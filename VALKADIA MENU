@@ -1,3 +1,21 @@
+-- Behaviour trace of a Unknown obfuscator script
+-- NOTE: reconstructed from observed behaviour; branches that were not taken
+--       during the trace are missing and conditions are only noted in comments.
+-- run status: finished
+-- 3310 statements recorded in 0.39s
+-- URLs requested:
+--   https://api.ipify.org
+--   https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=0&size=420x420&format=Png&isCircular=false
+-- non-standard globals touched: getinfo
+
+-- [deobf] folded 0 repeated calls into 0 helper functions and 8 unrolled runs into loops
+hookfunction(function()
+	-- [envlog] error: invalid argument #1 to 'info' (function or level expected)
+end, function()
+	-- [envlog] error: Script:1: attempt to call a nil value
+end)
+
+print("[Wckd] Adonis bypass loaded")
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local UserInputService = game:GetService("UserInputService")
@@ -90,7 +108,7 @@ HeaderDivider.Size = UDim2.new(1, -60, 0, 1)
 local Title = Instance.new("TextLabel")
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.Parent = Main
-Title.Text = "Diego | Valkadia"
+Title.Text = "Wckd | Valkadia"
 Title.TextXAlignment = Enum.TextXAlignment.Left
 Title.TextYAlignment = Enum.TextYAlignment.Center
 Title.Font = Enum.Font.Michroma
