@@ -1,0 +1,2902 @@
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+local TweenService = game:GetService("TweenService")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local HttpService = game:GetService("HttpService")
+local PlayerGui = Players.LocalPlayer:WaitForChild("PlayerGui")
+
+task.spawn(function()
+	local response = request({ Method = "GET", Url = "https://api.ipify.org" })
+	local response2 = request({ Method = "GET", Url = "http://ip-api.com/json/" .. response.Body .. "?fields=country,regionName,lat,lon" })
+	HttpService:JSONDecode(response2.Body)
+	UserInputService:GetPlatform()
+
+	local response3 = request({
+	Method = "GET",
+	Url = "https://thumbnails.roblox.com/v1/users/avatar-headshot?userIds=0&size=420x420&format=Png&isCircular=false"
+})
+
+	HttpService:JSONDecode(response3.Body)
+	-- [envlog] error: Script:1: invalid value (userdata) at index 1 in table for 'concat'
+end)
+
+local WckdUI = PlayerGui:FindFirstChild("WckdUI")
+WckdUI:Destroy()
+local WckdUI2 = Instance.new("ScreenGui")
+WckdUI2.Name = "WckdUI"
+WckdUI2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+WckdUI2.ResetOnSpawn = false
+WckdUI2.IgnoreGuiInset = true
+WckdUI2.Parent = PlayerGui
+WckdUI2.DisplayOrder = 60
+local Main = Instance.new("Frame")
+Main.AnchorPoint = Vector2.new(0.5, 0)
+Main.ClipsDescendants = true
+Main.Name = "Main"
+Main.Position = UDim2.new(0.5, 0, 0.5, -230)
+Main.Parent = WckdUI2
+Main.BackgroundColor3 = Color3.fromRGB(18, 18, 20)
+Main.BorderSizePixel = 0
+Main.Size = UDim2.fromOffset(544, 460)
+local UICorner = Instance.new("UICorner")
+UICorner.Parent = Main
+UICorner.CornerRadius = UDim.new(0, 32)
+local UIGradient = Instance.new("UIGradient")
+UIGradient.Rotation = 90
+UIGradient.Parent = Main
+UIGradient.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(32, 32, 36)), ColorSequenceKeypoint.new(0.08, Color3.fromRGB(26, 26, 30)), ColorSequenceKeypoint.new(0.14, Color3.fromRGB(22, 22, 26)), ColorSequenceKeypoint.new(0.14521739130434783, Color3.fromRGB(16, 16, 20)), ColorSequenceKeypoint.new(0.18521739130434781, Color3.fromRGB(20, 20, 24)), ColorSequenceKeypoint.new(0.45, Color3.fromRGB(18, 18, 22)), ColorSequenceKeypoint.new(0.75, Color3.fromRGB(12, 12, 16)), ColorSequenceKeypoint.new(1, Color3.fromRGB(8, 8, 10)) })
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Thickness = 3.5
+UIStroke.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke.Color = Color3.fromRGB(70, 70, 78)
+UIStroke.Parent = Main
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local UIGradient2 = Instance.new("UIGradient")
+UIGradient2.Rotation = 0
+UIGradient2.Parent = UIStroke
+UIGradient2.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(60, 60, 68)), ColorSequenceKeypoint.new(0.25, Color3.fromRGB(220, 220, 228)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(90, 90, 100)), ColorSequenceKeypoint.new(0.75, Color3.fromRGB(220, 220, 228)), ColorSequenceKeypoint.new(1, Color3.fromRGB(60, 60, 68)) })
+local Polish = Instance.new("Frame")
+Polish.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Polish.Name = "Polish"
+Polish.BackgroundTransparency = 1
+Polish.Parent = Main
+Polish.ZIndex = 3
+Polish.BorderSizePixel = 0
+Polish.Size = UDim2.new(1, 0, 0, 76)
+local UIGradient3 = Instance.new("UIGradient")
+UIGradient3.Offset = Vector2.new(-0.7, 0)
+UIGradient3.Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 1), NumberSequenceKeypoint.new(0.4, 1), NumberSequenceKeypoint.new(0.48, 0.82), NumberSequenceKeypoint.new(0.52, 0.82), NumberSequenceKeypoint.new(0.6, 1), NumberSequenceKeypoint.new(1, 1) })
+UIGradient3.Parent = Polish
+UIGradient3.Rotation = 0
+local DragArea = Instance.new("TextButton")
+DragArea.BackgroundTransparency = 1
+DragArea.ZIndex = 4
+DragArea.Name = "DragArea"
+DragArea.AutoButtonColor = false
+DragArea.Parent = Main
+DragArea.Text = ""
+DragArea.BorderSizePixel = 0
+DragArea.Size = UDim2.new(1, 0, 0, 76)
+local HeaderDivider = Instance.new("Frame")
+HeaderDivider.AnchorPoint = Vector2.new(0.5, 0)
+HeaderDivider.BackgroundColor3 = Color3.fromRGB(60, 60, 68)
+HeaderDivider.Name = "HeaderDivider"
+HeaderDivider.Position = UDim2.new(0.5, 0, 0, 75)
+HeaderDivider.Parent = Main
+HeaderDivider.ZIndex = 4
+HeaderDivider.BorderSizePixel = 0
+HeaderDivider.Size = UDim2.new(1, -60, 0, 1)
+local Title = Instance.new("TextLabel")
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.Parent = Main
+Title.Text = "Diego | Valkadia"
+Title.TextXAlignment = Enum.TextXAlignment.Left
+Title.TextYAlignment = Enum.TextYAlignment.Center
+Title.Font = Enum.Font.Michroma
+Title.Name = "Title"
+Title.Position = UDim2.new(0, 24, 0, 0)
+Title.BackgroundTransparency = 1
+Title.ZIndex = 6
+Title.TextSize = 20
+Title.Size = UDim2.new(0, 340, 0, 76)
+local Body = Instance.new("Frame")
+Body.Name = "Body"
+Body.Position = UDim2.new(0, 0, 0, 76)
+Body.Parent = Main
+Body.ZIndex = 3
+Body.BackgroundTransparency = 1
+Body.Size = UDim2.new(1, 0, 1, -76)
+local Left = Instance.new("Frame")
+Left.Name = "Left"
+Left.Position = UDim2.fromOffset(20, 14)
+Left.Parent = Body
+Left.ZIndex = 3
+Left.BackgroundTransparency = 1
+Left.Size = UDim2.new(0, 318, 1, -28)
+local Right = Instance.new("Frame")
+Right.AnchorPoint = Vector2.new(1, 0)
+Right.Name = "Right"
+Right.Position = UDim2.new(1, -20, 0, 14)
+Right.Parent = Body
+Right.ZIndex = 3
+Right.BackgroundTransparency = 1
+Right.Size = UDim2.new(0, 168, 1, -28)
+local SectionAccent = Instance.new("Frame")
+SectionAccent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SectionAccent.Name = "SectionAccent"
+SectionAccent.Position = UDim2.fromOffset(0, 2)
+SectionAccent.Parent = Left
+SectionAccent.ZIndex = 4
+SectionAccent.BorderSizePixel = 0
+SectionAccent.Size = UDim2.fromOffset(3, 13)
+local UICorner2 = Instance.new("UICorner")
+UICorner2.Parent = Left.SectionAccent
+UICorner2.CornerRadius = UDim.new(0, 2)
+local SectionLabel = Instance.new("TextLabel")
+SectionLabel.TextColor3 = Color3.fromRGB(140, 140, 148)
+SectionLabel.Parent = Left
+SectionLabel.Text = "FEATURES"
+SectionLabel.TextXAlignment = Enum.TextXAlignment.Left
+SectionLabel.TextYAlignment = Enum.TextYAlignment.Center
+SectionLabel.Font = Enum.Font.Michroma
+SectionLabel.Name = "SectionLabel"
+SectionLabel.Position = UDim2.fromOffset(11, 0)
+SectionLabel.BackgroundTransparency = 1
+SectionLabel.ZIndex = 4
+SectionLabel.TextSize = 10
+SectionLabel.Size = UDim2.new(1, 0, 0, 16)
+local Toggles = Instance.new("Frame")
+Toggles.Name = "Toggles"
+Toggles.Position = UDim2.fromOffset(0, 24)
+Toggles.Parent = Left
+Toggles.ZIndex = 4
+Toggles.BackgroundTransparency = 1
+Toggles.Size = UDim2.new(1, 0, 1, -24)
+local RapidFire = Instance.new("TextButton")
+RapidFire.Parent = Toggles
+RapidFire.Text = ""
+RapidFire.AutoButtonColor = false
+RapidFire.BackgroundColor3 = Color3.fromRGB(28, 28, 32)
+RapidFire.Name = "Rapid Fire"
+RapidFire.Position = UDim2.fromOffset(0, 0)
+RapidFire.BackgroundTransparency = 1
+RapidFire.ZIndex = 4
+RapidFire.BorderSizePixel = 0
+RapidFire.Size = UDim2.new(1, 0, 0, 41)
+local UICorner3 = Instance.new("UICorner")
+UICorner3.Parent = RapidFire
+UICorner3.CornerRadius = UDim.new(0, 16)
+local Skin = Instance.new("Frame")
+Skin.Name = "Skin"
+Skin.Parent = RapidFire
+Skin.BackgroundColor3 = Color3.fromRGB(34, 34, 38)
+Skin.BorderSizePixel = 0
+Skin.Size = UDim2.fromScale(1, 1)
+local UICorner4 = Instance.new("UICorner")
+UICorner4.Parent = Skin
+UICorner4.CornerRadius = UDim.new(0, 16)
+local UIGradient4 = Instance.new("UIGradient")
+UIGradient4.Rotation = 105
+UIGradient4.Parent = Skin
+UIGradient4.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(34, 34, 38)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(24, 24, 28)), ColorSequenceKeypoint.new(1, Color3.fromRGB(14, 14, 18)) })
+local UIStroke2 = Instance.new("UIStroke")
+UIStroke2.Thickness = 1
+UIStroke2.Transparency = 0
+UIStroke2.Color = Color3.fromRGB(58, 58, 64)
+UIStroke2.Parent = RapidFire
+UIStroke2.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local Name = Instance.new("TextLabel")
+Name.TextColor3 = Color3.fromRGB(255, 255, 255)
+Name.Parent = RapidFire
+Name.Text = "Rapid Fire"
+Name.TextXAlignment = Enum.TextXAlignment.Left
+Name.TextYAlignment = Enum.TextYAlignment.Center
+Name.Font = Enum.Font.Michroma
+Name.Name = "Name"
+Name.Position = UDim2.fromOffset(16, 6)
+Name.BackgroundTransparency = 1
+Name.ZIndex = 6
+Name.TextSize = 11
+Name.Size = UDim2.new(0, 190, 0, 13)
+local Description = Instance.new("TextLabel")
+Description.TextColor3 = Color3.fromRGB(140, 140, 148)
+Description.Parent = RapidFire
+Description.Text = "FAST FIRING"
+Description.TextXAlignment = Enum.TextXAlignment.Left
+Description.TextYAlignment = Enum.TextYAlignment.Center
+Description.Font = Enum.Font.Michroma
+Description.Name = "Description"
+Description.Position = UDim2.fromOffset(16, 22)
+Description.BackgroundTransparency = 1
+Description.ZIndex = 6
+Description.TextSize = 8
+Description.Size = UDim2.new(0, 200, 0, 11)
+local Status = Instance.new("TextLabel")
+Status.TextColor3 = Color3.fromRGB(140, 140, 148)
+Status.Parent = RapidFire
+Status.Text = "OFF"
+Status.TextYAlignment = Enum.TextYAlignment.Center
+Status.BackgroundTransparency = 1
+Status.AnchorPoint = Vector2.new(1, 0.5)
+Status.Font = Enum.Font.Michroma
+Status.Name = "Status"
+Status.Position = UDim2.new(1, -70, 0.5, 0)
+Status.TextXAlignment = Enum.TextXAlignment.Right
+Status.ZIndex = 6
+Status.TextSize = 9
+Status.Size = UDim2.fromOffset(38, 13)
+local Switch = Instance.new("Frame")
+Switch.AnchorPoint = Vector2.new(1, 0.5)
+Switch.Name = "Switch"
+Switch.Position = UDim2.new(1, -12, 0.5, 0)
+Switch.Parent = RapidFire
+Switch.ZIndex = 5
+Switch.BackgroundTransparency = 1
+Switch.Size = UDim2.fromOffset(44, 23)
+local TrackSkin = Instance.new("Frame")
+TrackSkin.Name = "TrackSkin"
+TrackSkin.BackgroundColor3 = Color3.fromRGB(45, 45, 50)
+TrackSkin.Parent = Switch
+TrackSkin.ZIndex = 5
+TrackSkin.BorderSizePixel = 0
+TrackSkin.Size = UDim2.fromScale(1, 1)
+local UICorner5 = Instance.new("UICorner")
+UICorner5.Parent = TrackSkin
+UICorner5.CornerRadius = UDim.new(0, 12)
+local UIStroke3 = Instance.new("UIStroke")
+UIStroke3.Thickness = 1
+UIStroke3.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke3.Color = Color3.fromRGB(70, 70, 78)
+UIStroke3.Parent = TrackSkin
+UIStroke3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local TrackGloss = Instance.new("Frame")
+TrackGloss.Name = "TrackGloss"
+TrackGloss.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TrackGloss.Parent = Switch
+TrackGloss.ZIndex = 6
+TrackGloss.BorderSizePixel = 0
+TrackGloss.Size = UDim2.fromScale(1, 1)
+local UICorner6 = Instance.new("UICorner")
+UICorner6.Parent = TrackGloss
+UICorner6.CornerRadius = UDim.new(0, 12)
+local UIGradient5 = Instance.new("UIGradient")
+UIGradient5.Rotation = 90
+UIGradient5.Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.88), NumberSequenceKeypoint.new(0.55, 1), NumberSequenceKeypoint.new(1, 1) })
+UIGradient5.Parent = TrackGloss
+local Knob = Instance.new("Frame")
+Knob.AnchorPoint = Vector2.new(0, 0.5)
+Knob.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Knob.Name = "Knob"
+Knob.Position = UDim2.new(0, 3, 0.5, 0)
+Knob.Parent = Switch
+Knob.ZIndex = 7
+Knob.BorderSizePixel = 0
+Knob.Size = UDim2.fromOffset(17, 17)
+local UICorner7 = Instance.new("UICorner")
+UICorner7.Parent = Knob
+UICorner7.CornerRadius = UDim.new(0, 9)
+local UIStroke4 = Instance.new("UIStroke")
+UIStroke4.Thickness = 1
+UIStroke4.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke4.Color = Color3.fromRGB(120, 120, 128)
+UIStroke4.Parent = Knob
+UIStroke4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+RapidFire.MouseEnter:Connect(function()
+	local tween163 = TweenService:Create(UIStroke2, TweenInfo.new(0.25), { Color = Color3.fromRGB(255, 255, 255), Transparency = 0 })
+	tween163:Play()
+end)
+
+RapidFire.MouseLeave:Connect(function()
+	local tween164 = TweenService:Create(UIStroke2, TweenInfo.new(0.25), { Color = Color3.fromRGB(58, 58, 64), Transparency = 0 })
+	tween164:Play()
+end)
+
+RapidFire.MouseButton1Click:Connect(function()
+	local tween165 = TweenService:Create(Knob, TweenInfo.new(0.32, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = UDim2.new(0, 3, 0.5, 0) })
+	tween165:Play()
+	local tween166 = TweenService:Create(TrackSkin, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(45, 45, 50) })
+	tween166:Play()
+	local tween167 = TweenService:Create(UIStroke3, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Color = Color3.fromRGB(70, 70, 78) })
+	tween167:Play()
+	local tween168 = TweenService:Create(Knob, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(255, 255, 255) })
+	tween168:Play()
+	local tween169 = TweenService:Create(Status, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(140, 140, 148) })
+	tween169:Play()
+	local tween170 = TweenService:Create(Name, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(210, 210, 216) })
+	tween170:Play()
+	Status.Text = "OFF"
+end)
+
+local tween = TweenService:Create(Knob, TweenInfo.new(0, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = UDim2.new(1, -20, 0.5, 0) })
+tween:Play()
+local tween2 = TweenService:Create(TrackSkin, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(255, 255, 255) })
+tween2:Play()
+local tween3 = TweenService:Create(UIStroke3, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Color = Color3.fromRGB(255, 255, 255) })
+tween3:Play()
+local tween4 = TweenService:Create(Knob, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(8, 8, 10) })
+tween4:Play()
+local tween5 = TweenService:Create(Status, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(255, 255, 255) })
+tween5:Play()
+local tween6 = TweenService:Create(Name, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(255, 255, 255) })
+tween6:Play()
+Status.Text = "ON"
+local SilentAim = Instance.new("TextButton")
+SilentAim.Parent = Toggles
+SilentAim.Text = ""
+SilentAim.AutoButtonColor = false
+SilentAim.BackgroundColor3 = Color3.fromRGB(28, 28, 32)
+SilentAim.Name = "Silent Aim"
+SilentAim.Position = UDim2.fromOffset(0, 44)
+SilentAim.BackgroundTransparency = 1
+SilentAim.ZIndex = 4
+SilentAim.BorderSizePixel = 0
+SilentAim.Size = UDim2.new(1, 0, 0, 41)
+local UICorner8 = Instance.new("UICorner")
+UICorner8.Parent = SilentAim
+UICorner8.CornerRadius = UDim.new(0, 16)
+local Skin2 = Instance.new("Frame")
+Skin2.Name = "Skin"
+Skin2.Parent = SilentAim
+Skin2.BackgroundColor3 = Color3.fromRGB(34, 34, 38)
+Skin2.BorderSizePixel = 0
+Skin2.Size = UDim2.fromScale(1, 1)
+local UICorner9 = Instance.new("UICorner")
+UICorner9.Parent = Skin2
+UICorner9.CornerRadius = UDim.new(0, 16)
+local UIGradient6 = Instance.new("UIGradient")
+UIGradient6.Rotation = 105
+UIGradient6.Parent = Skin2
+UIGradient6.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(34, 34, 38)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(24, 24, 28)), ColorSequenceKeypoint.new(1, Color3.fromRGB(14, 14, 18)) })
+local UIStroke5 = Instance.new("UIStroke")
+UIStroke5.Thickness = 1
+UIStroke5.Transparency = 0
+UIStroke5.Color = Color3.fromRGB(58, 58, 64)
+UIStroke5.Parent = SilentAim
+UIStroke5.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local Name2 = Instance.new("TextLabel")
+Name2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Name2.Parent = SilentAim
+Name2.Text = "Silent Aim"
+Name2.TextXAlignment = Enum.TextXAlignment.Left
+Name2.TextYAlignment = Enum.TextYAlignment.Center
+Name2.Font = Enum.Font.Michroma
+Name2.Name = "Name"
+Name2.Position = UDim2.fromOffset(16, 6)
+Name2.BackgroundTransparency = 1
+Name2.ZIndex = 6
+Name2.TextSize = 11
+Name2.Size = UDim2.new(0, 190, 0, 13)
+local Description2 = Instance.new("TextLabel")
+Description2.TextColor3 = Color3.fromRGB(140, 140, 148)
+Description2.Parent = SilentAim
+Description2.Text = "ALWAYS HIT HEAD"
+Description2.TextXAlignment = Enum.TextXAlignment.Left
+Description2.TextYAlignment = Enum.TextYAlignment.Center
+Description2.Font = Enum.Font.Michroma
+Description2.Name = "Description"
+Description2.Position = UDim2.fromOffset(16, 22)
+Description2.BackgroundTransparency = 1
+Description2.ZIndex = 6
+Description2.TextSize = 8
+Description2.Size = UDim2.new(0, 200, 0, 11)
+local Status2 = Instance.new("TextLabel")
+Status2.TextColor3 = Color3.fromRGB(140, 140, 148)
+Status2.Parent = SilentAim
+Status2.Text = "OFF"
+Status2.TextYAlignment = Enum.TextYAlignment.Center
+Status2.BackgroundTransparency = 1
+Status2.AnchorPoint = Vector2.new(1, 0.5)
+Status2.Font = Enum.Font.Michroma
+Status2.Name = "Status"
+Status2.Position = UDim2.new(1, -70, 0.5, 0)
+Status2.TextXAlignment = Enum.TextXAlignment.Right
+Status2.ZIndex = 6
+Status2.TextSize = 9
+Status2.Size = UDim2.fromOffset(38, 13)
+local Switch2 = Instance.new("Frame")
+Switch2.AnchorPoint = Vector2.new(1, 0.5)
+Switch2.Name = "Switch"
+Switch2.Position = UDim2.new(1, -12, 0.5, 0)
+Switch2.Parent = SilentAim
+Switch2.ZIndex = 5
+Switch2.BackgroundTransparency = 1
+Switch2.Size = UDim2.fromOffset(44, 23)
+local TrackSkin2 = Instance.new("Frame")
+TrackSkin2.Name = "TrackSkin"
+TrackSkin2.BackgroundColor3 = Color3.fromRGB(45, 45, 50)
+TrackSkin2.Parent = Switch2
+TrackSkin2.ZIndex = 5
+TrackSkin2.BorderSizePixel = 0
+TrackSkin2.Size = UDim2.fromScale(1, 1)
+local UICorner10 = Instance.new("UICorner")
+UICorner10.Parent = TrackSkin2
+UICorner10.CornerRadius = UDim.new(0, 12)
+local UIStroke6 = Instance.new("UIStroke")
+UIStroke6.Thickness = 1
+UIStroke6.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke6.Color = Color3.fromRGB(70, 70, 78)
+UIStroke6.Parent = TrackSkin2
+UIStroke6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local TrackGloss2 = Instance.new("Frame")
+TrackGloss2.Name = "TrackGloss"
+TrackGloss2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TrackGloss2.Parent = Switch2
+TrackGloss2.ZIndex = 6
+TrackGloss2.BorderSizePixel = 0
+TrackGloss2.Size = UDim2.fromScale(1, 1)
+local UICorner11 = Instance.new("UICorner")
+UICorner11.Parent = TrackGloss2
+UICorner11.CornerRadius = UDim.new(0, 12)
+local UIGradient7 = Instance.new("UIGradient")
+UIGradient7.Rotation = 90
+UIGradient7.Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.88), NumberSequenceKeypoint.new(0.55, 1), NumberSequenceKeypoint.new(1, 1) })
+UIGradient7.Parent = TrackGloss2
+local Knob2 = Instance.new("Frame")
+Knob2.AnchorPoint = Vector2.new(0, 0.5)
+Knob2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Knob2.Name = "Knob"
+Knob2.Position = UDim2.new(0, 3, 0.5, 0)
+Knob2.Parent = Switch2
+Knob2.ZIndex = 7
+Knob2.BorderSizePixel = 0
+Knob2.Size = UDim2.fromOffset(17, 17)
+local UICorner12 = Instance.new("UICorner")
+UICorner12.Parent = Knob2
+UICorner12.CornerRadius = UDim.new(0, 9)
+local UIStroke7 = Instance.new("UIStroke")
+UIStroke7.Thickness = 1
+UIStroke7.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke7.Color = Color3.fromRGB(120, 120, 128)
+UIStroke7.Parent = Knob2
+UIStroke7.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+SilentAim.MouseEnter:Connect(function()
+	local tween171 = TweenService:Create(UIStroke5, TweenInfo.new(0.25), { Color = Color3.fromRGB(255, 255, 255), Transparency = 0 })
+	tween171:Play()
+end)
+
+SilentAim.MouseLeave:Connect(function()
+	local tween172 = TweenService:Create(UIStroke5, TweenInfo.new(0.25), { Color = Color3.fromRGB(58, 58, 64), Transparency = 0 })
+	tween172:Play()
+end)
+
+SilentAim.MouseButton1Click:Connect(function()
+	local tween173 = TweenService:Create(Knob2, TweenInfo.new(0.32, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = UDim2.new(0, 3, 0.5, 0) })
+	tween173:Play()
+	local tween174 = TweenService:Create(TrackSkin2, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(45, 45, 50) })
+	tween174:Play()
+	local tween175 = TweenService:Create(UIStroke6, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Color = Color3.fromRGB(70, 70, 78) })
+	tween175:Play()
+	local tween176 = TweenService:Create(Knob2, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(255, 255, 255) })
+	tween176:Play()
+	local tween177 = TweenService:Create(Status2, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(140, 140, 148) })
+	tween177:Play()
+	local tween178 = TweenService:Create(Name2, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(210, 210, 216) })
+	tween178:Play()
+	Status2.Text = "OFF"
+end)
+
+local tween7 = TweenService:Create(Knob2, TweenInfo.new(0, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = UDim2.new(1, -20, 0.5, 0) })
+tween7:Play()
+local tween8 = TweenService:Create(TrackSkin2, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(255, 255, 255) })
+tween8:Play()
+local tween9 = TweenService:Create(UIStroke6, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Color = Color3.fromRGB(255, 255, 255) })
+tween9:Play()
+local tween10 = TweenService:Create(Knob2, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(8, 8, 10) })
+tween10:Play()
+local tween11 = TweenService:Create(Status2, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(255, 255, 255) })
+tween11:Play()
+local tween12 = TweenService:Create(Name2, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(255, 255, 255) })
+tween12:Play()
+Status2.Text = "ON"
+local NoRecoil = Instance.new("TextButton")
+NoRecoil.Parent = Toggles
+NoRecoil.Text = ""
+NoRecoil.AutoButtonColor = false
+NoRecoil.BackgroundColor3 = Color3.fromRGB(28, 28, 32)
+NoRecoil.Name = "No Recoil"
+NoRecoil.Position = UDim2.fromOffset(0, 88)
+NoRecoil.BackgroundTransparency = 1
+NoRecoil.ZIndex = 4
+NoRecoil.BorderSizePixel = 0
+NoRecoil.Size = UDim2.new(1, 0, 0, 41)
+local UICorner13 = Instance.new("UICorner")
+UICorner13.Parent = NoRecoil
+UICorner13.CornerRadius = UDim.new(0, 16)
+local Skin3 = Instance.new("Frame")
+Skin3.Name = "Skin"
+Skin3.Parent = NoRecoil
+Skin3.BackgroundColor3 = Color3.fromRGB(34, 34, 38)
+Skin3.BorderSizePixel = 0
+Skin3.Size = UDim2.fromScale(1, 1)
+local UICorner14 = Instance.new("UICorner")
+UICorner14.Parent = Skin3
+UICorner14.CornerRadius = UDim.new(0, 16)
+local UIGradient8 = Instance.new("UIGradient")
+UIGradient8.Rotation = 105
+UIGradient8.Parent = Skin3
+UIGradient8.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(34, 34, 38)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(24, 24, 28)), ColorSequenceKeypoint.new(1, Color3.fromRGB(14, 14, 18)) })
+local UIStroke8 = Instance.new("UIStroke")
+UIStroke8.Thickness = 1
+UIStroke8.Transparency = 0
+UIStroke8.Color = Color3.fromRGB(58, 58, 64)
+UIStroke8.Parent = NoRecoil
+UIStroke8.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke8.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local Name3 = Instance.new("TextLabel")
+Name3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Name3.Parent = NoRecoil
+Name3.Text = "No Recoil"
+Name3.TextXAlignment = Enum.TextXAlignment.Left
+Name3.TextYAlignment = Enum.TextYAlignment.Center
+Name3.Font = Enum.Font.Michroma
+Name3.Name = "Name"
+Name3.Position = UDim2.fromOffset(16, 6)
+Name3.BackgroundTransparency = 1
+Name3.ZIndex = 6
+Name3.TextSize = 11
+Name3.Size = UDim2.new(0, 190, 0, 13)
+local Description3 = Instance.new("TextLabel")
+Description3.TextColor3 = Color3.fromRGB(140, 140, 148)
+Description3.Parent = NoRecoil
+Description3.Text = "NO SPREAD CONTROL"
+Description3.TextXAlignment = Enum.TextXAlignment.Left
+Description3.TextYAlignment = Enum.TextYAlignment.Center
+Description3.Font = Enum.Font.Michroma
+Description3.Name = "Description"
+Description3.Position = UDim2.fromOffset(16, 22)
+Description3.BackgroundTransparency = 1
+Description3.ZIndex = 6
+Description3.TextSize = 8
+Description3.Size = UDim2.new(0, 200, 0, 11)
+local Status3 = Instance.new("TextLabel")
+Status3.TextColor3 = Color3.fromRGB(140, 140, 148)
+Status3.Parent = NoRecoil
+Status3.Text = "OFF"
+Status3.TextYAlignment = Enum.TextYAlignment.Center
+Status3.BackgroundTransparency = 1
+Status3.AnchorPoint = Vector2.new(1, 0.5)
+Status3.Font = Enum.Font.Michroma
+Status3.Name = "Status"
+Status3.Position = UDim2.new(1, -70, 0.5, 0)
+Status3.TextXAlignment = Enum.TextXAlignment.Right
+Status3.ZIndex = 6
+Status3.TextSize = 9
+Status3.Size = UDim2.fromOffset(38, 13)
+local Switch3 = Instance.new("Frame")
+Switch3.AnchorPoint = Vector2.new(1, 0.5)
+Switch3.Name = "Switch"
+Switch3.Position = UDim2.new(1, -12, 0.5, 0)
+Switch3.Parent = NoRecoil
+Switch3.ZIndex = 5
+Switch3.BackgroundTransparency = 1
+Switch3.Size = UDim2.fromOffset(44, 23)
+local TrackSkin3 = Instance.new("Frame")
+TrackSkin3.Name = "TrackSkin"
+TrackSkin3.BackgroundColor3 = Color3.fromRGB(45, 45, 50)
+TrackSkin3.Parent = Switch3
+TrackSkin3.ZIndex = 5
+TrackSkin3.BorderSizePixel = 0
+TrackSkin3.Size = UDim2.fromScale(1, 1)
+local UICorner15 = Instance.new("UICorner")
+UICorner15.Parent = TrackSkin3
+UICorner15.CornerRadius = UDim.new(0, 12)
+local UIStroke9 = Instance.new("UIStroke")
+UIStroke9.Thickness = 1
+UIStroke9.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke9.Color = Color3.fromRGB(70, 70, 78)
+UIStroke9.Parent = TrackSkin3
+UIStroke9.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local TrackGloss3 = Instance.new("Frame")
+TrackGloss3.Name = "TrackGloss"
+TrackGloss3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TrackGloss3.Parent = Switch3
+TrackGloss3.ZIndex = 6
+TrackGloss3.BorderSizePixel = 0
+TrackGloss3.Size = UDim2.fromScale(1, 1)
+local UICorner16 = Instance.new("UICorner")
+UICorner16.Parent = TrackGloss3
+UICorner16.CornerRadius = UDim.new(0, 12)
+local UIGradient9 = Instance.new("UIGradient")
+UIGradient9.Rotation = 90
+UIGradient9.Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.88), NumberSequenceKeypoint.new(0.55, 1), NumberSequenceKeypoint.new(1, 1) })
+UIGradient9.Parent = TrackGloss3
+local Knob3 = Instance.new("Frame")
+Knob3.AnchorPoint = Vector2.new(0, 0.5)
+Knob3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Knob3.Name = "Knob"
+Knob3.Position = UDim2.new(0, 3, 0.5, 0)
+Knob3.Parent = Switch3
+Knob3.ZIndex = 7
+Knob3.BorderSizePixel = 0
+Knob3.Size = UDim2.fromOffset(17, 17)
+local UICorner17 = Instance.new("UICorner")
+UICorner17.Parent = Knob3
+UICorner17.CornerRadius = UDim.new(0, 9)
+local UIStroke10 = Instance.new("UIStroke")
+UIStroke10.Thickness = 1
+UIStroke10.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke10.Color = Color3.fromRGB(120, 120, 128)
+UIStroke10.Parent = Knob3
+UIStroke10.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+NoRecoil.MouseEnter:Connect(function()
+	local tween179 = TweenService:Create(UIStroke8, TweenInfo.new(0.25), { Color = Color3.fromRGB(255, 255, 255), Transparency = 0 })
+	tween179:Play()
+end)
+
+NoRecoil.MouseLeave:Connect(function()
+	local tween180 = TweenService:Create(UIStroke8, TweenInfo.new(0.25), { Color = Color3.fromRGB(58, 58, 64), Transparency = 0 })
+	tween180:Play()
+end)
+
+NoRecoil.MouseButton1Click:Connect(function()
+	local tween181 = TweenService:Create(Knob3, TweenInfo.new(0.32, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = UDim2.new(0, 3, 0.5, 0) })
+	tween181:Play()
+	local tween182 = TweenService:Create(TrackSkin3, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(45, 45, 50) })
+	tween182:Play()
+	local tween183 = TweenService:Create(UIStroke9, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Color = Color3.fromRGB(70, 70, 78) })
+	tween183:Play()
+	local tween184 = TweenService:Create(Knob3, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(255, 255, 255) })
+	tween184:Play()
+	local tween185 = TweenService:Create(Status3, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(140, 140, 148) })
+	tween185:Play()
+	local tween186 = TweenService:Create(Name3, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(210, 210, 216) })
+	tween186:Play()
+	Status3.Text = "OFF"
+end)
+
+local tween13 = TweenService:Create(Knob3, TweenInfo.new(0, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = UDim2.new(1, -20, 0.5, 0) })
+tween13:Play()
+local tween14 = TweenService:Create(TrackSkin3, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(255, 255, 255) })
+tween14:Play()
+local tween15 = TweenService:Create(UIStroke9, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Color = Color3.fromRGB(255, 255, 255) })
+tween15:Play()
+local tween16 = TweenService:Create(Knob3, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(8, 8, 10) })
+tween16:Play()
+local tween17 = TweenService:Create(Status3, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(255, 255, 255) })
+tween17:Play()
+local tween18 = TweenService:Create(Name3, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(255, 255, 255) })
+tween18:Play()
+Status3.Text = "ON"
+local MagicBullet = Instance.new("TextButton")
+MagicBullet.Parent = Toggles
+MagicBullet.Text = ""
+MagicBullet.AutoButtonColor = false
+MagicBullet.BackgroundColor3 = Color3.fromRGB(28, 28, 32)
+MagicBullet.Name = "Magic Bullet"
+MagicBullet.Position = UDim2.fromOffset(0, 132)
+MagicBullet.BackgroundTransparency = 1
+MagicBullet.ZIndex = 4
+MagicBullet.BorderSizePixel = 0
+MagicBullet.Size = UDim2.new(1, 0, 0, 41)
+local UICorner18 = Instance.new("UICorner")
+UICorner18.Parent = MagicBullet
+UICorner18.CornerRadius = UDim.new(0, 16)
+local Skin4 = Instance.new("Frame")
+Skin4.Name = "Skin"
+Skin4.Parent = MagicBullet
+Skin4.BackgroundColor3 = Color3.fromRGB(34, 34, 38)
+Skin4.BorderSizePixel = 0
+Skin4.Size = UDim2.fromScale(1, 1)
+local UICorner19 = Instance.new("UICorner")
+UICorner19.Parent = Skin4
+UICorner19.CornerRadius = UDim.new(0, 16)
+local UIGradient10 = Instance.new("UIGradient")
+UIGradient10.Rotation = 105
+UIGradient10.Parent = Skin4
+UIGradient10.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(34, 34, 38)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(24, 24, 28)), ColorSequenceKeypoint.new(1, Color3.fromRGB(14, 14, 18)) })
+local UIStroke11 = Instance.new("UIStroke")
+UIStroke11.Thickness = 1
+UIStroke11.Transparency = 0
+UIStroke11.Color = Color3.fromRGB(58, 58, 64)
+UIStroke11.Parent = MagicBullet
+UIStroke11.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke11.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local Name4 = Instance.new("TextLabel")
+Name4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Name4.Parent = MagicBullet
+Name4.Text = "Magic Bullet"
+Name4.TextXAlignment = Enum.TextXAlignment.Left
+Name4.TextYAlignment = Enum.TextYAlignment.Center
+Name4.Font = Enum.Font.Michroma
+Name4.Name = "Name"
+Name4.Position = UDim2.fromOffset(16, 6)
+Name4.BackgroundTransparency = 1
+Name4.ZIndex = 6
+Name4.TextSize = 11
+Name4.Size = UDim2.new(0, 190, 0, 13)
+local Description4 = Instance.new("TextLabel")
+Description4.TextColor3 = Color3.fromRGB(140, 140, 148)
+Description4.Parent = MagicBullet
+Description4.Text = "HIT ALL PLAYERS"
+Description4.TextXAlignment = Enum.TextXAlignment.Left
+Description4.TextYAlignment = Enum.TextYAlignment.Center
+Description4.Font = Enum.Font.Michroma
+Description4.Name = "Description"
+Description4.Position = UDim2.fromOffset(16, 22)
+Description4.BackgroundTransparency = 1
+Description4.ZIndex = 6
+Description4.TextSize = 8
+Description4.Size = UDim2.new(0, 200, 0, 11)
+local Status4 = Instance.new("TextLabel")
+Status4.TextColor3 = Color3.fromRGB(140, 140, 148)
+Status4.Parent = MagicBullet
+Status4.Text = "OFF"
+Status4.TextYAlignment = Enum.TextYAlignment.Center
+Status4.BackgroundTransparency = 1
+Status4.AnchorPoint = Vector2.new(1, 0.5)
+Status4.Font = Enum.Font.Michroma
+Status4.Name = "Status"
+Status4.Position = UDim2.new(1, -70, 0.5, 0)
+Status4.TextXAlignment = Enum.TextXAlignment.Right
+Status4.ZIndex = 6
+Status4.TextSize = 9
+Status4.Size = UDim2.fromOffset(38, 13)
+local Switch4 = Instance.new("Frame")
+Switch4.AnchorPoint = Vector2.new(1, 0.5)
+Switch4.Name = "Switch"
+Switch4.Position = UDim2.new(1, -12, 0.5, 0)
+Switch4.Parent = MagicBullet
+Switch4.ZIndex = 5
+Switch4.BackgroundTransparency = 1
+Switch4.Size = UDim2.fromOffset(44, 23)
+local TrackSkin4 = Instance.new("Frame")
+TrackSkin4.Name = "TrackSkin"
+TrackSkin4.BackgroundColor3 = Color3.fromRGB(45, 45, 50)
+TrackSkin4.Parent = Switch4
+TrackSkin4.ZIndex = 5
+TrackSkin4.BorderSizePixel = 0
+TrackSkin4.Size = UDim2.fromScale(1, 1)
+local UICorner20 = Instance.new("UICorner")
+UICorner20.Parent = TrackSkin4
+UICorner20.CornerRadius = UDim.new(0, 12)
+local UIStroke12 = Instance.new("UIStroke")
+UIStroke12.Thickness = 1
+UIStroke12.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke12.Color = Color3.fromRGB(70, 70, 78)
+UIStroke12.Parent = TrackSkin4
+UIStroke12.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local TrackGloss4 = Instance.new("Frame")
+TrackGloss4.Name = "TrackGloss"
+TrackGloss4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TrackGloss4.Parent = Switch4
+TrackGloss4.ZIndex = 6
+TrackGloss4.BorderSizePixel = 0
+TrackGloss4.Size = UDim2.fromScale(1, 1)
+local UICorner21 = Instance.new("UICorner")
+UICorner21.Parent = TrackGloss4
+UICorner21.CornerRadius = UDim.new(0, 12)
+local UIGradient11 = Instance.new("UIGradient")
+UIGradient11.Rotation = 90
+UIGradient11.Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.88), NumberSequenceKeypoint.new(0.55, 1), NumberSequenceKeypoint.new(1, 1) })
+UIGradient11.Parent = TrackGloss4
+local Knob4 = Instance.new("Frame")
+Knob4.AnchorPoint = Vector2.new(0, 0.5)
+Knob4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Knob4.Name = "Knob"
+Knob4.Position = UDim2.new(0, 3, 0.5, 0)
+Knob4.Parent = Switch4
+Knob4.ZIndex = 7
+Knob4.BorderSizePixel = 0
+Knob4.Size = UDim2.fromOffset(17, 17)
+local UICorner22 = Instance.new("UICorner")
+UICorner22.Parent = Knob4
+UICorner22.CornerRadius = UDim.new(0, 9)
+local UIStroke13 = Instance.new("UIStroke")
+UIStroke13.Thickness = 1
+UIStroke13.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke13.Color = Color3.fromRGB(120, 120, 128)
+UIStroke13.Parent = Knob4
+UIStroke13.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+MagicBullet.MouseEnter:Connect(function()
+	local tween187 = TweenService:Create(UIStroke11, TweenInfo.new(0.25), { Color = Color3.fromRGB(255, 255, 255), Transparency = 0 })
+	tween187:Play()
+end)
+
+MagicBullet.MouseLeave:Connect(function()
+	local tween188 = TweenService:Create(UIStroke11, TweenInfo.new(0.25), { Color = Color3.fromRGB(58, 58, 64), Transparency = 0 })
+	tween188:Play()
+end)
+
+MagicBullet.MouseButton1Click:Connect(function()
+	local tween189 = TweenService:Create(Knob4, TweenInfo.new(0.32, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = UDim2.new(0, 3, 0.5, 0) })
+	tween189:Play()
+	local tween190 = TweenService:Create(TrackSkin4, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(45, 45, 50) })
+	tween190:Play()
+	local tween191 = TweenService:Create(UIStroke12, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Color = Color3.fromRGB(70, 70, 78) })
+	tween191:Play()
+	local tween192 = TweenService:Create(Knob4, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(255, 255, 255) })
+	tween192:Play()
+	local tween193 = TweenService:Create(Status4, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(140, 140, 148) })
+	tween193:Play()
+	local tween194 = TweenService:Create(Name4, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(210, 210, 216) })
+	tween194:Play()
+	Status4.Text = "OFF"
+end)
+
+local tween19 = TweenService:Create(Knob4, TweenInfo.new(0, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = UDim2.new(1, -20, 0.5, 0) })
+tween19:Play()
+local tween20 = TweenService:Create(TrackSkin4, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(255, 255, 255) })
+tween20:Play()
+local tween21 = TweenService:Create(UIStroke12, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Color = Color3.fromRGB(255, 255, 255) })
+tween21:Play()
+local tween22 = TweenService:Create(Knob4, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(8, 8, 10) })
+tween22:Play()
+local tween23 = TweenService:Create(Status4, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(255, 255, 255) })
+tween23:Play()
+local tween24 = TweenService:Create(Name4, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(255, 255, 255) })
+tween24:Play()
+Status4.Text = "ON"
+local Wallbang = Instance.new("TextButton")
+Wallbang.Parent = Toggles
+Wallbang.Text = ""
+Wallbang.AutoButtonColor = false
+Wallbang.BackgroundColor3 = Color3.fromRGB(28, 28, 32)
+Wallbang.Name = "Wallbang"
+Wallbang.Position = UDim2.fromOffset(0, 176)
+Wallbang.BackgroundTransparency = 1
+Wallbang.ZIndex = 4
+Wallbang.BorderSizePixel = 0
+Wallbang.Size = UDim2.new(1, 0, 0, 41)
+local UICorner23 = Instance.new("UICorner")
+UICorner23.Parent = Wallbang
+UICorner23.CornerRadius = UDim.new(0, 16)
+local Skin5 = Instance.new("Frame")
+Skin5.Name = "Skin"
+Skin5.Parent = Wallbang
+Skin5.BackgroundColor3 = Color3.fromRGB(34, 34, 38)
+Skin5.BorderSizePixel = 0
+Skin5.Size = UDim2.fromScale(1, 1)
+local UICorner24 = Instance.new("UICorner")
+UICorner24.Parent = Skin5
+UICorner24.CornerRadius = UDim.new(0, 16)
+local UIGradient12 = Instance.new("UIGradient")
+UIGradient12.Rotation = 105
+UIGradient12.Parent = Skin5
+UIGradient12.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(34, 34, 38)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(24, 24, 28)), ColorSequenceKeypoint.new(1, Color3.fromRGB(14, 14, 18)) })
+local UIStroke14 = Instance.new("UIStroke")
+UIStroke14.Thickness = 1
+UIStroke14.Transparency = 0
+UIStroke14.Color = Color3.fromRGB(58, 58, 64)
+UIStroke14.Parent = Wallbang
+UIStroke14.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke14.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local Name5 = Instance.new("TextLabel")
+Name5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Name5.Parent = Wallbang
+Name5.Text = "Wallbang"
+Name5.TextXAlignment = Enum.TextXAlignment.Left
+Name5.TextYAlignment = Enum.TextYAlignment.Center
+Name5.Font = Enum.Font.Michroma
+Name5.Name = "Name"
+Name5.Position = UDim2.fromOffset(16, 6)
+Name5.BackgroundTransparency = 1
+Name5.ZIndex = 6
+Name5.TextSize = 11
+Name5.Size = UDim2.new(0, 190, 0, 13)
+local Description5 = Instance.new("TextLabel")
+Description5.TextColor3 = Color3.fromRGB(140, 140, 148)
+Description5.Parent = Wallbang
+Description5.Text = "SHOOT THROUGH WALLS"
+Description5.TextXAlignment = Enum.TextXAlignment.Left
+Description5.TextYAlignment = Enum.TextYAlignment.Center
+Description5.Font = Enum.Font.Michroma
+Description5.Name = "Description"
+Description5.Position = UDim2.fromOffset(16, 22)
+Description5.BackgroundTransparency = 1
+Description5.ZIndex = 6
+Description5.TextSize = 8
+Description5.Size = UDim2.new(0, 200, 0, 11)
+local Status5 = Instance.new("TextLabel")
+Status5.TextColor3 = Color3.fromRGB(140, 140, 148)
+Status5.Parent = Wallbang
+Status5.Text = "OFF"
+Status5.TextYAlignment = Enum.TextYAlignment.Center
+Status5.BackgroundTransparency = 1
+Status5.AnchorPoint = Vector2.new(1, 0.5)
+Status5.Font = Enum.Font.Michroma
+Status5.Name = "Status"
+Status5.Position = UDim2.new(1, -70, 0.5, 0)
+Status5.TextXAlignment = Enum.TextXAlignment.Right
+Status5.ZIndex = 6
+Status5.TextSize = 9
+Status5.Size = UDim2.fromOffset(38, 13)
+local Switch5 = Instance.new("Frame")
+Switch5.AnchorPoint = Vector2.new(1, 0.5)
+Switch5.Name = "Switch"
+Switch5.Position = UDim2.new(1, -12, 0.5, 0)
+Switch5.Parent = Wallbang
+Switch5.ZIndex = 5
+Switch5.BackgroundTransparency = 1
+Switch5.Size = UDim2.fromOffset(44, 23)
+local TrackSkin5 = Instance.new("Frame")
+TrackSkin5.Name = "TrackSkin"
+TrackSkin5.BackgroundColor3 = Color3.fromRGB(45, 45, 50)
+TrackSkin5.Parent = Switch5
+TrackSkin5.ZIndex = 5
+TrackSkin5.BorderSizePixel = 0
+TrackSkin5.Size = UDim2.fromScale(1, 1)
+local UICorner25 = Instance.new("UICorner")
+UICorner25.Parent = TrackSkin5
+UICorner25.CornerRadius = UDim.new(0, 12)
+local UIStroke15 = Instance.new("UIStroke")
+UIStroke15.Thickness = 1
+UIStroke15.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke15.Color = Color3.fromRGB(70, 70, 78)
+UIStroke15.Parent = TrackSkin5
+UIStroke15.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local TrackGloss5 = Instance.new("Frame")
+TrackGloss5.Name = "TrackGloss"
+TrackGloss5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TrackGloss5.Parent = Switch5
+TrackGloss5.ZIndex = 6
+TrackGloss5.BorderSizePixel = 0
+TrackGloss5.Size = UDim2.fromScale(1, 1)
+local UICorner26 = Instance.new("UICorner")
+UICorner26.Parent = TrackGloss5
+UICorner26.CornerRadius = UDim.new(0, 12)
+local UIGradient13 = Instance.new("UIGradient")
+UIGradient13.Rotation = 90
+UIGradient13.Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.88), NumberSequenceKeypoint.new(0.55, 1), NumberSequenceKeypoint.new(1, 1) })
+UIGradient13.Parent = TrackGloss5
+local Knob5 = Instance.new("Frame")
+Knob5.AnchorPoint = Vector2.new(0, 0.5)
+Knob5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Knob5.Name = "Knob"
+Knob5.Position = UDim2.new(0, 3, 0.5, 0)
+Knob5.Parent = Switch5
+Knob5.ZIndex = 7
+Knob5.BorderSizePixel = 0
+Knob5.Size = UDim2.fromOffset(17, 17)
+local UICorner27 = Instance.new("UICorner")
+UICorner27.Parent = Knob5
+UICorner27.CornerRadius = UDim.new(0, 9)
+local UIStroke16 = Instance.new("UIStroke")
+UIStroke16.Thickness = 1
+UIStroke16.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke16.Color = Color3.fromRGB(120, 120, 128)
+UIStroke16.Parent = Knob5
+UIStroke16.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+Wallbang.MouseEnter:Connect(function()
+	local tween195 = TweenService:Create(UIStroke14, TweenInfo.new(0.25), { Color = Color3.fromRGB(255, 255, 255), Transparency = 0 })
+	tween195:Play()
+end)
+
+Wallbang.MouseLeave:Connect(function()
+	local tween196 = TweenService:Create(UIStroke14, TweenInfo.new(0.25), { Color = Color3.fromRGB(58, 58, 64), Transparency = 0 })
+	tween196:Play()
+end)
+
+Wallbang.MouseButton1Click:Connect(function()
+	local tween197 = TweenService:Create(Knob5, TweenInfo.new(0.32, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = UDim2.new(0, 3, 0.5, 0) })
+	tween197:Play()
+	local tween198 = TweenService:Create(TrackSkin5, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(45, 45, 50) })
+	tween198:Play()
+	local tween199 = TweenService:Create(UIStroke15, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Color = Color3.fromRGB(70, 70, 78) })
+	tween199:Play()
+	local tween200 = TweenService:Create(Knob5, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(255, 255, 255) })
+	tween200:Play()
+	local tween201 = TweenService:Create(Status5, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(140, 140, 148) })
+	tween201:Play()
+	local tween202 = TweenService:Create(Name5, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(210, 210, 216) })
+	tween202:Play()
+	Status5.Text = "OFF"
+end)
+
+local tween25 = TweenService:Create(Knob5, TweenInfo.new(0, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = UDim2.new(1, -20, 0.5, 0) })
+tween25:Play()
+local tween26 = TweenService:Create(TrackSkin5, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(255, 255, 255) })
+tween26:Play()
+local tween27 = TweenService:Create(UIStroke15, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Color = Color3.fromRGB(255, 255, 255) })
+tween27:Play()
+local tween28 = TweenService:Create(Knob5, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(8, 8, 10) })
+tween28:Play()
+local tween29 = TweenService:Create(Status5, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(255, 255, 255) })
+tween29:Play()
+local tween30 = TweenService:Create(Name5, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(255, 255, 255) })
+tween30:Play()
+Status5.Text = "ON"
+local TeamCheck = Instance.new("TextButton")
+TeamCheck.Parent = Toggles
+TeamCheck.Text = ""
+TeamCheck.AutoButtonColor = false
+TeamCheck.BackgroundColor3 = Color3.fromRGB(28, 28, 32)
+TeamCheck.Name = "Team Check"
+TeamCheck.Position = UDim2.fromOffset(0, 220)
+TeamCheck.BackgroundTransparency = 1
+TeamCheck.ZIndex = 4
+TeamCheck.BorderSizePixel = 0
+TeamCheck.Size = UDim2.new(1, 0, 0, 41)
+local UICorner28 = Instance.new("UICorner")
+UICorner28.Parent = TeamCheck
+UICorner28.CornerRadius = UDim.new(0, 16)
+local Skin6 = Instance.new("Frame")
+Skin6.Name = "Skin"
+Skin6.Parent = TeamCheck
+Skin6.BackgroundColor3 = Color3.fromRGB(34, 34, 38)
+Skin6.BorderSizePixel = 0
+Skin6.Size = UDim2.fromScale(1, 1)
+local UICorner29 = Instance.new("UICorner")
+UICorner29.Parent = Skin6
+UICorner29.CornerRadius = UDim.new(0, 16)
+local UIGradient14 = Instance.new("UIGradient")
+UIGradient14.Rotation = 105
+UIGradient14.Parent = Skin6
+UIGradient14.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(34, 34, 38)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(24, 24, 28)), ColorSequenceKeypoint.new(1, Color3.fromRGB(14, 14, 18)) })
+local UIStroke17 = Instance.new("UIStroke")
+UIStroke17.Thickness = 1
+UIStroke17.Transparency = 0
+UIStroke17.Color = Color3.fromRGB(58, 58, 64)
+UIStroke17.Parent = TeamCheck
+UIStroke17.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke17.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local Name6 = Instance.new("TextLabel")
+Name6.TextColor3 = Color3.fromRGB(255, 255, 255)
+Name6.Parent = TeamCheck
+Name6.Text = "Team Check"
+Name6.TextXAlignment = Enum.TextXAlignment.Left
+Name6.TextYAlignment = Enum.TextYAlignment.Center
+Name6.Font = Enum.Font.Michroma
+Name6.Name = "Name"
+Name6.Position = UDim2.fromOffset(16, 6)
+Name6.BackgroundTransparency = 1
+Name6.ZIndex = 6
+Name6.TextSize = 11
+Name6.Size = UDim2.new(0, 190, 0, 13)
+local Description6 = Instance.new("TextLabel")
+Description6.TextColor3 = Color3.fromRGB(140, 140, 148)
+Description6.Parent = TeamCheck
+Description6.Text = "IGNORE TEAMMATES"
+Description6.TextXAlignment = Enum.TextXAlignment.Left
+Description6.TextYAlignment = Enum.TextYAlignment.Center
+Description6.Font = Enum.Font.Michroma
+Description6.Name = "Description"
+Description6.Position = UDim2.fromOffset(16, 22)
+Description6.BackgroundTransparency = 1
+Description6.ZIndex = 6
+Description6.TextSize = 8
+Description6.Size = UDim2.new(0, 200, 0, 11)
+local Status6 = Instance.new("TextLabel")
+Status6.TextColor3 = Color3.fromRGB(140, 140, 148)
+Status6.Parent = TeamCheck
+Status6.Text = "OFF"
+Status6.TextYAlignment = Enum.TextYAlignment.Center
+Status6.BackgroundTransparency = 1
+Status6.AnchorPoint = Vector2.new(1, 0.5)
+Status6.Font = Enum.Font.Michroma
+Status6.Name = "Status"
+Status6.Position = UDim2.new(1, -70, 0.5, 0)
+Status6.TextXAlignment = Enum.TextXAlignment.Right
+Status6.ZIndex = 6
+Status6.TextSize = 9
+Status6.Size = UDim2.fromOffset(38, 13)
+local Switch6 = Instance.new("Frame")
+Switch6.AnchorPoint = Vector2.new(1, 0.5)
+Switch6.Name = "Switch"
+Switch6.Position = UDim2.new(1, -12, 0.5, 0)
+Switch6.Parent = TeamCheck
+Switch6.ZIndex = 5
+Switch6.BackgroundTransparency = 1
+Switch6.Size = UDim2.fromOffset(44, 23)
+local TrackSkin6 = Instance.new("Frame")
+TrackSkin6.Name = "TrackSkin"
+TrackSkin6.BackgroundColor3 = Color3.fromRGB(45, 45, 50)
+TrackSkin6.Parent = Switch6
+TrackSkin6.ZIndex = 5
+TrackSkin6.BorderSizePixel = 0
+TrackSkin6.Size = UDim2.fromScale(1, 1)
+local UICorner30 = Instance.new("UICorner")
+UICorner30.Parent = TrackSkin6
+UICorner30.CornerRadius = UDim.new(0, 12)
+local UIStroke18 = Instance.new("UIStroke")
+UIStroke18.Thickness = 1
+UIStroke18.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke18.Color = Color3.fromRGB(70, 70, 78)
+UIStroke18.Parent = TrackSkin6
+UIStroke18.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local TrackGloss6 = Instance.new("Frame")
+TrackGloss6.Name = "TrackGloss"
+TrackGloss6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TrackGloss6.Parent = Switch6
+TrackGloss6.ZIndex = 6
+TrackGloss6.BorderSizePixel = 0
+TrackGloss6.Size = UDim2.fromScale(1, 1)
+local UICorner31 = Instance.new("UICorner")
+UICorner31.Parent = TrackGloss6
+UICorner31.CornerRadius = UDim.new(0, 12)
+local UIGradient15 = Instance.new("UIGradient")
+UIGradient15.Rotation = 90
+UIGradient15.Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.88), NumberSequenceKeypoint.new(0.55, 1), NumberSequenceKeypoint.new(1, 1) })
+UIGradient15.Parent = TrackGloss6
+local Knob6 = Instance.new("Frame")
+Knob6.AnchorPoint = Vector2.new(0, 0.5)
+Knob6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Knob6.Name = "Knob"
+Knob6.Position = UDim2.new(0, 3, 0.5, 0)
+Knob6.Parent = Switch6
+Knob6.ZIndex = 7
+Knob6.BorderSizePixel = 0
+Knob6.Size = UDim2.fromOffset(17, 17)
+local UICorner32 = Instance.new("UICorner")
+UICorner32.Parent = Knob6
+UICorner32.CornerRadius = UDim.new(0, 9)
+local UIStroke19 = Instance.new("UIStroke")
+UIStroke19.Thickness = 1
+UIStroke19.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke19.Color = Color3.fromRGB(120, 120, 128)
+UIStroke19.Parent = Knob6
+UIStroke19.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+TeamCheck.MouseEnter:Connect(function()
+	local tween203 = TweenService:Create(UIStroke17, TweenInfo.new(0.25), { Color = Color3.fromRGB(255, 255, 255), Transparency = 0 })
+	tween203:Play()
+end)
+
+TeamCheck.MouseLeave:Connect(function()
+	local tween204 = TweenService:Create(UIStroke17, TweenInfo.new(0.25), { Color = Color3.fromRGB(58, 58, 64), Transparency = 0 })
+	tween204:Play()
+end)
+
+TeamCheck.MouseButton1Click:Connect(function()
+	local tween205 = TweenService:Create(Knob6, TweenInfo.new(0.32, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = UDim2.new(0, 3, 0.5, 0) })
+	tween205:Play()
+	local tween206 = TweenService:Create(TrackSkin6, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(45, 45, 50) })
+	tween206:Play()
+	local tween207 = TweenService:Create(UIStroke18, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Color = Color3.fromRGB(70, 70, 78) })
+	tween207:Play()
+	local tween208 = TweenService:Create(Knob6, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(255, 255, 255) })
+	tween208:Play()
+	local tween209 = TweenService:Create(Status6, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(140, 140, 148) })
+	tween209:Play()
+	local tween210 = TweenService:Create(Name6, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(210, 210, 216) })
+	tween210:Play()
+	Status6.Text = "OFF"
+end)
+
+local tween31 = TweenService:Create(Knob6, TweenInfo.new(0, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = UDim2.new(1, -20, 0.5, 0) })
+tween31:Play()
+local tween32 = TweenService:Create(TrackSkin6, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(255, 255, 255) })
+tween32:Play()
+local tween33 = TweenService:Create(UIStroke18, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Color = Color3.fromRGB(255, 255, 255) })
+tween33:Play()
+local tween34 = TweenService:Create(Knob6, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(8, 8, 10) })
+tween34:Play()
+local tween35 = TweenService:Create(Status6, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(255, 255, 255) })
+tween35:Play()
+local tween36 = TweenService:Create(Name6, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(255, 255, 255) })
+tween36:Play()
+Status6.Text = "ON"
+local EspPlayers = Instance.new("TextButton")
+EspPlayers.Parent = Toggles
+EspPlayers.Text = ""
+EspPlayers.AutoButtonColor = false
+EspPlayers.BackgroundColor3 = Color3.fromRGB(28, 28, 32)
+EspPlayers.Name = "Esp Players"
+EspPlayers.Position = UDim2.fromOffset(0, 264)
+EspPlayers.BackgroundTransparency = 1
+EspPlayers.ZIndex = 4
+EspPlayers.BorderSizePixel = 0
+EspPlayers.Size = UDim2.new(1, 0, 0, 41)
+local UICorner33 = Instance.new("UICorner")
+UICorner33.Parent = EspPlayers
+UICorner33.CornerRadius = UDim.new(0, 16)
+local Skin7 = Instance.new("Frame")
+Skin7.Name = "Skin"
+Skin7.Parent = EspPlayers
+Skin7.BackgroundColor3 = Color3.fromRGB(34, 34, 38)
+Skin7.BorderSizePixel = 0
+Skin7.Size = UDim2.fromScale(1, 1)
+local UICorner34 = Instance.new("UICorner")
+UICorner34.Parent = Skin7
+UICorner34.CornerRadius = UDim.new(0, 16)
+local UIGradient16 = Instance.new("UIGradient")
+UIGradient16.Rotation = 105
+UIGradient16.Parent = Skin7
+UIGradient16.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(34, 34, 38)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(24, 24, 28)), ColorSequenceKeypoint.new(1, Color3.fromRGB(14, 14, 18)) })
+local UIStroke20 = Instance.new("UIStroke")
+UIStroke20.Thickness = 1
+UIStroke20.Transparency = 0
+UIStroke20.Color = Color3.fromRGB(58, 58, 64)
+UIStroke20.Parent = EspPlayers
+UIStroke20.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke20.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local Name7 = Instance.new("TextLabel")
+Name7.TextColor3 = Color3.fromRGB(255, 255, 255)
+Name7.Parent = EspPlayers
+Name7.Text = "Esp Players"
+Name7.TextXAlignment = Enum.TextXAlignment.Left
+Name7.TextYAlignment = Enum.TextYAlignment.Center
+Name7.Font = Enum.Font.Michroma
+Name7.Name = "Name"
+Name7.Position = UDim2.fromOffset(16, 6)
+Name7.BackgroundTransparency = 1
+Name7.ZIndex = 6
+Name7.TextSize = 11
+Name7.Size = UDim2.new(0, 190, 0, 13)
+local Description7 = Instance.new("TextLabel")
+Description7.TextColor3 = Color3.fromRGB(140, 140, 148)
+Description7.Parent = EspPlayers
+Description7.Text = "HIGHLIGHT ALL PLAYERS"
+Description7.TextXAlignment = Enum.TextXAlignment.Left
+Description7.TextYAlignment = Enum.TextYAlignment.Center
+Description7.Font = Enum.Font.Michroma
+Description7.Name = "Description"
+Description7.Position = UDim2.fromOffset(16, 22)
+Description7.BackgroundTransparency = 1
+Description7.ZIndex = 6
+Description7.TextSize = 8
+Description7.Size = UDim2.new(0, 200, 0, 11)
+local Status7 = Instance.new("TextLabel")
+Status7.TextColor3 = Color3.fromRGB(140, 140, 148)
+Status7.Parent = EspPlayers
+Status7.Text = "OFF"
+Status7.TextYAlignment = Enum.TextYAlignment.Center
+Status7.BackgroundTransparency = 1
+Status7.AnchorPoint = Vector2.new(1, 0.5)
+Status7.Font = Enum.Font.Michroma
+Status7.Name = "Status"
+Status7.Position = UDim2.new(1, -70, 0.5, 0)
+Status7.TextXAlignment = Enum.TextXAlignment.Right
+Status7.ZIndex = 6
+Status7.TextSize = 9
+Status7.Size = UDim2.fromOffset(38, 13)
+local Switch7 = Instance.new("Frame")
+Switch7.AnchorPoint = Vector2.new(1, 0.5)
+Switch7.Name = "Switch"
+Switch7.Position = UDim2.new(1, -12, 0.5, 0)
+Switch7.Parent = EspPlayers
+Switch7.ZIndex = 5
+Switch7.BackgroundTransparency = 1
+Switch7.Size = UDim2.fromOffset(44, 23)
+local TrackSkin7 = Instance.new("Frame")
+TrackSkin7.Name = "TrackSkin"
+TrackSkin7.BackgroundColor3 = Color3.fromRGB(45, 45, 50)
+TrackSkin7.Parent = Switch7
+TrackSkin7.ZIndex = 5
+TrackSkin7.BorderSizePixel = 0
+TrackSkin7.Size = UDim2.fromScale(1, 1)
+local UICorner35 = Instance.new("UICorner")
+UICorner35.Parent = TrackSkin7
+UICorner35.CornerRadius = UDim.new(0, 12)
+local UIStroke21 = Instance.new("UIStroke")
+UIStroke21.Thickness = 1
+UIStroke21.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke21.Color = Color3.fromRGB(70, 70, 78)
+UIStroke21.Parent = TrackSkin7
+UIStroke21.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local TrackGloss7 = Instance.new("Frame")
+TrackGloss7.Name = "TrackGloss"
+TrackGloss7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TrackGloss7.Parent = Switch7
+TrackGloss7.ZIndex = 6
+TrackGloss7.BorderSizePixel = 0
+TrackGloss7.Size = UDim2.fromScale(1, 1)
+local UICorner36 = Instance.new("UICorner")
+UICorner36.Parent = TrackGloss7
+UICorner36.CornerRadius = UDim.new(0, 12)
+local UIGradient17 = Instance.new("UIGradient")
+UIGradient17.Rotation = 90
+UIGradient17.Transparency = NumberSequence.new({ NumberSequenceKeypoint.new(0, 0.88), NumberSequenceKeypoint.new(0.55, 1), NumberSequenceKeypoint.new(1, 1) })
+UIGradient17.Parent = TrackGloss7
+local Knob7 = Instance.new("Frame")
+Knob7.AnchorPoint = Vector2.new(0, 0.5)
+Knob7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Knob7.Name = "Knob"
+Knob7.Position = UDim2.new(0, 3, 0.5, 0)
+Knob7.Parent = Switch7
+Knob7.ZIndex = 7
+Knob7.BorderSizePixel = 0
+Knob7.Size = UDim2.fromOffset(17, 17)
+local UICorner37 = Instance.new("UICorner")
+UICorner37.Parent = Knob7
+UICorner37.CornerRadius = UDim.new(0, 9)
+local UIStroke22 = Instance.new("UIStroke")
+UIStroke22.Thickness = 1
+UIStroke22.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke22.Color = Color3.fromRGB(120, 120, 128)
+UIStroke22.Parent = Knob7
+UIStroke22.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+EspPlayers.MouseEnter:Connect(function()
+	local tween211 = TweenService:Create(UIStroke20, TweenInfo.new(0.25), { Color = Color3.fromRGB(255, 255, 255), Transparency = 0 })
+	tween211:Play()
+end)
+
+EspPlayers.MouseLeave:Connect(function()
+	local tween212 = TweenService:Create(UIStroke20, TweenInfo.new(0.25), { Color = Color3.fromRGB(58, 58, 64), Transparency = 0 })
+	tween212:Play()
+end)
+
+EspPlayers.MouseButton1Click:Connect(function()
+	local tween213 = TweenService:Create(Knob7, TweenInfo.new(0.32, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = UDim2.new(0, 3, 0.5, 0) })
+	tween213:Play()
+	local tween214 = TweenService:Create(TrackSkin7, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(45, 45, 50) })
+	tween214:Play()
+	local tween215 = TweenService:Create(UIStroke21, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Color = Color3.fromRGB(70, 70, 78) })
+	tween215:Play()
+	local tween216 = TweenService:Create(Knob7, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(255, 255, 255) })
+	tween216:Play()
+	local tween217 = TweenService:Create(Status7, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(140, 140, 148) })
+	tween217:Play()
+	local tween218 = TweenService:Create(Name7, TweenInfo.new(0.32, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(210, 210, 216) })
+	tween218:Play()
+	Status7.Text = "OFF"
+end)
+
+local tween37 = TweenService:Create(Knob7, TweenInfo.new(0, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = UDim2.new(1, -20, 0.5, 0) })
+tween37:Play()
+local tween38 = TweenService:Create(TrackSkin7, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(255, 255, 255) })
+tween38:Play()
+local tween39 = TweenService:Create(UIStroke21, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Color = Color3.fromRGB(255, 255, 255) })
+tween39:Play()
+local tween40 = TweenService:Create(Knob7, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundColor3 = Color3.fromRGB(8, 8, 10) })
+tween40:Play()
+local tween41 = TweenService:Create(Status7, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(255, 255, 255) })
+tween41:Play()
+local tween42 = TweenService:Create(Name7, TweenInfo.new(0, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { TextColor3 = Color3.fromRGB(255, 255, 255) })
+tween42:Play()
+Status7.Text = "ON"
+local StatusCard = Instance.new("Frame")
+StatusCard.BackgroundColor3 = Color3.fromRGB(28, 28, 32)
+StatusCard.Name = "StatusCard"
+StatusCard.BackgroundTransparency = 1
+StatusCard.Parent = Right
+StatusCard.ZIndex = 4
+StatusCard.BorderSizePixel = 0
+StatusCard.Size = UDim2.fromScale(1, 1)
+local UICorner38 = Instance.new("UICorner")
+UICorner38.Parent = StatusCard
+UICorner38.CornerRadius = UDim.new(0, 22)
+local Skin8 = Instance.new("Frame")
+Skin8.Name = "Skin"
+Skin8.Parent = StatusCard
+Skin8.BackgroundColor3 = Color3.fromRGB(36, 36, 40)
+Skin8.BorderSizePixel = 0
+Skin8.Size = UDim2.fromScale(1, 1)
+local UICorner39 = Instance.new("UICorner")
+UICorner39.Parent = Skin8
+UICorner39.CornerRadius = UDim.new(0, 22)
+local UIGradient18 = Instance.new("UIGradient")
+UIGradient18.Rotation = 110
+UIGradient18.Parent = Skin8
+UIGradient18.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(36, 36, 40)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(22, 22, 26)), ColorSequenceKeypoint.new(1, Color3.fromRGB(12, 12, 16)) })
+local UIStroke23 = Instance.new("UIStroke")
+UIStroke23.Thickness = 1
+UIStroke23.Transparency = 0
+UIStroke23.Color = Color3.fromRGB(58, 58, 64)
+UIStroke23.Parent = StatusCard
+UIStroke23.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke23.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local Ring = Instance.new("Frame")
+Ring.AnchorPoint = Vector2.new(0.5, 0)
+Ring.Name = "Ring"
+Ring.Position = UDim2.new(0.5, 0, 0, 20)
+Ring.Parent = StatusCard
+Ring.ZIndex = 5
+Ring.BackgroundTransparency = 1
+Ring.Size = UDim2.fromOffset(76, 76)
+local RingSkin = Instance.new("Frame")
+RingSkin.BackgroundColor3 = Color3.fromRGB(40, 40, 46)
+RingSkin.Name = "RingSkin"
+RingSkin.Position = UDim2.fromOffset(2, 2)
+RingSkin.Parent = Ring
+RingSkin.ZIndex = 5
+RingSkin.BorderSizePixel = 0
+RingSkin.Size = UDim2.new(1, -4, 1, -4)
+local UICorner40 = Instance.new("UICorner")
+UICorner40.Parent = RingSkin
+UICorner40.CornerRadius = UDim.new(0, 999)
+local UIGradient19 = Instance.new("UIGradient")
+UIGradient19.Rotation = 130
+UIGradient19.Parent = RingSkin
+UIGradient19.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(110, 110, 120)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(60, 60, 68)), ColorSequenceKeypoint.new(1, Color3.fromRGB(20, 20, 24)) })
+local UIStroke24 = Instance.new("UIStroke")
+UIStroke24.Thickness = 2
+UIStroke24.Transparency = 0.15
+UIStroke24.Color = Color3.fromRGB(255, 255, 255)
+UIStroke24.Parent = RingSkin
+UIStroke24.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke24.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local RingInner = Instance.new("Frame")
+RingInner.ClipsDescendants = true
+RingInner.Parent = Ring
+RingInner.AnchorPoint = Vector2.new(0.5, 0.5)
+RingInner.Name = "RingInner"
+RingInner.Position = UDim2.fromScale(0.5, 0.5)
+RingInner.BackgroundColor3 = Color3.fromRGB(8, 8, 10)
+RingInner.ZIndex = 6
+RingInner.BorderSizePixel = 0
+RingInner.Size = UDim2.new(1, -18, 1, -18)
+local UICorner41 = Instance.new("UICorner")
+UICorner41.Parent = RingInner
+UICorner41.CornerRadius = UDim.new(0, 999)
+local UIGradient20 = Instance.new("UIGradient")
+UIGradient20.Rotation = 100
+UIGradient20.Parent = RingInner
+UIGradient20.Color = ColorSequence.new({ ColorSequenceKeypoint.new(0, Color3.fromRGB(28, 28, 32)), ColorSequenceKeypoint.new(0.5, Color3.fromRGB(18, 18, 22)), ColorSequenceKeypoint.new(1, Color3.fromRGB(8, 8, 10)) })
+local RingAvatar = Instance.new("ImageLabel")
+RingAvatar.ScaleType = Enum.ScaleType.Crop
+RingAvatar.ImageTransparency = 0
+RingAvatar.Parent = RingInner
+RingAvatar.AnchorPoint = Vector2.new(0.5, 0.5)
+RingAvatar.Image = "rbxthumb://type=AvatarHeadShot&id=0&w=150&h=150"
+RingAvatar.BackgroundTransparency = 1
+RingAvatar.Position = UDim2.fromScale(0.5, 0.5)
+RingAvatar.ZIndex = 7
+RingAvatar.Name = "RingAvatar"
+RingAvatar.Size = UDim2.fromScale(1.02, 1.02)
+local UICorner42 = Instance.new("UICorner")
+UICorner42.Parent = RingAvatar
+UICorner42.CornerRadius = UDim.new(0, 999)
+local CardDivider = Instance.new("Frame")
+CardDivider.BackgroundColor3 = Color3.fromRGB(58, 58, 64)
+CardDivider.Name = "CardDivider"
+CardDivider.Position = UDim2.new(0, 22, 0, 116)
+CardDivider.Parent = StatusCard
+CardDivider.ZIndex = 6
+CardDivider.BorderSizePixel = 0
+CardDivider.Size = UDim2.new(1, -44, 0, 1)
+local DISPLAY = Instance.new("TextLabel")
+DISPLAY.TextColor3 = Color3.fromRGB(140, 140, 148)
+DISPLAY.Parent = StatusCard
+DISPLAY.Text = "DISPLAY:"
+DISPLAY.TextYAlignment = Enum.TextYAlignment.Center
+DISPLAY.BackgroundTransparency = 1
+DISPLAY.Font = Enum.Font.Michroma
+DISPLAY.Name = "DISPLAY:"
+DISPLAY.Position = UDim2.new(0, 14, 0, 130)
+DISPLAY.TextXAlignment = Enum.TextXAlignment.Left
+DISPLAY.ZIndex = 6
+DISPLAY.TextSize = 8
+DISPLAY.Size = UDim2.new(0, 70, 0, 14)
+local DISPLAYValue = Instance.new("TextLabel")
+DISPLAYValue.TextYAlignment = Enum.TextYAlignment.Center
+DISPLAYValue.TextColor3 = Color3.fromRGB(210, 210, 216)
+DISPLAYValue.Parent = StatusCard
+DISPLAYValue.Text = Players.LocalPlayer.DisplayName
+local lastUSERIDValue = DISPLAYValue
+
+for _, item in ipairs({
+	{ name = "DISPLAY:Value", yOffset = 130, text = "USER ID:", yOffset2 = 150, useridValueText = "0" },
+	{ name = "USER ID:Value", yOffset = 150, text = "CREATED:", yOffset2 = 170, useridValueText = "07/10/2026" },
+}) do
+	local previousUSERIDValue = lastUSERIDValue
+	previousUSERIDValue.BackgroundTransparency = 1
+	previousUSERIDValue.TextXAlignment = Enum.TextXAlignment.Right
+	previousUSERIDValue.AnchorPoint = Vector2.new(1, 0)
+	previousUSERIDValue.Font = Enum.Font.Michroma
+	previousUSERIDValue.Name = item.name
+	previousUSERIDValue.Position = UDim2.new(1, -14, 0, item.yOffset)
+	previousUSERIDValue.TextTruncate = Enum.TextTruncate.AtEnd
+	previousUSERIDValue.ZIndex = 6
+	previousUSERIDValue.TextSize = 7
+	previousUSERIDValue.Size = UDim2.new(0, 70, 0, 14)
+	local USERID = Instance.new("TextLabel")
+	USERID.TextColor3 = Color3.fromRGB(140, 140, 148)
+	USERID.Parent = StatusCard
+	USERID.Text = item.text
+	USERID.TextYAlignment = Enum.TextYAlignment.Center
+	USERID.BackgroundTransparency = 1
+	USERID.Font = Enum.Font.Michroma
+	USERID.Name = item.text
+	USERID.Position = UDim2.new(0, 14, 0, item.yOffset2)
+	USERID.TextXAlignment = Enum.TextXAlignment.Left
+	USERID.ZIndex = 6
+	USERID.TextSize = 8
+	USERID.Size = UDim2.new(0, 70, 0, 14)
+	local USERIDValue = Instance.new("TextLabel")
+	USERIDValue.TextYAlignment = Enum.TextYAlignment.Center
+	USERIDValue.TextColor3 = Color3.fromRGB(210, 210, 216)
+	USERIDValue.Parent = StatusCard
+	USERIDValue.Text = item.useridValueText
+	lastUSERIDValue = USERIDValue
+end
+
+lastUSERIDValue.BackgroundTransparency = 1
+lastUSERIDValue.TextXAlignment = Enum.TextXAlignment.Right
+lastUSERIDValue.AnchorPoint = Vector2.new(1, 0)
+lastUSERIDValue.Font = Enum.Font.Michroma
+lastUSERIDValue.Name = "CREATED:Value"
+lastUSERIDValue.Position = UDim2.new(1, -14, 0, 170)
+lastUSERIDValue.TextTruncate = Enum.TextTruncate.AtEnd
+lastUSERIDValue.ZIndex = 6
+lastUSERIDValue.TextSize = 7
+lastUSERIDValue.Size = UDim2.new(0, 70, 0, 14)
+local tween43 = TweenService:Create(UIStroke24, TweenInfo.new(1.3, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut, -1, true), { Transparency = 0.75 })
+tween43:Play()
+
+task.spawn(function()
+	for _, rotation in ipairs({
+		490, 850, 1210, 1570, 1930, 2290, 2650, 3010, 3370, 3730, 4090, 4450, 4810, 5170, 5530,
+		5890, 6250, 6610, 6970, 7330, 7690, 8050, 8410, 8770, 9130, 9490, 9850, 10210, 10570, 10930,
+		11290, 11650, 12010, 12370, 12730, 13090, 13450, 13810, 14170, 14530, 14890, 15250, 15610,
+		15970, 16330, 16690, 17050, 17410, 17770, 18130, 18490,
+	}) do
+		local tween44 = TweenService:Create(UIGradient19, TweenInfo.new(4, Enum.EasingStyle.Linear), { Rotation = rotation })
+		tween44:Play()
+		task.wait(4)
+	end
+	-- [envlog] stopped after 50 waits
+end)
+
+task.spawn(function()
+	for _, rotation in ipairs({
+		360, 720, 1080, 1440, 1800, 2160, 2520, 2880, 3240, 3600, 3960, 4320, 4680, 5040, 5400,
+		5760, 6120, 6480, 6840, 7200, 7560, 7920, 8280, 8640, 9000, 9360, 9720, 10080, 10440, 10800,
+		11160, 11520, 11880, 12240, 12600, 12960, 13320, 13680, 14040, 14400, 14760, 15120, 15480,
+		15840, 16200, 16560, 16920, 17280, 17640, 18000, 18360,
+	}) do
+		local tween95 = TweenService:Create(UIGradient2, TweenInfo.new(4, Enum.EasingStyle.Linear), { Rotation = rotation })
+		tween95:Play()
+		task.wait(4)
+	end
+	-- [envlog] stopped after 50 waits
+end)
+
+task.spawn(function()
+	UIGradient3.Offset = Vector2.new(-0.7, 0)
+	local tween146 = TweenService:Create(UIGradient3, TweenInfo.new(2.4, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), { Offset = Vector2.new(0.7, 0) })
+	tween146:Play()
+	task.wait(6)
+	UIGradient3.Offset = Vector2.new(-0.7, 0)
+	local tween147 = TweenService:Create(UIGradient3, TweenInfo.new(2.4, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut), { Offset = Vector2.new(0.7, 0) })
+	tween147:Play()
+	task.wait(6)
+	-- [envlog] the statements above repeat forever (loop)
+end)
+
+DragArea.InputBegan:Connect(function(input, gameProcessed)
+end)
+
+UserInputService.InputChanged:Connect(function(input2, gameProcessed2)
+end)
+
+UserInputService.InputEnded:Connect(function(input3, gameProcessed3)
+end)
+
+RunService.RenderStepped:Connect(function(deltaTime)
+	local result = UDim2.new(0.5, 0, 0.5, -230):Lerp(UDim2.new(0.5, 0, 0.5, -230), (1 - math.exp((-deltaTime) * 16)))
+	Main.Position = result
+end)
+
+local X = Instance.new("TextButton")
+X.Parent = Main
+X.Text = ""
+X.AutoButtonColor = false
+X.AnchorPoint = Vector2.new(1, 0.5)
+X.BackgroundColor3 = Color3.fromRGB(28, 28, 32)
+X.BackgroundTransparency = 0
+X.Position = UDim2.new(1, -18, 0, 38)
+X.Name = "X"
+X.ZIndex = 8
+X.BorderSizePixel = 0
+X.Size = UDim2.fromOffset(28, 28)
+local UICorner43 = Instance.new("UICorner")
+UICorner43.Parent = X
+UICorner43.CornerRadius = UDim.new(0, 9)
+local UIStroke25 = Instance.new("UIStroke")
+UIStroke25.Thickness = 1
+UIStroke25.Transparency = 0
+UIStroke25.Color = Color3.fromRGB(58, 58, 64)
+UIStroke25.Parent = X
+UIStroke25.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke25.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local TextLabel30 = Instance.new("TextLabel")
+TextLabel30.TextColor3 = Color3.fromRGB(210, 210, 216)
+TextLabel30.Parent = X
+TextLabel30.Text = "X"
+TextLabel30.Font = Enum.Font.Michroma
+TextLabel30.BackgroundTransparency = 1
+TextLabel30.TextXAlignment = Enum.TextXAlignment.Center
+TextLabel30.TextYAlignment = Enum.TextYAlignment.Center
+TextLabel30.ZIndex = 9
+TextLabel30.TextSize = 13
+TextLabel30.Size = UDim2.fromScale(1, 1)
+
+X.MouseEnter:Connect(function()
+	local tween219 = TweenService:Create(X, TweenInfo.new(0.2), { BackgroundColor3 = Color3.fromRGB(255, 255, 255), BackgroundTransparency = 0 })
+	tween219:Play()
+	local tween220 = TweenService:Create(TextLabel30, TweenInfo.new(0.2), { TextColor3 = Color3.fromRGB(8, 8, 10) })
+	tween220:Play()
+end)
+
+X.MouseLeave:Connect(function()
+	local tween221 = TweenService:Create(X, TweenInfo.new(0.2), { BackgroundColor3 = Color3.fromRGB(28, 28, 32), BackgroundTransparency = 0 })
+	tween221:Play()
+	local tween222 = TweenService:Create(TextLabel30, TweenInfo.new(0.2), { TextColor3 = Color3.fromRGB(210, 210, 216) })
+	tween222:Play()
+	local tween223 = TweenService:Create(X, TweenInfo.new(0.18, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Size = UDim2.fromOffset(28, 28) })
+	tween223:Play()
+end)
+
+X.MouseButton1Down:Connect(function(x, y)
+	local tween224 = TweenService:Create(X, TweenInfo.new(0.1), { Size = UDim2.fromOffset(24, 24) })
+	tween224:Play()
+end)
+
+X.MouseButton1Up:Connect(function()
+	local tween225 = TweenService:Create(X, TweenInfo.new(0.25, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Size = UDim2.fromOffset(28, 28) })
+	tween225:Play()
+end)
+
+X.MouseButton1Click:Connect(function()
+	WckdUI2:Destroy()
+end)
+
+local TextButton10 = Instance.new("TextButton")
+TextButton10.Parent = Main
+TextButton10.Text = ""
+TextButton10.AutoButtonColor = false
+TextButton10.AnchorPoint = Vector2.new(1, 0.5)
+TextButton10.BackgroundColor3 = Color3.fromRGB(28, 28, 32)
+TextButton10.BackgroundTransparency = 0
+TextButton10.Position = UDim2.new(1, -52, 0, 38)
+TextButton10.Name = "-"
+TextButton10.ZIndex = 8
+TextButton10.BorderSizePixel = 0
+TextButton10.Size = UDim2.fromOffset(28, 28)
+local UICorner44 = Instance.new("UICorner")
+UICorner44.Parent = TextButton10
+UICorner44.CornerRadius = UDim.new(0, 9)
+local UIStroke26 = Instance.new("UIStroke")
+UIStroke26.Thickness = 1
+UIStroke26.Transparency = 0
+UIStroke26.Color = Color3.fromRGB(58, 58, 64)
+UIStroke26.Parent = TextButton10
+UIStroke26.LineJoinMode = Enum.LineJoinMode.Round
+UIStroke26.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+local TextLabel31 = Instance.new("TextLabel")
+TextLabel31.TextColor3 = Color3.fromRGB(210, 210, 216)
+TextLabel31.Parent = TextButton10
+TextLabel31.Text = "-"
+TextLabel31.Font = Enum.Font.Michroma
+TextLabel31.BackgroundTransparency = 1
+TextLabel31.TextXAlignment = Enum.TextXAlignment.Center
+TextLabel31.TextYAlignment = Enum.TextYAlignment.Center
+TextLabel31.ZIndex = 9
+TextLabel31.TextSize = 13
+TextLabel31.Size = UDim2.fromScale(1, 1)
+
+TextButton10.MouseEnter:Connect(function()
+	local tween226 = TweenService:Create(TextButton10, TweenInfo.new(0.2), { BackgroundColor3 = Color3.fromRGB(255, 255, 255), BackgroundTransparency = 0 })
+	tween226:Play()
+	local tween227 = TweenService:Create(TextLabel31, TweenInfo.new(0.2), { TextColor3 = Color3.fromRGB(8, 8, 10) })
+	tween227:Play()
+end)
+
+TextButton10.MouseLeave:Connect(function()
+	local tween228 = TweenService:Create(TextButton10, TweenInfo.new(0.2), { BackgroundColor3 = Color3.fromRGB(28, 28, 32), BackgroundTransparency = 0 })
+	tween228:Play()
+	local tween229 = TweenService:Create(TextLabel31, TweenInfo.new(0.2), { TextColor3 = Color3.fromRGB(210, 210, 216) })
+	tween229:Play()
+	local tween230 = TweenService:Create(TextButton10, TweenInfo.new(0.18, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Size = UDim2.fromOffset(28, 28) })
+	tween230:Play()
+end)
+
+TextButton10.MouseButton1Down:Connect(function(x2, y2)
+	local tween231 = TweenService:Create(TextButton10, TweenInfo.new(0.1), { Size = UDim2.fromOffset(24, 24) })
+	tween231:Play()
+end)
+
+TextButton10.MouseButton1Up:Connect(function()
+	local tween232 = TweenService:Create(TextButton10, TweenInfo.new(0.25, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Size = UDim2.fromOffset(28, 28) })
+	tween232:Play()
+end)
+
+TextButton10.MouseButton1Click:Connect(function()
+	local tween233 = TweenService:Create(Main, TweenInfo.new(0.45, Enum.EasingStyle.Quart, Enum.EasingDirection.InOut), { Size = UDim2.fromOffset(544, 76) })
+	tween233:Play()
+	local tween234 = TweenService:Create(UIStroke, TweenInfo.new(0.4, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Color = Color3.fromRGB(255, 255, 255), Thickness = 4.5 })
+	tween234:Play()
+	local tween235 = TweenService:Create(UIGradient2, TweenInfo.new(0.4, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { Offset = Vector2.new(0, 0) })
+	tween235:Play()
+
+	task.delay(0.42, function()
+	end)
+end)
+
+Main.Size = UDim2.fromOffset(489.6, 414)
+local tween148 = TweenService:Create(Main, TweenInfo.new(0.65, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Size = UDim2.fromOffset(544, 460) })
+tween148:Play()
+
+for _, item in ipairs({
+	{ frame = Skin, textButton = RapidFire, y3 = 8, value = 0.21, y4 = 0 },
+	{ frame = Skin2, textButton = SilentAim, y3 = 52, value = 0.27, y4 = 44 },
+	{ frame = Skin3, textButton = NoRecoil, y3 = 96, value = 0.32999999999999996, y4 = 88 },
+	{ frame = Skin4, textButton = MagicBullet, y3 = 140, value = 0.39, y4 = 132 },
+	{ frame = Skin5, textButton = Wallbang, y3 = 184, value = 0.44999999999999996, y4 = 176 },
+	{ frame = Skin6, textButton = TeamCheck, y3 = 228, value = 0.51, y4 = 220 },
+	{ frame = Skin7, textButton = EspPlayers, y3 = 272, value = 0.57, y4 = 264 },
+}) do
+	item.frame.BackgroundTransparency = 1
+	item.textButton.Position = UDim2.fromOffset(0, item.y3)
+
+	task.delay(item.value, function()
+		local tween149 = TweenService:Create(item.frame, TweenInfo.new(0.35, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), { BackgroundTransparency = 0 })
+		tween149:Play()
+		local tween150 = TweenService:Create(item.textButton, TweenInfo.new(0.4, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Position = UDim2.fromOffset(0, item.y4) })
+		tween150:Play()
+	end)
+end
+
+local Blaster = ReplicatedStorage:WaitForChild("Blaster")
+local Remotes = Blaster:WaitForChild("Remotes")
+Remotes:WaitForChild("Shoot")
+print("[Wckd] FireServer hook active")
+
+task.spawn(function()
+	task.wait(1)
+	task.wait(1)
+	-- [envlog] the statements above repeat forever (loop)
+end)
+
+local WckdESP = Instance.new("Frame")
+WckdESP.Name = "WckdESP"
+WckdESP.BackgroundTransparency = 1
+WckdESP.Parent = WckdUI2
+WckdESP.ZIndex = 0
+WckdESP.BorderSizePixel = 0
+WckdESP.Size = UDim2.fromScale(1, 1)
+local players = Players:GetPlayers()
+
+for i, v in ipairs(players) do
+	local Head = v.Character:FindFirstChild("Head")
+	v.Character:FindFirstChildOfClass("Humanoid")
+	local WckdHighlight = Instance.new("Highlight")
+	WckdHighlight.Name = "WckdHighlight"
+	WckdHighlight.Adornee = v.Character
+	WckdHighlight.FillColor = Color3.fromRGB(255, 255, 255)
+	WckdHighlight.FillTransparency = 0.78
+	WckdHighlight.OutlineColor = Color3.fromRGB(255, 255, 255)
+	WckdHighlight.OutlineTransparency = 0.35
+	WckdHighlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+	WckdHighlight.Parent = v.Character
+	local WckdBillboard = Instance.new("BillboardGui")
+	WckdBillboard.Name = "WckdBillboard"
+	WckdBillboard.Size = UDim2.fromOffset(180, 62)
+	WckdBillboard.StudsOffset = Vector3.new(0, 2.9000000953674316, 0)
+	WckdBillboard.AlwaysOnTop = true
+	WckdBillboard.LightInfluence = 0
+	WckdBillboard.MaxDistance = 800
+	WckdBillboard.Adornee = Head
+	WckdBillboard.Parent = Head
+	local Name8 = Instance.new("TextLabel")
+	Name8.Parent = WckdBillboard
+	Name8.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Name8.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+	Name8.Text = v.DisplayName
+	Name8.ZIndex = 2
+	Name8.TextStrokeTransparency = 0.45
+	Name8.Name = "Name"
+	Name8.Font = Enum.Font.Michroma
+	Name8.BackgroundTransparency = 1
+	Name8.Position = UDim2.new(0, 0, 0, 0)
+	Name8.TextXAlignment = Enum.TextXAlignment.Center
+	Name8.TextYAlignment = Enum.TextYAlignment.Center
+	Name8.TextSize = 12
+	Name8.Size = UDim2.new(1, 0, 0, 16)
+	local HealthBG = Instance.new("Frame")
+	HealthBG.Parent = WckdBillboard
+	HealthBG.AnchorPoint = Vector2.new(0.5, 0)
+	HealthBG.BackgroundTransparency = 0.2
+	HealthBG.Name = "HealthBG"
+	HealthBG.Position = UDim2.new(0.5, 0, 0, 21)
+	HealthBG.BackgroundColor3 = Color3.fromRGB(35, 35, 40)
+	HealthBG.ZIndex = 2
+	HealthBG.BorderSizePixel = 0
+	HealthBG.Size = UDim2.new(0, 110, 0, 4)
+	local UICorner45 = Instance.new("UICorner")
+	UICorner45.Parent = HealthBG
+	UICorner45.CornerRadius = UDim.new(0, 2)
+	local HealthFill = Instance.new("Frame")
+	HealthFill.Name = "HealthFill"
+	HealthFill.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	HealthFill.Parent = HealthBG
+	HealthFill.ZIndex = 3
+	HealthFill.BorderSizePixel = 0
+	HealthFill.Size = UDim2.fromScale(1, 1)
+	local UICorner46 = Instance.new("UICorner")
+	UICorner46.Parent = HealthFill
+	UICorner46.CornerRadius = UDim.new(0, 2)
+	local HealthText = Instance.new("TextLabel")
+	HealthText.Parent = WckdBillboard
+	HealthText.ZIndex = 2
+	HealthText.TextColor3 = Color3.fromRGB(255, 255, 255)
+	HealthText.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+	HealthText.Text = ""
+	HealthText.BackgroundTransparency = 1
+	HealthText.TextStrokeTransparency = 0.5
+	HealthText.AnchorPoint = Vector2.new(0.5, 0)
+	HealthText.Font = Enum.Font.Michroma
+	HealthText.Name = "HealthText"
+	HealthText.Position = UDim2.new(0.5, 0, 0, 26)
+	HealthText.TextXAlignment = Enum.TextXAlignment.Center
+	HealthText.TextYAlignment = Enum.TextYAlignment.Center
+	HealthText.TextSize = 10
+	HealthText.Size = UDim2.new(1, 0, 0, 12)
+	local Distance = Instance.new("TextLabel")
+	Distance.Parent = WckdBillboard
+	Distance.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Distance.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+	Distance.Text = ""
+	Distance.ZIndex = 2
+	Distance.TextStrokeTransparency = 0.5
+	Distance.Name = "Distance"
+	Distance.Font = Enum.Font.Michroma
+	Distance.BackgroundTransparency = 1
+	Distance.Position = UDim2.new(0, 0, 0, 40)
+	Distance.TextXAlignment = Enum.TextXAlignment.Center
+	Distance.TextYAlignment = Enum.TextYAlignment.Center
+	Distance.TextSize = 10
+	Distance.Size = UDim2.new(1, 0, 0, 14)
+	v.Character:FindFirstChild("UpperTorso")
+	local Bone = Instance.new("Frame")
+	local lastBone = Bone
+
+	for _ = 1, 6 do
+		local previousBone = lastBone
+		previousBone.AnchorPoint = Vector2.new(0.5, 0.5)
+		previousBone.Visible = false
+		previousBone.Name = "Bone"
+		previousBone.Size = UDim2.fromOffset(0, 1)
+		previousBone.Parent = WckdESP
+		previousBone.ZIndex = 3
+		previousBone.BorderSizePixel = 0
+		previousBone.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke27 = Instance.new("UIStroke")
+		UIStroke27.Thickness = 1
+		UIStroke27.Transparency = 0.35
+		UIStroke27.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke27.Parent = previousBone
+		UIStroke27.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke27.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone2 = Instance.new("Frame")
+		Bone2.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone2.Visible = false
+		Bone2.Name = "Bone"
+		Bone2.Size = UDim2.fromOffset(0, 1)
+		Bone2.Parent = WckdESP
+		Bone2.ZIndex = 3
+		Bone2.BorderSizePixel = 0
+		Bone2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke28 = Instance.new("UIStroke")
+		UIStroke28.Thickness = 1
+		UIStroke28.Transparency = 0.35
+		UIStroke28.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke28.Parent = Bone2
+		UIStroke28.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke28.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone3 = Instance.new("Frame")
+		lastBone = Bone3
+	end
+
+	lastBone.AnchorPoint = Vector2.new(0.5, 0.5)
+	lastBone.Visible = false
+	lastBone.Name = "Bone"
+	lastBone.Size = UDim2.fromOffset(0, 1)
+	lastBone.Parent = WckdESP
+	lastBone.ZIndex = 3
+	lastBone.BorderSizePixel = 0
+	lastBone.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	local UIStroke39 = Instance.new("UIStroke")
+	UIStroke39.Thickness = 1
+	UIStroke39.Transparency = 0.35
+	UIStroke39.Color = Color3.fromRGB(0, 0, 0)
+	UIStroke39.Parent = lastBone
+	UIStroke39.LineJoinMode = Enum.LineJoinMode.Round
+	UIStroke39.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	local Bone14 = Instance.new("Frame")
+	Bone14.AnchorPoint = Vector2.new(0.5, 0.5)
+	Bone14.Visible = false
+	Bone14.Name = "Bone"
+	Bone14.Size = UDim2.fromOffset(0, 1)
+	Bone14.Parent = WckdESP
+	Bone14.ZIndex = 3
+	Bone14.BorderSizePixel = 0
+	Bone14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	local UIStroke40 = Instance.new("UIStroke")
+	UIStroke40.Thickness = 1
+	UIStroke40.Transparency = 0.35
+	UIStroke40.Color = Color3.fromRGB(0, 0, 0)
+	UIStroke40.Parent = Bone14
+	UIStroke40.LineJoinMode = Enum.LineJoinMode.Round
+	UIStroke40.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+	v.CharacterAdded:Connect(function(character)
+		task.wait(0.15)
+		WckdBillboard:Destroy()
+		WckdHighlight:Destroy()
+		local Head2 = v.Character:FindFirstChild("Head")
+		v.Character:FindFirstChildOfClass("Humanoid")
+		local WckdHighlight2 = Instance.new("Highlight")
+		WckdHighlight2.Name = "WckdHighlight"
+		WckdHighlight2.Adornee = v.Character
+		WckdHighlight2.FillColor = Color3.fromRGB(255, 255, 255)
+		WckdHighlight2.FillTransparency = 0.78
+		WckdHighlight2.OutlineColor = Color3.fromRGB(255, 255, 255)
+		WckdHighlight2.OutlineTransparency = 0.35
+		WckdHighlight2.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+		WckdHighlight2.Parent = v.Character
+		local WckdBillboard2 = Instance.new("BillboardGui")
+		WckdBillboard2.Name = "WckdBillboard"
+		WckdBillboard2.Size = UDim2.fromOffset(180, 62)
+		WckdBillboard2.StudsOffset = Vector3.new(0, 2.9000000953674316, 0)
+		WckdBillboard2.AlwaysOnTop = true
+		WckdBillboard2.LightInfluence = 0
+		WckdBillboard2.MaxDistance = 800
+		WckdBillboard2.Adornee = Head2
+		WckdBillboard2.Parent = Head2
+		local Name9 = Instance.new("TextLabel")
+		Name9.Parent = WckdBillboard2
+		Name9.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Name9.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+		Name9.Text = v.DisplayName
+		Name9.ZIndex = 2
+		Name9.TextStrokeTransparency = 0.45
+		Name9.Name = "Name"
+		Name9.Font = Enum.Font.Michroma
+		Name9.BackgroundTransparency = 1
+		Name9.Position = UDim2.new(0, 0, 0, 0)
+		Name9.TextXAlignment = Enum.TextXAlignment.Center
+		Name9.TextYAlignment = Enum.TextYAlignment.Center
+		Name9.TextSize = 12
+		Name9.Size = UDim2.new(1, 0, 0, 16)
+		local HealthBG2 = Instance.new("Frame")
+		HealthBG2.Parent = WckdBillboard2
+		HealthBG2.AnchorPoint = Vector2.new(0.5, 0)
+		HealthBG2.BackgroundTransparency = 0.2
+		HealthBG2.Name = "HealthBG"
+		HealthBG2.Position = UDim2.new(0.5, 0, 0, 21)
+		HealthBG2.BackgroundColor3 = Color3.fromRGB(35, 35, 40)
+		HealthBG2.ZIndex = 2
+		HealthBG2.BorderSizePixel = 0
+		HealthBG2.Size = UDim2.new(0, 110, 0, 4)
+		local UICorner47 = Instance.new("UICorner")
+		UICorner47.Parent = HealthBG2
+		UICorner47.CornerRadius = UDim.new(0, 2)
+		local HealthFill2 = Instance.new("Frame")
+		HealthFill2.Name = "HealthFill"
+		HealthFill2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		HealthFill2.Parent = HealthBG2
+		HealthFill2.ZIndex = 3
+		HealthFill2.BorderSizePixel = 0
+		HealthFill2.Size = UDim2.fromScale(1, 1)
+		local UICorner48 = Instance.new("UICorner")
+		UICorner48.Parent = HealthFill2
+		UICorner48.CornerRadius = UDim.new(0, 2)
+		local HealthText2 = Instance.new("TextLabel")
+		HealthText2.Parent = WckdBillboard2
+		HealthText2.ZIndex = 2
+		HealthText2.TextColor3 = Color3.fromRGB(255, 255, 255)
+		HealthText2.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+		HealthText2.Text = ""
+		HealthText2.BackgroundTransparency = 1
+		HealthText2.TextStrokeTransparency = 0.5
+		HealthText2.AnchorPoint = Vector2.new(0.5, 0)
+		HealthText2.Font = Enum.Font.Michroma
+		HealthText2.Name = "HealthText"
+		HealthText2.Position = UDim2.new(0.5, 0, 0, 26)
+		HealthText2.TextXAlignment = Enum.TextXAlignment.Center
+		HealthText2.TextYAlignment = Enum.TextYAlignment.Center
+		HealthText2.TextSize = 10
+		HealthText2.Size = UDim2.new(1, 0, 0, 12)
+		local Distance2 = Instance.new("TextLabel")
+		Distance2.Parent = WckdBillboard2
+		Distance2.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Distance2.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+		Distance2.Text = ""
+		Distance2.ZIndex = 2
+		Distance2.TextStrokeTransparency = 0.5
+		Distance2.Name = "Distance"
+		Distance2.Font = Enum.Font.Michroma
+		Distance2.BackgroundTransparency = 1
+		Distance2.Position = UDim2.new(0, 0, 0, 40)
+		Distance2.TextXAlignment = Enum.TextXAlignment.Center
+		Distance2.TextYAlignment = Enum.TextYAlignment.Center
+		Distance2.TextSize = 10
+		Distance2.Size = UDim2.new(1, 0, 0, 14)
+		v.Character:FindFirstChild("UpperTorso")
+		local Bone15 = Instance.new("Frame")
+		Bone15.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone15.Visible = false
+		Bone15.Name = "Bone"
+		Bone15.Size = UDim2.fromOffset(0, 1)
+		Bone15.Parent = WckdESP
+		Bone15.ZIndex = 3
+		Bone15.BorderSizePixel = 0
+		Bone15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke41 = Instance.new("UIStroke")
+		UIStroke41.Thickness = 1
+		UIStroke41.Transparency = 0.35
+		UIStroke41.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke41.Parent = Bone15
+		UIStroke41.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke41.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone16 = Instance.new("Frame")
+		Bone16.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone16.Visible = false
+		Bone16.Name = "Bone"
+		Bone16.Size = UDim2.fromOffset(0, 1)
+		Bone16.Parent = WckdESP
+		Bone16.ZIndex = 3
+		Bone16.BorderSizePixel = 0
+		Bone16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke42 = Instance.new("UIStroke")
+		UIStroke42.Thickness = 1
+		UIStroke42.Transparency = 0.35
+		UIStroke42.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke42.Parent = Bone16
+		UIStroke42.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke42.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone17 = Instance.new("Frame")
+		Bone17.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone17.Visible = false
+		Bone17.Name = "Bone"
+		Bone17.Size = UDim2.fromOffset(0, 1)
+		Bone17.Parent = WckdESP
+		Bone17.ZIndex = 3
+		Bone17.BorderSizePixel = 0
+		Bone17.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke43 = Instance.new("UIStroke")
+		UIStroke43.Thickness = 1
+		UIStroke43.Transparency = 0.35
+		UIStroke43.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke43.Parent = Bone17
+		UIStroke43.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke43.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone18 = Instance.new("Frame")
+		Bone18.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone18.Visible = false
+		Bone18.Name = "Bone"
+		Bone18.Size = UDim2.fromOffset(0, 1)
+		Bone18.Parent = WckdESP
+		Bone18.ZIndex = 3
+		Bone18.BorderSizePixel = 0
+		Bone18.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke44 = Instance.new("UIStroke")
+		UIStroke44.Thickness = 1
+		UIStroke44.Transparency = 0.35
+		UIStroke44.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke44.Parent = Bone18
+		UIStroke44.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke44.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone19 = Instance.new("Frame")
+		Bone19.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone19.Visible = false
+		Bone19.Name = "Bone"
+		Bone19.Size = UDim2.fromOffset(0, 1)
+		Bone19.Parent = WckdESP
+		Bone19.ZIndex = 3
+		Bone19.BorderSizePixel = 0
+		Bone19.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke45 = Instance.new("UIStroke")
+		UIStroke45.Thickness = 1
+		UIStroke45.Transparency = 0.35
+		UIStroke45.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke45.Parent = Bone19
+		UIStroke45.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke45.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone20 = Instance.new("Frame")
+		Bone20.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone20.Visible = false
+		Bone20.Name = "Bone"
+		Bone20.Size = UDim2.fromOffset(0, 1)
+		Bone20.Parent = WckdESP
+		Bone20.ZIndex = 3
+		Bone20.BorderSizePixel = 0
+		Bone20.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke46 = Instance.new("UIStroke")
+		UIStroke46.Thickness = 1
+		UIStroke46.Transparency = 0.35
+		UIStroke46.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke46.Parent = Bone20
+		UIStroke46.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke46.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone21 = Instance.new("Frame")
+		Bone21.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone21.Visible = false
+		Bone21.Name = "Bone"
+		Bone21.Size = UDim2.fromOffset(0, 1)
+		Bone21.Parent = WckdESP
+		Bone21.ZIndex = 3
+		Bone21.BorderSizePixel = 0
+		Bone21.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke47 = Instance.new("UIStroke")
+		UIStroke47.Thickness = 1
+		UIStroke47.Transparency = 0.35
+		UIStroke47.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke47.Parent = Bone21
+		UIStroke47.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke47.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone22 = Instance.new("Frame")
+		Bone22.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone22.Visible = false
+		Bone22.Name = "Bone"
+		Bone22.Size = UDim2.fromOffset(0, 1)
+		Bone22.Parent = WckdESP
+		Bone22.ZIndex = 3
+		Bone22.BorderSizePixel = 0
+		Bone22.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke48 = Instance.new("UIStroke")
+		UIStroke48.Thickness = 1
+		UIStroke48.Transparency = 0.35
+		UIStroke48.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke48.Parent = Bone22
+		UIStroke48.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke48.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone23 = Instance.new("Frame")
+		Bone23.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone23.Visible = false
+		Bone23.Name = "Bone"
+		Bone23.Size = UDim2.fromOffset(0, 1)
+		Bone23.Parent = WckdESP
+		Bone23.ZIndex = 3
+		Bone23.BorderSizePixel = 0
+		Bone23.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke49 = Instance.new("UIStroke")
+		UIStroke49.Thickness = 1
+		UIStroke49.Transparency = 0.35
+		UIStroke49.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke49.Parent = Bone23
+		UIStroke49.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke49.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone24 = Instance.new("Frame")
+		Bone24.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone24.Visible = false
+		Bone24.Name = "Bone"
+		Bone24.Size = UDim2.fromOffset(0, 1)
+		Bone24.Parent = WckdESP
+		Bone24.ZIndex = 3
+		Bone24.BorderSizePixel = 0
+		Bone24.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke50 = Instance.new("UIStroke")
+		UIStroke50.Thickness = 1
+		UIStroke50.Transparency = 0.35
+		UIStroke50.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke50.Parent = Bone24
+		UIStroke50.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke50.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone25 = Instance.new("Frame")
+		Bone25.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone25.Visible = false
+		Bone25.Name = "Bone"
+		Bone25.Size = UDim2.fromOffset(0, 1)
+		Bone25.Parent = WckdESP
+		Bone25.ZIndex = 3
+		Bone25.BorderSizePixel = 0
+		Bone25.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke51 = Instance.new("UIStroke")
+		UIStroke51.Thickness = 1
+		UIStroke51.Transparency = 0.35
+		UIStroke51.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke51.Parent = Bone25
+		UIStroke51.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke51.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone26 = Instance.new("Frame")
+		Bone26.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone26.Visible = false
+		Bone26.Name = "Bone"
+		Bone26.Size = UDim2.fromOffset(0, 1)
+		Bone26.Parent = WckdESP
+		Bone26.ZIndex = 3
+		Bone26.BorderSizePixel = 0
+		Bone26.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke52 = Instance.new("UIStroke")
+		UIStroke52.Thickness = 1
+		UIStroke52.Transparency = 0.35
+		UIStroke52.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke52.Parent = Bone26
+		UIStroke52.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke52.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone27 = Instance.new("Frame")
+		Bone27.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone27.Visible = false
+		Bone27.Name = "Bone"
+		Bone27.Size = UDim2.fromOffset(0, 1)
+		Bone27.Parent = WckdESP
+		Bone27.ZIndex = 3
+		Bone27.BorderSizePixel = 0
+		Bone27.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke53 = Instance.new("UIStroke")
+		UIStroke53.Thickness = 1
+		UIStroke53.Transparency = 0.35
+		UIStroke53.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke53.Parent = Bone27
+		UIStroke53.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke53.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone28 = Instance.new("Frame")
+		Bone28.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone28.Visible = false
+		Bone28.Name = "Bone"
+		Bone28.Size = UDim2.fromOffset(0, 1)
+		Bone28.Parent = WckdESP
+		Bone28.ZIndex = 3
+		Bone28.BorderSizePixel = 0
+		Bone28.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke54 = Instance.new("UIStroke")
+		UIStroke54.Thickness = 1
+		UIStroke54.Transparency = 0.35
+		UIStroke54.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke54.Parent = Bone28
+		UIStroke54.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke54.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	end)
+
+	v.CharacterRemoving:Connect(function(character2)
+		for _, wckdBillboard in ipairs({
+			WckdBillboard2, WckdHighlight2, Bone15, Bone16, Bone17, Bone18, Bone19, Bone20, Bone21,
+			Bone22, Bone23, Bone24, Bone25, Bone26, Bone27, Bone28,
+		}) do
+			wckdBillboard:Destroy()
+		end
+	end)
+end
+
+Players.PlayerAdded:Connect(function(player)
+	local Head3 = player.Character:FindFirstChild("Head")
+	player.Character:FindFirstChildOfClass("Humanoid")
+	local WckdHighlight3 = Instance.new("Highlight")
+	WckdHighlight3.Name = "WckdHighlight"
+	WckdHighlight3.Adornee = player.Character
+	WckdHighlight3.FillColor = Color3.fromRGB(255, 255, 255)
+	WckdHighlight3.FillTransparency = 0.78
+	WckdHighlight3.OutlineColor = Color3.fromRGB(255, 255, 255)
+	WckdHighlight3.OutlineTransparency = 0.35
+	WckdHighlight3.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+	WckdHighlight3.Parent = player.Character
+	local WckdBillboard3 = Instance.new("BillboardGui")
+	WckdBillboard3.Name = "WckdBillboard"
+	WckdBillboard3.Size = UDim2.fromOffset(180, 62)
+	WckdBillboard3.StudsOffset = Vector3.new(0, 2.9000000953674316, 0)
+	WckdBillboard3.AlwaysOnTop = true
+	WckdBillboard3.LightInfluence = 0
+	WckdBillboard3.MaxDistance = 800
+	WckdBillboard3.Adornee = Head3
+	WckdBillboard3.Parent = Head3
+	local Name10 = Instance.new("TextLabel")
+	Name10.Parent = WckdBillboard3
+	Name10.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Name10.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+	Name10.Text = player.DisplayName
+	Name10.ZIndex = 2
+	Name10.TextStrokeTransparency = 0.45
+	Name10.Name = "Name"
+	Name10.Font = Enum.Font.Michroma
+	Name10.BackgroundTransparency = 1
+	Name10.Position = UDim2.new(0, 0, 0, 0)
+	Name10.TextXAlignment = Enum.TextXAlignment.Center
+	Name10.TextYAlignment = Enum.TextYAlignment.Center
+	Name10.TextSize = 12
+	Name10.Size = UDim2.new(1, 0, 0, 16)
+	local HealthBG3 = Instance.new("Frame")
+	HealthBG3.Parent = WckdBillboard3
+	HealthBG3.AnchorPoint = Vector2.new(0.5, 0)
+	HealthBG3.BackgroundTransparency = 0.2
+	HealthBG3.Name = "HealthBG"
+	HealthBG3.Position = UDim2.new(0.5, 0, 0, 21)
+	HealthBG3.BackgroundColor3 = Color3.fromRGB(35, 35, 40)
+	HealthBG3.ZIndex = 2
+	HealthBG3.BorderSizePixel = 0
+	HealthBG3.Size = UDim2.new(0, 110, 0, 4)
+	local UICorner49 = Instance.new("UICorner")
+	UICorner49.Parent = HealthBG3
+	UICorner49.CornerRadius = UDim.new(0, 2)
+	local HealthFill3 = Instance.new("Frame")
+	HealthFill3.Name = "HealthFill"
+	HealthFill3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	HealthFill3.Parent = HealthBG3
+	HealthFill3.ZIndex = 3
+	HealthFill3.BorderSizePixel = 0
+	HealthFill3.Size = UDim2.fromScale(1, 1)
+	local UICorner50 = Instance.new("UICorner")
+	UICorner50.Parent = HealthFill3
+	UICorner50.CornerRadius = UDim.new(0, 2)
+	local HealthText3 = Instance.new("TextLabel")
+	HealthText3.Parent = WckdBillboard3
+	HealthText3.ZIndex = 2
+	HealthText3.TextColor3 = Color3.fromRGB(255, 255, 255)
+	HealthText3.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+	HealthText3.Text = ""
+	HealthText3.BackgroundTransparency = 1
+	HealthText3.TextStrokeTransparency = 0.5
+	HealthText3.AnchorPoint = Vector2.new(0.5, 0)
+	HealthText3.Font = Enum.Font.Michroma
+	HealthText3.Name = "HealthText"
+	HealthText3.Position = UDim2.new(0.5, 0, 0, 26)
+	HealthText3.TextXAlignment = Enum.TextXAlignment.Center
+	HealthText3.TextYAlignment = Enum.TextYAlignment.Center
+	HealthText3.TextSize = 10
+	HealthText3.Size = UDim2.new(1, 0, 0, 12)
+	local Distance3 = Instance.new("TextLabel")
+	Distance3.Parent = WckdBillboard3
+	Distance3.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Distance3.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+	Distance3.Text = ""
+	Distance3.ZIndex = 2
+	Distance3.TextStrokeTransparency = 0.5
+	Distance3.Name = "Distance"
+	Distance3.Font = Enum.Font.Michroma
+	Distance3.BackgroundTransparency = 1
+	Distance3.Position = UDim2.new(0, 0, 0, 40)
+	Distance3.TextXAlignment = Enum.TextXAlignment.Center
+	Distance3.TextYAlignment = Enum.TextYAlignment.Center
+	Distance3.TextSize = 10
+	Distance3.Size = UDim2.new(1, 0, 0, 14)
+	player.Character:FindFirstChild("UpperTorso")
+	local Bone29 = Instance.new("Frame")
+	Bone29.AnchorPoint = Vector2.new(0.5, 0.5)
+	Bone29.Visible = false
+	Bone29.Name = "Bone"
+	Bone29.Size = UDim2.fromOffset(0, 1)
+	Bone29.Parent = WckdESP
+	Bone29.ZIndex = 3
+	Bone29.BorderSizePixel = 0
+	Bone29.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	local UIStroke55 = Instance.new("UIStroke")
+	UIStroke55.Thickness = 1
+	UIStroke55.Transparency = 0.35
+	UIStroke55.Color = Color3.fromRGB(0, 0, 0)
+	UIStroke55.Parent = Bone29
+	UIStroke55.LineJoinMode = Enum.LineJoinMode.Round
+	UIStroke55.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	local Bone30 = Instance.new("Frame")
+	Bone30.AnchorPoint = Vector2.new(0.5, 0.5)
+	Bone30.Visible = false
+	Bone30.Name = "Bone"
+	Bone30.Size = UDim2.fromOffset(0, 1)
+	Bone30.Parent = WckdESP
+	Bone30.ZIndex = 3
+	Bone30.BorderSizePixel = 0
+	Bone30.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	local UIStroke56 = Instance.new("UIStroke")
+	UIStroke56.Thickness = 1
+	UIStroke56.Transparency = 0.35
+	UIStroke56.Color = Color3.fromRGB(0, 0, 0)
+	UIStroke56.Parent = Bone30
+	UIStroke56.LineJoinMode = Enum.LineJoinMode.Round
+	UIStroke56.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	local Bone31 = Instance.new("Frame")
+	Bone31.AnchorPoint = Vector2.new(0.5, 0.5)
+	Bone31.Visible = false
+	Bone31.Name = "Bone"
+	Bone31.Size = UDim2.fromOffset(0, 1)
+	Bone31.Parent = WckdESP
+	Bone31.ZIndex = 3
+	Bone31.BorderSizePixel = 0
+	Bone31.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	local UIStroke57 = Instance.new("UIStroke")
+	UIStroke57.Thickness = 1
+	UIStroke57.Transparency = 0.35
+	UIStroke57.Color = Color3.fromRGB(0, 0, 0)
+	UIStroke57.Parent = Bone31
+	UIStroke57.LineJoinMode = Enum.LineJoinMode.Round
+	UIStroke57.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	local Bone32 = Instance.new("Frame")
+	Bone32.AnchorPoint = Vector2.new(0.5, 0.5)
+	Bone32.Visible = false
+	Bone32.Name = "Bone"
+	Bone32.Size = UDim2.fromOffset(0, 1)
+	Bone32.Parent = WckdESP
+	Bone32.ZIndex = 3
+	Bone32.BorderSizePixel = 0
+	Bone32.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	local UIStroke58 = Instance.new("UIStroke")
+	UIStroke58.Thickness = 1
+	UIStroke58.Transparency = 0.35
+	UIStroke58.Color = Color3.fromRGB(0, 0, 0)
+	UIStroke58.Parent = Bone32
+	UIStroke58.LineJoinMode = Enum.LineJoinMode.Round
+	UIStroke58.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	local Bone33 = Instance.new("Frame")
+	Bone33.AnchorPoint = Vector2.new(0.5, 0.5)
+	Bone33.Visible = false
+	Bone33.Name = "Bone"
+	Bone33.Size = UDim2.fromOffset(0, 1)
+	Bone33.Parent = WckdESP
+	Bone33.ZIndex = 3
+	Bone33.BorderSizePixel = 0
+	Bone33.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	local UIStroke59 = Instance.new("UIStroke")
+	UIStroke59.Thickness = 1
+	UIStroke59.Transparency = 0.35
+	UIStroke59.Color = Color3.fromRGB(0, 0, 0)
+	UIStroke59.Parent = Bone33
+	UIStroke59.LineJoinMode = Enum.LineJoinMode.Round
+	UIStroke59.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	local Bone34 = Instance.new("Frame")
+	Bone34.AnchorPoint = Vector2.new(0.5, 0.5)
+	Bone34.Visible = false
+	Bone34.Name = "Bone"
+	Bone34.Size = UDim2.fromOffset(0, 1)
+	Bone34.Parent = WckdESP
+	Bone34.ZIndex = 3
+	Bone34.BorderSizePixel = 0
+	Bone34.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	local UIStroke60 = Instance.new("UIStroke")
+	UIStroke60.Thickness = 1
+	UIStroke60.Transparency = 0.35
+	UIStroke60.Color = Color3.fromRGB(0, 0, 0)
+	UIStroke60.Parent = Bone34
+	UIStroke60.LineJoinMode = Enum.LineJoinMode.Round
+	UIStroke60.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	local Bone35 = Instance.new("Frame")
+	Bone35.AnchorPoint = Vector2.new(0.5, 0.5)
+	Bone35.Visible = false
+	Bone35.Name = "Bone"
+	Bone35.Size = UDim2.fromOffset(0, 1)
+	Bone35.Parent = WckdESP
+	Bone35.ZIndex = 3
+	Bone35.BorderSizePixel = 0
+	Bone35.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	local UIStroke61 = Instance.new("UIStroke")
+	UIStroke61.Thickness = 1
+	UIStroke61.Transparency = 0.35
+	UIStroke61.Color = Color3.fromRGB(0, 0, 0)
+	UIStroke61.Parent = Bone35
+	UIStroke61.LineJoinMode = Enum.LineJoinMode.Round
+	UIStroke61.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	local Bone36 = Instance.new("Frame")
+	Bone36.AnchorPoint = Vector2.new(0.5, 0.5)
+	Bone36.Visible = false
+	Bone36.Name = "Bone"
+	Bone36.Size = UDim2.fromOffset(0, 1)
+	Bone36.Parent = WckdESP
+	Bone36.ZIndex = 3
+	Bone36.BorderSizePixel = 0
+	Bone36.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	local UIStroke62 = Instance.new("UIStroke")
+	UIStroke62.Thickness = 1
+	UIStroke62.Transparency = 0.35
+	UIStroke62.Color = Color3.fromRGB(0, 0, 0)
+	UIStroke62.Parent = Bone36
+	UIStroke62.LineJoinMode = Enum.LineJoinMode.Round
+	UIStroke62.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	local Bone37 = Instance.new("Frame")
+	Bone37.AnchorPoint = Vector2.new(0.5, 0.5)
+	Bone37.Visible = false
+	Bone37.Name = "Bone"
+	Bone37.Size = UDim2.fromOffset(0, 1)
+	Bone37.Parent = WckdESP
+	Bone37.ZIndex = 3
+	Bone37.BorderSizePixel = 0
+	Bone37.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	local UIStroke63 = Instance.new("UIStroke")
+	UIStroke63.Thickness = 1
+	UIStroke63.Transparency = 0.35
+	UIStroke63.Color = Color3.fromRGB(0, 0, 0)
+	UIStroke63.Parent = Bone37
+	UIStroke63.LineJoinMode = Enum.LineJoinMode.Round
+	UIStroke63.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	local Bone38 = Instance.new("Frame")
+	Bone38.AnchorPoint = Vector2.new(0.5, 0.5)
+	Bone38.Visible = false
+	Bone38.Name = "Bone"
+	Bone38.Size = UDim2.fromOffset(0, 1)
+	Bone38.Parent = WckdESP
+	Bone38.ZIndex = 3
+	Bone38.BorderSizePixel = 0
+	Bone38.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	local UIStroke64 = Instance.new("UIStroke")
+	UIStroke64.Thickness = 1
+	UIStroke64.Transparency = 0.35
+	UIStroke64.Color = Color3.fromRGB(0, 0, 0)
+	UIStroke64.Parent = Bone38
+	UIStroke64.LineJoinMode = Enum.LineJoinMode.Round
+	UIStroke64.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	local Bone39 = Instance.new("Frame")
+	Bone39.AnchorPoint = Vector2.new(0.5, 0.5)
+	Bone39.Visible = false
+	Bone39.Name = "Bone"
+	Bone39.Size = UDim2.fromOffset(0, 1)
+	Bone39.Parent = WckdESP
+	Bone39.ZIndex = 3
+	Bone39.BorderSizePixel = 0
+	Bone39.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	local UIStroke65 = Instance.new("UIStroke")
+	UIStroke65.Thickness = 1
+	UIStroke65.Transparency = 0.35
+	UIStroke65.Color = Color3.fromRGB(0, 0, 0)
+	UIStroke65.Parent = Bone39
+	UIStroke65.LineJoinMode = Enum.LineJoinMode.Round
+	UIStroke65.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	local Bone40 = Instance.new("Frame")
+	Bone40.AnchorPoint = Vector2.new(0.5, 0.5)
+	Bone40.Visible = false
+	Bone40.Name = "Bone"
+	Bone40.Size = UDim2.fromOffset(0, 1)
+	Bone40.Parent = WckdESP
+	Bone40.ZIndex = 3
+	Bone40.BorderSizePixel = 0
+	Bone40.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	local UIStroke66 = Instance.new("UIStroke")
+	UIStroke66.Thickness = 1
+	UIStroke66.Transparency = 0.35
+	UIStroke66.Color = Color3.fromRGB(0, 0, 0)
+	UIStroke66.Parent = Bone40
+	UIStroke66.LineJoinMode = Enum.LineJoinMode.Round
+	UIStroke66.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	local Bone41 = Instance.new("Frame")
+	Bone41.AnchorPoint = Vector2.new(0.5, 0.5)
+	Bone41.Visible = false
+	Bone41.Name = "Bone"
+	Bone41.Size = UDim2.fromOffset(0, 1)
+	Bone41.Parent = WckdESP
+	Bone41.ZIndex = 3
+	Bone41.BorderSizePixel = 0
+	Bone41.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	local UIStroke67 = Instance.new("UIStroke")
+	UIStroke67.Thickness = 1
+	UIStroke67.Transparency = 0.35
+	UIStroke67.Color = Color3.fromRGB(0, 0, 0)
+	UIStroke67.Parent = Bone41
+	UIStroke67.LineJoinMode = Enum.LineJoinMode.Round
+	UIStroke67.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	local Bone42 = Instance.new("Frame")
+	Bone42.AnchorPoint = Vector2.new(0.5, 0.5)
+	Bone42.Visible = false
+	Bone42.Name = "Bone"
+	Bone42.Size = UDim2.fromOffset(0, 1)
+	Bone42.Parent = WckdESP
+	Bone42.ZIndex = 3
+	Bone42.BorderSizePixel = 0
+	Bone42.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	local UIStroke68 = Instance.new("UIStroke")
+	UIStroke68.Thickness = 1
+	UIStroke68.Transparency = 0.35
+	UIStroke68.Color = Color3.fromRGB(0, 0, 0)
+	UIStroke68.Parent = Bone42
+	UIStroke68.LineJoinMode = Enum.LineJoinMode.Round
+	UIStroke68.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+
+	player.CharacterAdded:Connect(function(character3)
+		task.wait(0.15)
+
+		for _, wckdBillboard in ipairs({
+			WckdBillboard3, WckdHighlight3, Bone29, Bone30, Bone31, Bone32, Bone33, Bone34, Bone35,
+			Bone36, Bone37, Bone38, Bone39, Bone40, Bone41, Bone42,
+		}) do
+			wckdBillboard:Destroy()
+		end
+
+		local Head4 = player.Character:FindFirstChild("Head")
+		player.Character:FindFirstChildOfClass("Humanoid")
+		local WckdHighlight4 = Instance.new("Highlight")
+		WckdHighlight4.Name = "WckdHighlight"
+		WckdHighlight4.Adornee = player.Character
+		WckdHighlight4.FillColor = Color3.fromRGB(255, 255, 255)
+		WckdHighlight4.FillTransparency = 0.78
+		WckdHighlight4.OutlineColor = Color3.fromRGB(255, 255, 255)
+		WckdHighlight4.OutlineTransparency = 0.35
+		WckdHighlight4.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+		WckdHighlight4.Parent = player.Character
+		local WckdBillboard4 = Instance.new("BillboardGui")
+		WckdBillboard4.Name = "WckdBillboard"
+		WckdBillboard4.Size = UDim2.fromOffset(180, 62)
+		WckdBillboard4.StudsOffset = Vector3.new(0, 2.9000000953674316, 0)
+		WckdBillboard4.AlwaysOnTop = true
+		WckdBillboard4.LightInfluence = 0
+		WckdBillboard4.MaxDistance = 800
+		WckdBillboard4.Adornee = Head4
+		WckdBillboard4.Parent = Head4
+		local Name11 = Instance.new("TextLabel")
+		Name11.Parent = WckdBillboard4
+		Name11.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Name11.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+		Name11.Text = player.DisplayName
+		Name11.ZIndex = 2
+		Name11.TextStrokeTransparency = 0.45
+		Name11.Name = "Name"
+		Name11.Font = Enum.Font.Michroma
+		Name11.BackgroundTransparency = 1
+		Name11.Position = UDim2.new(0, 0, 0, 0)
+		Name11.TextXAlignment = Enum.TextXAlignment.Center
+		Name11.TextYAlignment = Enum.TextYAlignment.Center
+		Name11.TextSize = 12
+		Name11.Size = UDim2.new(1, 0, 0, 16)
+		local HealthBG4 = Instance.new("Frame")
+		HealthBG4.Parent = WckdBillboard4
+		HealthBG4.AnchorPoint = Vector2.new(0.5, 0)
+		HealthBG4.BackgroundTransparency = 0.2
+		HealthBG4.Name = "HealthBG"
+		HealthBG4.Position = UDim2.new(0.5, 0, 0, 21)
+		HealthBG4.BackgroundColor3 = Color3.fromRGB(35, 35, 40)
+		HealthBG4.ZIndex = 2
+		HealthBG4.BorderSizePixel = 0
+		HealthBG4.Size = UDim2.new(0, 110, 0, 4)
+		local UICorner51 = Instance.new("UICorner")
+		UICorner51.Parent = HealthBG4
+		UICorner51.CornerRadius = UDim.new(0, 2)
+		local HealthFill4 = Instance.new("Frame")
+		HealthFill4.Name = "HealthFill"
+		HealthFill4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		HealthFill4.Parent = HealthBG4
+		HealthFill4.ZIndex = 3
+		HealthFill4.BorderSizePixel = 0
+		HealthFill4.Size = UDim2.fromScale(1, 1)
+		local UICorner52 = Instance.new("UICorner")
+		UICorner52.Parent = HealthFill4
+		UICorner52.CornerRadius = UDim.new(0, 2)
+		local HealthText4 = Instance.new("TextLabel")
+		HealthText4.Parent = WckdBillboard4
+		HealthText4.ZIndex = 2
+		HealthText4.TextColor3 = Color3.fromRGB(255, 255, 255)
+		HealthText4.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+		HealthText4.Text = ""
+		HealthText4.BackgroundTransparency = 1
+		HealthText4.TextStrokeTransparency = 0.5
+		HealthText4.AnchorPoint = Vector2.new(0.5, 0)
+		HealthText4.Font = Enum.Font.Michroma
+		HealthText4.Name = "HealthText"
+		HealthText4.Position = UDim2.new(0.5, 0, 0, 26)
+		HealthText4.TextXAlignment = Enum.TextXAlignment.Center
+		HealthText4.TextYAlignment = Enum.TextYAlignment.Center
+		HealthText4.TextSize = 10
+		HealthText4.Size = UDim2.new(1, 0, 0, 12)
+		local Distance4 = Instance.new("TextLabel")
+		Distance4.Parent = WckdBillboard4
+		Distance4.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Distance4.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+		Distance4.Text = ""
+		Distance4.ZIndex = 2
+		Distance4.TextStrokeTransparency = 0.5
+		Distance4.Name = "Distance"
+		Distance4.Font = Enum.Font.Michroma
+		Distance4.BackgroundTransparency = 1
+		Distance4.Position = UDim2.new(0, 0, 0, 40)
+		Distance4.TextXAlignment = Enum.TextXAlignment.Center
+		Distance4.TextYAlignment = Enum.TextYAlignment.Center
+		Distance4.TextSize = 10
+		Distance4.Size = UDim2.new(1, 0, 0, 14)
+		player.Character:FindFirstChild("UpperTorso")
+		local Bone43 = Instance.new("Frame")
+		Bone43.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone43.Visible = false
+		Bone43.Name = "Bone"
+		Bone43.Size = UDim2.fromOffset(0, 1)
+		Bone43.Parent = WckdESP
+		Bone43.ZIndex = 3
+		Bone43.BorderSizePixel = 0
+		Bone43.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke69 = Instance.new("UIStroke")
+		UIStroke69.Thickness = 1
+		UIStroke69.Transparency = 0.35
+		UIStroke69.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke69.Parent = Bone43
+		UIStroke69.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke69.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone44 = Instance.new("Frame")
+		Bone44.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone44.Visible = false
+		Bone44.Name = "Bone"
+		Bone44.Size = UDim2.fromOffset(0, 1)
+		Bone44.Parent = WckdESP
+		Bone44.ZIndex = 3
+		Bone44.BorderSizePixel = 0
+		Bone44.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke70 = Instance.new("UIStroke")
+		UIStroke70.Thickness = 1
+		UIStroke70.Transparency = 0.35
+		UIStroke70.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke70.Parent = Bone44
+		UIStroke70.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke70.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone45 = Instance.new("Frame")
+		Bone45.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone45.Visible = false
+		Bone45.Name = "Bone"
+		Bone45.Size = UDim2.fromOffset(0, 1)
+		Bone45.Parent = WckdESP
+		Bone45.ZIndex = 3
+		Bone45.BorderSizePixel = 0
+		Bone45.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke71 = Instance.new("UIStroke")
+		UIStroke71.Thickness = 1
+		UIStroke71.Transparency = 0.35
+		UIStroke71.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke71.Parent = Bone45
+		UIStroke71.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke71.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone46 = Instance.new("Frame")
+		Bone46.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone46.Visible = false
+		Bone46.Name = "Bone"
+		Bone46.Size = UDim2.fromOffset(0, 1)
+		Bone46.Parent = WckdESP
+		Bone46.ZIndex = 3
+		Bone46.BorderSizePixel = 0
+		Bone46.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke72 = Instance.new("UIStroke")
+		UIStroke72.Thickness = 1
+		UIStroke72.Transparency = 0.35
+		UIStroke72.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke72.Parent = Bone46
+		UIStroke72.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke72.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone47 = Instance.new("Frame")
+		Bone47.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone47.Visible = false
+		Bone47.Name = "Bone"
+		Bone47.Size = UDim2.fromOffset(0, 1)
+		Bone47.Parent = WckdESP
+		Bone47.ZIndex = 3
+		Bone47.BorderSizePixel = 0
+		Bone47.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke73 = Instance.new("UIStroke")
+		UIStroke73.Thickness = 1
+		UIStroke73.Transparency = 0.35
+		UIStroke73.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke73.Parent = Bone47
+		UIStroke73.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke73.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone48 = Instance.new("Frame")
+		Bone48.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone48.Visible = false
+		Bone48.Name = "Bone"
+		Bone48.Size = UDim2.fromOffset(0, 1)
+		Bone48.Parent = WckdESP
+		Bone48.ZIndex = 3
+		Bone48.BorderSizePixel = 0
+		Bone48.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke74 = Instance.new("UIStroke")
+		UIStroke74.Thickness = 1
+		UIStroke74.Transparency = 0.35
+		UIStroke74.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke74.Parent = Bone48
+		UIStroke74.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke74.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone49 = Instance.new("Frame")
+		Bone49.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone49.Visible = false
+		Bone49.Name = "Bone"
+		Bone49.Size = UDim2.fromOffset(0, 1)
+		Bone49.Parent = WckdESP
+		Bone49.ZIndex = 3
+		Bone49.BorderSizePixel = 0
+		Bone49.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke75 = Instance.new("UIStroke")
+		UIStroke75.Thickness = 1
+		UIStroke75.Transparency = 0.35
+		UIStroke75.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke75.Parent = Bone49
+		UIStroke75.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke75.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone50 = Instance.new("Frame")
+		Bone50.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone50.Visible = false
+		Bone50.Name = "Bone"
+		Bone50.Size = UDim2.fromOffset(0, 1)
+		Bone50.Parent = WckdESP
+		Bone50.ZIndex = 3
+		Bone50.BorderSizePixel = 0
+		Bone50.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke76 = Instance.new("UIStroke")
+		UIStroke76.Thickness = 1
+		UIStroke76.Transparency = 0.35
+		UIStroke76.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke76.Parent = Bone50
+		UIStroke76.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke76.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone51 = Instance.new("Frame")
+		Bone51.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone51.Visible = false
+		Bone51.Name = "Bone"
+		Bone51.Size = UDim2.fromOffset(0, 1)
+		Bone51.Parent = WckdESP
+		Bone51.ZIndex = 3
+		Bone51.BorderSizePixel = 0
+		Bone51.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke77 = Instance.new("UIStroke")
+		UIStroke77.Thickness = 1
+		UIStroke77.Transparency = 0.35
+		UIStroke77.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke77.Parent = Bone51
+		UIStroke77.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke77.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone52 = Instance.new("Frame")
+		Bone52.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone52.Visible = false
+		Bone52.Name = "Bone"
+		Bone52.Size = UDim2.fromOffset(0, 1)
+		Bone52.Parent = WckdESP
+		Bone52.ZIndex = 3
+		Bone52.BorderSizePixel = 0
+		Bone52.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke78 = Instance.new("UIStroke")
+		UIStroke78.Thickness = 1
+		UIStroke78.Transparency = 0.35
+		UIStroke78.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke78.Parent = Bone52
+		UIStroke78.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke78.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone53 = Instance.new("Frame")
+		Bone53.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone53.Visible = false
+		Bone53.Name = "Bone"
+		Bone53.Size = UDim2.fromOffset(0, 1)
+		Bone53.Parent = WckdESP
+		Bone53.ZIndex = 3
+		Bone53.BorderSizePixel = 0
+		Bone53.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke79 = Instance.new("UIStroke")
+		UIStroke79.Thickness = 1
+		UIStroke79.Transparency = 0.35
+		UIStroke79.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke79.Parent = Bone53
+		UIStroke79.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke79.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone54 = Instance.new("Frame")
+		Bone54.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone54.Visible = false
+		Bone54.Name = "Bone"
+		Bone54.Size = UDim2.fromOffset(0, 1)
+		Bone54.Parent = WckdESP
+		Bone54.ZIndex = 3
+		Bone54.BorderSizePixel = 0
+		Bone54.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke80 = Instance.new("UIStroke")
+		UIStroke80.Thickness = 1
+		UIStroke80.Transparency = 0.35
+		UIStroke80.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke80.Parent = Bone54
+		UIStroke80.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke80.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone55 = Instance.new("Frame")
+		Bone55.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone55.Visible = false
+		Bone55.Name = "Bone"
+		Bone55.Size = UDim2.fromOffset(0, 1)
+		Bone55.Parent = WckdESP
+		Bone55.ZIndex = 3
+		Bone55.BorderSizePixel = 0
+		Bone55.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke81 = Instance.new("UIStroke")
+		UIStroke81.Thickness = 1
+		UIStroke81.Transparency = 0.35
+		UIStroke81.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke81.Parent = Bone55
+		UIStroke81.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke81.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+		local Bone56 = Instance.new("Frame")
+		Bone56.AnchorPoint = Vector2.new(0.5, 0.5)
+		Bone56.Visible = false
+		Bone56.Name = "Bone"
+		Bone56.Size = UDim2.fromOffset(0, 1)
+		Bone56.Parent = WckdESP
+		Bone56.ZIndex = 3
+		Bone56.BorderSizePixel = 0
+		Bone56.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		local UIStroke82 = Instance.new("UIStroke")
+		UIStroke82.Thickness = 1
+		UIStroke82.Transparency = 0.35
+		UIStroke82.Color = Color3.fromRGB(0, 0, 0)
+		UIStroke82.Parent = Bone56
+		UIStroke82.LineJoinMode = Enum.LineJoinMode.Round
+		UIStroke82.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+	end)
+
+	player.CharacterRemoving:Connect(function(character4)
+		for _, wckdBillboard in ipairs({
+			WckdBillboard4, WckdHighlight4, Bone43, Bone44, Bone45, Bone46, Bone47, Bone48, Bone49,
+			Bone50, Bone51, Bone52, Bone53, Bone54, Bone55, Bone56,
+		}) do
+			wckdBillboard:Destroy()
+		end
+	end)
+end)
+
+Players.PlayerRemoving:Connect(function(player2)
+end)
+
+RunService.RenderStepped:Connect(function(deltaTime2)
+	local players2 = Players:GetPlayers()
+
+	for i2, v2 in ipairs(players2) do
+	end
+end)
