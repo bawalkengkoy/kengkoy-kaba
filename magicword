@@ -1,7 +1,7 @@
 
 local function __dec(s)
-  local K={0x0b,0x53,0xf6,0x55,0x52,0x2e,0x0d,0x9c,0x7c,0xcc,0xd0,0x05,0x08,0x79,0xb6,0xdd}
-  local N={0xeb,0xe5,0x0e,0x87,0x62,0xae,0xed,0xdc}
+  local K={0xe9,0xea,0xaf,0x0e,0x3f,0x58,0xb2,0xd3,0xa3,0x83,0xd9,0xcc,0xa0,0x1a,0xda,0x42}
+  local N={0x13,0xc9,0xb5,0x65,0xaf,0x86,0x3a,0x66}
   local b={}
   for i=1,#s,2 do b[#b+1]=tonumber(s:sub(i,i+1),16) end
   local o={} local st=0
@@ -11,4 +11,1643 @@ local function __dec(s)
   end
   return table.concat(o)
 end
-local Players=_0x04f06304:_0x44ee0586(__dec(""));local UserInputService=_0x16292596:_0x44ee0586(__dec(""));local MarketplaceService=_0x16292596:_0x44ee0586(__dec(""));local StatsService=_0x16292596:_0x44ee0586(__dec(""));local RunService=_0x16292596:_0x44ee0586(__dec(""));local TeleportService=_0x16292596:_0x44ee0586(__dec(""));local CoreGui=_0x16292596:_0x44ee0586(__dec(""));local LocalPlayer=Players._0x84c6768e;local Camera=_0x70f24265._0xf1a5a072;local function getSafeParent() if _0x8bf70ef8 then return _0x03ef007c() elseif (_0x44e19c18and_0x78a06c0f._0x59439bf0) then local target=_0x45ffe04a._0x7a8d58cb(__dec(""));_0x78a06c0f._0x59439bf0(target);target._0x3c8a151a=CoreGui;return target elseif nil then return CoreGui end end;local UIParent=getSafeParent();if UIParent:_0xb2dcb868(__dec("")) then UIParent._0xa34b249e:_0x4c189307() end;local screenGui=_0x120ebf31._0x7a8d58cb(__dec(""));screenGui._0xfc688beb=__dec("");screenGui._0xf1c448ef=false;screenGui._0x2ec82905=999999;screenGui._0x415109c0=true;if (_0x78a06c0fand_0x78a06c0f._0x59439bf0) then _0x78a06c0f._0x59439bf0(screenGui);screenGui._0x3c8a151a=CoreGui elseif nil then screenGui._0x3c8a151a=UIParent end;local clickSound=_0x120ebf31._0x7a8d58cb(__dec(""));clickSound._0xfc688beb=__dec("");clickSound._0xfcdb3540=__dec("");clickSound._0x56383551=1;clickSound._0x3c8a151a=screenGui;local mainFrame=_0x120ebf31._0x7a8d58cb(__dec(""));mainFrame._0xfc688beb=__dec("");mainFrame._0xb44eb37b=_0x7768e599._0x7a8d58cb(0,720,0,430);mainFrame._0x04a256ec=_0xcff7655d._0x7a8d58cb(0.5,-360,0.5,-215);mainFrame._0xd7ae0be4=_0xc1408c4f._0x114a8c13(6,6,8);mainFrame._0x55e21127=0;mainFrame._0x6097ad11=true;mainFrame._0xd17f5c37=true;mainFrame._0x3c8a151a=screenGui;local mainCorner=_0x120ebf31._0x7a8d58cb(__dec(""));mainCorner._0x1fe127d5=_0xff1d6ac2._0x7a8d58cb(0,14);mainCorner._0x3c8a151a=mainFrame;local starsFolder=_0x120ebf31._0x7a8d58cb(__dec(""));starsFolder._0xfc688beb=__dec("");starsFolder._0x3c8a151a=mainFrame;local starPositions={{0.05,0.12,3},{0.18,0.08,2},{0.32,0.25,3},{0.45,0.15,2},{0.68,0.07,4},{0.82,0.18,2},{0.95,0.22,3},{0.12,0.42,2},{0.27,0.38,4},{0.48,0.45,2},{0.55,0.32,3},{0.72,0.42,2},{0.88,0.35,4},{0.92,0.52,2},{0.08,0.65,3},{0.22,0.72,2},{0.39,0.62,3},{0.61,0.68,4},{0.78,0.75,2},{0.85,0.65,3},{0.15,0.88,2},{0.31,0.82,3},{0.52,0.92,2},{0.69,0.85,3},{0.81,0.92,4},{0.94,0.82,2}};for _,pos in _0xf7956132(starPositions) do local star=_0x120ebf31._0x7a8d58cb(__dec(""));star._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,pos[3],0,pos[3]);star._0x04a256ec=_0xcff7655d._0x7a8d58cb(pos[1],0,pos[2],0);star._0xd7ae0be4=_0xc44148dc._0x114a8c13(255,255,255);star._0x0cc14200=0.3;star._0x55e21127=0;star._0x3c8a151a=starsFolder;local starCorner=_0x120ebf31._0x7a8d58cb(__dec(""));starCorner._0x1fe127d5=_0x36730120._0x7a8d58cb(1,0);starCorner._0x3c8a151a=star end;local dragging,dragInput,dragStart,startPos;mainFrame._0x301506fe:_0xd60d8156(function(input) if ((input._0x1a795572==_0x6aaf1b42._0x1a795572._0xb2e369ab)or(input._0x1a795572==_0x878a00b5._0x1a795572._0x7e0601b0)) then dragging=true;dragStart=input._0x04a256ec;startPos=mainFrame._0x04a256ec;input._0x8004b8f9:_0xd60d8156(function() if (input._0x217c4f2c==_0x878a00b5._0x217c4f2c._0x7754c2dc) then dragging=false end end) end end);mainFrame._0x6d40a6a3:_0xd60d8156(function(input) if ((input._0x1a795572==_0x878a00b5._0x1a795572._0x7171eaf6)or(input._0x1a795572==_0x878a00b5._0x1a795572._0x7e0601b0)) then dragInput=input end end);UserInputService._0x6d40a6a3:_0xd60d8156(function(input) if ((input==dragInput)anddragging) then local delta=(input._0x04a256ec-dragStart);mainFrame._0x04a256ec=_0xcff7655d._0x7a8d58cb(startPos._0x5991f6a8._0x2a1e950d,(startPos._0x5991f6a8._0x145a4f2b+delta._0x5991f6a8),startPos._0x8e4cf3d9._0x2a1e950d,(startPos._0x8e4cf3d9._0x145a4f2b+delta._0x8e4cf3d9)) end end);local sideBar=_0x120ebf31._0x7a8d58cb(__dec(""));sideBar._0xfc688beb=__dec("");sideBar._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,110,1,0);sideBar._0xd7ae0be4=_0xc44148dc._0x114a8c13(4,4,6);sideBar._0x0cc14200=0.3;sideBar._0x55e21127=0;sideBar._0x3c8a151a=mainFrame;local topLogo=_0x120ebf31._0x7a8d58cb(__dec(""));topLogo._0xfc688beb=__dec("");topLogo._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,40,0,40);topLogo._0x04a256ec=_0xcff7655d._0x7a8d58cb(0.5,-20,0,12);topLogo._0x0cc14200=1;topLogo._0x4e85e65c=__dec("");topLogo._0x3c8a151a=sideBar;local navList=_0x120ebf31._0x7a8d58cb(__dec(""));navList._0xfc688beb=__dec("");navList._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,0,0,300);navList._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,0,0,68);navList._0x0cc14200=1;navList._0x3c8a151a=sideBar;local uiList=_0x120ebf31._0x7a8d58cb(__dec(""));uiList._0x79e55923=_0x878a00b5._0x79e55923._0x7bb5bd1f;uiList._0xa8059162=_0x36730120._0x7a8d58cb(0,4);uiList._0x624e3f1b=_0x878a00b5._0x624e3f1b._0x7ef05c2b;uiList._0x3c8a151a=navList;local footerAvatar=_0x120ebf31._0x7a8d58cb(__dec(""));footerAvatar._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,24,0,24);footerAvatar._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,12,1,-42);footerAvatar._0x0cc14200=1;footerAvatar._0x3c8a151a=sideBar;local footerAvatarCorner=_0x120ebf31._0x7a8d58cb(__dec(""));footerAvatarCorner._0x1fe127d5=_0x36730120._0x7a8d58cb(1,0);footerAvatarCorner._0x3c8a151a=footerAvatar;local footerName=_0x120ebf31._0x7a8d58cb(__dec(""));footerName._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,70,0,24);footerName._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,40,1,-43);footerName._0x0cc14200=1;footerName._0x096162cf=(LocalPlayer._0x1acd4ca8..(__dec("")..LocalPlayer._0xfc688beb));footerName._0xa32e840d=_0xc44148dc._0x114a8c13(160,160,160);footerName._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;footerName._0xafb08ec3=9;footerName._0x83250ed6=_0x878a00b5._0x83250ed6._0x0053d0e8;footerName._0x3c8a151a=sideBar;local contentArea=_0x120ebf31._0x7a8d58cb(__dec(""));contentArea._0xfc688beb=__dec("");contentArea._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,-110,1,0);contentArea._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,110,0,0);contentArea._0x0cc14200=1;contentArea._0x3c8a151a=mainFrame;local tabs={};local tabButtons={};local favoriteItems={};local allButtonsRegistry={};local navItems={{_0xfc688beb=__dec(""),_0x71a95ba8=__dec("")},{_0xfc688beb=__dec(""),_0x71a95ba8=__dec("")},{_0xfc688beb=__dec(""),_0x71a95ba8=__dec("")},{_0xfc688beb=__dec(""),_0x71a95ba8=__dec("")},{_0xfc688beb=__dec(""),_0x71a95ba8=__dec("")},{_0xfc688beb=__dec(""),_0x71a95ba8=__dec("")},{_0xfc688beb=__dec(""),_0x71a95ba8=__dec("")},{_0xfc688beb=__dec(""),_0x71a95ba8=__dec("")}};local function switchTab(tabName) clickSound:_0x15dee473();for name,page in _0xb21c8564(tabs) do if (name==tabName) then page._0xd2bf722c=true;if tabButtons[name] then tabButtons[name]._0xd7ae0be4=_0xc44148dc._0x114a8c13(22,22,26);tabButtons[name]._0x0cc14200=0 end elseif nil then page._0xd2bf722c=false;if tabButtons[name] then tabButtons[name]._0xd7ae0be4=_0xc44148dc._0x114a8c13(0,0,0);tabButtons[name]._0x0cc14200=1 end end end end;local function createGridTab(tabName,hasHeader) local pageContainer=_0x120ebf31._0x7a8d58cb(__dec(""));pageContainer._0xfc688beb=(tabName..__dec(""));pageContainer._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,0,1,0);pageContainer._0x0cc14200=1;pageContainer._0xd2bf722c=false;pageContainer._0x3c8a151a=contentArea;local scrollYOffset=20;local scrollHeightOffset=-40;if hasHeader then local headerTitle=_0x120ebf31._0x7a8d58cb(__dec(""));headerTitle._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,-40,0,20);headerTitle._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,20,0,15);headerTitle._0x0cc14200=1;headerTitle._0x096162cf=(_0xa8c41998._0x5d34b862(tabName)..__dec(""));headerTitle._0xa32e840d=_0xc44148dc._0x114a8c13(255,255,255);headerTitle._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;headerTitle._0xafb08ec3=14;headerTitle._0x83250ed6=_0x878a00b5._0x83250ed6._0x0053d0e8;headerTitle._0x3c8a151a=pageContainer;local headerSub=_0x120ebf31._0x7a8d58cb(__dec(""));headerSub._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,-40,0,14);headerSub._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,20,0,35);headerSub._0x0cc14200=1;headerSub._0x096162cf=__dec("");headerSub._0xa32e840d=_0xc44148dc._0x114a8c13(130,130,130);headerSub._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;headerSub._0xafb08ec3=9;headerSub._0x83250ed6=_0x878a00b5._0x83250ed6._0x0053d0e8;headerSub._0x3c8a151a=pageContainer;local searchFrame=_0x120ebf31._0x7a8d58cb(__dec(""));searchFrame._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,-40,0,30);searchFrame._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,20,0,58);searchFrame._0xd7ae0be4=_0xc44148dc._0x114a8c13(12,12,16);searchFrame._0x55e21127=0;searchFrame._0x3c8a151a=pageContainer;local searchCorner=_0x120ebf31._0x7a8d58cb(__dec(""));searchCorner._0x1fe127d5=_0x36730120._0x7a8d58cb(0,6);searchCorner._0x3c8a151a=searchFrame;local searchBox=_0x120ebf31._0x7a8d58cb(__dec(""));searchBox._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,-20,1,0);searchBox._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,10,0,0);searchBox._0x0cc14200=1;searchBox._0x096162cf=__dec("");searchBox._0x29ce7d73=__dec("");searchBox._0x048ffe78=_0xc44148dc._0x114a8c13(100,100,100);searchBox._0xa32e840d=_0xc44148dc._0x114a8c13(220,220,220);searchBox._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;searchBox._0xafb08ec3=11;searchBox._0x83250ed6=_0x878a00b5._0x83250ed6._0x7ef05c2b;searchBox._0x3c8a151a=searchFrame;scrollYOffset=98;scrollHeightOffset=-118;searchBox:_0xa388486e(__dec("")):_0xd60d8156(function() local searchText=_0xc21af56f._0xf795ab75(searchBox._0x096162cf);local scrollFrame=pageContainer:_0x058d7776(__dec(""));if scrollFrame then for _,child in _0x58144d00(scrollFrame:_0x299c08f9()) do if child:_0x7c59d032(__dec("")) then if ((searchText==__dec(""))or_0xc21af56f._0x7e66e2d3(_0xc21af56f._0xf795ab75(child._0xfc688beb),searchText)) then child._0xd2bf722c=true elseif nil then child._0xd2bf722c=false end end end end end) end;local scrollPage=_0x120ebf31._0x7a8d58cb(__dec(""));scrollPage._0xfc688beb=__dec("");scrollPage._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,-40,1,scrollHeightOffset);scrollPage._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,20,0,scrollYOffset);scrollPage._0x0cc14200=1;scrollPage._0x55e21127=0;scrollPage._0xdf83ab19=3;scrollPage._0xebd607d4=_0xc44148dc._0x114a8c13(120,120,140);scrollPage._0x3c8a151a=pageContainer;local listLayout=_0x120ebf31._0x7a8d58cb(__dec(""));listLayout._0x79e55923=_0x878a00b5._0x79e55923._0x7bb5bd1f;listLayout._0xa8059162=_0x36730120._0x7a8d58cb(0,8);listLayout._0x624e3f1b=_0x878a00b5._0x624e3f1b._0x7ef05c2b;listLayout._0x3c8a151a=scrollPage;listLayout:_0xa388486e(__dec("")):_0xd60d8156(function() scrollPage._0x1dbf865b=_0xcff7655d._0x7a8d58cb(0,0,0,(listLayout._0x7e57c2cd._0x8e4cf3d9+10)) end);tabs[tabName]=pageContainer;return scrollPage end;local favoritesTab=createGridTab(__dec(""),false);local function AddMenuButton(parentTab,text,callback) local mainBtn=_0x120ebf31._0x7a8d58cb(__dec(""));mainBtn._0xfc688beb=(text..__dec(""));mainBtn._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,-10,0,36);mainBtn._0xd7ae0be4=_0xc44148dc._0x114a8c13(12,12,16);mainBtn._0x0cc14200=0.5;mainBtn._0x096162cf=__dec("");mainBtn._0xbb780db4=false;mainBtn._0xa7b66b90=_0x120ebf31._0x7a8d58cb(__dec(""));mainBtn._0x3c8a151a=parentTab;local btnCorner=_0x120ebf31._0x7a8d58cb(__dec(""));btnCorner._0x1fe127d5=_0x36730120._0x7a8d58cb(0,6);btnCorner._0x3c8a151a=mainBtn;local titleLbl=_0x120ebf31._0x7a8d58cb(__dec(""));titleLbl._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,-45,1,0);titleLbl._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,10,0,0);titleLbl._0x0cc14200=1;titleLbl._0x096162cf=_0xc21af56f._0x5d34b862(text);titleLbl._0xa32e840d=_0xc44148dc._0x114a8c13(220,220,220);titleLbl._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;titleLbl._0xafb08ec3=11;titleLbl._0x83250ed6=_0x878a00b5._0x83250ed6._0x7ef05c2b;titleLbl._0x3c8a151a=mainBtn;local starBtn=_0x120ebf31._0x7a8d58cb(__dec(""));starBtn._0xfc688beb=__dec("");starBtn._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,30,0,30);starBtn._0x04a256ec=_0xcff7655d._0x7a8d58cb(1,-34,0.5,-15);starBtn._0x0cc14200=1;starBtn._0x096162cf=__dec("");starBtn._0xa32e840d=_0xc44148dc._0x114a8c13(180,180,180);starBtn._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;starBtn._0xafb08ec3=18;starBtn._0xa15228f7=2;starBtn._0xa7b66b90=_0x120ebf31._0x7a8d58cb(__dec(""));starBtn._0x3c8a151a=mainBtn;if notallButtonsRegistry[text] then allButtonsRegistry[text]={} end;_0xfd58f8b5._0x4c37a506(allButtonsRegistry[text],starBtn);mainBtn._0xce7d928b:_0xd60d8156(function() mainBtn._0xd7ae0be4=_0xc44148dc._0x114a8c13(24,24,32);titleLbl._0xa32e840d=_0xc44148dc._0x114a8c13(255,255,255) end);mainBtn._0x9d611980:_0xd60d8156(function() mainBtn._0xd7ae0be4=_0xc44148dc._0x114a8c13(12,12,16);titleLbl._0xa32e840d=_0xc44148dc._0x114a8c13(220,220,220) end);mainBtn._0x2678498d:_0xd60d8156(function() mainBtn._0xd7ae0be4=_0xc44148dc._0x114a8c13(45,45,60);_0x521ccaed._0xe26d0711(0.1,function() mainBtn._0xd7ae0be4=_0xc44148dc._0x114a8c13(24,24,32) end);_0x80853ac3(callback) end);starBtn._0xce7d928b:_0xd60d8156(function() starBtn._0xa32e840d=_0xc44148dc._0x114a8c13(255,215,0) end);starBtn._0x9d611980:_0xd60d8156(function() starBtn._0xa32e840d=_0xc44148dc._0x114a8c13(180,180,180) end);starBtn._0x2678498d:_0xd60d8156(function() if favoriteItems[text] then favoriteItems[text]:_0x4c189307();favoriteItems[text]=nil;for _,b in _0x58144d00(allButtonsRegistry[text]) do b._0x096162cf=__dec("") end elseif nil then for _,b in _0x58144d00(allButtonsRegistry[text]) do b._0x096162cf=__dec("") end;local favFrame=AddMenuButton(favoritesTab,text,callback);favoriteItems[text]=favFrame;local favStar=favFrame:_0xb2dcb868(__dec(""));if favStar then favStar._0x096162cf=__dec("") end end end);return mainBtn end;for i,item in _0x58144d00(navItems) do local btn=_0x120ebf31._0x7a8d58cb(__dec(""));btn._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,92,0,36);btn._0xd7ae0be4=(((i==1)and_0xc44148dc._0x114a8c13(22,22,26))or_0xc44148dc._0x114a8c13(0,0,0));btn._0x0cc14200=(((i==1)and0)or1);btn._0x096162cf=__dec("");btn._0x3c8a151a=navList;local btnCorner=_0x120ebf31._0x7a8d58cb(__dec(""));btnCorner._0x1fe127d5=_0x36730120._0x7a8d58cb(0,8);btnCorner._0x3c8a151a=btn;local icon=_0x120ebf31._0x7a8d58cb(__dec(""));icon._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,14,0,14);icon._0x04a256ec=_0xcff7655d._0x7a8d58cb(0.5,-7,0,4);icon._0x0cc14200=1;icon._0x4e85e65c=item._0x71a95ba8;icon._0xd1864d20=_0xc44148dc._0x114a8c13(255,255,255);icon._0x3c8a151a=btn;local label=_0x120ebf31._0x7a8d58cb(__dec(""));label._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,0,0,14);label._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,0,0,18);label._0x0cc14200=1;label._0x096162cf=item._0xfc688beb;label._0xa32e840d=_0xc44148dc._0x114a8c13(220,220,220);label._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;label._0xafb08ec3=9;label._0x3c8a151a=btn;tabButtons[item._0xfc688beb]=btn;btn._0x2678498d:_0xd60d8156(function() switchTab(item._0xfc688beb) end) end;local homePage=_0x120ebf31._0x7a8d58cb(__dec(""));homePage._0xfc688beb=__dec("");homePage._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,0,1,0);homePage._0x0cc14200=1;homePage._0xd2bf722c=true;homePage._0x3c8a151a=contentArea;tabs[__dec("")]=homePage;local title=_0x120ebf31._0x7a8d58cb(__dec(""));title._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0.5,0,0,30);title._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,20,0,12);title._0x0cc14200=1;title._0x096162cf=__dec("");title._0xa32e840d=_0xc44148dc._0x114a8c13(255,255,255);title._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;title._0xafb08ec3=12;title._0x83250ed6=_0x878a00b5._0x83250ed6._0x0053d0e8;title._0x3c8a151a=homePage;local searchLbl=_0x120ebf31._0x7a8d58cb(__dec(""));searchLbl._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,100,0,30);searchLbl._0x04a256ec=_0xcff7655d._0x7a8d58cb(1,-120,0,12);searchLbl._0x0cc14200=1;searchLbl._0x096162cf=__dec("");searchLbl._0xa32e840d=_0xc44148dc._0x114a8c13(150,150,150);searchLbl._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;searchLbl._0xafb08ec3=11;searchLbl._0x83250ed6=_0x878a00b5._0x83250ed6._0x48d1c719;searchLbl._0x3c8a151a=homePage;local defaultAvatarAsset=__dec("");local realAvatarAsset=Players:_0x374d49e0(LocalPlayer._0x9abbf4c4,_0x878a00b5._0xf9badc6f._0x7f6c72d7,_0x878a00b5._0xdfe9175f._0xa0045b75);local profileAvatar=_0x120ebf31._0x7a8d58cb(__dec(""));profileAvatar._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,38,0,38);profileAvatar._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,20,0,48);profileAvatar._0x0cc14200=1;profileAvatar._0x3c8a151a=homePage;local mainAvatarCorner=_0x120ebf31._0x7a8d58cb(__dec(""));mainAvatarCorner._0x1fe127d5=_0x36730120._0x7a8d58cb(1,0);mainAvatarCorner._0x3c8a151a=profileAvatar;local welcomeText=_0x120ebf31._0x7a8d58cb(__dec(""));welcomeText._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,150,0,35);welcomeText._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,68,0,46);welcomeText._0x0cc14200=1;welcomeText._0x096162cf=(__dec("")..(LocalPlayer._0x1acd4ca8..(__dec("")..LocalPlayer._0xfc688beb)));welcomeText._0xa32e840d=_0xc44148dc._0x114a8c13(220,220,220);welcomeText._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;welcomeText._0xafb08ec3=10;welcomeText._0x83250ed6=_0x878a00b5._0x83250ed6._0x0053d0e8;welcomeText._0x3c8a151a=homePage;local hideNameOn=false;local hideProfileOn=false;local function updateAccountDisplay() if hideNameOn then welcomeText._0x096162cf=__dec("");footerName._0x096162cf=__dec("") elseif nil then welcomeText._0x096162cf=(__dec("")..(LocalPlayer._0x1acd4ca8..(__dec("")..LocalPlayer._0xfc688beb)));footerName._0x096162cf=(LocalPlayer._0x1acd4ca8..(__dec("")..LocalPlayer._0xfc688beb)) end;if hideProfileOn then profileAvatar._0x4e85e65c=defaultAvatarAsset;footerAvatar._0x4e85e65c=defaultAvatarAsset elseif nil then profileAvatar._0x4e85e65c=realAvatarAsset;footerAvatar._0x4e85e65c=realAvatarAsset end end;updateAccountDisplay();local nameLbl=_0x120ebf31._0x7a8d58cb(__dec(""));nameLbl._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,40,0,20);nameLbl._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,210,0,62);nameLbl._0x0cc14200=1;nameLbl._0x096162cf=__dec("");nameLbl._0xa32e840d=_0xc44148dc._0x114a8c13(200,200,200);nameLbl._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;nameLbl._0xafb08ec3=10;nameLbl._0x3c8a151a=homePage;local nameBtn=_0x120ebf31._0x7a8d58cb(__dec(""));nameBtn._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,34,0,16);nameBtn._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,255,0,64);nameBtn._0xd7ae0be4=_0xc44148dc._0x114a8c13(60,60,70);nameBtn._0x096162cf=__dec("");nameBtn._0x3c8a151a=homePage;local p1C=_0x120ebf31._0x7a8d58cb(__dec(""));p1C._0x1fe127d5=_0x36730120._0x7a8d58cb(1,0);p1C._0x3c8a151a=nameBtn;local nameDot=_0x120ebf31._0x7a8d58cb(__dec(""));nameDot._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,12,0,12);nameDot._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,2,0.5,-6);nameDot._0xd7ae0be4=_0xc44148dc._0x114a8c13(200,200,200);nameDot._0x3c8a151a=nameBtn;local d1C=_0x120ebf31._0x7a8d58cb(__dec(""));d1C._0x1fe127d5=_0x36730120._0x7a8d58cb(1,0);d1C._0x3c8a151a=nameDot;nameBtn._0x2678498d:_0xd60d8156(function() clickSound:_0x15dee473();hideNameOn=nothideNameOn;if hideNameOn then nameBtn._0xd7ae0be4=_0xc44148dc._0x114a8c13(255,255,255);nameDot._0x04a256ec=_0xcff7655d._0x7a8d58cb(1,-14,0.5,-6);nameDot._0xd7ae0be4=_0xc44148dc._0x114a8c13(20,20,20) elseif nil then nameBtn._0xd7ae0be4=_0xc44148dc._0x114a8c13(60,60,70);nameDot._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,2,0.5,-6);nameDot._0xd7ae0be4=_0xc44148dc._0x114a8c13(200,200,200) end;updateAccountDisplay() end);local profLbl=_0x120ebf31._0x7a8d58cb(__dec(""));profLbl._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,40,0,20);profLbl._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,305,0,62);profLbl._0x0cc14200=1;profLbl._0x096162cf=__dec("");profLbl._0xa32e840d=_0xc44148dc._0x114a8c13(200,200,200);profLbl._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;profLbl._0xafb08ec3=10;profLbl._0x3c8a151a=homePage;local profBtn=_0x120ebf31._0x7a8d58cb(__dec(""));profBtn._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,34,0,16);profBtn._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,355,0,64);profBtn._0xd7ae0be4=_0xc44148dc._0x114a8c13(60,60,70);profBtn._0x096162cf=__dec("");profBtn._0x3c8a151a=homePage;local p2C=_0x120ebf31._0x7a8d58cb(__dec(""));p2C._0x1fe127d5=_0x36730120._0x7a8d58cb(1,0);p2C._0x3c8a151a=profBtn;local profDot=_0x120ebf31._0x7a8d58cb(__dec(""));profDot._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,12,0,12);profDot._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,2,0.5,-6);profDot._0xd7ae0be4=_0xc44148dc._0x114a8c13(200,200,200);profDot._0x3c8a151a=profBtn;local d2C=_0x120ebf31._0x7a8d58cb(__dec(""));d2C._0x1fe127d5=_0x36730120._0x7a8d58cb(1,0);d2C._0x3c8a151a=profDot;profBtn._0x2678498d:_0xd60d8156(function() clickSound:_0x15dee473();hideProfileOn=nothideProfileOn;if hideProfileOn then profBtn._0xd7ae0be4=_0xc44148dc._0x114a8c13(255,255,255);profDot._0x04a256ec=_0xcff7655d._0x7a8d58cb(1,-14,0.5,-6);profDot._0xd7ae0be4=_0xc44148dc._0x114a8c13(20,20,20) elseif nil then profBtn._0xd7ae0be4=_0xc44148dc._0x114a8c13(60,60,70);profDot._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,2,0.5,-6);profDot._0xd7ae0be4=_0xc44148dc._0x114a8c13(200,200,200) end;updateAccountDisplay() end);local paidLbl=_0x120ebf31._0x7a8d58cb(__dec(""));paidLbl._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,80,0,16);paidLbl._0x04a256ec=_0xcff7655d._0x7a8d58cb(1,-100,0,52);paidLbl._0x0cc14200=1;paidLbl._0x096162cf=__dec("");paidLbl._0xa32e840d=_0xc44148dc._0x114a8c13(200,200,200);paidLbl._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;paidLbl._0xafb08ec3=10;paidLbl._0x83250ed6=_0x878a00b5._0x83250ed6._0x48d1c719;paidLbl._0x3c8a151a=homePage;local timerLbl=_0x120ebf31._0x7a8d58cb(__dec(""));timerLbl._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,80,0,14);timerLbl._0x04a256ec=_0xcff7655d._0x7a8d58cb(1,-100,0,68);timerLbl._0x0cc14200=1;timerLbl._0x096162cf=__dec("");timerLbl._0xa32e840d=_0xc44148dc._0x114a8c13(130,130,130);timerLbl._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;timerLbl._0xafb08ec3=9;timerLbl._0x83250ed6=_0x878a00b5._0x83250ed6._0x48d1c719;timerLbl._0x3c8a151a=homePage;local startTime=_0xd15d9c6f._0xb56ecca1();_0x3dd3008e._0x2eceaadd(function() while _0x3dd3008e._0xa71a450b(1) do local diff=(_0x5cf3a556._0xb56ecca1()-startTime);local m=_0xda53b2d9._0x01ca2774((diff/60));local s=(diff%60);timerLbl._0x096162cf=(m..(__dec("")..(s..__dec("")))) end end);local playerVal=_0x120ebf31._0x7a8d58cb(__dec(""));local friendVal=_0x120ebf31._0x7a8d58cb(__dec(""));local execVal=_0x120ebf31._0x7a8d58cb(__dec(""));local sessionVal=_0x120ebf31._0x7a8d58cb(__dec(""));local fpsVal=_0x120ebf31._0x7a8d58cb(__dec(""));local pingVal=_0x120ebf31._0x7a8d58cb(__dec(""));local statLabels={{__dec(""),playerVal},{__dec(""),friendVal},{__dec(""),execVal},{__dec(""),sessionVal},{__dec(""),fpsVal},{__dec(""),pingVal}};for i,st in _0x58144d00(statLabels) do local x=(20+((i-1)*95));local label=_0x120ebf31._0x7a8d58cb(__dec(""));label._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,80,0,14);label._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,x,0,102);label._0x0cc14200=1;label._0x096162cf=st[1];label._0xa32e840d=_0xc44148dc._0x114a8c13(140,140,140);label._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;label._0xafb08ec3=10;label._0x3c8a151a=homePage;local val=st[2];val._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,80,0,18);val._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,x,0,118);val._0x0cc14200=1;val._0x096162cf=__dec("");val._0xa32e840d=_0xc44148dc._0x114a8c13(255,255,255);val._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;val._0xafb08ec3=11;val._0x3c8a151a=homePage end;local detectedExec=(((_0x46b71447and_0xb900ca15())or(_0x9a356cd2and_0xb82df96a()))or__dec(""));execVal._0x096162cf=detectedExec;local function updateFriendsCount() local friendCount=0;for _,plr in _0x58144d00(Players:_0xd2c53ba1()) do if ((plr~=LocalPlayer)andLocalPlayer:_0xcdf7b3fb(plr._0x9abbf4c4)) then friendCount=(friendCount+1) end end;friendVal._0x096162cf=_0xafb986bc(friendCount) end;_0x3dd3008e._0x2eceaadd(updateFriendsCount);local frameCount=0;local lastCheck=_0x8b747364();RunService._0xae9b355a:_0xd60d8156(function() frameCount=(frameCount+1);local now=_0x453d3daa();if ((now-lastCheck)>=1) then fpsVal._0x096162cf=_0xde25faa7(_0x4c65744e._0x01ca2774((frameCount/(now-lastCheck))));frameCount=0;lastCheck=now end end);_0x3dd3008e._0x2eceaadd(function() while _0x3dd3008e._0xa71a450b(1) do playerVal._0x096162cf=_0xde25faa7(#Players:_0xd2c53ba1());local ping=_0x4c65744e._0x01ca2774(StatsService._0x16877ea4._0x0c956219[__dec("")]:_0xceabd8ee());pingVal._0x096162cf=(ping..__dec(""));local diff=(_0x5cf3a556._0xb56ecca1()-startTime);sessionVal._0x096162cf=(diff..__dec("")) end end);local gameThumb=_0x120ebf31._0x7a8d58cb(__dec(""));gameThumb._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,42,0,42);gameThumb._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,20,0,155);gameThumb._0xd7ae0be4=_0xc44148dc._0x114a8c13(20,20,20);gameThumb._0x4e85e65c=__dec("");gameThumb._0x3c8a151a=homePage;local gtCorner=_0x120ebf31._0x7a8d58cb(__dec(""));gtCorner._0x1fe127d5=_0x36730120._0x7a8d58cb(0,8);gtCorner._0x3c8a151a=gameThumb;local gName=_0x120ebf31._0x7a8d58cb(__dec(""));gName._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,280,0,16);gName._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,70,0,155);gName._0x0cc14200=1;gName._0x096162cf=__dec("");gName._0xa32e840d=_0xc44148dc._0x114a8c13(255,255,255);gName._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;gName._0xafb08ec3=10;gName._0x83250ed6=_0x878a00b5._0x83250ed6._0x0053d0e8;gName._0x3c8a151a=homePage;local gSub=_0x120ebf31._0x7a8d58cb(__dec(""));gSub._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,280,0,14);gSub._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,70,0,171);gSub._0x0cc14200=1;gSub._0x096162cf=__dec("");gSub._0xa32e840d=_0xc44148dc._0x114a8c13(130,130,130);gSub._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;gSub._0xafb08ec3=9;gSub._0x83250ed6=_0x878a00b5._0x83250ed6._0x0053d0e8;gSub._0x3c8a151a=homePage;local gIds=_0x120ebf31._0x7a8d58cb(__dec(""));gIds._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,280,0,14);gIds._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,70,0,185);gIds._0x0cc14200=1;gIds._0x096162cf=(__dec("")..(_0xc21af56f._0x0479334b(_0x16292596._0x763bc952,1,15)..__dec("")));gIds._0xa32e840d=_0xc44148dc._0x114a8c13(100,100,100);gIds._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;gIds._0xafb08ec3=9;gIds._0x83250ed6=_0x878a00b5._0x83250ed6._0x0053d0e8;gIds._0x3c8a151a=homePage;local gPlace=_0x120ebf31._0x7a8d58cb(__dec(""));gPlace._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,380,0,14);gPlace._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,20,0,212);gPlace._0x0cc14200=1;gPlace._0x096162cf=(__dec("")..(_0x16292596._0x1f81400b..(__dec("").._0x16292596._0x80357420)));gPlace._0xa32e840d=_0xc44148dc._0x114a8c13(100,100,100);gPlace._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;gPlace._0xafb08ec3=8;gPlace._0x83250ed6=_0x878a00b5._0x83250ed6._0x0053d0e8;gPlace._0x3c8a151a=homePage;_0x3dd3008e._0x2eceaadd(function() _0xe664c1a4(function() local productInfo=MarketplaceService:_0xb62c174e(_0x16292596._0x1f81400b);gName._0x096162cf=productInfo._0xfc688beb;gSub._0x096162cf=(__dec("")..productInfo._0x5187b497._0xfc688beb);gameThumb._0x4e85e65c=(__dec("")..productInfo._0x02457ed3) end) end);local actJoin=_0x120ebf31._0x7a8d58cb(__dec(""));actJoin._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,60,0,18);actJoin._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,380,0,155);actJoin._0x0cc14200=1;actJoin._0x096162cf=__dec("");actJoin._0xa32e840d=_0xc44148dc._0x114a8c13(220,220,220);actJoin._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;actJoin._0xafb08ec3=10;actJoin._0x3c8a151a=homePage;local actHop=_0x120ebf31._0x7a8d58cb(__dec(""));actHop._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,80,0,18);actHop._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,465,0,155);actHop._0x0cc14200=1;actHop._0x096162cf=__dec("");actHop._0xa32e840d=_0xc44148dc._0x114a8c13(220,220,220);actHop._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;actHop._0xafb08ec3=10;actHop._0x3c8a151a=homePage;local actCopyJob=_0x120ebf31._0x7a8d58cb(__dec(""));actCopyJob._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,85,0,18);actCopyJob._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,370,0,182);actCopyJob._0x0cc14200=1;actCopyJob._0x096162cf=__dec("");actCopyJob._0xa32e840d=_0xc44148dc._0x114a8c13(220,220,220);actCopyJob._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;actCopyJob._0xafb08ec3=10;actCopyJob._0x3c8a151a=homePage;local actCopyUni=_0x120ebf31._0x7a8d58cb(__dec(""));actCopyUni._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,95,0,18);actCopyUni._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,455,0,182);actCopyUni._0x0cc14200=1;actCopyUni._0x096162cf=__dec("");actCopyUni._0xa32e840d=_0xc44148dc._0x114a8c13(220,220,220);actCopyUni._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;actCopyUni._0xafb08ec3=10;actCopyUni._0x3c8a151a=homePage;actCopyJob._0x2678498d:_0xd60d8156(function() clickSound:_0x15dee473();_0x08d9e89f(_0x16292596._0x763bc952) end);actCopyUni._0x2678498d:_0xd60d8156(function() clickSound:_0x15dee473();_0xecfcae31(_0xde25faa7(_0x16292596._0x80357420)) end);actHop._0x2678498d:_0xd60d8156(function() clickSound:_0x15dee473();TeleportService:_0x55c6d728(_0x16292596._0x1f81400b,LocalPlayer) end);local shieldIcon=_0x120ebf31._0x7a8d58cb(__dec(""));shieldIcon._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,20,0,20);shieldIcon._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,20,0,252);shieldIcon._0x0cc14200=1;shieldIcon._0x4e85e65c=__dec("");shieldIcon._0xd1864d20=_0xc44148dc._0x114a8c13(200,200,200);shieldIcon._0x3c8a151a=homePage;local statusTitle=_0x120ebf31._0x7a8d58cb(__dec(""));statusTitle._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,200,0,16);statusTitle._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,48,0,248);statusTitle._0x0cc14200=1;statusTitle._0x096162cf=detectedExec;statusTitle._0xa32e840d=_0xc44148dc._0x114a8c13(255,255,255);statusTitle._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;statusTitle._0xafb08ec3=11;statusTitle._0x83250ed6=_0x878a00b5._0x83250ed6._0x0053d0e8;statusTitle._0x3c8a151a=homePage;local statusSub=_0x120ebf31._0x7a8d58cb(__dec(""));statusSub._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,320,0,14);statusSub._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,48,0,264);statusSub._0x0cc14200=1;statusSub._0x096162cf=__dec("");statusSub._0xa32e840d=_0xc44148dc._0x114a8c13(130,130,130);statusSub._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;statusSub._0xafb08ec3=9;statusSub._0x83250ed6=_0x878a00b5._0x83250ed6._0x0053d0e8;statusSub._0x3c8a151a=homePage;local discordIcon=_0x120ebf31._0x7a8d58cb(__dec(""));discordIcon._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,20,0,20);discordIcon._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,20,0,310);discordIcon._0x0cc14200=1;discordIcon._0x4e85e65c=__dec("");discordIcon._0xd1864d20=_0xc44148dc._0x114a8c13(200,200,200);discordIcon._0x3c8a151a=homePage;local discTitle=_0x120ebf31._0x7a8d58cb(__dec(""));discTitle._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,150,0,14);discTitle._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,48,0,308);discTitle._0x0cc14200=1;discTitle._0x096162cf=__dec("");discTitle._0xa32e840d=_0xc44148dc._0x114a8c13(220,220,220);discTitle._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;discTitle._0xafb08ec3=10;discTitle._0x83250ed6=_0x878a00b5._0x83250ed6._0x0053d0e8;discTitle._0x3c8a151a=homePage;local discLink=_0x120ebf31._0x7a8d58cb(__dec(""));discLink._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,150,0,12);discLink._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,48,0,322);discLink._0x0cc14200=1;discLink._0x096162cf=__dec("");discLink._0xa32e840d=_0xc44148dc._0x114a8c13(120,120,120);discLink._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;discLink._0xafb08ec3=8;discLink._0x83250ed6=_0x878a00b5._0x83250ed6._0x0053d0e8;discLink._0x3c8a151a=homePage;local copyInvite=_0x120ebf31._0x7a8d58cb(__dec(""));copyInvite._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,80,0,20);copyInvite._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,200,0,310);copyInvite._0x0cc14200=1;copyInvite._0x096162cf=__dec("");copyInvite._0xa32e840d=_0xc44148dc._0x114a8c13(220,220,220);copyInvite._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;copyInvite._0xafb08ec3=10;copyInvite._0x3c8a151a=homePage;copyInvite._0x2678498d:_0xd60d8156(function() clickSound:_0x15dee473();_0xecfcae31(__dec("")) end);local gamesIcon=_0x120ebf31._0x7a8d58cb(__dec(""));gamesIcon._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,20,0,20);gamesIcon._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,310,0,310);gamesIcon._0x0cc14200=1;gamesIcon._0x4e85e65c=__dec("");gamesIcon._0xd1864d20=_0xc44148dc._0x114a8c13(200,200,200);gamesIcon._0x3c8a151a=homePage;local gamesTitle=_0x120ebf31._0x7a8d58cb(__dec(""));gamesTitle._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,150,0,14);gamesTitle._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,338,0,308);gamesTitle._0x0cc14200=1;gamesTitle._0x096162cf=__dec("");gamesTitle._0xa32e840d=_0xc44148dc._0x114a8c13(220,220,220);gamesTitle._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;gamesTitle._0xafb08ec3=10;gamesTitle._0x83250ed6=_0x878a00b5._0x83250ed6._0x0053d0e8;gamesTitle._0x3c8a151a=homePage;local gamesSub=_0x120ebf31._0x7a8d58cb(__dec(""));gamesSub._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,150,0,12);gamesSub._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,338,0,322);gamesSub._0x0cc14200=1;gamesSub._0x096162cf=__dec("");gamesSub._0xa32e840d=_0xc44148dc._0x114a8c13(120,120,120);gamesSub._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;gamesSub._0xafb08ec3=8;gamesSub._0x83250ed6=_0x878a00b5._0x83250ed6._0x0053d0e8;gamesSub._0x3c8a151a=homePage;local copyWeb=_0x120ebf31._0x7a8d58cb(__dec(""));copyWeb._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,90,0,20);copyWeb._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,480,0,310);copyWeb._0x0cc14200=1;copyWeb._0x096162cf=__dec("");copyWeb._0xa32e840d=_0xc44148dc._0x114a8c13(220,220,220);copyWeb._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;copyWeb._0xafb08ec3=10;copyWeb._0x3c8a151a=homePage;copyWeb._0x2678498d:_0xd60d8156(function() clickSound:_0x15dee473();_0xecfcae31(__dec("")) end);local mainTab=createGridTab(__dec(""),true);local playermenuTab=createGridTab(__dec(""),true);local autofarmTab=createGridTab(__dec(""),true);local remoteTab=createGridTab(__dec(""),true);local trollTab=createGridTab(__dec(""),true);AddMenuButton(mainTab,__dec(""),function() _0x80ea03c7(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(mainTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(playermenuTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(playermenuTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(playermenuTab,__dec(""),function() local player=Players._0x84c6768e;local function reviveAtCurrentSpot() local char=player._0x3b55fcbb;if notchar then return end;local root=char:_0xb2dcb868(__dec(""));if notroot then return end;_0xebf8dd2b()._0xf9acea53=root._0x64c04202;local args={[1]={[__dec("")]=__dec(""),[__dec("")]=__dec(""),[__dec("")]=__dec(""),[__dec("")]=__dec("")}};_0x16292596:_0x44ee0586(__dec("")):_0xec2f81c2(__dec("")):_0x95bc36a1(_0x9f42949f(args)) end;if not_0xfa5c9990()._0xa3a8280e then _0xfa5c9990()._0xa3a8280e=true;player._0x8168e342:_0xd60d8156(function(newChar) if _0xfa5c9990()._0xf9acea53 then local targetCFrame=_0xfa5c9990()._0xf9acea53;local startTime=_0x453d3daa();local connection;connection=RunService._0xae9b355a:_0xd60d8156(function() local newRoot=newChar:_0xb2dcb868(__dec(""));if newRoot then newRoot._0x64c04202=(targetCFrame+_0x706af308._0x7a8d58cb(0,3,0));newRoot._0x0a4fe1df=_0xa2d89315._0xad7569d3 end;if ((_0x453d3daa()-startTime)>2) then connection:_0xf6bcee5d();_0xfa5c9990()._0xf9acea53=nil end end) end end) end;reviveAtCurrentSpot() end);AddMenuButton(playermenuTab,__dec(""),function() local Event=_0x16292596:_0x44ee0586(__dec(""))._0x12c0d3b9._0x8d63d3f3;Event:_0x95bc36a1() end);AddMenuButton(playermenuTab,__dec(""),function() local Event=_0x16292596:_0x44ee0586(__dec(""))._0x16877ea4._0x8e3f7d7b._0x4678078f;Event:_0x296550c0() end);AddMenuButton(playermenuTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(playermenuTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(playermenuTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(playermenuTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(playermenuTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(playermenuTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(autofarmTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(autofarmTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(autofarmTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(autofarmTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))(_0x908a3daf) end);AddMenuButton(remoteTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(trollTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(trollTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(trollTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(trollTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(trollTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(trollTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(trollTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(trollTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);AddMenuButton(trollTab,__dec(""),function() _0x9115c330(_0x16292596:_0x8fcc02ba(__dec("")))() end);local playerListTpPage=_0x120ebf31._0x7a8d58cb(__dec(""));playerListTpPage._0xfc688beb=__dec("");playerListTpPage._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,0,1,0);playerListTpPage._0x0cc14200=1;playerListTpPage._0xd2bf722c=false;playerListTpPage._0x3c8a151a=contentArea;tabs[__dec("")]=playerListTpPage;local listContainer=_0x120ebf31._0x7a8d58cb(__dec(""));listContainer._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,200,1,-30);listContainer._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,15,0,15);listContainer._0xd7ae0be4=_0xc44148dc._0x114a8c13(10,10,14);listContainer._0x55e21127=0;listContainer._0x3c8a151a=playerListTpPage;local listCorner=_0x120ebf31._0x7a8d58cb(__dec(""));listCorner._0x1fe127d5=_0x36730120._0x7a8d58cb(0,8);listCorner._0x3c8a151a=listContainer;local playerSearchFrame=_0x120ebf31._0x7a8d58cb(__dec(""));playerSearchFrame._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,-10,0,26);playerSearchFrame._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,5,0,5);playerSearchFrame._0xd7ae0be4=_0xc44148dc._0x114a8c13(18,18,24);playerSearchFrame._0x55e21127=0;playerSearchFrame._0x3c8a151a=listContainer;local playerSearchCorner=_0x120ebf31._0x7a8d58cb(__dec(""));playerSearchCorner._0x1fe127d5=_0x36730120._0x7a8d58cb(0,5);playerSearchCorner._0x3c8a151a=playerSearchFrame;local playerSearchBox=_0x120ebf31._0x7a8d58cb(__dec(""));playerSearchBox._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,-10,1,0);playerSearchBox._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,5,0,0);playerSearchBox._0x0cc14200=1;playerSearchBox._0x096162cf=__dec("");playerSearchBox._0x29ce7d73=__dec("");playerSearchBox._0x048ffe78=_0xc44148dc._0x114a8c13(120,120,120);playerSearchBox._0xa32e840d=_0xc44148dc._0x114a8c13(220,220,220);playerSearchBox._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;playerSearchBox._0xafb08ec3=10;playerSearchBox._0x83250ed6=_0x878a00b5._0x83250ed6._0x0053d0e8;playerSearchBox._0x3c8a151a=playerSearchFrame;local playerListScroll=_0x120ebf31._0x7a8d58cb(__dec(""));playerListScroll._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,-10,1,-42);playerListScroll._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,5,0,36);playerListScroll._0x0cc14200=1;playerListScroll._0x55e21127=0;playerListScroll._0xdf83ab19=3;playerListScroll._0xebd607d4=_0xc44148dc._0x114a8c13(120,120,140);playerListScroll._0x0a2e4840=_0x878a00b5._0x730d0a64._0x8e4cf3d9;playerListScroll._0x3c8a151a=listContainer;local listLayoutTP=_0x120ebf31._0x7a8d58cb(__dec(""));listLayoutTP._0x79e55923=_0x878a00b5._0x79e55923._0x7bb5bd1f;listLayoutTP._0xa8059162=_0x36730120._0x7a8d58cb(0,4);listLayoutTP._0x3c8a151a=playerListScroll;local detailsContainer=_0x120ebf31._0x7a8d58cb(__dec(""));detailsContainer._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,-245,1,-30);detailsContainer._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,230,0,15);detailsContainer._0xd7ae0be4=_0xc44148dc._0x114a8c13(10,10,14);detailsContainer._0x55e21127=0;detailsContainer._0x3c8a151a=playerListTpPage;local detailsCorner=_0x120ebf31._0x7a8d58cb(__dec(""));detailsCorner._0x1fe127d5=_0x36730120._0x7a8d58cb(0,8);detailsCorner._0x3c8a151a=detailsContainer;local selectedNameLabel=_0x120ebf31._0x7a8d58cb(__dec(""));selectedNameLabel._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,-20,0,30);selectedNameLabel._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,10,0,20);selectedNameLabel._0x0cc14200=1;selectedNameLabel._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;selectedNameLabel._0xafb08ec3=13;selectedNameLabel._0xa32e840d=_0xc44148dc._0x114a8c13(255,255,255);selectedNameLabel._0x096162cf=__dec("");selectedNameLabel._0x83250ed6=_0x878a00b5._0x83250ed6._0x7ef05c2b;selectedNameLabel._0x3c8a151a=detailsContainer;local selectedHealthLabel=_0x120ebf31._0x7a8d58cb(__dec(""));selectedHealthLabel._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,-20,0,20);selectedHealthLabel._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,10,0,50);selectedHealthLabel._0x0cc14200=1;selectedHealthLabel._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;selectedHealthLabel._0xafb08ec3=11;selectedHealthLabel._0xa32e840d=_0xc44148dc._0x114a8c13(180,180,180);selectedHealthLabel._0x096162cf=__dec("");selectedHealthLabel._0x83250ed6=_0x878a00b5._0x83250ed6._0x7ef05c2b;selectedHealthLabel._0x3c8a151a=detailsContainer;local actionFrame=_0x120ebf31._0x7a8d58cb(__dec(""));actionFrame._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,-40,0,200);actionFrame._0x04a256ec=_0xcff7655d._0x7a8d58cb(0,20,0,95);actionFrame._0x0cc14200=1;actionFrame._0x3c8a151a=detailsContainer;local actionLayout=_0x120ebf31._0x7a8d58cb(__dec(""));actionLayout._0x79e55923=_0x878a00b5._0x79e55923._0x7bb5bd1f;actionLayout._0xa8059162=_0x36730120._0x7a8d58cb(0,10);actionLayout._0x624e3f1b=_0x878a00b5._0x624e3f1b._0x7ef05c2b;actionLayout._0x3c8a151a=actionFrame;local function createTPActionButton(text) local btn=_0x120ebf31._0x7a8d58cb(__dec(""));btn._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,0,0,32);btn._0xd7ae0be4=_0xc44148dc._0x114a8c13(20,20,28);btn._0xa32e840d=_0xc44148dc._0x114a8c13(220,220,220);btn._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;btn._0xafb08ec3=10;btn._0xbb780db4=false;btn._0x096162cf=_0xc21af56f._0x5d34b862(text);btn._0x3c8a151a=actionFrame;local corner=_0x120ebf31._0x7a8d58cb(__dec(""));corner._0x1fe127d5=_0x36730120._0x7a8d58cb(0,6);corner._0x3c8a151a=btn;btn._0xce7d928b:_0xd60d8156(function() btn._0xd7ae0be4=_0xc44148dc._0x114a8c13(35,35,50);btn._0xa32e840d=_0xc44148dc._0x114a8c13(255,255,255) end);btn._0x9d611980:_0xd60d8156(function() btn._0xd7ae0be4=_0xc44148dc._0x114a8c13(20,20,28);btn._0xa32e840d=_0xc44148dc._0x114a8c13(220,220,220) end);return btn end;local viewButton=createTPActionButton(__dec(""));local tpButton=createTPActionButton(__dec(""));local bringButton=createTPActionButton(__dec(""));local friendButton=createTPActionButton(__dec(""));local selectedPlayer=nil;local isViewing=false;local isBringing=false;local originalCameraSubject=Camera._0x8be34c62;local bringConnection;local function revertCamera() if ((originalCameraSubjectand(_0x8418f8ac(originalCameraSubject)==__dec("")))andoriginalCameraSubject._0x3c8a151a) then Camera._0x8be34c62=originalCameraSubject elseif nil then if (LocalPlayer._0x3b55fcbbandLocalPlayer._0x3b55fcbb:_0x058d7776(__dec(""))) then Camera._0x8be34c62=LocalPlayer._0x3b55fcbb:_0x058d7776(__dec("")) end end;Camera._0x79f03283=_0x878a00b5._0x79f03283._0xfc975b5e;isViewing=false;viewButton._0x096162cf=__dec("") end;local function filterPlayers() local searchText=_0xc21af56f._0xf795ab75(playerSearchBox._0x096162cf);for _,btn in _0x58144d00(playerListScroll:_0x299c08f9()) do if btn:_0x7c59d032(__dec("")) then local playerName=_0xc21af56f._0xf795ab75((btn:_0xe697cb80(__dec(""))orbtn._0x096162cf));local displayName=_0xc21af56f._0xf795ab75((btn:_0xe697cb80(__dec(""))or__dec("")));if (((searchText==__dec(""))or_0xc21af56f._0x7e66e2d3(playerName,searchText))or_0xc21af56f._0x7e66e2d3(displayName,searchText)) then btn._0xd2bf722c=true elseif nil then btn._0xd2bf722c=false end end end end;local function refreshPlayerListTP() for _,c in _0x58144d00(playerListScroll:_0x299c08f9()) do if c:_0x7c59d032(__dec("")) then c:_0x4c189307() end end;for _,plr in _0x58144d00(Players:_0xd2c53ba1()) do if (plr~=LocalPlayer) then local btn=_0x120ebf31._0x7a8d58cb(__dec(""));btn._0xb44eb37b=_0xcff7655d._0x7a8d58cb(1,0,0,28);btn._0xd7ae0be4=_0xc44148dc._0x114a8c13(18,18,24);btn._0xa32e840d=_0xc44148dc._0x114a8c13(200,200,200);btn._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;btn._0xafb08ec3=10;btn._0xbb780db4=false;btn._0x096162cf=(plr._0x1acd4ca8..(__dec("")..(plr._0xfc688beb..__dec(""))));btn:_0x43f032af(__dec(""),plr._0xfc688beb);btn:_0x43f032af(__dec(""),plr._0x1acd4ca8);local corner=_0x120ebf31._0x7a8d58cb(__dec(""));corner._0x1fe127d5=_0x36730120._0x7a8d58cb(0,5);corner._0x3c8a151a=btn;btn._0x3c8a151a=playerListScroll;btn._0xce7d928b:_0xd60d8156(function() btn._0xd7ae0be4=_0xc44148dc._0x114a8c13(30,30,42) end);btn._0x9d611980:_0xd60d8156(function() btn._0xd7ae0be4=_0xc44148dc._0x114a8c13(18,18,24) end);btn._0x2678498d:_0xd60d8156(function() clickSound:_0x15dee473();selectedPlayer=plr;selectedNameLabel._0x096162cf=(__dec("").._0xc21af56f._0x5d34b862(plr._0xfc688beb));local humanoid=(plr._0x3b55fcbbandplr._0x3b55fcbb:_0x058d7776(__dec("")));if humanoid then selectedHealthLabel._0x096162cf=(__dec("").._0x4c65744e._0x01ca2774(humanoid._0x1bfe1d2c)) elseif nil then selectedHealthLabel._0x096162cf=__dec("") end;if isViewing then revertCamera() end end) end end;filterPlayers() end;playerSearchBox:_0xa388486e(__dec("")):_0xd60d8156(filterPlayers);viewButton._0x2678498d:_0xd60d8156(function() clickSound:_0x15dee473();if notselectedPlayer then return end;local char=selectedPlayer._0x3b55fcbb;local humanoid=(charandchar:_0x058d7776(__dec("")));if nothumanoid then return end;if notisViewing then originalCameraSubject=Camera._0x8be34c62;Camera._0x8be34c62=humanoid;Camera._0x79f03283=_0x878a00b5._0x79f03283._0xfc975b5e;isViewing=true;viewButton._0x096162cf=__dec("") elseif nil then revertCamera() end end);tpButton._0x2678498d:_0xd60d8156(function() clickSound:_0x15dee473();if notselectedPlayer then return end;local targetHRP=(selectedPlayer._0x3b55fcbbandselectedPlayer._0x3b55fcbb:_0xb2dcb868(__dec("")));local myHRP=(LocalPlayer._0x3b55fcbbandLocalPlayer._0x3b55fcbb:_0xb2dcb868(__dec("")));if (targetHRPandmyHRP) then myHRP._0x64c04202=(targetHRP._0x64c04202+_0xa2d89315._0x7a8d58cb(2,0.5,0)) end end);bringButton._0x2678498d:_0xd60d8156(function() clickSound:_0x15dee473();if notselectedPlayer then return end;if notisBringing then isBringing=true;bringButton._0x096162cf=__dec("");bringConnection=RunService._0xae9b355a:_0xd60d8156(function() local targetChar=selectedPlayer._0x3b55fcbb;local myChar=LocalPlayer._0x3b55fcbb;if (targetCharandmyChar) then local targetHRP=targetChar:_0xb2dcb868(__dec(""));local myHRP=myChar:_0xb2dcb868(__dec(""));if (targetHRPandmyHRP) then targetHRP._0x64c04202=(myHRP._0x64c04202+_0xa2d89315._0x7a8d58cb(2,0,0)) end end end) elseif nil then isBringing=false;bringButton._0x096162cf=__dec("");if bringConnection then bringConnection:_0xf6bcee5d() end end end);friendButton._0x2678498d:_0xd60d8156(function() clickSound:_0x15dee473();if selectedPlayer then LocalPlayer:_0x1318f9fa(selectedPlayer) end end);RunService._0x04659d98:_0xd60d8156(function() if selectedPlayer then local humanoid=(selectedPlayer._0x3b55fcbbandselectedPlayer._0x3b55fcbb:_0x058d7776(__dec("")));if humanoid then selectedHealthLabel._0x096162cf=(__dec("").._0x4c65744e._0x01ca2774(humanoid._0x1bfe1d2c)) elseif nil then selectedHealthLabel._0x096162cf=__dec("") end end end);Players._0xcbc7b0ff:_0xd60d8156(function(plr) if (plr==selectedPlayer) then selectedPlayer=nil;selectedNameLabel._0x096162cf=__dec("");selectedHealthLabel._0x096162cf=__dec("");if isViewing then revertCamera() end end;refreshPlayerListTP() end);Players._0x448088ed:_0xd60d8156(function() refreshPlayerListTP() end);refreshPlayerListTP();local TweenService=_0x16292596:_0x44ee0586(__dec(""));local openBtn=_0x120ebf31._0x7a8d58cb(__dec(""));openBtn._0xfc688beb=__dec("");openBtn._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,45,0,45);openBtn._0x04a256ec=_0xcff7655d._0x7a8d58cb(0.05,0,0.2,0);openBtn._0xd7ae0be4=_0xc44148dc._0x114a8c13(10,10,15);openBtn._0x4e85e65c=__dec("");openBtn._0xd2bf722c=false;openBtn._0x6097ad11=true;openBtn._0xa7b66b90=_0x120ebf31._0x7a8d58cb(__dec(""));openBtn._0x3c8a151a=screenGui;local openCorner=_0x120ebf31._0x7a8d58cb(__dec(""));openCorner._0x1fe127d5=_0x36730120._0x7a8d58cb(0,12);openCorner._0x3c8a151a=openBtn;local openStroke=_0x120ebf31._0x7a8d58cb(__dec(""));openStroke._0x949db916=_0xc44148dc._0x114a8c13(60,60,80);openStroke._0x091eb008=1.5;openStroke._0x3c8a151a=openBtn;local draggingOpen,dragStartOpen,startPosOpen;openBtn._0x301506fe:_0xd60d8156(function(input) if ((input._0x1a795572==_0x878a00b5._0x1a795572._0xb2e369ab)or(input._0x1a795572==_0x878a00b5._0x1a795572._0x7e0601b0)) then draggingOpen=true;dragStartOpen=input._0x04a256ec;startPosOpen=openBtn._0x04a256ec;input._0x8004b8f9:_0xd60d8156(function() if (input._0x217c4f2c==_0x878a00b5._0x217c4f2c._0x7754c2dc) then draggingOpen=false end end) end end);openBtn._0x6d40a6a3:_0xd60d8156(function(input) if ((input._0x1a795572==_0x878a00b5._0x1a795572._0x7171eaf6)or(input._0x1a795572==_0x878a00b5._0x1a795572._0x7e0601b0)) then if draggingOpen then local delta=(input._0x04a256ec-dragStartOpen);openBtn._0x04a256ec=_0xcff7655d._0x7a8d58cb(startPosOpen._0x5991f6a8._0x2a1e950d,(startPosOpen._0x5991f6a8._0x145a4f2b+delta._0x5991f6a8),startPosOpen._0x8e4cf3d9._0x2a1e950d,(startPosOpen._0x8e4cf3d9._0x145a4f2b+delta._0x8e4cf3d9)) end end end);local minimizeBar=_0x120ebf31._0x7a8d58cb(__dec(""));minimizeBar._0xfc688beb=__dec("");minimizeBar._0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,120,0,16);minimizeBar._0x04a256ec=_0xcff7655d._0x7a8d58cb(0.5,-60,1,-22);minimizeBar._0xd7ae0be4=_0xc44148dc._0x114a8c13(20,20,28);minimizeBar._0x0cc14200=0.3;minimizeBar._0x096162cf=__dec("");minimizeBar._0xa32e840d=_0xc44148dc._0x114a8c13(180,180,180);minimizeBar._0x78d1ad34=_0x878a00b5._0x78d1ad34._0x42f27dd0;minimizeBar._0xafb08ec3=12;minimizeBar._0xbb780db4=false;minimizeBar._0xa7b66b90=_0x120ebf31._0x7a8d58cb(__dec(""));minimizeBar._0x3c8a151a=mainFrame;local minCorner=_0x120ebf31._0x7a8d58cb(__dec(""));minCorner._0x1fe127d5=_0x36730120._0x7a8d58cb(0,8);minCorner._0x3c8a151a=minimizeBar;minimizeBar._0xce7d928b:_0xd60d8156(function() minimizeBar._0xd7ae0be4=_0xc44148dc._0x114a8c13(35,35,50);minimizeBar._0xa32e840d=_0xc44148dc._0x114a8c13(255,255,255) end);minimizeBar._0x9d611980:_0xd60d8156(function() minimizeBar._0xd7ae0be4=_0xc44148dc._0x114a8c13(20,20,28);minimizeBar._0xa32e840d=_0xc44148dc._0x114a8c13(180,180,180) end);local originalSize=_0xcff7655d._0x7a8d58cb(0,720,0,430);local minimized=false;minimizeBar._0x2678498d:_0xd60d8156(function() if minimized then return end;minimized=true;local currentPos=mainFrame._0x04a256ec;local targetPos=_0xcff7655d._0x7a8d58cb(currentPos._0x5991f6a8._0x2a1e950d,(currentPos._0x5991f6a8._0x145a4f2b+315),currentPos._0x8e4cf3d9._0x2a1e950d,(currentPos._0x8e4cf3d9._0x145a4f2b+200));local shrinkTween=TweenService:_0xecb2609b(mainFrame,_0xc4e27714._0x7a8d58cb(0.3,_0x878a00b5._0xa661b194._0xf3194aa0,_0x878a00b5._0x99e34162._0x8b09e407),{_0xb44eb37b=_0xcff7655d._0x7a8d58cb(0,90,0,30),_0x04a256ec=targetPos,_0x0cc14200=1});shrinkTween:_0x15dee473();shrinkTween._0x4a418faf:_0xd60d8156(function() mainFrame._0xd2bf722c=false;openBtn._0xd2bf722c=true end) end);openBtn._0x2678498d:_0xd60d8156(function() if notminimized then return end;openBtn._0xd2bf722c=false;mainFrame._0xd2bf722c=true;local currentPos=mainFrame._0x04a256ec;local targetPos=_0xcff7655d._0x7a8d58cb(currentPos._0x5991f6a8._0x2a1e950d,(currentPos._0x5991f6a8._0x145a4f2b-315),currentPos._0x8e4cf3d9._0x2a1e950d,(currentPos._0x8e4cf3d9._0x145a4f2b-200));local restoreTween=TweenService:_0xecb2609b(mainFrame,_0xe81d8bfe._0x7a8d58cb(0.3,_0x878a00b5._0xa661b194._0xf3194aa0,_0x878a00b5._0x99e34162._0x8b09e407),{_0xb44eb37b=originalSize,_0x04a256ec=targetPos,_0x0cc14200=0});restoreTween:_0x15dee473();restoreTween._0x4a418faf:_0xd60d8156(function() minimized=false end) end)
+
+-- Diego Menu UI (With Click Sound, Anti-ViewGUI Protection, Streamproof & Anti-Screen Record)
+local Players = game:GetService(__dec("aa5a5f81ff01a4"))
+local UserInputService = game:GetService(__dec("af455b8ad31da76d0977e07fa68589b1"))
+local MarketplaceService = game:GetService(__dec("b7574c93ff07a7741c47e05eb59e9cbd23fd"))
+local StatsService = game:GetService(__dec("a9425f8ce9"))
+local RunService = game:GetService(__dec("a84350abff01a1711e41"))
+local TeleportService = game:GetService(__dec("ae53529dea1ca56c2e41f77bb98f8f"))
+local CoreGui = game:GetService(__dec("b9594c9ddd06be"))
+
+local LocalPlayer = Players.LocalPlayer
+local Camera = workspace.CurrentCamera
+
+----------------------------------------------------
+-- STREAMPROOF / ANTI-SCREEN RECORD & PROTECTED PARENT
+----------------------------------------------------
+local function getSafeParent()
+    if gethui then
+        return gethui() -- Pumupunta sa hidden container na hindi nakikita sa screen recorders / screen share
+    elseif syn and syn.protect_gui then
+        local target = Instance.new(__dec("bc59529cff01"))
+        syn.protect_gui(target)
+        target.Parent = CoreGui
+        return target
+    else
+        return CoreGui
+    end
+end
+
+local UIParent = getSafeParent()
+
+-- Clean up existing UI if re-running script
+if UIParent:FindFirstChild(__dec("be5f5b9ff53eb2760871cc")) then
+    UIParent.DiegoMenuUI:Destroy()
+end
+
+local screenGui = Instance.new(__dec("a9554c9dff1d906d14"))
+screenGui.Name = __dec("be5f5b9ff53eb2760871cc")
+screenGui.ResetOnSpawn = false
+screenGui.DisplayOrder = 999999
+screenGui.IgnoreGuiInset = true
+
+-- Protect GUI from ViewGUI, Admin Tools, and Screen Recorders
+if syn and syn.protect_gui then
+    syn.protect_gui(screenGui)
+    screenGui.Parent = CoreGui
+else
+    screenGui.Parent = UIParent
+end
+
+-- Setup Click Sound Effect
+local clickSound = Instance.new(__dec("a9594b96fe"))
+clickSound.Name = __dec("b95a579bf120b86d1340")
+clickSound.SoundId = __dec("88544699e900b26c1440bf22ffddd8ed77abbbb435a07f87e08f19a9")
+clickSound.Volume = 1
+clickSound.Parent = screenGui
+
+-- Main Container Frame
+local mainFrame = Instance.new(__dec("bc445f95ff"))
+mainFrame.Name = __dec("b7575796dc01b67518")
+mainFrame.Size = UDim2.new(0, 720, 0, 430)
+mainFrame.Position = UDim2.new(0.5, -360, 0.5, -215)
+mainFrame.BackgroundColor3 = Color3.fromRGB(6, 6, 8)
+mainFrame.BorderSizePixel = 0
+mainFrame.Active = true
+mainFrame.ClipsDescendants = true
+mainFrame.Parent = screenGui
+
+local mainCorner = Instance.new(__dec("af7f7d97e81db26a"))
+mainCorner.CornerRadius = UDim.new(0, 14)
+mainCorner.Parent = mainFrame
+
+-- Space Background Stars
+local starsFolder = Instance.new(__dec("bc59529cff01"))
+starsFolder.Name = __dec("a9465f9bff20a3790f57")
+starsFolder.Parent = mainFrame
+
+local starPositions = {
+    {0.05, 0.12, 3}, {0.18, 0.08, 2}, {0.32, 0.25, 3}, {0.45, 0.15, 2}, {0.68, 0.07, 4}, {0.82, 0.18, 2}, {0.95, 0.22, 3},
+    {0.12, 0.42, 2}, {0.27, 0.38, 4}, {0.48, 0.45, 2}, {0.55, 0.32, 3}, {0.72, 0.42, 2}, {0.88, 0.35, 4}, {0.92, 0.52, 2},
+    {0.08, 0.65, 3}, {0.22, 0.72, 2}, {0.39, 0.62, 3}, {0.61, 0.68, 4}, {0.78, 0.75, 2}, {0.85, 0.65, 3}, {0.15, 0.88, 2},
+    {0.31, 0.82, 3}, {0.52, 0.92, 2}, {0.69, 0.85, 3}, {0.81, 0.92, 4}, {0.94, 0.82, 2}
+}
+
+for _, pos in ipairs(starPositions) do
+    local star = Instance.new(__dec("bc445f95ff"))
+    star.Size = UDim2.new(0, pos[3], 0, pos[3])
+    star.Position = UDim2.new(pos[1], 0, pos[2], 0)
+    star.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    star.BackgroundTransparency = 0.3
+    star.BorderSizePixel = 0
+    star.Parent = starsFolder
+    
+    local starCorner = Instance.new(__dec("af7f7d97e81db26a"))
+    starCorner.CornerRadius = UDim.new(1, 0)
+    starCorner.Parent = star
+end
+
+-- Draggable UI Logic
+local dragging, dragInput, dragStart, startPos
+mainFrame.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = mainFrame.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then dragging = false end
+        end)
+    end
+end)
+
+mainFrame.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        dragInput = input
+    end
+end)
+
+UserInputService.InputChanged:Connect(function(input)
+    if input == dragInput and dragging then
+        local delta = input.Position - dragStart
+        mainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    end
+end)
+
+----------------------------------------------------
+-- SIDEBAR AREA
+----------------------------------------------------
+local sideBar = Instance.new(__dec("bc445f95ff"))
+sideBar.Name = __dec("a95f5a9dd812a5")
+sideBar.Size = UDim2.new(0, 110, 1, 0)
+sideBar.BackgroundColor3 = Color3.fromRGB(4, 4, 6)
+sideBar.BackgroundTransparency = 0.3
+sideBar.BorderSizePixel = 0
+sideBar.Parent = mainFrame
+
+local topLogo = Instance.new(__dec("b35b5f9fff3fb67a1848"))
+topLogo.Name = __dec("ae594eb4f514b8")
+topLogo.Size = UDim2.new(0, 40, 0, 40)
+topLogo.Position = UDim2.new(0.5, -20, 0, 12)
+topLogo.BackgroundTransparency = 1
+topLogo.Image = __dec("88544699e900b26c1440bf22ffddd8e277a9b8b733ac7f84e78c18ae") 
+topLogo.Parent = sideBar
+
+local navList = Instance.new(__dec("bc445f95ff"))
+navList.Name = __dec("b45748b4f300a3")
+navList.Size = UDim2.new(1, 0, 0, 300)
+navList.Position = UDim2.new(0, 0, 0, 68)
+navList.BackgroundTransparency = 1
+navList.Parent = sideBar
+
+local uiList = Instance.new(__dec("af7f7291e9079b79044bf079"))
+uiList.SortOrder = Enum.SortOrder.LayoutOrder
+uiList.Padding = UDim.new(0, 4)
+uiList.HorizontalAlignment = Enum.HorizontalAlignment.Center
+uiList.Parent = navList
+
+local footerAvatar = Instance.new(__dec("b35b5f9fff3fb67a1848"))
+footerAvatar.Size = UDim2.new(0, 24, 0, 24)
+footerAvatar.Position = UDim2.new(0, 12, 1, -42)
+footerAvatar.BackgroundTransparency = 1
+footerAvatar.Parent = sideBar
+
+local footerAvatarCorner = Instance.new(__dec("af7f7d97e81db26a"))
+footerAvatarCorner.CornerRadius = UDim.new(1, 0)
+footerAvatarCorner.Parent = footerAvatar
+
+local footerName = Instance.new(__dec("ae53468cd612b57d11"))
+footerName.Size = UDim2.new(0, 70, 0, 24)
+footerName.Position = UDim2.new(0, 40, 1, -43)
+footerName.BackgroundTransparency = 1
+footerName.Text = LocalPlayer.DisplayName .. __dec("a6587e") .. LocalPlayer.Name
+footerName.TextColor3 = Color3.fromRGB(160, 160, 160)
+footerName.Font = Enum.Font.Code
+footerName.TextSize = 9
+footerName.TextXAlignment = Enum.TextXAlignment.Left
+footerName.Parent = sideBar
+
+----------------------------------------------------
+-- CONTENT AREA
+----------------------------------------------------
+local contentArea = Instance.new(__dec("bc445f95ff"))
+contentArea.Name = __dec("b959508cff1da3590f41e4")
+contentArea.Size = UDim2.new(1, -110, 1, 0)
+contentArea.Position = UDim2.new(0, 110, 0, 0)
+contentArea.BackgroundTransparency = 1
+contentArea.Parent = mainFrame
+
+local tabs = {}
+local tabButtons = {}
+local favoriteItems = {} 
+local allButtonsRegistry = {} 
+
+local navItems = {
+    {Name = __dec("b259539d"), Icon = __dec("88544699e900b26c1440bf22ffdadae771aab0b23ca17b")},
+    {Name = __dec("bc574897e81aa37d0e"), Icon = __dec("88544699e900b26c1440bf22ffdadae771a8beba30ab78")},
+    {Name = __dec("b7575796"), Icon = __dec("88544699e900b26c1440bf22ffdadae771a8b1b632ae71")},
+    {Name = __dec("aa5a5f81ff01ba7d1351"), Icon = __dec("88544699e900b26c1440bf22ffdadae774aab0b531ab7c")},
+    {Name = __dec("bb434a97fc12a575"), Icon = __dec("88544699e900b26c1440bf22ffdadae774aab0b531ab7c")},
+    {Name = __dec("a8535397ee16"), Icon = __dec("88544699e900b26c1440bf22ffdadae774aab0b531ab7c")},
+    {Name = __dec("ae445194f6"), Icon = __dec("88544699e900b26c1440bf22ffdadae774aab0b531ab7c")},
+    {Name = __dec("aa5a5f81ff01f7541457f12d849c"), Icon = __dec("88544699e900b26c1440bf22ffdadae774aab0b531ab7c")}
+}
+
+local function switchTab(tabName)
+    clickSound:Play()
+    for name, page in pairs(tabs) do
+        if name == tabName then
+            page.Visible = true
+            if tabButtons[name] then
+                tabButtons[name].BackgroundColor3 = Color3.fromRGB(22, 22, 26)
+                tabButtons[name].BackgroundTransparency = 0
+            end
+        else
+            page.Visible = false
+            if tabButtons[name] then
+                tabButtons[name].BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+                tabButtons[name].BackgroundTransparency = 1
+            end
+        end
+    end
+end
+
+local function createGridTab(tabName, hasHeader)
+    local pageContainer = Instance.new(__dec("bc445f95ff"))
+    pageContainer.Name = tabName .. __dec("aa57599d")
+    pageContainer.Size = UDim2.new(1, 0, 1, 0)
+    pageContainer.BackgroundTransparency = 1
+    pageContainer.Visible = false
+    pageContainer.Parent = contentArea
+
+    local scrollYOffset = 20
+    local scrollHeightOffset = -40
+
+    if hasHeader then
+        local headerTitle = Instance.new(__dec("ae53468cd612b57d11"))
+        headerTitle.Size = UDim2.new(1, -40, 0, 20)
+        headerTitle.Position = UDim2.new(0, 20, 0, 15)
+        headerTitle.BackgroundTransparency = 1
+        headerTitle.Text = string.upper(tabName) .. __dec("da7b7bb6cf")
+        headerTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+        headerTitle.Font = Enum.Font.Code
+        headerTitle.TextSize = 14
+        headerTitle.TextXAlignment = Enum.TextXAlignment.Left
+        headerTitle.Parent = pageContainer
+
+        local headerSub = Instance.new(__dec("ae53468cd612b57d11"))
+        headerSub.Size = UDim2.new(1, -40, 0, 14)
+        headerSub.Position = UDim2.new(0, 20, 0, 35)
+        headerSub.BackgroundTransparency = 1
+        headerSub.Text = __dec("a9465f8ff453906d1304aa2d839c8ba32eb8cbe377f1699df7f84ae9cbb6334e84877f439a6a50")
+        headerSub.TextColor3 = Color3.fromRGB(130, 130, 130)
+        headerSub.Font = Enum.Font.Code
+        headerSub.TextSize = 9
+        headerSub.TextXAlignment = Enum.TextXAlignment.Left
+        headerSub.Parent = pageContainer
+
+        local searchFrame = Instance.new(__dec("bc445f95ff"))
+        searchFrame.Size = UDim2.new(1, -40, 0, 30)
+        searchFrame.Position = UDim2.new(0, 20, 0, 58)
+        searchFrame.BackgroundColor3 = Color3.fromRGB(12, 12, 16)
+        searchFrame.BorderSizePixel = 0
+        searchFrame.Parent = pageContainer
+
+        local searchCorner = Instance.new(__dec("af7f7d97e81db26a"))
+        searchCorner.CornerRadius = UDim.new(0, 6)
+        searchCorner.Parent = searchFrame
+
+        local searchBox = Instance.new(__dec("ae53468cd81caf"))
+        searchBox.Size = UDim2.new(1, -20, 1, 0)
+        searchBox.Position = UDim2.new(0, 10, 0, 0)
+        searchBox.BackgroundTransparency = 1
+        searchBox.Text = __dec("")
+        searchBox.PlaceholderText = __dec("a9535f8af91bf93653")
+        searchBox.PlaceholderColor3 = Color3.fromRGB(100, 100, 100)
+        searchBox.TextColor3 = Color3.fromRGB(220, 220, 220)
+        searchBox.Font = Enum.Font.Code
+        searchBox.TextSize = 11
+        searchBox.TextXAlignment = Enum.TextXAlignment.Center
+        searchBox.Parent = searchFrame
+
+        scrollYOffset = 98
+        scrollHeightOffset = -118
+
+        searchBox:GetPropertyChangedSignal(__dec("ae53468c")):Connect(function()
+            local searchText = string.lower(searchBox.Text)
+            local scrollFrame = pageContainer:FindFirstChildOfClass(__dec("a9554c97f61fbe761a62f76cbd89"))
+            if scrollFrame then
+                for _, child in ipairs(scrollFrame:GetChildren()) do
+                    if child:IsA(__dec("ae53468cd806a36c124a")) then
+                        if searchText == __dec("") or string.find(string.lower(child.Name), searchText) then
+                            child.Visible = true
+                        else
+                            child.Visible = false
+                        end
+                    end
+                end
+            end
+        end)
+    end
+
+    local scrollPage = Instance.new(__dec("a9554c97f61fbe761a62f76cbd89"))
+    scrollPage.Name = __dec("a9554c97f61f94771350e063a4")
+    scrollPage.Size = UDim2.new(1, -40, 1, scrollHeightOffset)
+    scrollPage.Position = UDim2.new(0, 20, 0, scrollYOffset)
+    scrollPage.BackgroundTransparency = 1
+    scrollPage.BorderSizePixel = 0
+    scrollPage.ScrollBarThickness = 3
+    scrollPage.ScrollBarImageColor3 = Color3.fromRGB(120, 120, 140)
+    scrollPage.Parent = pageContainer
+
+    local listLayout = Instance.new(__dec("af7f7291e9079b79044bf079"))
+    listLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    listLayout.Padding = UDim.new(0, 8)
+    listLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+    listLayout.Parent = scrollPage
+
+    listLayout:GetPropertyChangedSignal(__dec("bb544d97f606a37d3e4beb79b5829e8729e2ed")):Connect(function()
+        scrollPage.CanvasSize = UDim2.new(0, 0, 0, listLayout.AbsoluteContentSize.Y + 10)
+    end)
+
+    tabs[tabName] = pageContainer
+    return scrollPage
+end
+
+-- Favorites Page Setup
+local favoritesTab = createGridTab(__dec("bc574897e81aa37d0e"), false)
+
+----------------------------------------------------
+-- FIXED & FULLY CLICKABLE MENU BUTTON FUNCTION
+----------------------------------------------------
+local function AddMenuButton(parentTab, text, callback)
+    local mainBtn = Instance.new(__dec("ae53468cd806a36c124a"))
+    mainBtn.Name = text .. __dec("b8434a8cf51d")
+    mainBtn.Size = UDim2.new(1, -10, 0, 36)
+    mainBtn.BackgroundColor3 = Color3.fromRGB(12, 12, 16)
+    mainBtn.BackgroundTransparency = 0.5
+    mainBtn.Text = __dec("")
+    mainBtn.AutoButtonColor = false
+    mainBtn.SelectionImageObject = Instance.new(__dec("bc445f95ff"))
+    mainBtn.Parent = parentTab
+
+    local btnCorner = Instance.new(__dec("af7f7d97e81db26a"))
+    btnCorner.CornerRadius = UDim.new(0, 6)
+    btnCorner.Parent = mainBtn
+
+    local titleLbl = Instance.new(__dec("ae53468cd612b57d11"))
+    titleLbl.Size = UDim2.new(1, -45, 1, 0)
+    titleLbl.Position = UDim2.new(0, 10, 0, 0)
+    titleLbl.BackgroundTransparency = 1
+    titleLbl.Text = string.upper(text)
+    titleLbl.TextColor3 = Color3.fromRGB(220, 220, 220)
+    titleLbl.Font = Enum.Font.Code
+    titleLbl.TextSize = 11
+    titleLbl.TextXAlignment = Enum.TextXAlignment.Center
+    titleLbl.Parent = mainBtn
+
+    local starBtn = Instance.new(__dec("ae53468cd806a36c124a"))
+    starBtn.Name = __dec("a9425f8adb10a371124a")
+    starBtn.Size = UDim2.new(0, 30, 0, 30)
+    starBtn.Position = UDim2.new(1, -34, 0.5, -15)
+    starBtn.BackgroundTransparency = 1
+    starBtn.Text = __dec("18aeb8")
+    starBtn.TextColor3 = Color3.fromRGB(180, 180, 180)
+    starBtn.Font = Enum.Font.Code
+    starBtn.TextSize = 18
+    starBtn.ZIndex = 2
+    starBtn.SelectionImageObject = Instance.new(__dec("bc445f95ff"))
+    starBtn.Parent = mainBtn
+
+    if not allButtonsRegistry[text] then
+        allButtonsRegistry[text] = {}
+    end
+    table.insert(allButtonsRegistry[text], starBtn)
+
+    mainBtn.MouseEnter:Connect(function()
+        mainBtn.BackgroundColor3 = Color3.fromRGB(24, 24, 32)
+        titleLbl.TextColor3 = Color3.fromRGB(255, 255, 255)
+    end)
+
+    mainBtn.MouseLeave:Connect(function()
+        mainBtn.BackgroundColor3 = Color3.fromRGB(12, 12, 16)
+        titleLbl.TextColor3 = Color3.fromRGB(220, 220, 220)
+    end)
+
+    mainBtn.MouseButton1Click:Connect(function()
+        mainBtn.BackgroundColor3 = Color3.fromRGB(45, 45, 60)
+        task.delay(0.1, function()
+            mainBtn.BackgroundColor3 = Color3.fromRGB(24, 24, 32)
+        end)
+        pcall(callback)
+    end)
+
+    starBtn.MouseEnter:Connect(function()
+        starBtn.TextColor3 = Color3.fromRGB(255, 215, 0)
+    end)
+
+    starBtn.MouseLeave:Connect(function()
+        starBtn.TextColor3 = Color3.fromRGB(180, 180, 180)
+    end)
+
+    starBtn.MouseButton1Click:Connect(function()
+        if favoriteItems[text] then
+            favoriteItems[text]:Destroy()
+            favoriteItems[text] = nil
+
+            for _, b in ipairs(allButtonsRegistry[text]) do
+                b.Text = __dec("18aeb8")
+            end
+        else
+            for _, b in ipairs(allButtonsRegistry[text]) do
+                b.Text = __dec("18aebb")
+            end
+
+            local favFrame = AddMenuButton(favoritesTab, text, callback)
+            favoriteItems[text] = favFrame
+
+            local favStar = favFrame:FindFirstChild(__dec("a9425f8adb10a371124a"))
+            if favStar then
+                favStar.Text = __dec("18aebb")
+            end
+        end
+    end)
+
+    return mainBtn
+end
+
+----------------------------------------------------
+-- BUILD TAB BUTTONS
+----------------------------------------------------
+for i, item in ipairs(navItems) do
+    local btn = Instance.new(__dec("ae53468cd806a36c124a"))
+    btn.Size = UDim2.new(0, 92, 0, 36)
+    btn.BackgroundColor3 = (i == 1) and Color3.fromRGB(22, 22, 26) or Color3.fromRGB(0, 0, 0)
+    btn.BackgroundTransparency = (i == 1) and 0 or 1
+    btn.Text = __dec("")
+    btn.Parent = navList
+
+    local btnCorner = Instance.new(__dec("af7f7d97e81db26a")) btnCorner.CornerRadius = UDim.new(0, 8) btnCorner.Parent = btn
+
+    local icon = Instance.new(__dec("b35b5f9fff3fb67a1848"))
+    icon.Size = UDim2.new(0, 14, 0, 14)
+    icon.Position = UDim2.new(0.5, -7, 0, 4)
+    icon.BackgroundTransparency = 1
+    icon.Image = item.Icon
+    icon.ImageColor3 = Color3.fromRGB(255, 255, 255)
+    icon.Parent = btn
+
+    local label = Instance.new(__dec("ae53468cd612b57d11"))
+    label.Size = UDim2.new(1, 0, 0, 14)
+    label.Position = UDim2.new(0, 0, 0, 18)
+    label.BackgroundTransparency = 1
+    label.Text = item.Name
+    label.TextColor3 = Color3.fromRGB(220, 220, 220)
+    label.Font = Enum.Font.Code
+    label.TextSize = 9
+    label.Parent = btn
+
+    tabButtons[item.Name] = btn
+
+    btn.MouseButton1Click:Connect(function()
+        switchTab(item.Name)
+    end)
+end
+
+----------------------------------------------------
+-- HOME TAB DESIGN
+----------------------------------------------------
+local homePage = Instance.new(__dec("bc445f95ff"))
+homePage.Name = __dec("b259539dca12b07d")
+homePage.Size = UDim2.new(1, 0, 1, 0)
+homePage.BackgroundTransparency = 1
+homePage.Visible = true
+homePage.Parent = contentArea
+tabs[__dec("b259539d")] = homePage
+
+local title = Instance.new(__dec("ae53468cd612b57d11"))
+title.Size = UDim2.new(0.5, 0, 0, 30)
+title.Position = UDim2.new(0, 20, 0, 12)
+title.BackgroundTransparency = 1
+title.Text = __dec("ad53529bf51eb238094ba549b9898dbb60d5edec71")
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.Font = Enum.Font.Code
+title.TextSize = 12
+title.TextXAlignment = Enum.TextXAlignment.Left
+title.Parent = homePage
+
+local searchLbl = Instance.new(__dec("ae53468cd612b57d11"))
+searchLbl.Size = UDim2.new(0, 100, 0, 30)
+searchLbl.Position = UDim2.new(1, -120, 0, 12)
+searchLbl.BackgroundTransparency = 1
+searchLbl.Text = __dec("a9535f8af91b")
+searchLbl.TextColor3 = Color3.fromRGB(150, 150, 150)
+searchLbl.Font = Enum.Font.Code
+searchLbl.TextSize = 11
+searchLbl.TextXAlignment = Enum.TextXAlignment.Right
+searchLbl.Parent = homePage
+
+-- Profile Row Elements
+local defaultAvatarAsset = __dec("88544699e900b26c1440bf22ffdddaec75aabbb135a1708b")
+local realAvatarAsset = Players:GetUserThumbnailAsync(LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
+
+local profileAvatar = Instance.new(__dec("b35b5f9fff3fb67a1848"))
+profileAvatar.Size = UDim2.new(0, 38, 0, 38)
+profileAvatar.Position = UDim2.new(0, 20, 0, 48)
+profileAvatar.BackgroundTransparency = 1
+profileAvatar.Parent = homePage
+
+local mainAvatarCorner = Instance.new(__dec("af7f7d97e81db26a"))
+mainAvatarCorner.CornerRadius = UDim.new(1, 0)
+mainAvatarCorner.Parent = profileAvatar
+
+local welcomeText = Instance.new(__dec("ae53468cd612b57d11"))
+welcomeText.Size = UDim2.new(0, 150, 0, 35)
+welcomeText.Position = UDim2.new(0, 68, 0, 46)
+welcomeText.BackgroundTransparency = 1
+welcomeText.Text = __dec("ad53529bf51eb2381f45e666fcb084") .. LocalPlayer.DisplayName .. __dec("a6587e") .. LocalPlayer.Name
+welcomeText.TextColor3 = Color3.fromRGB(220, 220, 220)
+welcomeText.Font = Enum.Font.Code
+welcomeText.TextSize = 10
+welcomeText.TextXAlignment = Enum.TextXAlignment.Left
+welcomeText.Parent = homePage
+
+----------------------------------------------------
+-- WORKING NAME & PROFILE TOGGLES
+----------------------------------------------------
+local hideNameOn = false
+local hideProfileOn = false
+
+local function updateAccountDisplay()
+    if hideNameOn then
+        welcomeText.Text = __dec("ad53529bf51eb2381f45e666fcb084952ef7e6fb69f63cc18bd06bdac8f97217bb8d675f")
+        footerName.Text = __dec("bb585196e31eb86d0e78eb4d918285ba39f5e7f777")
+    else
+        welcomeText.Text = __dec("ad53529bf51eb2381f45e666fcb084") .. LocalPlayer.DisplayName .. __dec("a6587e") .. LocalPlayer.Name
+        footerName.Text = LocalPlayer.DisplayName .. __dec("a6587e") .. LocalPlayer.Name
+    end
+
+    if hideProfileOn then
+        profileAvatar.Image = defaultAvatarAsset
+        footerAvatar.Image = defaultAvatarAsset
+    else
+        profileAvatar.Image = realAvatarAsset
+        footerAvatar.Image = realAvatarAsset
+    end
+end
+
+updateAccountDisplay()
+
+-- Name Toggle UI Component
+local nameLbl = Instance.new(__dec("ae53468cd612b57d11"))
+nameLbl.Size = UDim2.new(0, 40, 0, 20)
+nameLbl.Position = UDim2.new(0, 210, 0, 62)
+nameLbl.BackgroundTransparency = 1
+nameLbl.Text = __dec("b457539d")
+nameLbl.TextColor3 = Color3.fromRGB(200, 200, 200)
+nameLbl.Font = Enum.Font.Code
+nameLbl.TextSize = 10
+nameLbl.Parent = homePage
+
+local nameBtn = Instance.new(__dec("ae53468cd806a36c124a"))
+nameBtn.Size = UDim2.new(0, 34, 0, 16)
+nameBtn.Position = UDim2.new(0, 255, 0, 64)
+nameBtn.BackgroundColor3 = Color3.fromRGB(60, 60, 70)
+nameBtn.Text = __dec("")
+nameBtn.Parent = homePage
+local p1C = Instance.new(__dec("af7f7d97e81db26a")) p1C.CornerRadius = UDim.new(1, 0) p1C.Parent = nameBtn
+
+local nameDot = Instance.new(__dec("bc445f95ff"))
+nameDot.Size = UDim2.new(0, 12, 0, 12)
+nameDot.Position = UDim2.new(0, 2, 0.5, -6)
+nameDot.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+nameDot.Parent = nameBtn
+local d1C = Instance.new(__dec("af7f7d97e81db26a")) d1C.CornerRadius = UDim.new(1, 0) d1C.Parent = nameDot
+
+nameBtn.MouseButton1Click:Connect(function()
+    clickSound:Play()
+    hideNameOn = not hideNameOn
+    if hideNameOn then
+        nameBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        nameDot.Position = UDim2.new(1, -14, 0.5, -6)
+        nameDot.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    else
+        nameBtn.BackgroundColor3 = Color3.fromRGB(60, 60, 70)
+        nameDot.Position = UDim2.new(0, 2, 0.5, -6)
+        nameDot.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+    end
+    updateAccountDisplay()
+end)
+
+-- Profile Toggle UI Component
+local profLbl = Instance.new(__dec("ae53468cd612b57d11"))
+profLbl.Size = UDim2.new(0, 40, 0, 20)
+profLbl.Position = UDim2.new(0, 305, 0, 62)
+profLbl.BackgroundTransparency = 1
+profLbl.Text = __dec("aa44519ef31fb2")
+profLbl.TextColor3 = Color3.fromRGB(200, 200, 200)
+profLbl.Font = Enum.Font.Code
+profLbl.TextSize = 10
+profLbl.Parent = homePage
+
+local profBtn = Instance.new(__dec("ae53468cd806a36c124a"))
+profBtn.Size = UDim2.new(0, 34, 0, 16)
+profBtn.Position = UDim2.new(0, 355, 0, 64)
+profBtn.BackgroundColor3 = Color3.fromRGB(60, 60, 70)
+profBtn.Text = __dec("")
+profBtn.Parent = homePage
+local p2C = Instance.new(__dec("af7f7d97e81db26a")) p2C.CornerRadius = UDim.new(1, 0) p2C.Parent = profBtn
+
+local profDot = Instance.new(__dec("bc445f95ff"))
+profDot.Size = UDim2.new(0, 12, 0, 12)
+profDot.Position = UDim2.new(0, 2, 0.5, -6)
+profDot.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+profDot.Parent = profBtn
+local d2C = Instance.new(__dec("af7f7d97e81db26a")) d2C.CornerRadius = UDim.new(1, 0) d2C.Parent = profDot
+
+profBtn.MouseButton1Click:Connect(function()
+    clickSound:Play()
+    hideProfileOn = not hideProfileOn
+    if hideProfileOn then
+        profBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        profDot.Position = UDim2.new(1, -14, 0.5, -6)
+        profDot.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+    else
+        profBtn.BackgroundColor3 = Color3.fromRGB(60, 60, 70)
+        profDot.Position = UDim2.new(0, 2, 0.5, -6)
+        profDot.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
+    end
+    updateAccountDisplay()
+end)
+
+-- PAID Status & Session Time Header
+local paidLbl = Instance.new(__dec("ae53468cd612b57d11"))
+paidLbl.Size = UDim2.new(0, 80, 0, 16)
+paidLbl.Position = UDim2.new(1, -100, 0, 52)
+paidLbl.BackgroundTransparency = 1
+paidLbl.Text = __dec("aa7777bc")
+paidLbl.TextColor3 = Color3.fromRGB(200, 200, 200)
+paidLbl.Font = Enum.Font.Code
+paidLbl.TextSize = 10
+paidLbl.TextXAlignment = Enum.TextXAlignment.Right
+paidLbl.Parent = homePage
+
+local timerLbl = Instance.new(__dec("ae53468cd612b57d11"))
+timerLbl.Size = UDim2.new(0, 80, 0, 14)
+timerLbl.Position = UDim2.new(1, -100, 0, 68)
+timerLbl.BackgroundTransparency = 1
+timerLbl.Text = __dec("ca5b1ec8e9")
+timerLbl.TextColor3 = Color3.fromRGB(130, 130, 130)
+timerLbl.Font = Enum.Font.Code
+timerLbl.TextSize = 9
+timerLbl.TextXAlignment = Enum.TextXAlignment.Right
+timerLbl.Parent = homePage
+
+local startTime = os.time()
+task.spawn(function()
+    while task.wait(1) do
+        local diff = os.time() - startTime
+        local m = math.floor(diff / 60)
+        local s = diff % 60
+        timerLbl.Text = m .. __dec("9716") .. s .. __dec("89")
+    end
+end)
+
+-- Stats Section Grid
+local playerVal = Instance.new(__dec("ae53468cd612b57d11"))
+local friendVal = Instance.new(__dec("ae53468cd612b57d11"))
+local execVal = Instance.new(__dec("ae53468cd612b57d11"))
+local sessionVal = Instance.new(__dec("ae53468cd612b57d11"))
+local fpsVal = Instance.new(__dec("ae53468cd612b57d11"))
+local pingVal = Instance.new(__dec("ae53468cd612b57d11"))
+
+local statLabels = {
+    {__dec("aa5a5f81ff01a4"), playerVal},
+    {__dec("bc44579df417a4"), friendVal},
+    {__dec("bf4e5b9be9"), execVal},
+    {__dec("a9534d8bf31cb9"), sessionVal},
+    {__dec("bc666d"), fpsVal},
+    {__dec("aa5f509f"), pingVal}
+}
+
+for i, st in ipairs(statLabels) do
+    local x = 20 + (i-1) * 95
+    local label = Instance.new(__dec("ae53468cd612b57d11"))
+    label.Size = UDim2.new(0, 80, 0, 14)
+    label.Position = UDim2.new(0, x, 0, 102)
+    label.BackgroundTransparency = 1
+    label.Text = st[1]
+    label.TextColor3 = Color3.fromRGB(140, 140, 140)
+    label.Font = Enum.Font.Code
+    label.TextSize = 10
+    label.Parent = homePage
+
+    local val = st[2]
+    val.Size = UDim2.new(0, 80, 0, 18)
+    val.Position = UDim2.new(0, x, 0, 118)
+    val.BackgroundTransparency = 1
+    val.Text = __dec("d41810")
+    val.TextColor3 = Color3.fromRGB(255, 255, 255)
+    val.Font = Enum.Font.Code
+    val.TextSize = 11
+    val.Parent = homePage
+end
+
+-- Live Stats Updating
+local detectedExec = (identifyexecutor and identifyexecutor()) or (getexecutorname and getexecutorname()) or __dec("a8535f94")
+execVal.Text = detectedExec
+
+local function updateFriendsCount()
+    local friendCount = 0
+    for _, plr in ipairs(Players:GetPlayers()) do
+        if plr ~= LocalPlayer and LocalPlayer:IsFriendsWith(plr.UserId) then
+            friendCount = friendCount + 1
+        end
+    end
+    friendVal.Text = tostring(friendCount)
+end
+task.spawn(updateFriendsCount)
+
+local frameCount = 0
+local lastCheck = tick()
+RunService.RenderStepped:Connect(function()
+    frameCount = frameCount + 1
+    local now = tick()
+    if now - lastCheck >= 1 then
+        fpsVal.Text = tostring(math.floor(frameCount / (now - lastCheck)))
+        frameCount = 0
+        lastCheck = now
+    end
+end)
+
+task.spawn(function()
+    while task.wait(1) do
+        playerVal.Text = tostring(#Players:GetPlayers())
+        local ping = math.floor(StatsService.Network.ServerStatsItem[__dec("be574a99ba23be761a")]:GetValue())
+        pingVal.Text = ping .. __dec("9745")
+        
+        local diff = os.time() - startTime
+        sessionVal.Text = diff .. __dec("89")
+    end
+end)
+
+----------------------------------------------------
+-- GAME DETAILS & SERVER ACTIONS
+----------------------------------------------------
+local gameThumb = Instance.new(__dec("b35b5f9fff3fb67a1848"))
+gameThumb.Size = UDim2.new(0, 42, 0, 42)
+gameThumb.Position = UDim2.new(0, 20, 0, 155)
+gameThumb.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+gameThumb.Image = __dec("88544699e900b26c1440bf22ffdc")
+gameThumb.Parent = homePage
+local gtCorner = Instance.new(__dec("af7f7d97e81db26a")) gtCorner.CornerRadius = UDim.new(0, 8) gtCorner.Parent = gameThumb
+
+local gName = Instance.new(__dec("ae53468cd612b57d11"))
+gName.Size = UDim2.new(0, 280, 0, 16)
+gName.Position = UDim2.new(0, 70, 0, 155)
+gName.BackgroundTransparency = 1
+gName.Text = __dec("b6595f9cf31db0383a45e868f0a584b22fb6a6ac")
+gName.TextColor3 = Color3.fromRGB(255, 255, 255)
+gName.Font = Enum.Font.Code
+gName.TextSize = 10
+gName.TextXAlignment = Enum.TextXAlignment.Left
+gName.Parent = homePage
+
+local gSub = Instance.new(__dec("ae53468cd612b57d11"))
+gSub.Size = UDim2.new(0, 280, 0, 14)
+gSub.Position = UDim2.new(0, 70, 0, 171)
+gSub.BackgroundTransparency = 1
+gSub.Text = __dec("984f1ed6b45d")
+gSub.TextColor3 = Color3.fromRGB(130, 130, 130)
+gSub.Font = Enum.Font.Code
+gSub.TextSize = 9
+gSub.TextXAlignment = Enum.TextXAlignment.Left
+gSub.Parent = homePage
+
+local gIds = Instance.new(__dec("ae53468cd612b57d11"))
+gIds.Size = UDim2.new(0, 280, 0, 14)
+gIds.Position = UDim2.new(0, 70, 0, 185)
+gIds.BackgroundTransparency = 1
+gIds.Text = __dec("b0595cd8") .. string.sub(game.JobId, 1, 15) .. __dec("d41810")
+gIds.TextColor3 = Color3.fromRGB(100, 100, 100)
+gIds.Font = Enum.Font.Code
+gIds.TextSize = 9
+gIds.TextXAlignment = Enum.TextXAlignment.Left
+gIds.Parent = homePage
+
+local gPlace = Instance.new(__dec("ae53468cd612b57d11"))
+gPlace.Size = UDim2.new(0, 380, 0, 14)
+gPlace.Position = UDim2.new(0, 20, 0, 212)
+gPlace.BackgroundTransparency = 1
+gPlace.Text = __dec("aa5a5f9bff53") .. game.PlaceId .. __dec("da161eadf41aa17d0f57e02d") .. game.GameId
+gPlace.TextColor3 = Color3.fromRGB(100, 100, 100)
+gPlace.Font = Enum.Font.Code
+gPlace.TextSize = 8
+gPlace.TextXAlignment = Enum.TextXAlignment.Left
+gPlace.Parent = homePage
+
+task.spawn(function()
+    pcall(function()
+        local productInfo = MarketplaceService:GetProductInfo(game.PlaceId)
+        gName.Text = productInfo.Name
+        gSub.Text = __dec("984f1e") .. productInfo.Creator.Name
+        gameThumb.Image = __dec("88544699e900b26c1440bf22ff") .. productInfo.IconImageAssetId
+    end)
+end)
+
+-- Action Buttons
+local actJoin = Instance.new(__dec("ae53468cd806a36c124a"))
+actJoin.Size = UDim2.new(0, 60, 0, 18)
+actJoin.Position = UDim2.new(0, 380, 0, 155)
+actJoin.BackgroundTransparency = 1
+actJoin.Text = __dec("b0595796")
+actJoin.TextColor3 = Color3.fromRGB(220, 220, 220)
+actJoin.Font = Enum.Font.Code
+actJoin.TextSize = 10
+actJoin.Parent = homePage
+
+local actHop = Instance.new(__dec("ae53468cd806a36c124a"))
+actHop.Size = UDim2.new(0, 80, 0, 18)
+actHop.Position = UDim2.new(0, 465, 0, 155)
+actHop.BackgroundTransparency = 1
+actHop.Text = __dec("a9534c8eff01f7501254")
+actHop.TextColor3 = Color3.fromRGB(220, 220, 220)
+actHop.Font = Enum.Font.Code
+actHop.TextSize = 10
+actHop.Parent = homePage
+
+local actCopyJob = Instance.new(__dec("ae53468cd806a36c124a"))
+actCopyJob.Size = UDim2.new(0, 85, 0, 18)
+actCopyJob.Position = UDim2.new(0, 370, 0, 182)
+actCopyJob.BackgroundTransparency = 1
+actCopyJob.Text = __dec("b9594e81ba39b87a5d6dc1")
+actCopyJob.TextColor3 = Color3.fromRGB(220, 220, 220)
+actCopyJob.Font = Enum.Font.Code
+actCopyJob.TextSize = 10
+actCopyJob.Parent = homePage
+
+local actCopyUni = Instance.new(__dec("ae53468cd806a36c124a"))
+actCopyUni.Size = UDim2.new(0, 95, 0, 18)
+actCopyUni.Position = UDim2.new(0, 455, 0, 182)
+actCopyUni.BackgroundTransparency = 1
+actCopyUni.Text = __dec("b9594e81ba26b9710b41f77eb5")
+actCopyUni.TextColor3 = Color3.fromRGB(220, 220, 220)
+actCopyUni.Font = Enum.Font.Code
+actCopyUni.TextSize = 10
+actCopyUni.Parent = homePage
+
+actCopyJob.MouseButton1Click:Connect(function() clickSound:Play() setclipboard(game.JobId) end)
+actCopyUni.MouseButton1Click:Connect(function() clickSound:Play() setclipboard(tostring(game.GameId)) end)
+actHop.MouseButton1Click:Connect(function() clickSound:Play() TeleportService:Teleport(game.PlaceId, LocalPlayer) end)
+
+-- Shield Status Section
+local shieldIcon = Instance.new(__dec("b35b5f9fff3fb67a1848"))
+shieldIcon.Size = UDim2.new(0, 20, 0, 20)
+shieldIcon.Position = UDim2.new(0, 20, 0, 252)
+shieldIcon.BackgroundTransparency = 1
+shieldIcon.Image = __dec("88544699e900b26c1440bf22ffdadae774a0bab735af7f")
+shieldIcon.ImageColor3 = Color3.fromRGB(200, 200, 200)
+shieldIcon.Parent = homePage
+
+local statusTitle = Instance.new(__dec("ae53468cd612b57d11"))
+statusTitle.Size = UDim2.new(0, 200, 0, 16)
+statusTitle.Position = UDim2.new(0, 48, 0, 248)
+statusTitle.BackgroundTransparency = 1
+statusTitle.Text = detectedExec
+statusTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+statusTitle.Font = Enum.Font.Code
+statusTitle.TextSize = 11
+statusTitle.TextXAlignment = Enum.TextXAlignment.Left
+statusTitle.Parent = homePage
+
+local statusSub = Instance.new(__dec("ae53468cd612b57d11"))
+statusSub.Size = UDim2.new(0, 320, 0, 14)
+statusSub.Position = UDim2.new(0, 48, 0, 264)
+statusSub.BackgroundTransparency = 1
+statusSub.Text = __dec("a3594b8aba16af7d1e51f162a2cc83a760ebfdf274f63bc6b2da0bfac8f23c08a38e7e55ce6c4c49d93125485e54e3ae")
+statusSub.TextColor3 = Color3.fromRGB(130, 130, 130)
+statusSub.Font = Enum.Font.Code
+statusSub.TextSize = 9
+statusSub.TextXAlignment = Enum.TextXAlignment.Left
+statusSub.Parent = homePage
+
+----------------------------------------------------
+-- COMMUNITY FOOTER SECTION
+----------------------------------------------------
+local discordIcon = Instance.new(__dec("b35b5f9fff3fb67a1848"))
+discordIcon.Size = UDim2.new(0, 20, 0, 20)
+discordIcon.Position = UDim2.new(0, 20, 0, 310)
+discordIcon.BackgroundTransparency = 1
+discordIcon.Image = __dec("88544699e900b26c1440bf22ffdadae774aab0b531ab7c")
+discordIcon.ImageColor3 = Color3.fromRGB(200, 200, 200)
+discordIcon.Parent = homePage
+
+local discTitle = Instance.new(__dec("ae53468cd612b57d11"))
+discTitle.Size = UDim2.new(0, 150, 0, 14)
+discTitle.Position = UDim2.new(0, 48, 0, 308)
+discTitle.BackgroundTransparency = 1
+discTitle.Text = __dec("b0595796ba07bf7d5d47ea60bd9984bd34e1")
+discTitle.TextColor3 = Color3.fromRGB(220, 220, 220)
+discTitle.Font = Enum.Font.Code
+discTitle.TextSize = 10
+discTitle.TextXAlignment = Enum.TextXAlignment.Left
+discTitle.Parent = homePage
+
+local discLink = Instance.new(__dec("ae53468cd612b57d11"))
+discLink.Size = UDim2.new(0, 150, 0, 12)
+discLink.Position = UDim2.new(0, 48, 0, 322)
+discLink.BackgroundTransparency = 1
+discLink.Text = __dec("9e455dd6fd14f84d3b45c158b289a19174")
+discLink.TextColor3 = Color3.fromRGB(120, 120, 120)
+discLink.Font = Enum.Font.Code
+discLink.TextSize = 8
+discLink.TextXAlignment = Enum.TextXAlignment.Left
+discLink.Parent = homePage
+
+local copyInvite = Instance.new(__dec("ae53468cd806a36c124a"))
+copyInvite.Size = UDim2.new(0, 80, 0, 20)
+copyInvite.Position = UDim2.new(0, 200, 0, 310)
+copyInvite.BackgroundTransparency = 1
+copyInvite.Text = __dec("b9594e81ba3ab96e1450e0")
+copyInvite.TextColor3 = Color3.fromRGB(220, 220, 220)
+copyInvite.Font = Enum.Font.Code
+copyInvite.TextSize = 10
+copyInvite.Parent = homePage
+
+copyInvite.MouseButton1Click:Connect(function()
+    clickSound:Play()
+    setclipboard(__dec("92424a88e949f8371957e623b78bc5862aeabfb555c31aca96"))
+end)
+
+-- Supported Games & Copy Website Section
+local gamesIcon = Instance.new(__dec("b35b5f9fff3fb67a1848"))
+gamesIcon.Size = UDim2.new(0, 20, 0, 20)
+gamesIcon.Position = UDim2.new(0, 310, 0, 310)
+gamesIcon.BackgroundTransparency = 1
+gamesIcon.Image = __dec("88544699e900b26c1440bf22ffdadae771a8b1b632ae71")
+gamesIcon.ImageColor3 = Color3.fromRGB(200, 200, 200)
+gamesIcon.Parent = homePage
+
+local gamesTitle = Instance.new(__dec("ae53468cd612b57d11"))
+gamesTitle.Size = UDim2.new(0, 150, 0, 14)
+gamesTitle.Position = UDim2.new(0, 338, 0, 308)
+gamesTitle.BackgroundTransparency = 1
+gamesTitle.Text = __dec("a9434e88f501a37d1904e26cbd8999")
+gamesTitle.TextColor3 = Color3.fromRGB(220, 220, 220)
+gamesTitle.Font = Enum.Font.Code
+gamesTitle.TextSize = 10
+gamesTitle.TextXAlignment = Enum.TextXAlignment.Left
+gamesTitle.Parent = homePage
+
+local gamesSub = Instance.new(__dec("ae53468cd612b57d11"))
+gamesSub.Size = UDim2.new(0, 150, 0, 12)
+gamesSub.Position = UDim2.new(0, 338, 0, 322)
+gamesSub.BackgroundTransparency = 1
+gamesSub.Text = __dec("99444b82ed1ca57419")
+gamesSub.TextColor3 = Color3.fromRGB(120, 120, 120)
+gamesSub.Font = Enum.Font.Code
+gamesSub.TextSize = 8
+gamesSub.TextXAlignment = Enum.TextXAlignment.Left
+gamesSub.Parent = homePage
+
+local copyWeb = Instance.new(__dec("ae53468cd806a36c124a"))
+copyWeb.Size = UDim2.new(0, 90, 0, 20)
+copyWeb.Position = UDim2.new(0, 480, 0, 310)
+copyWeb.BackgroundTransparency = 1
+copyWeb.Text = __dec("b9594e81ba24b27a0e4df168")
+copyWeb.TextColor3 = Color3.fromRGB(220, 220, 220)
+copyWeb.Font = Enum.Font.Code
+copyWeb.TextSize = 10
+copyWeb.Parent = homePage
+
+copyWeb.MouseButton1Click:Connect(function()
+    clickSound:Play()
+    setclipboard(__dec("92424a88e949f8371e56f077a78398b824b6e6e770f520d4ae904aebd6b9"))
+end)
+
+----------------------------------------------------
+-- SCRIPT MENU TABS
+----------------------------------------------------
+local mainTab = createGridTab(__dec("b7575796"), true)
+local playermenuTab = createGridTab(__dec("aa5a5f81ff01ba7d1351"), true)
+local autofarmTab = createGridTab(__dec("bb434a97fc12a575"), true)
+local remoteTab = createGridTab(__dec("a8535397ee16"), true)
+local trollTab = createGridTab(__dec("ae445194f6"), true)
+
+-- Buttons for Main Menu
+AddMenuButton(mainTab, __dec("b27f6cb9c332f75b3470dc2d83bcab830eb8cfd74ab60ffd98fa0bb382bf"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5964")))()
+end)
+
+AddMenuButton(mainTab, __dec("b87779b7d434f74b3468c44397ccb88460cbd8c353d769f196ed63bb8eb235"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa59")))()
+end)
+
+AddMenuButton(mainTab, __dec("b87779b7d434f74b3468c44397ccb88460cbd8c353d769f582f004dde9d9584efec63b"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5a")))()
+end)
+
+AddMenuButton(mainTab, __dec("b96f73b7c832f75b3470dc2d83bcab830eb8cbc357d1699af397"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5b")))()
+end)
+
+AddMenuButton(mainTab, __dec("b96f73b7c832f75b3470dc2d83bcab830eb8cfd74ab96196fe"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5c")))()
+end)
+
+AddMenuButton(mainTab, __dec("be166db7cf21945d5d67cc5989ccb98401cfc6a247d81afaf7960fb2"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5d")))()
+end)
+
+AddMenuButton(mainTab, __dec("be166db7cf21945d5d67cc5989ccb98401cfc6a243cc0792ff9a02"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5965")))()
+end)
+
+AddMenuButton(mainTab, __dec("a97770d8db3d934a3865d62d93a5be8d60cbd8c353d769f196ed63bb8eb235"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5e")))()
+end)
+
+AddMenuButton(mainTab, __dec("a97770d8db3d934a3865d62d93a5be8d60cbd8c353d769f582f00bb382bf"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5f")))()
+end)
+
+AddMenuButton(mainTab, __dec("aa647babce3a905d5d76ca4195bca69519b8dbd245ce079294ff78d386be3847"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa50")))()
+end)
+
+AddMenuButton(mainTab, __dec("b67779add432f75b3470dc2d82a3a69110d4c9db24ca19f380f00bd8e7c5544efec63b"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa51")))()
+end)
+
+AddMenuButton(mainTab, __dec("a87764bdba309e4c2404d75df0bfba9517d6a8c145ca0192ff9a02"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5966")))()
+end)
+
+AddMenuButton(mainTab, __dec("a87764bdba309e4c2404d75df0bfba9517d6a8c551d7699af397"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5967")))()
+end)
+
+AddMenuButton(mainTab, __dec("b47369d8df2196383e6dd154f0bfba9517d6a8c551d766f498f16fbb8ed8592b92c25e65ad4a6d77ec79"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5960")))()
+end)
+
+AddMenuButton(mainTab, __dec("b96471afd45385513963c02d93a5be8d60cbd8c353d769f582f004dde9d9584efec63b"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5961")))()
+end)
+
+AddMenuButton(mainTab, __dec("b87a71b7de5385593a61a54e99b8b3f413c8c9d54ab90af384f60bb382bf"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5a65")))()
+end)
+
+AddMenuButton(mainTab, __dec("b87a71b7de5385593a61a54e99b8b3f413c8c9d54ab90ee7999e03bf8f"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5a66")))()
+end)
+
+AddMenuButton(mainTab, __dec("b7736aaad5539a59336dc94cf0afa38019b8dbd245ce079294ff78d386be3847"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5a60")))()
+end)
+
+AddMenuButton(mainTab, __dec("b7736aaad5539a59336dc94cf0afa38019b8dbd245ce079290eb65bb8eb235"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5a61")))()
+end)
+
+AddMenuButton(mainTab, __dec("b5636ab4db24f75b3470dc2d83bcab830eb8cfd74ab96196fe"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5a63")))()
+end)
+
+-- Buttons for Player Menu
+AddMenuButton(playermenuTab, __dec("a97f72bdd427f7593469a54b91a2be9513d5c9a257c01ae692f30bd9ffb64b2d9da63204ca26"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa2e151cf8a9739dab8973d139265ad62daadbf6f63fc3f7")))()
+end)
+
+AddMenuButton(playermenuTab, __dec("b2776cb9c332f7593469c74284ccc2f069"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa201500edb161f5d89c00a8272d59c7")))()
+end)
+
+AddMenuButton(playermenuTab, __dec("a87368b1cc36f7303c68c92d93a5be8d69"), function()
+    local player = Players.LocalPlayer
+
+    local function reviveAtCurrentSpot()
+        local char = player.Character
+        if not char then return end
+        
+        local root = char:FindFirstChild(__dec("b2435399f41cbe7c2f4bea79808d98a0"))
+        if not root then return end
+
+        getgenv().SavedDeathCFrame = root.CFrame
+
+        local args = {
+            [1] = {
+                [__dec("bc5f4c8bee3db67518")] = __dec("be5f5b9ff5"),
+                [__dec("bd53509cff01")] = __dec("b85947"),
+                [__dec("b6574d8cd412ba7d")] = __dec("b9444b82fb1db8"),
+                [__dec("be797c")] = __dec("c90613c9aa5ee5284d11"),
+            }
+        }
+        
+        game:GetService(__dec("a8534e94f310b66c1840d679bf9e8bb325")):WaitForChild(__dec("a9435c95f3079e7c184af164a495")):FireServer(unpack(args))
+    end
+
+    if not getgenv().ReviveLoopStarted then
+        getgenv().ReviveLoopStarted = true
+        
+        player.CharacterAdded:Connect(function(newChar)
+            if getgenv().SavedDeathCFrame then
+                local targetCFrame = getgenv().SavedDeathCFrame
+                
+                local startTime = tick()
+                local connection
+                
+                connection = RunService.RenderStepped:Connect(function()
+                    local newRoot = newChar:FindFirstChild(__dec("b2435399f41cbe7c2f4bea79808d98a0"))
+                    if newRoot then
+                        newRoot.CFrame = targetCFrame + Vector3.new(0, 3, 0)
+                        newRoot.AssemblyLinearVelocity = Vector3.zero
+                    end
+                    
+                    if tick() - startTime > 2 then
+                        connection:Disconnect()
+                        getgenv().SavedDeathCFrame = nil
+                    end
+                end)
+            end
+        end)
+    end
+
+    reviveAtCurrentSpot()
+end)
+
+AddMenuButton(playermenuTab, __dec("a87368b1cc36f7563873a54882adca9709ccd1a22cbd60"), function()
+    local Event = game:GetService(__dec("a8534e94f310b66c1840d679bf9e8bb325")).DeathEvents.RespawnRequest
+Event:FireServer()
+end)
+
+AddMenuButton(playermenuTab, __dec("a87368b1cc36f75c3269cc4399a3a4f403d1dcdb24b16d9b"), function()
+    local Event = game:GetService(__dec("a8534e94f310b66c1840d679bf9e8bb325")).Network.Functions.InstantRespawn
+Event:InvokeServer()
+end)
+
+AddMenuButton(playermenuTab, __dec("b87f79d8d236965c5d0ca124"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd761ddd391348dc3330521159efaf783db9f10bf9da1f47af9560e0c74e69adb62321a6a8209df41503fa2a1c")))()
+end)
+
+AddMenuButton(playermenuTab, __dec("bc7a67d8b257fe"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd761ddd391348dc3330521159efaf783db9f10bf9da1f47af9560e0c74e69adb62321a6a8209df41503fa2e180b")))()
+end)
+
+AddMenuButton(playermenuTab, __dec("bf656ed8b257fe"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5962")))()
+end)
+
+AddMenuButton(playermenuTab, __dec("bb786ab1ba3185513363a525f4c5"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5963")))()
+end)
+
+AddMenuButton(playermenuTab, __dec("ae647fbbd15396543104ad29f9"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5a64")))()
+end)
+
+AddMenuButton(playermenuTab, __dec("bb7f73bad527f7553266cc4195ccc2f069"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5a67")))()
+end)
+
+-- Buttons for Auto Farm
+AddMenuButton(autofarmTab, __dec("b5636ab4db24f7592870ca2d9aa3a8f414c8a8a6"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5a6c")))()
+end)
+
+AddMenuButton(autofarmTab, __dec("b27f6cb9c332f7592870ca2d96adb89960ccd8a220"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd761ddd391348dc3330521159efaf783db9f10bf9da1f47af9560e0c74e69adb62321a6a8209df41503fa290106e3cd12e0aced13ac4f5d26db2aacbf9d87")))()
+end)
+
+AddMenuButton(autofarmTab, __dec("be7368b9c953964d296ba54b91bea7f414c8a8a6"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd761ddd391348dc3330521159efaf783db9f10bf9da1f47af9560e0c74e69adb62321a6a8209df41503fa290106e3cd12e0aced13ac4f5d26d726a8bf97")))()
+end)
+
+AddMenuButton(autofarmTab, __dec("be7973b1d43a98565d65d0599fccac9512d5a8d654b96d"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa290106e3cd12e0aced13ac4f5d26d72cb3b7")))(DIEGOCHEAT)
+end)
+
+-- Buttons for Remotes
+AddMenuButton(remoteTab, __dec("a9786aabba2192553270c02d83bcb3f468dad1d245ca1a9b"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370d45f679b58e83ba6efbe7ef2beb28c5f8c41af1edc26f0395")))()
+end)
+
+-- Buttons for Troll
+AddMenuButton(trollTab, __dec("bc7770acdb209a595d76c45d99a8ca9209cacda246c069e594f56fbb8eb235"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa2e151cf8a9739dab8973d1382e46da27dbccf48037d8ff")))()
+end)
+
+AddMenuButton(trollTab, __dec("bb7a75bdde3a98565d69c04385cca88d60cfcbc940b96196fe"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa291819e9ac699fa48973d13a3946")))()
+end)
+
+AddMenuButton(trollTab, __dec("ac7772b3db379e595d69c04385cca88d60cfcbc940b96196fe"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa3e151ee7a96499ab8973d1272a58c6")))()
+end)
+
+AddMenuButton(trollTab, __dec("bb786ab1ba31824b3c68a525f4c5"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8371151e47da2839efa2efdfcad65e9209da18d04f7c9f7780ba4913d4b8b7b0c169f6261120c0fb7b10844cf856184ac6f36def3")))()
+end)
+
+AddMenuButton(trollTab, __dec("ae6471b4d65394592f76dc2d9da5ae9a09dfc0d624da00e68e9e03cce7d13c2f94b74169ce446c70e61e16607218cdc96835d5"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa5a62")))()
+end)
+
+AddMenuButton(trollTab, __dec("ae6471b4d65394592f76dc2d98a5b89519d9a8c14dcd109df7fc6adce9d85b4e85ab5e6da0480367e0040801146fc7c71c35bee30bf0b5154cbe8801d5e3663ac9971201eb"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa596c")))()
+end)
+
+AddMenuButton(trollTab, __dec("ae6471b4d65394592f76dc2d83d9ca8714d9cec424da00e68e9e03cce7d13c2f94b74169ce446c70e61e16607218cdc96835d5"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f223b7859ebc35fafdf161eb2addb9ca4ef5d2b87f01bbcd704d996e4f4fcc3e364a5341a9eb591a9bdd37ccb8356288a660e0c74e69adb62321a6a8209df41503fa596d")))()
+end)
+
+AddMenuButton(trollTab, __dec("b7636db1d95392402d68ca4484ccc29a05ddcca245da7f9b"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370f45f27eb39e83a434eba6ec61ed66c0b6c904cec8ff6a0ba4917340c35c4056c020250c7a7dabc15f42d1fb2dc6fc3d2ebcb223fcc75a7be0b72a29b6a222c2a0495ee3")))()
+end)
+
+AddMenuButton(trollTab, __dec("b0736cb3ba5bf331"), function()
+    loadstring(game:HttpGet(__dec("92424a88e949f8370d45f679b58e83ba6efbe7ef2beb28c5f8f87cecc2c5485b8f")))()
+end)
+
+----------------------------------------------------
+-- PLAYER LIST TP TAB WITH SEARCH BAR
+----------------------------------------------------
+local playerListTpPage = Instance.new(__dec("bc445f95ff"))
+playerListTpPage.Name = __dec("aa5a5f81ff01f7541457f12d849cbab527fd")
+playerListTpPage.Size = UDim2.new(1, 0, 1, 0)
+playerListTpPage.BackgroundTransparency = 1
+playerListTpPage.Visible = false
+playerListTpPage.Parent = contentArea
+tabs[__dec("aa5a5f81ff01f7541457f12d849c")] = playerListTpPage
+
+local listContainer = Instance.new(__dec("bc445f95ff"))
+listContainer.Size = UDim2.new(0, 200, 1, -30)
+listContainer.Position = UDim2.new(0, 15, 0, 15)
+listContainer.BackgroundColor3 = Color3.fromRGB(10, 10, 14)
+listContainer.BorderSizePixel = 0
+listContainer.Parent = playerListTpPage
+
+local listCorner = Instance.new(__dec("af7f7d97e81db26a"))
+listCorner.CornerRadius = UDim.new(0, 8)
+listCorner.Parent = listContainer
+
+-- Search Box Box Container for Player TP List
+local playerSearchFrame = Instance.new(__dec("bc445f95ff"))
+playerSearchFrame.Size = UDim2.new(1, -10, 0, 26)
+playerSearchFrame.Position = UDim2.new(0, 5, 0, 5)
+playerSearchFrame.BackgroundColor3 = Color3.fromRGB(18, 18, 24)
+playerSearchFrame.BorderSizePixel = 0
+playerSearchFrame.Parent = listContainer
+
+local playerSearchCorner = Instance.new(__dec("af7f7d97e81db26a"))
+playerSearchCorner.CornerRadius = UDim.new(0, 5)
+playerSearchCorner.Parent = playerSearchFrame
+
+local playerSearchBox = Instance.new(__dec("ae53468cd81caf"))
+playerSearchBox.Size = UDim2.new(1, -10, 1, 0)
+playerSearchBox.Position = UDim2.new(0, 5, 0, 0)
+playerSearchBox.BackgroundTransparency = 1
+playerSearchBox.Text = __dec("")
+playerSearchBox.PlaceholderText = __dec("a9535f8af91bf7481145fc68a2c2c4fa")
+playerSearchBox.PlaceholderColor3 = Color3.fromRGB(120, 120, 120)
+playerSearchBox.TextColor3 = Color3.fromRGB(220, 220, 220)
+playerSearchBox.Font = Enum.Font.Code
+playerSearchBox.TextSize = 10
+playerSearchBox.TextXAlignment = Enum.TextXAlignment.Left
+playerSearchBox.Parent = playerSearchFrame
+
+local playerListScroll = Instance.new(__dec("a9554c97f61fbe761a62f76cbd89"))
+playerListScroll.Size = UDim2.new(1, -10, 1, -42)
+playerListScroll.Position = UDim2.new(0, 5, 0, 36)
+playerListScroll.BackgroundTransparency = 1
+playerListScroll.BorderSizePixel = 0
+playerListScroll.ScrollBarThickness = 3
+playerListScroll.ScrollBarImageColor3 = Color3.fromRGB(120, 120, 140)
+playerListScroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
+playerListScroll.Parent = listContainer
+
+local listLayoutTP = Instance.new(__dec("af7f7291e9079b79044bf079"))
+listLayoutTP.SortOrder = Enum.SortOrder.LayoutOrder
+listLayoutTP.Padding = UDim.new(0, 4)
+listLayoutTP.Parent = playerListScroll
+
+local detailsContainer = Instance.new(__dec("bc445f95ff"))
+detailsContainer.Size = UDim2.new(1, -245, 1, -30)
+detailsContainer.Position = UDim2.new(0, 230, 0, 15)
+detailsContainer.BackgroundColor3 = Color3.fromRGB(10, 10, 14)
+detailsContainer.BorderSizePixel = 0
+detailsContainer.Parent = playerListTpPage
+
+local detailsCorner = Instance.new(__dec("af7f7d97e81db26a"))
+detailsCorner.CornerRadius = UDim.new(0, 8)
+detailsCorner.Parent = detailsContainer
+
+local selectedNameLabel = Instance.new(__dec("ae53468cd612b57d11"))
+selectedNameLabel.Size = UDim2.new(1, -20, 0, 30)
+selectedNameLabel.Position = UDim2.new(0, 10, 0, 20)
+selectedNameLabel.BackgroundTransparency = 1
+selectedNameLabel.Font = Enum.Font.Code
+selectedNameLabel.TextSize = 13
+selectedNameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+selectedNameLabel.Text = __dec("b47773bda05399573361")
+selectedNameLabel.TextXAlignment = Enum.TextXAlignment.Center
+selectedNameLabel.Parent = detailsContainer
+
+local selectedHealthLabel = Instance.new(__dec("ae53468cd612b57d11"))
+selectedHealthLabel.Size = UDim2.new(1, -20, 0, 20)
+selectedHealthLabel.Position = UDim2.new(0, 10, 0, 50)
+selectedHealthLabel.BackgroundTransparency = 1
+selectedHealthLabel.Font = Enum.Font.Code
+selectedHealthLabel.TextSize = 11
+selectedHealthLabel.TextColor3 = Color3.fromRGB(180, 180, 180)
+selectedHealthLabel.Text = __dec("b2737fb4ce3bed38330bc4")
+selectedHealthLabel.TextXAlignment = Enum.TextXAlignment.Center
+selectedHealthLabel.Parent = detailsContainer
+
+local actionFrame = Instance.new(__dec("bc445f95ff"))
+actionFrame.Size = UDim2.new(1, -40, 0, 200)
+actionFrame.Position = UDim2.new(0, 20, 0, 95)
+actionFrame.BackgroundTransparency = 1
+actionFrame.Parent = detailsContainer
+
+local actionLayout = Instance.new(__dec("af7f7291e9079b79044bf079"))
+actionLayout.SortOrder = Enum.SortOrder.LayoutOrder
+actionLayout.Padding = UDim.new(0, 10)
+actionLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+actionLayout.Parent = actionFrame
+
+local function createTPActionButton(text)
+    local btn = Instance.new(__dec("ae53468cd806a36c124a"))
+    btn.Size = UDim2.new(1, 0, 0, 32)
+    btn.BackgroundColor3 = Color3.fromRGB(20, 20, 28)
+    btn.TextColor3 = Color3.fromRGB(220, 220, 220)
+    btn.Font = Enum.Font.Code
+    btn.TextSize = 10
+    btn.AutoButtonColor = false
+    btn.Text = string.upper(text)
+    btn.Parent = actionFrame
+
+    local corner = Instance.new(__dec("af7f7d97e81db26a"))
+    corner.CornerRadius = UDim.new(0, 6)
+    corner.Parent = btn
+
+    btn.MouseEnter:Connect(function()
+        btn.BackgroundColor3 = Color3.fromRGB(35, 35, 50)
+        btn.TextColor3 = Color3.fromRGB(255, 255, 255)
+    end)
+    btn.MouseLeave:Connect(function()
+        btn.BackgroundColor3 = Color3.fromRGB(20, 20, 28)
+        btn.TextColor3 = Color3.fromRGB(220, 220, 220)
+    end)
+
+    return btn
+end
+
+local viewButton = createTPActionButton(__dec("ac5f5b8fba23bb790441f7"))
+local tpButton = createTPActionButton(__dec("ae53529dea1ca56c5d50ea2d80808bad25ea"))
+local bringButton = createTPActionButton(__dec("b8445796fd5387741c5de07f"))
+local friendButton = createTPActionButton(__dec("bb525ad8dc01be7d1340"))
+
+local selectedPlayer = nil
+local isViewing = false
+local isBringing = false
+local originalCameraSubject = Camera.CameraSubject
+local bringConnection
+
+local function revertCamera()
+    if originalCameraSubject and typeof(originalCameraSubject) == __dec("b3584d8cfb1db47d") and originalCameraSubject.Parent then
+        Camera.CameraSubject = originalCameraSubject
+    else
+        if LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass(__dec("b2435399f41cbe7c")) then
+            Camera.CameraSubject = LocalPlayer.Character:FindFirstChildOfClass(__dec("b2435399f41cbe7c"))
+        end
+    end
+    Camera.CameraType = Enum.CameraType.Custom
+    isViewing = false
+    viewButton.Text = __dec("ac7f7bafba239b592461d7")
+end
+
+local function filterPlayers()
+    local searchText = string.lower(playerSearchBox.Text)
+    for _, btn in ipairs(playerListScroll:GetChildren()) do
+        if btn:IsA(__dec("ae53468cd806a36c124a")) then
+            local playerName = string.lower(btn:GetAttribute(__dec("aa5a5f81ff0199791041")) or btn.Text)
+            local displayName = string.lower(btn:GetAttribute(__dec("be5f4d88f612ae561c49e0")) or __dec(""))
+            if searchText == __dec("") or string.find(playerName, searchText) or string.find(displayName, searchText) then
+                btn.Visible = true
+            else
+                btn.Visible = false
+            end
+        end
+    end
+end
+
+local function refreshPlayerListTP()
+    for _, c in ipairs(playerListScroll:GetChildren()) do
+        if c:IsA(__dec("ae53468cd806a36c124a")) then c:Destroy() end
+    end
+    for _, plr in ipairs(Players:GetPlayers()) do
+        if plr ~= LocalPlayer then
+            local btn = Instance.new(__dec("ae53468cd806a36c124a"))
+            btn.Size = UDim2.new(1, 0, 0, 28)
+            btn.BackgroundColor3 = Color3.fromRGB(18, 18, 24)
+            btn.TextColor3 = Color3.fromRGB(200, 200, 200)
+            btn.Font = Enum.Font.Code
+            btn.TextSize = 10
+            btn.AutoButtonColor = false
+            btn.Text = plr.DisplayName .. __dec("da1e7e") .. plr.Name .. __dec("d3")
+            
+            btn:SetAttribute(__dec("aa5a5f81ff0199791041"), plr.Name)
+            btn:SetAttribute(__dec("be5f4d88f612ae561c49e0"), plr.DisplayName)
+
+            local corner = Instance.new(__dec("af7f7d97e81db26a"))
+            corner.CornerRadius = UDim.new(0, 5)
+            corner.Parent = btn
+            btn.Parent = playerListScroll
+
+            btn.MouseEnter:Connect(function() btn.BackgroundColor3 = Color3.fromRGB(30, 30, 42) end)
+            btn.MouseLeave:Connect(function() btn.BackgroundColor3 = Color3.fromRGB(18, 18, 24) end)
+
+            btn.MouseButton1Click:Connect(function()
+                clickSound:Play()
+                selectedPlayer = plr
+                selectedNameLabel.Text = __dec("b47773bda053") .. string.upper(plr.Name)
+                local humanoid = plr.Character and plr.Character:FindFirstChildOfClass(__dec("b2435399f41cbe7c"))
+                if humanoid then
+                    selectedHealthLabel.Text = __dec("b2737fb4ce3bed38") .. math.floor(humanoid.Health)
+                else
+                    selectedHealthLabel.Text = __dec("b2737fb4ce3bed38330bc4")
+                end
+                if isViewing then revertCamera() end
+            end)
+        end
+    end
+    filterPlayers()
+end
+
+playerSearchBox:GetPropertyChangedSignal(__dec("ae53468c")):Connect(filterPlayers)
+
+viewButton.MouseButton1Click:Connect(function()
+    clickSound:Play()
+    if not selectedPlayer then return end
+    local char = selectedPlayer.Character
+    local humanoid = char and char:FindFirstChildOfClass(__dec("b2435399f41cbe7c"))
+    if not humanoid then return end
+    if not isViewing then
+        originalCameraSubject = Camera.CameraSubject
+        Camera.CameraSubject = humanoid
+        Camera.CameraType = Enum.CameraType.Custom
+        isViewing = true
+        viewButton.Text = __dec("af7868b1df24f7483165dc4882")
+    else
+        revertCamera()
+    end
+end)
+
+tpButton.MouseButton1Click:Connect(function()
+    clickSound:Play()
+    if not selectedPlayer then return end
+    local targetHRP = selectedPlayer.Character and selectedPlayer.Character:FindFirstChild(__dec("b2435399f41cbe7c2f4bea79808d98a0"))
+    local myHRP = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild(__dec("b2435399f41cbe7c2f4bea79808d98a0"))
+    if targetHRP and myHRP then
+        myHRP.CFrame = targetHRP.CFrame + Vector3.new(2, 0.5, 0)
+    end
+end)
+
+bringButton.MouseButton1Click:Connect(function()
+    clickSound:Play()
+    if not selectedPlayer then return end
+    if not isBringing then
+        isBringing = true
+        bringButton.Text = __dec("af787caad33d90382d68c45495be")
+        bringConnection = RunService.RenderStepped:Connect(function()
+            local targetChar = selectedPlayer.Character
+            local myChar = LocalPlayer.Character
+            if targetChar and myChar then
+                local targetHRP = targetChar:FindFirstChild(__dec("b2435399f41cbe7c2f4bea79808d98a0"))
+                local myHRP = myChar:FindFirstChild(__dec("b2435399f41cbe7c2f4bea79808d98a0"))
+                if targetHRP and myHRP then
+                    targetHRP.CFrame = myHRP.CFrame + Vector3.new(2, 0, 0)
+                end
+            end
+        end)
+    else
+        isBringing = false
+        bringButton.Text = __dec("b86477b6dd5387543c7dc05f")
+        if bringConnection then bringConnection:Disconnect() end
+    end
+end)
+
+friendButton.MouseButton1Click:Connect(function()
+    clickSound:Play()
+    if selectedPlayer then
+        LocalPlayer:RequestFriendship(selectedPlayer)
+    end
+end)
+
+RunService.Heartbeat:Connect(function()
+    if selectedPlayer then
+        local humanoid = selectedPlayer.Character and selectedPlayer.Character:FindFirstChildOfClass(__dec("b2435399f41cbe7c"))
+        if humanoid then
+            selectedHealthLabel.Text = __dec("b2737fb4ce3bed38") .. math.floor(humanoid.Health)
+        else
+            selectedHealthLabel.Text = __dec("b2737fb4ce3bed38330bc4")
+        end
+    end
+end)
+
+Players.PlayerRemoving:Connect(function(plr)
+    if plr == selectedPlayer then
+        selectedPlayer = nil
+        selectedNameLabel.Text = __dec("b47773bda05399573361")
+        selectedHealthLabel.Text = __dec("b2737fb4ce3bed38330bc4")
+        if isViewing then revertCamera() end
+    end
+    refreshPlayerListTP()
+end)
+
+Players.PlayerAdded:Connect(function()
+    refreshPlayerListTP()
+end)
+
+refreshPlayerListTP()
+
+----------------------------------------------------
+-- MINIMIZE BUTTON & FLOATING OPEN TOGGLE
+----------------------------------------------------
+local TweenService = game:GetService(__dec("ae415b9df420b26a0b4de668"))
+
+local openBtn = Instance.new(__dec("b35b5f9fff31a26c094beb"))
+openBtn.Name = __dec("b5465b96d716b96d3f51f179bf82")
+openBtn.Size = UDim2.new(0, 45, 0, 45)
+openBtn.Position = UDim2.new(0.05, 0, 0.2, 0)
+openBtn.BackgroundColor3 = Color3.fromRGB(10, 10, 15)
+openBtn.Image = __dec("88544699e900b26c1440bf22ffdddaec75aabbb135a1708b")
+openBtn.Visible = false
+openBtn.Active = true
+openBtn.SelectionImageObject = Instance.new(__dec("bc445f95ff"))
+openBtn.Parent = screenGui
+
+local openCorner = Instance.new(__dec("af7f7d97e81db26a"))
+openCorner.CornerRadius = UDim.new(0, 12)
+openCorner.Parent = openBtn
+
+local openStroke = Instance.new(__dec("af7f6d8ce81cbc7d"))
+openStroke.Color = Color3.fromRGB(60, 60, 80)
+openStroke.Thickness = 1.5
+openStroke.Parent = openBtn
+
+local draggingOpen, dragStartOpen, startPosOpen
+openBtn.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        draggingOpen = true
+        dragStartOpen = input.Position
+        startPosOpen = openBtn.Position
+        input.Changed:Connect(function()
+            if input.UserInputState == Enum.UserInputState.End then draggingOpen = false end
+        end)
+    end
+end)
+
+openBtn.InputChanged:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+        if draggingOpen then
+            local delta = input.Position - dragStartOpen
+            openBtn.Position = UDim2.new(startPosOpen.X.Scale, startPosOpen.X.Offset + delta.X, startPosOpen.Y.Scale, startPosOpen.Y.Offset + delta.Y)
+        end
+    end
+end)
+
+local minimizeBar = Instance.new(__dec("ae53468cd806a36c124a"))
+minimizeBar.Name = __dec("b75f5091f71aad7d3f45f7")
+minimizeBar.Size = UDim2.new(0, 120, 0, 16)
+minimizeBar.Position = UDim2.new(0.5, -60, 1, -22)
+minimizeBar.BackgroundColor3 = Color3.fromRGB(20, 20, 28)
+minimizeBar.BackgroundTransparency = 0.3
+minimizeBar.Text = __dec("be7f7bbfd5539a5d3371")
+minimizeBar.TextColor3 = Color3.fromRGB(180, 180, 180)
+minimizeBar.Font = Enum.Font.Code
+minimizeBar.TextSize = 12
+minimizeBar.AutoButtonColor = false
+minimizeBar.SelectionImageObject = Instance.new(__dec("bc445f95ff"))
+minimizeBar.Parent = mainFrame
+
+local minCorner = Instance.new(__dec("af7f7d97e81db26a"))
+minCorner.CornerRadius = UDim.new(0, 8)
+minCorner.Parent = minimizeBar
+
+minimizeBar.MouseEnter:Connect(function()
+    minimizeBar.BackgroundColor3 = Color3.fromRGB(35, 35, 50)
+    minimizeBar.TextColor3 = Color3.fromRGB(255, 255, 255)
+end)
+
+minimizeBar.MouseLeave:Connect(function()
+    minimizeBar.BackgroundColor3 = Color3.fromRGB(20, 20, 28)
+    minimizeBar.TextColor3 = Color3.fromRGB(180, 180, 180)
+end)
+
+local originalSize = UDim2.new(0, 720, 0, 430)
+local minimized = false
+
+minimizeBar.MouseButton1Click:Connect(function()
+    if minimized then return end
+    minimized = true
+
+    local currentPos = mainFrame.Position
+    local targetPos = UDim2.new(currentPos.X.Scale, currentPos.X.Offset + 315, currentPos.Y.Scale, currentPos.Y.Offset + 200)
+
+    local shrinkTween = TweenService:Create(mainFrame, TweenInfo.new(0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {
+        Size = UDim2.new(0, 90, 0, 30),
+        Position = targetPos,
+        BackgroundTransparency = 1
+    })
+
+    shrinkTween:Play()
+    shrinkTween.Completed:Connect(function()
+        mainFrame.Visible = false
+        openBtn.Visible = true
+    end)
+end)
+
+openBtn.MouseButton1Click:Connect(function()
+    if not minimized then return end
+
+    openBtn.Visible = false
+    mainFrame.Visible = true
+    
+    local currentPos = mainFrame.Position
+    local targetPos = UDim2.new(currentPos.X.Scale, currentPos.X.Offset - 315, currentPos.Y.Scale, currentPos.Y.Offset - 200)
+
+    local restoreTween = TweenService:Create(mainFrame, TweenInfo.new(0.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {
+        Size = originalSize,
+        Position = targetPos,
+        BackgroundTransparency = 0
+    })
+
+    restoreTween:Play()
+    restoreTween.Completed:Connect(function()
+        minimized = false
+    end)
+end)
