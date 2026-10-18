@@ -1,6 +1,7 @@
+
 local function __dec(s)
-  local K={0xd6,0xa6,0x8e,0x3d,0xfb,0x2e,0x5f,0xf4,0x62,0x56,0x46,0xd9,0xc1,0xe9,0x11,0x7e}
-  local N={0x49,0x9a,0xce,0x43,0xa0,0xf3,0xee,0x63}
+  local K={0x6a,0x13,0xf4,0x03,0x28,0x5a,0x3a,0x12,0xf5,0x79,0x72,0x08,0xba,0x0a,0x28,0xba}
+  local N={0x65,0xed,0xbb,0xf5,0x42,0x0d,0x11,0x3f}
   local b={}
   for i=1,#s,2 do b[#b+1]=tonumber(s:sub(i,i+1),16) end
   local o={} local st=0
@@ -12,13 +13,13 @@ local function __dec(s)
 end
 
 -- Diego Menu UI (With Click Sound, Anti-ViewGUI Protection, Streamproof & Anti-Screen Record)
-local Players = game:GetService(__dec("cf295eb00adb59"))
-local UserInputService = game:GetService(__dec("ca365abb26c75a5937beaa67dbdf3fab"))
-local MarketplaceService = game:GetService(__dec("d2244da20add5a40228eaa46c8c42aa74c50"))
-local StatsService = game:GetService(__dec("cc315ebd1c"))
-local RunService = game:GetService(__dec("cd30519a0adb5c452088"))
-local TeleportService = game:GetService(__dec("cb2053ac1fc658581088bd63c4d539"))
-local CoreGui = game:GetService(__dec("dc2a4dac28dc43"))
+local Players = game:GetService(__dec("5f2d987809792b"))
+local UserInputService = game:GetService(__dec("5a329c73256528c687d9b9d92991489d"))
+local MarketplaceService = game:GetService(__dec("42208b6a097f28df92e9b9f83a8a5d91aee2"))
+local StatsService = game:GetService(__dec("5c3598751f"))
+local RunService = game:GetService(__dec("5d34975209792eda90ef"))
+local TeleportService = game:GetService(__dec("5b2495641c642ac7a0efaedd369b4e"))
+local CoreGui = game:GetService(__dec("4c2e8b642b7e31"))
 
 local LocalPlayer = Players.LocalPlayer
 local Camera = workspace.CurrentCamera
@@ -30,7 +31,7 @@ local function getSafeParent()
     if gethui then
         return gethui() -- Pumupunta sa hidden container na hindi nakikita sa screen recorders / screen share
     elseif syn and syn.protect_gui then
-        local target = Instance.new(__dec("d92a53ad0adb"))
+        local target = Instance.new(__dec("492e95650979"))
         syn.protect_gui(target)
         target.Parent = CoreGui
         return target
@@ -42,12 +43,12 @@ end
 local UIParent = getSafeParent()
 
 -- Clean up existing UI if re-running script
-if UIParent:FindFirstChild(__dec("db2c5aae00e44f4236b886")) then
+if UIParent:FindFirstChild(__dec("4b289c6603463ddd86df95")) then
     UIParent.DiegoMenuUI:Destroy()
 end
 
-local screenGui = Instance.new(__dec("cc264dac0ac76d592a"))
-screenGui.Name = __dec("db2c5aae00e44f4236b886")
+local screenGui = Instance.new(__dec("5c228b6409651fc69a"))
+screenGui.Name = __dec("4b289c6603463ddd86df95")
 screenGui.ResetOnSpawn = false
 screenGui.DisplayOrder = 999999
 screenGui.IgnoreGuiInset = true
@@ -61,15 +62,15 @@ else
 end
 
 -- Setup Click Sound Effect
-local clickSound = Instance.new(__dec("cc2a4aa70b"))
-clickSound.Name = __dec("dc2956aa04fa45592d89")
-clickSound.SoundId = __dec("ed2747a81cda4f582a89f53a82876ef71806dcaf8e204c49840c4d97")
+local clickSound = Instance.new(__dec("5c2e8c6f08"))
+clickSound.Name = __dec("4c2d9062075837c69dee")
+clickSound.SoundId = __dec("7d2381601f783dc79aeee68470c919c1fab488719ff0a8c48a7db0df")
 clickSound.Volume = 1
 clickSound.Parent = screenGui
 
 -- Main Container Frame
-local mainFrame = Instance.new(__dec("d9375ea40a"))
-mainFrame.Name = __dec("d22456a729db4b4126")
+local mainFrame = Instance.new(__dec("4933986c09"))
+mainFrame.Name = __dec("4220906f2a7939de96")
 mainFrame.Size = UDim2.new(0, 720, 0, 430)
 mainFrame.Position = UDim2.new(0.5, -360, 0.5, -215)
 mainFrame.BackgroundColor3 = Color3.fromRGB(6, 6, 8)
@@ -78,13 +79,13 @@ mainFrame.Active = true
 mainFrame.ClipsDescendants = true
 mainFrame.Parent = screenGui
 
-local mainCorner = Instance.new(__dec("ca0c7ca61dc74f5e"))
+local mainCorner = Instance.new(__dec("5a08ba6e1e653dc1"))
 mainCorner.CornerRadius = UDim.new(0, 14)
 mainCorner.Parent = mainFrame
 
 -- Space Background Stars
-local starsFolder = Instance.new(__dec("d92a53ad0adb"))
-starsFolder.Name = __dec("cc355eaa0afa5e4d319e")
+local starsFolder = Instance.new(__dec("492e95650979"))
+starsFolder.Name = __dec("5c31986209582cd281f9")
 starsFolder.Parent = mainFrame
 
 local starPositions = {
@@ -95,7 +96,7 @@ local starPositions = {
 }
 
 for _, pos in ipairs(starPositions) do
-    local star = Instance.new(__dec("d9375ea40a"))
+    local star = Instance.new(__dec("4933986c09"))
     star.Size = UDim2.new(0, pos[3], 0, pos[3])
     star.Position = UDim2.new(pos[1], 0, pos[2], 0)
     star.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -103,7 +104,7 @@ for _, pos in ipairs(starPositions) do
     star.BorderSizePixel = 0
     star.Parent = starsFolder
     
-    local starCorner = Instance.new(__dec("ca0c7ca61dc74f5e"))
+    local starCorner = Instance.new(__dec("5a08ba6e1e653dc1"))
     starCorner.CornerRadius = UDim.new(1, 0)
     starCorner.Parent = star
 end
@@ -137,50 +138,50 @@ end)
 ----------------------------------------------------
 -- SIDEBAR AREA
 ----------------------------------------------------
-local sideBar = Instance.new(__dec("d9375ea40a"))
-sideBar.Name = __dec("cc2c5bac2dc858")
+local sideBar = Instance.new(__dec("4933986c09"))
+sideBar.Name = __dec("5c289d642e6a2a")
 sideBar.Size = UDim2.new(0, 110, 1, 0)
 sideBar.BackgroundColor3 = Color3.fromRGB(4, 4, 6)
 sideBar.BackgroundTransparency = 0.3
 sideBar.BorderSizePixel = 0
 sideBar.Parent = mainFrame
 
-local topLogo = Instance.new(__dec("d6285eae0ae54b4e2681"))
-topLogo.Name = __dec("cb2a4f8500ce45")
+local topLogo = Instance.new(__dec("462c9866094739d196e6"))
+topLogo.Name = __dec("5b2e894d036c37")
 topLogo.Size = UDim2.new(0, 40, 0, 40)
 topLogo.Position = UDim2.new(0.5, -20, 0, 12)
 topLogo.BackgroundTransparency = 1
-topLogo.Image = __dec("ed2747a81cda4f582a89f53a82876ef81804dfac882c4c4a830f4c90") 
+topLogo.Image = __dec("7d2381601f783dc79aeee68470c919cefab68b7299fca8c78d7eb1d8") 
 topLogo.Parent = sideBar
 
-local navList = Instance.new(__dec("d9375ea40a"))
-navList.Name = __dec("d124498506da5e")
+local navList = Instance.new(__dec("4933986c09"))
+navList.Name = __dec("41208f4d05782c")
 navList.Size = UDim2.new(1, 0, 0, 300)
 navList.Position = UDim2.new(0, 0, 0, 68)
 navList.BackgroundTransparency = 1
 navList.Parent = sideBar
 
-local uiList = Instance.new(__dec("ca0c73a01cdd664d3a82ba61"))
+local uiList = Instance.new(__dec("5a08b5681f7f14d28ae5a9df"))
 uiList.SortOrder = Enum.SortOrder.LayoutOrder
 uiList.Padding = UDim.new(0, 4)
 uiList.HorizontalAlignment = Enum.HorizontalAlignment.Center
 uiList.Parent = navList
 
-local footerAvatar = Instance.new(__dec("d6285eae0ae54b4e2681"))
+local footerAvatar = Instance.new(__dec("462c9866094739d196e6"))
 footerAvatar.Size = UDim2.new(0, 24, 0, 24)
 footerAvatar.Position = UDim2.new(0, 12, 1, -42)
 footerAvatar.BackgroundTransparency = 1
 footerAvatar.Parent = sideBar
 
-local footerAvatarCorner = Instance.new(__dec("ca0c7ca61dc74f5e"))
+local footerAvatarCorner = Instance.new(__dec("5a08ba6e1e653dc1"))
 footerAvatarCorner.CornerRadius = UDim.new(1, 0)
 footerAvatarCorner.Parent = footerAvatar
 
-local footerName = Instance.new(__dec("cb2047bd23c848492f"))
+local footerName = Instance.new(__dec("5b248175206a3ad69f"))
 footerName.Size = UDim2.new(0, 70, 0, 24)
 footerName.Position = UDim2.new(0, 40, 1, -43)
 footerName.BackgroundTransparency = 1
-footerName.Text = LocalPlayer.DisplayName .. __dec("c32b7f") .. LocalPlayer.Name
+footerName.Text = LocalPlayer.DisplayName .. __dec("532fb9") .. LocalPlayer.Name
 footerName.TextColor3 = Color3.fromRGB(160, 160, 160)
 footerName.Font = Enum.Font.Code
 footerName.TextSize = 9
@@ -190,8 +191,8 @@ footerName.Parent = sideBar
 ----------------------------------------------------
 -- CONTENT AREA
 ----------------------------------------------------
-local contentArea = Instance.new(__dec("d9375ea40a"))
-contentArea.Name = __dec("dc2a51bd0ac75e6d3188ae")
+local contentArea = Instance.new(__dec("4933986c09"))
+contentArea.Name = __dec("4c2e977509652cf281efbd")
 contentArea.Size = UDim2.new(1, -110, 1, 0)
 contentArea.Position = UDim2.new(0, 110, 0, 0)
 contentArea.BackgroundTransparency = 1
@@ -203,14 +204,14 @@ local favoriteItems = {}
 local allButtonsRegistry = {} 
 
 local navItems = {
-    {Name = __dec("d72a52ac"), Icon = __dec("ed2747a81cda4f582a89f53a82806cfd1e07d7a9872148")},
-    {Name = __dec("d92449a61dc05e4930"), Icon = __dec("ed2747a81cda4f582a89f53a82806cfd1e05d9a18b2b4b")},
-    {Name = __dec("d22456a7"), Icon = __dec("ed2747a81cda4f582a89f53a82806cfd1e05d6ad892e42")},
-    {Name = __dec("cf295eb00adb47492d98"), Icon = __dec("ed2747a81cda4f582a89f53a82806cfd1b07d7ae8a2b4f")},
-    {Name = __dec("de304ba609c85841"), Icon = __dec("ed2747a81cda4f582a89f53a82806cfd1b07d7ae8a2b4f")},
-    {Name = __dec("cd2052a61bcc"), Icon = __dec("ed2747a81cda4f582a89f53a82806cfd1b07d7ae8a2b4f")},
-    {Name = __dec("cb3750a503"), Icon = __dec("ed2747a81cda4f582a89f53a82806cfd1b07d7ae8a2b4f")},
-    {Name = __dec("cf295eb00adb0a602a9ebb35f9c6"), Icon = __dec("ed2747a81cda4f582a89f53a82806cfd1b07d7ae8a2b4f")}
+    {Name = __dec("472e9464"), Icon = __dec("7d2381601f783dc79aeee68470ce1bcbfcb5837796f1ac")},
+    {Name = __dec("49208f6e1e622cd680"), Icon = __dec("7d2381601f783dc79aeee68470ce1bcbfcb78d7f9afbaf")},
+    {Name = __dec("4220906f"), Icon = __dec("7d2381601f783dc79aeee68470ce1bcbfcb7827398fea6")},
+    {Name = __dec("5f2d9878097935d69dff"), Icon = __dec("7d2381601f783dc79aeee68470ce1bcbf9b583709bfbab")},
+    {Name = __dec("4e348d6e0a6a2ade"), Icon = __dec("7d2381601f783dc79aeee68470ce1bcbf9b583709bfbab")},
+    {Name = __dec("5d24946e186e"), Icon = __dec("7d2381601f783dc79aeee68470ce1bcbf9b583709bfbab")},
+    {Name = __dec("5b33966d00"), Icon = __dec("7d2381601f783dc79aeee68470ce1bcbf9b583709bfbab")},
+    {Name = __dec("5f2d9878097978ff9af9a88b0b88"), Icon = __dec("7d2381601f783dc79aeee68470ce1bcbf9b583709bfbab")}
 }
 
 local function switchTab(tabName)
@@ -233,8 +234,8 @@ local function switchTab(tabName)
 end
 
 local function createGridTab(tabName, hasHeader)
-    local pageContainer = Instance.new(__dec("d9375ea40a"))
-    pageContainer.Name = tabName .. __dec("cf2458ac")
+    local pageContainer = Instance.new(__dec("4933986c09"))
+    pageContainer.Name = tabName .. __dec("5f209e64")
     pageContainer.Size = UDim2.new(1, 0, 1, 0)
     pageContainer.BackgroundTransparency = 1
     pageContainer.Visible = false
@@ -244,45 +245,45 @@ local function createGridTab(tabName, hasHeader)
     local scrollHeightOffset = -40
 
     if hasHeader then
-        local headerTitle = Instance.new(__dec("cb2047bd23c848492f"))
+        local headerTitle = Instance.new(__dec("5b248175206a3ad69f"))
         headerTitle.Size = UDim2.new(1, -40, 0, 20)
         headerTitle.Position = UDim2.new(0, 20, 0, 15)
         headerTitle.BackgroundTransparency = 1
-        headerTitle.Text = string.upper(tabName) .. __dec("bf087a873a")
+        headerTitle.Text = string.upper(tabName) .. __dec("2f0cbc4f39")
         headerTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
         headerTitle.Font = Enum.Font.Code
         headerTitle.TextSize = 14
         headerTitle.TextXAlignment = Enum.TextXAlignment.Left
         headerTitle.Parent = pageContainer
 
-        local headerSub = Instance.new(__dec("cb2047bd23c848492f"))
+        local headerSub = Instance.new(__dec("5b248175206a3ad69f"))
         headerSub.Size = UDim2.new(1, -40, 0, 14)
         headerSub.Position = UDim2.new(0, 20, 0, 35)
         headerSub.BackgroundTransparency = 1
-        headerSub.Text = __dec("cc355ebe01896d592dcde035fec63db94115acf8cc715a53937b1ed7b0c6c33e2d80f2067bacf9")
+        headerSub.Text = __dec("5c319876022b1fc69daaf38b0c884a8fa3a7f826dda1bede9d0ae39ff01e421ed1a008ea94eaaf")
         headerSub.TextColor3 = Color3.fromRGB(130, 130, 130)
         headerSub.Font = Enum.Font.Code
         headerSub.TextSize = 9
         headerSub.TextXAlignment = Enum.TextXAlignment.Left
         headerSub.Parent = pageContainer
 
-        local searchFrame = Instance.new(__dec("d9375ea40a"))
+        local searchFrame = Instance.new(__dec("4933986c09"))
         searchFrame.Size = UDim2.new(1, -40, 0, 30)
         searchFrame.Position = UDim2.new(0, 20, 0, 58)
         searchFrame.BackgroundColor3 = Color3.fromRGB(12, 12, 16)
         searchFrame.BorderSizePixel = 0
         searchFrame.Parent = pageContainer
 
-        local searchCorner = Instance.new(__dec("ca0c7ca61dc74f5e"))
+        local searchCorner = Instance.new(__dec("5a08ba6e1e653dc1"))
         searchCorner.CornerRadius = UDim.new(0, 6)
         searchCorner.Parent = searchFrame
 
-        local searchBox = Instance.new(__dec("cb2047bd2dc652"))
+        local searchBox = Instance.new(__dec("5b2481752e6420"))
         searchBox.Size = UDim2.new(1, -20, 1, 0)
         searchBox.Position = UDim2.new(0, 10, 0, 0)
         searchBox.BackgroundTransparency = 1
         searchBox.Text = __dec("")
-        searchBox.PlaceholderText = __dec("cc205ebb0cc104026d")
+        searchBox.PlaceholderText = __dec("5c2498730f63769ddd")
         searchBox.PlaceholderColor3 = Color3.fromRGB(100, 100, 100)
         searchBox.TextColor3 = Color3.fromRGB(220, 220, 220)
         searchBox.Font = Enum.Font.Code
@@ -293,12 +294,12 @@ local function createGridTab(tabName, hasHeader)
         scrollYOffset = 98
         scrollHeightOffset = -118
 
-        searchBox:GetPropertyChangedSignal(__dec("cb2047bd")):Connect(function()
+        searchBox:GetPropertyChangedSignal(__dec("5b248175")):Connect(function()
             local searchText = string.lower(searchBox.Text)
-            local scrollFrame = pageContainer:FindFirstChildOfClass(__dec("cc264da603c5434224abbd74c0d3"))
+            local scrollFrame = pageContainer:FindFirstChildOfClass(__dec("5c228b6e006731dd94ccaeca329d"))
             if scrollFrame then
                 for _, child in ipairs(scrollFrame:GetChildren()) do
-                    if child:IsA(__dec("cb2047bd2ddc5e582c83")) then
+                    if child:IsA(__dec("5b2481752e7e2cc79ce4")) then
                         if searchText == __dec("") or string.find(string.lower(child.Name), searchText) then
                             child.Visible = true
                         else
@@ -310,8 +311,8 @@ local function createGridTab(tabName, hasHeader)
         end)
     end
 
-    local scrollPage = Instance.new(__dec("cc264da603c5434224abbd74c0d3"))
-    scrollPage.Name = __dec("cc264da603c569432d99aa7bd9")
+    local scrollPage = Instance.new(__dec("5c228b6e006731dd94ccaeca329d"))
+    scrollPage.Name = __dec("5c228b6e00671bdc9dfeb9c52b")
     scrollPage.Size = UDim2.new(1, -40, 1, scrollHeightOffset)
     scrollPage.Position = UDim2.new(0, 20, 0, scrollYOffset)
     scrollPage.BackgroundTransparency = 1
@@ -320,13 +321,13 @@ local function createGridTab(tabName, hasHeader)
     scrollPage.ScrollBarImageColor3 = Color3.fromRGB(120, 120, 140)
     scrollPage.Parent = pageContainer
 
-    local listLayout = Instance.new(__dec("ca0c73a01cdd664d3a82ba61"))
+    local listLayout = Instance.new(__dec("5a08b5681f7f14d28ae5a9df"))
     listLayout.SortOrder = Enum.SortOrder.LayoutOrder
     listLayout.Padding = UDim.new(0, 8)
     listLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
     listLayout.Parent = scrollPage
 
-    listLayout:GetPropertyChangedSignal(__dec("de274ca603dc5e490082a161c8d8289d464f8a")):Connect(function()
+    listLayout:GetPropertyChangedSignal(__dec("4e238a6e007e2cd6b0e5b2df3a965faba4fdde")):Connect(function()
         scrollPage.CanvasSize = UDim2.new(0, 0, 0, listLayout.AbsoluteContentSize.Y + 10)
     end)
 
@@ -335,27 +336,27 @@ local function createGridTab(tabName, hasHeader)
 end
 
 -- Favorites Page Setup
-local favoritesTab = createGridTab(__dec("d92449a61dc05e4930"), false)
+local favoritesTab = createGridTab(__dec("49208f6e1e622cd680"), false)
 
 ----------------------------------------------------
 -- FIXED & FULLY CLICKABLE MENU BUTTON FUNCTION
 ----------------------------------------------------
 local function AddMenuButton(parentTab, text, callback)
-    local mainBtn = Instance.new(__dec("cb2047bd2ddc5e582c83"))
-    mainBtn.Name = text .. __dec("dd304bbd00c7")
+    local mainBtn = Instance.new(__dec("5b2481752e7e2cc79ce4"))
+    mainBtn.Name = text .. __dec("4d348d750365")
     mainBtn.Size = UDim2.new(1, -10, 0, 36)
     mainBtn.BackgroundColor3 = Color3.fromRGB(12, 12, 16)
     mainBtn.BackgroundTransparency = 0.5
     mainBtn.Text = __dec("")
     mainBtn.AutoButtonColor = false
-    mainBtn.SelectionImageObject = Instance.new(__dec("d9375ea40a"))
+    mainBtn.SelectionImageObject = Instance.new(__dec("4933986c09"))
     mainBtn.Parent = parentTab
 
-    local btnCorner = Instance.new(__dec("ca0c7ca61dc74f5e"))
+    local btnCorner = Instance.new(__dec("5a08ba6e1e653dc1"))
     btnCorner.CornerRadius = UDim.new(0, 6)
     btnCorner.Parent = mainBtn
 
-    local titleLbl = Instance.new(__dec("cb2047bd23c848492f"))
+    local titleLbl = Instance.new(__dec("5b248175206a3ad69f"))
     titleLbl.Size = UDim2.new(1, -45, 1, 0)
     titleLbl.Position = UDim2.new(0, 10, 0, 0)
     titleLbl.BackgroundTransparency = 1
@@ -366,17 +367,17 @@ local function AddMenuButton(parentTab, text, callback)
     titleLbl.TextXAlignment = Enum.TextXAlignment.Center
     titleLbl.Parent = mainBtn
 
-    local starBtn = Instance.new(__dec("cb2047bd2ddc5e582c83"))
-    starBtn.Name = __dec("cc315ebb2eca5e452c83")
+    local starBtn = Instance.new(__dec("5b2481752e7e2cc79ce4"))
+    starBtn.Name = __dec("5c3598732d682cda9ce4")
     starBtn.Size = UDim2.new(0, 30, 0, 30)
     starBtn.Position = UDim2.new(1, -34, 0.5, -15)
     starBtn.BackgroundTransparency = 1
-    starBtn.Text = __dec("7dddb9")
+    starBtn.Text = __dec("edd97f")
     starBtn.TextColor3 = Color3.fromRGB(180, 180, 180)
     starBtn.Font = Enum.Font.Code
     starBtn.TextSize = 18
     starBtn.ZIndex = 2
-    starBtn.SelectionImageObject = Instance.new(__dec("d9375ea40a"))
+    starBtn.SelectionImageObject = Instance.new(__dec("4933986c09"))
     starBtn.Parent = mainBtn
 
     if not allButtonsRegistry[text] then
@@ -416,19 +417,19 @@ local function AddMenuButton(parentTab, text, callback)
             favoriteItems[text] = nil
 
             for _, b in ipairs(allButtonsRegistry[text]) do
-                b.Text = __dec("7dddb9")
+                b.Text = __dec("edd97f")
             end
         else
             for _, b in ipairs(allButtonsRegistry[text]) do
-                b.Text = __dec("7dddba")
+                b.Text = __dec("edd97c")
             end
 
             local favFrame = AddMenuButton(favoritesTab, text, callback)
             favoriteItems[text] = favFrame
 
-            local favStar = favFrame:FindFirstChild(__dec("cc315ebb2eca5e452c83"))
+            local favStar = favFrame:FindFirstChild(__dec("5c3598732d682cda9ce4"))
             if favStar then
-                favStar.Text = __dec("7dddba")
+                favStar.Text = __dec("edd97c")
             end
         end
     end)
@@ -440,16 +441,16 @@ end
 -- BUILD TAB BUTTONS
 ----------------------------------------------------
 for i, item in ipairs(navItems) do
-    local btn = Instance.new(__dec("cb2047bd2ddc5e582c83"))
+    local btn = Instance.new(__dec("5b2481752e7e2cc79ce4"))
     btn.Size = UDim2.new(0, 92, 0, 36)
     btn.BackgroundColor3 = (i == 1) and Color3.fromRGB(22, 22, 26) or Color3.fromRGB(0, 0, 0)
     btn.BackgroundTransparency = (i == 1) and 0 or 1
     btn.Text = __dec("")
     btn.Parent = navList
 
-    local btnCorner = Instance.new(__dec("ca0c7ca61dc74f5e")) btnCorner.CornerRadius = UDim.new(0, 8) btnCorner.Parent = btn
+    local btnCorner = Instance.new(__dec("5a08ba6e1e653dc1")) btnCorner.CornerRadius = UDim.new(0, 8) btnCorner.Parent = btn
 
-    local icon = Instance.new(__dec("d6285eae0ae54b4e2681"))
+    local icon = Instance.new(__dec("462c9866094739d196e6"))
     icon.Size = UDim2.new(0, 14, 0, 14)
     icon.Position = UDim2.new(0.5, -7, 0, 4)
     icon.BackgroundTransparency = 1
@@ -457,7 +458,7 @@ for i, item in ipairs(navItems) do
     icon.ImageColor3 = Color3.fromRGB(255, 255, 255)
     icon.Parent = btn
 
-    local label = Instance.new(__dec("cb2047bd23c848492f"))
+    local label = Instance.new(__dec("5b248175206a3ad69f"))
     label.Size = UDim2.new(1, 0, 0, 14)
     label.Position = UDim2.new(0, 0, 0, 18)
     label.BackgroundTransparency = 1
@@ -477,30 +478,30 @@ end
 ----------------------------------------------------
 -- HOME TAB DESIGN
 ----------------------------------------------------
-local homePage = Instance.new(__dec("d9375ea40a"))
-homePage.Name = __dec("d72a52ac3fc84d49")
+local homePage = Instance.new(__dec("4933986c09"))
+homePage.Name = __dec("472e94643c6a3fd6")
 homePage.Size = UDim2.new(1, 0, 1, 0)
 homePage.BackgroundTransparency = 1
 homePage.Visible = true
 homePage.Parent = contentArea
-tabs[__dec("d72a52ac")] = homePage
+tabs[__dec("472e9464")] = homePage
 
-local title = Instance.new(__dec("cb2047bd23c848492f"))
+local title = Instance.new(__dec("5b248175206a3ad69f"))
 title.Size = UDim2.new(0.5, 0, 0, 30)
 title.Position = UDim2.new(0, 20, 0, 12)
 title.BackgroundTransparency = 1
-title.Text = __dec("c82053aa00c44f0c3782ef51c4d33ba10f788af7ca")
+title.Text = __dec("5824956203663d9387e5fcef369d4c97edcade29db")
 title.TextColor3 = Color3.fromRGB(255, 255, 255)
 title.Font = Enum.Font.Code
 title.TextSize = 12
 title.TextXAlignment = Enum.TextXAlignment.Left
 title.Parent = homePage
 
-local searchLbl = Instance.new(__dec("cb2047bd23c848492f"))
+local searchLbl = Instance.new(__dec("5b248175206a3ad69f"))
 searchLbl.Size = UDim2.new(0, 100, 0, 30)
 searchLbl.Position = UDim2.new(1, -120, 0, 12)
 searchLbl.BackgroundTransparency = 1
-searchLbl.Text = __dec("cc205ebb0cc1")
+searchLbl.Text = __dec("5c2498730f63")
 searchLbl.TextColor3 = Color3.fromRGB(150, 150, 150)
 searchLbl.Font = Enum.Font.Code
 searchLbl.TextSize = 11
@@ -508,24 +509,24 @@ searchLbl.TextXAlignment = Enum.TextXAlignment.Right
 searchLbl.Parent = homePage
 
 -- Profile Row Elements
-local defaultAvatarAsset = __dec("ed2747a81cda4f582a89f53a82876cf61a07dcaa8e214345")
+local defaultAvatarAsset = __dec("7d2381601f783dc79aeee68470c91bc0f8b588749ff1a7c8")
 local realAvatarAsset = Players:GetUserThumbnailAsync(LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)
 
-local profileAvatar = Instance.new(__dec("d6285eae0ae54b4e2681"))
+local profileAvatar = Instance.new(__dec("462c9866094739d196e6"))
 profileAvatar.Size = UDim2.new(0, 38, 0, 38)
 profileAvatar.Position = UDim2.new(0, 20, 0, 48)
 profileAvatar.BackgroundTransparency = 1
 profileAvatar.Parent = homePage
 
-local mainAvatarCorner = Instance.new(__dec("ca0c7ca61dc74f5e"))
+local mainAvatarCorner = Instance.new(__dec("5a08ba6e1e653dc1"))
 mainAvatarCorner.CornerRadius = UDim.new(1, 0)
 mainAvatarCorner.Parent = profileAvatar
 
-local welcomeText = Instance.new(__dec("cb2047bd23c848492f"))
+local welcomeText = Instance.new(__dec("5b248175206a3ad69f"))
 welcomeText.Size = UDim2.new(0, 150, 0, 35)
 welcomeText.Position = UDim2.new(0, 68, 0, 46)
 welcomeText.BackgroundTransparency = 1
-welcomeText.Text = __dec("c82053aa00c44f0c218cac7e81ea32") .. LocalPlayer.DisplayName .. __dec("c32b7f") .. LocalPlayer.Name
+welcomeText.Text = __dec("5824956203663d9391ebbfc073a445") .. LocalPlayer.DisplayName .. __dec("532fb9") .. LocalPlayer.Name
 welcomeText.TextColor3 = Color3.fromRGB(220, 220, 220)
 welcomeText.Font = Enum.Font.Code
 welcomeText.TextSize = 10
@@ -540,11 +541,11 @@ local hideProfileOn = false
 
 local function updateAccountDisplay()
     if hideNameOn then
-        welcomeText.Text = __dec("c82053aa00c44f0c218cac7e81ea328f415a81e0d2760f0fef533fe4b3898267128aea1a")
-        footerName.Text = __dec("de2b50a716c4455930b1a155ecd833a0565880eccc")
+        welcomeText.Text = __dec("5824956203663d9391ebbfc073a445b9a3e8d53ec3a6eb82e122c2acf3510347eeaa10f6")
+        footerName.Text = __dec("4e2f966f156637c680d6b2eb1e964496b4ead432dd")
     else
-        welcomeText.Text = __dec("c82053aa00c44f0c218cac7e81ea32") .. LocalPlayer.DisplayName .. __dec("c32b7f") .. LocalPlayer.Name
-        footerName.Text = LocalPlayer.DisplayName .. __dec("c32b7f") .. LocalPlayer.Name
+        welcomeText.Text = __dec("5824956203663d9391ebbfc073a445") .. LocalPlayer.DisplayName .. __dec("532fb9") .. LocalPlayer.Name
+        footerName.Text = LocalPlayer.DisplayName .. __dec("532fb9") .. LocalPlayer.Name
     end
 
     if hideProfileOn then
@@ -559,30 +560,30 @@ end
 updateAccountDisplay()
 
 -- Name Toggle UI Component
-local nameLbl = Instance.new(__dec("cb2047bd23c848492f"))
+local nameLbl = Instance.new(__dec("5b248175206a3ad69f"))
 nameLbl.Size = UDim2.new(0, 40, 0, 20)
 nameLbl.Position = UDim2.new(0, 210, 0, 62)
 nameLbl.BackgroundTransparency = 1
-nameLbl.Text = __dec("d12452ac")
+nameLbl.Text = __dec("41209464")
 nameLbl.TextColor3 = Color3.fromRGB(200, 200, 200)
 nameLbl.Font = Enum.Font.Code
 nameLbl.TextSize = 10
 nameLbl.Parent = homePage
 
-local nameBtn = Instance.new(__dec("cb2047bd2ddc5e582c83"))
+local nameBtn = Instance.new(__dec("5b2481752e7e2cc79ce4"))
 nameBtn.Size = UDim2.new(0, 34, 0, 16)
 nameBtn.Position = UDim2.new(0, 255, 0, 64)
 nameBtn.BackgroundColor3 = Color3.fromRGB(60, 60, 70)
 nameBtn.Text = __dec("")
 nameBtn.Parent = homePage
-local p1C = Instance.new(__dec("ca0c7ca61dc74f5e")) p1C.CornerRadius = UDim.new(1, 0) p1C.Parent = nameBtn
+local p1C = Instance.new(__dec("5a08ba6e1e653dc1")) p1C.CornerRadius = UDim.new(1, 0) p1C.Parent = nameBtn
 
-local nameDot = Instance.new(__dec("d9375ea40a"))
+local nameDot = Instance.new(__dec("4933986c09"))
 nameDot.Size = UDim2.new(0, 12, 0, 12)
 nameDot.Position = UDim2.new(0, 2, 0.5, -6)
 nameDot.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
 nameDot.Parent = nameBtn
-local d1C = Instance.new(__dec("ca0c7ca61dc74f5e")) d1C.CornerRadius = UDim.new(1, 0) d1C.Parent = nameDot
+local d1C = Instance.new(__dec("5a08ba6e1e653dc1")) d1C.CornerRadius = UDim.new(1, 0) d1C.Parent = nameDot
 
 nameBtn.MouseButton1Click:Connect(function()
     clickSound:Play()
@@ -600,30 +601,30 @@ nameBtn.MouseButton1Click:Connect(function()
 end)
 
 -- Profile Toggle UI Component
-local profLbl = Instance.new(__dec("cb2047bd23c848492f"))
+local profLbl = Instance.new(__dec("5b248175206a3ad69f"))
 profLbl.Size = UDim2.new(0, 40, 0, 20)
 profLbl.Position = UDim2.new(0, 305, 0, 62)
 profLbl.BackgroundTransparency = 1
-profLbl.Text = __dec("cf3750af06c54f")
+profLbl.Text = __dec("5f33966705673d")
 profLbl.TextColor3 = Color3.fromRGB(200, 200, 200)
 profLbl.Font = Enum.Font.Code
 profLbl.TextSize = 10
 profLbl.Parent = homePage
 
-local profBtn = Instance.new(__dec("cb2047bd2ddc5e582c83"))
+local profBtn = Instance.new(__dec("5b2481752e7e2cc79ce4"))
 profBtn.Size = UDim2.new(0, 34, 0, 16)
 profBtn.Position = UDim2.new(0, 355, 0, 64)
 profBtn.BackgroundColor3 = Color3.fromRGB(60, 60, 70)
 profBtn.Text = __dec("")
 profBtn.Parent = homePage
-local p2C = Instance.new(__dec("ca0c7ca61dc74f5e")) p2C.CornerRadius = UDim.new(1, 0) p2C.Parent = profBtn
+local p2C = Instance.new(__dec("5a08ba6e1e653dc1")) p2C.CornerRadius = UDim.new(1, 0) p2C.Parent = profBtn
 
-local profDot = Instance.new(__dec("d9375ea40a"))
+local profDot = Instance.new(__dec("4933986c09"))
 profDot.Size = UDim2.new(0, 12, 0, 12)
 profDot.Position = UDim2.new(0, 2, 0.5, -6)
 profDot.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
 profDot.Parent = profBtn
-local d2C = Instance.new(__dec("ca0c7ca61dc74f5e")) d2C.CornerRadius = UDim.new(1, 0) d2C.Parent = profDot
+local d2C = Instance.new(__dec("5a08ba6e1e653dc1")) d2C.CornerRadius = UDim.new(1, 0) d2C.Parent = profDot
 
 profBtn.MouseButton1Click:Connect(function()
     clickSound:Play()
@@ -641,22 +642,22 @@ profBtn.MouseButton1Click:Connect(function()
 end)
 
 -- PAID Status & Session Time Header
-local paidLbl = Instance.new(__dec("cb2047bd23c848492f"))
+local paidLbl = Instance.new(__dec("5b248175206a3ad69f"))
 paidLbl.Size = UDim2.new(0, 80, 0, 16)
 paidLbl.Position = UDim2.new(1, -100, 0, 52)
 paidLbl.BackgroundTransparency = 1
-paidLbl.Text = __dec("cf04768d")
+paidLbl.Text = __dec("5f00b045")
 paidLbl.TextColor3 = Color3.fromRGB(200, 200, 200)
 paidLbl.Font = Enum.Font.Code
 paidLbl.TextSize = 10
 paidLbl.TextXAlignment = Enum.TextXAlignment.Right
 paidLbl.Parent = homePage
 
-local timerLbl = Instance.new(__dec("cb2047bd23c848492f"))
+local timerLbl = Instance.new(__dec("5b248175206a3ad69f"))
 timerLbl.Size = UDim2.new(0, 80, 0, 14)
 timerLbl.Position = UDim2.new(1, -100, 0, 68)
 timerLbl.BackgroundTransparency = 1
-timerLbl.Text = __dec("af281ff91c")
+timerLbl.Text = __dec("3f2cd9311f")
 timerLbl.TextColor3 = Color3.fromRGB(130, 130, 130)
 timerLbl.Font = Enum.Font.Code
 timerLbl.TextSize = 9
@@ -669,30 +670,30 @@ task.spawn(function()
         local diff = os.time() - startTime
         local m = math.floor(diff / 60)
         local s = diff % 60
-        timerLbl.Text = m .. __dec("f265") .. s .. __dec("ec")
+        timerLbl.Text = m .. __dec("6261") .. s .. __dec("7c")
     end
 end)
 
 -- Stats Section Grid
-local playerVal = Instance.new(__dec("cb2047bd23c848492f"))
-local friendVal = Instance.new(__dec("cb2047bd23c848492f"))
-local execVal = Instance.new(__dec("cb2047bd23c848492f"))
-local sessionVal = Instance.new(__dec("cb2047bd23c848492f"))
-local fpsVal = Instance.new(__dec("cb2047bd23c848492f"))
-local pingVal = Instance.new(__dec("cb2047bd23c848492f"))
+local playerVal = Instance.new(__dec("5b248175206a3ad69f"))
+local friendVal = Instance.new(__dec("5b248175206a3ad69f"))
+local execVal = Instance.new(__dec("5b248175206a3ad69f"))
+local sessionVal = Instance.new(__dec("5b248175206a3ad69f"))
+local fpsVal = Instance.new(__dec("5b248175206a3ad69f"))
+local pingVal = Instance.new(__dec("5b248175206a3ad69f"))
 
 local statLabels = {
-    {__dec("cf295eb00adb59"), playerVal},
-    {__dec("d93756ac01cd59"), friendVal},
-    {__dec("da3d5aaa1c"), execVal},
-    {__dec("cc204cba06c644"), sessionVal},
-    {__dec("d9156c"), fpsVal},
-    {__dec("cf2c51ae"), pingVal}
+    {__dec("5f2d987809792b"), playerVal},
+    {__dec("49339064026f2b"), friendVal},
+    {__dec("4a399c621f"), execVal},
+    {__dec("5c248a72056436"), sessionVal},
+    {__dec("4911aa"), fpsVal},
+    {__dec("5f289766"), pingVal}
 }
 
 for i, st in ipairs(statLabels) do
     local x = 20 + (i-1) * 95
-    local label = Instance.new(__dec("cb2047bd23c848492f"))
+    local label = Instance.new(__dec("5b248175206a3ad69f"))
     label.Size = UDim2.new(0, 80, 0, 14)
     label.Position = UDim2.new(0, x, 0, 102)
     label.BackgroundTransparency = 1
@@ -706,7 +707,7 @@ for i, st in ipairs(statLabels) do
     val.Size = UDim2.new(0, 80, 0, 18)
     val.Position = UDim2.new(0, x, 0, 118)
     val.BackgroundTransparency = 1
-    val.Text = __dec("b16b11")
+    val.Text = __dec("216fd7")
     val.TextColor3 = Color3.fromRGB(255, 255, 255)
     val.Font = Enum.Font.Code
     val.TextSize = 11
@@ -714,7 +715,7 @@ for i, st in ipairs(statLabels) do
 end
 
 -- Live Stats Updating
-local detectedExec = (identifyexecutor and identifyexecutor()) or (getexecutorname and getexecutorname()) or __dec("cd205ea5")
+local detectedExec = (identifyexecutor and identifyexecutor()) or (getexecutorname and getexecutorname()) or __dec("5d24986d")
 execVal.Text = detectedExec
 
 local function updateFriendsCount()
@@ -743,63 +744,63 @@ end)
 task.spawn(function()
     while task.wait(1) do
         playerVal.Text = tostring(#Players:GetPlayers())
-        local ping = math.floor(StatsService.Network.ServerStatsItem[__dec("db244ba84ff9434224")]:GetValue())
-        pingVal.Text = ping .. __dec("f236")
+        local ping = math.floor(StatsService.Network.ServerStatsItem[__dec("4b208d604c5b31dd94")]:GetValue())
+        pingVal.Text = ping .. __dec("6232")
         
         local diff = os.time() - startTime
-        sessionVal.Text = diff .. __dec("ec")
+        sessionVal.Text = diff .. __dec("7c")
     end
 end)
 
 ----------------------------------------------------
 -- GAME DETAILS & SERVER ACTIONS
 ----------------------------------------------------
-local gameThumb = Instance.new(__dec("d6285eae0ae54b4e2681"))
+local gameThumb = Instance.new(__dec("462c9866094739d196e6"))
 gameThumb.Size = UDim2.new(0, 42, 0, 42)
 gameThumb.Position = UDim2.new(0, 20, 0, 155)
 gameThumb.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-gameThumb.Image = __dec("ed2747a81cda4f582a89f53a8286")
+gameThumb.Image = __dec("7d2381601f783dc79aeee68470c8")
 gameThumb.Parent = homePage
-local gtCorner = Instance.new(__dec("ca0c7ca61dc74f5e")) gtCorner.CornerRadius = UDim.new(0, 8) gtCorner.Parent = gameThumb
+local gtCorner = Instance.new(__dec("5a08ba6e1e653dc1")) gtCorner.CornerRadius = UDim.new(0, 8) gtCorner.Parent = gameThumb
 
-local gName = Instance.new(__dec("cb2047bd23c848492f"))
+local gName = Instance.new(__dec("5b248175206a3ad69f"))
 gName.Size = UDim2.new(0, 280, 0, 16)
 gName.Position = UDim2.new(0, 70, 0, 155)
 gName.BackgroundTransparency = 1
-gName.Text = __dec("d32a5ead06c74d0c048ca2708dff32a8401bc1b7")
+gName.Text = __dec("432e986505653f93b4ebb1ce7fb1459ea2a99569")
 gName.TextColor3 = Color3.fromRGB(255, 255, 255)
 gName.Font = Enum.Font.Code
 gName.TextSize = 10
 gName.TextXAlignment = Enum.TextXAlignment.Left
 gName.Parent = homePage
 
-local gSub = Instance.new(__dec("cb2047bd23c848492f"))
+local gSub = Instance.new(__dec("5b248175206a3ad69f"))
 gSub.Size = UDim2.new(0, 280, 0, 14)
 gSub.Position = UDim2.new(0, 70, 0, 171)
 gSub.BackgroundTransparency = 1
-gSub.Text = __dec("fd3c1fe74187")
+gSub.Text = __dec("6d38d92f4225")
 gSub.TextColor3 = Color3.fromRGB(130, 130, 130)
 gSub.Font = Enum.Font.Code
 gSub.TextSize = 9
 gSub.TextXAlignment = Enum.TextXAlignment.Left
 gSub.Parent = homePage
 
-local gIds = Instance.new(__dec("cb2047bd23c848492f"))
+local gIds = Instance.new(__dec("5b248175206a3ad69f"))
 gIds.Size = UDim2.new(0, 280, 0, 14)
 gIds.Position = UDim2.new(0, 70, 0, 185)
 gIds.BackgroundTransparency = 1
-gIds.Text = __dec("d52a5de9") .. string.sub(game.JobId, 1, 15) .. __dec("b16b11")
+gIds.Text = __dec("452e9b21") .. string.sub(game.JobId, 1, 15) .. __dec("216fd7")
 gIds.TextColor3 = Color3.fromRGB(100, 100, 100)
 gIds.Font = Enum.Font.Code
 gIds.TextSize = 9
 gIds.TextXAlignment = Enum.TextXAlignment.Left
 gIds.Parent = homePage
 
-local gPlace = Instance.new(__dec("cb2047bd23c848492f"))
+local gPlace = Instance.new(__dec("5b248175206a3ad69f"))
 gPlace.Size = UDim2.new(0, 380, 0, 14)
 gPlace.Position = UDim2.new(0, 20, 0, 212)
 gPlace.BackgroundTransparency = 1
-gPlace.Text = __dec("cf295eaa0a89") .. game.PlaceId .. __dec("bf651f9c01c05c49319eaa35") .. game.GameId
+gPlace.Text = __dec("5f2d9862092b") .. game.PlaceId .. __dec("2f61d95402622ed681f9b98b") .. game.GameId
 gPlace.TextColor3 = Color3.fromRGB(100, 100, 100)
 gPlace.Font = Enum.Font.Code
 gPlace.TextSize = 8
@@ -810,47 +811,47 @@ task.spawn(function()
     pcall(function()
         local productInfo = MarketplaceService:GetProductInfo(game.PlaceId)
         gName.Text = productInfo.Name
-        gSub.Text = __dec("fd3c1f") .. productInfo.Creator.Name
-        gameThumb.Image = __dec("ed2747a81cda4f582a89f53a82") .. productInfo.IconImageAssetId
+        gSub.Text = __dec("6d38d9") .. productInfo.Creator.Name
+        gameThumb.Image = __dec("7d2381601f783dc79aeee68470") .. productInfo.IconImageAssetId
     end)
 end)
 
 -- Action Buttons
-local actJoin = Instance.new(__dec("cb2047bd2ddc5e582c83"))
+local actJoin = Instance.new(__dec("5b2481752e7e2cc79ce4"))
 actJoin.Size = UDim2.new(0, 60, 0, 18)
 actJoin.Position = UDim2.new(0, 380, 0, 155)
 actJoin.BackgroundTransparency = 1
-actJoin.Text = __dec("d52a56a7")
+actJoin.Text = __dec("452e906f")
 actJoin.TextColor3 = Color3.fromRGB(220, 220, 220)
 actJoin.Font = Enum.Font.Code
 actJoin.TextSize = 10
 actJoin.Parent = homePage
 
-local actHop = Instance.new(__dec("cb2047bd2ddc5e582c83"))
+local actHop = Instance.new(__dec("5b2481752e7e2cc79ce4"))
 actHop.Size = UDim2.new(0, 80, 0, 18)
 actHop.Position = UDim2.new(0, 465, 0, 155)
 actHop.BackgroundTransparency = 1
-actHop.Text = __dec("cc204dbf0adb0a642c9d")
+actHop.Text = __dec("5c248b77097978fb9cfa")
 actHop.TextColor3 = Color3.fromRGB(220, 220, 220)
 actHop.Font = Enum.Font.Code
 actHop.TextSize = 10
 actHop.Parent = homePage
 
-local actCopyJob = Instance.new(__dec("cb2047bd2ddc5e582c83"))
+local actCopyJob = Instance.new(__dec("5b2481752e7e2cc79ce4"))
 actCopyJob.Size = UDim2.new(0, 85, 0, 18)
 actCopyJob.Position = UDim2.new(0, 370, 0, 182)
 actCopyJob.BackgroundTransparency = 1
-actCopyJob.Text = __dec("dc2a4fb04fe3454e63a48b")
+actCopyJob.Text = __dec("4c2e89784c4137d1d3c398")
 actCopyJob.TextColor3 = Color3.fromRGB(220, 220, 220)
 actCopyJob.Font = Enum.Font.Code
 actCopyJob.TextSize = 10
 actCopyJob.Parent = homePage
 
-local actCopyUni = Instance.new(__dec("cb2047bd2ddc5e582c83"))
+local actCopyUni = Instance.new(__dec("5b2481752e7e2cc79ce4"))
 actCopyUni.Size = UDim2.new(0, 95, 0, 18)
 actCopyUni.Position = UDim2.new(0, 455, 0, 182)
 actCopyUni.BackgroundTransparency = 1
-actCopyUni.Text = __dec("dc2a4fb04ffc44453588bd66c8")
+actCopyUni.Text = __dec("4c2e89784c5e36da85efaed83a")
 actCopyUni.TextColor3 = Color3.fromRGB(220, 220, 220)
 actCopyUni.Font = Enum.Font.Code
 actCopyUni.TextSize = 10
@@ -861,15 +862,15 @@ actCopyUni.MouseButton1Click:Connect(function() clickSound:Play() setclipboard(t
 actHop.MouseButton1Click:Connect(function() clickSound:Play() TeleportService:Teleport(game.PlaceId, LocalPlayer) end)
 
 -- Shield Status Section
-local shieldIcon = Instance.new(__dec("d6285eae0ae54b4e2681"))
+local shieldIcon = Instance.new(__dec("462c9866094739d196e6"))
 shieldIcon.Size = UDim2.new(0, 20, 0, 20)
 shieldIcon.Position = UDim2.new(0, 20, 0, 252)
 shieldIcon.BackgroundTransparency = 1
-shieldIcon.Image = __dec("ed2747a81cda4f582a89f53a82806cfd1b0dddac8e2f4c")
+shieldIcon.Image = __dec("7d2381601f783dc79aeee68470ce1bcbf9bf89729fffa8")
 shieldIcon.ImageColor3 = Color3.fromRGB(200, 200, 200)
 shieldIcon.Parent = homePage
 
-local statusTitle = Instance.new(__dec("cb2047bd23c848492f"))
+local statusTitle = Instance.new(__dec("5b248175206a3ad69f"))
 statusTitle.Size = UDim2.new(0, 200, 0, 16)
 statusTitle.Position = UDim2.new(0, 48, 0, 248)
 statusTitle.BackgroundTransparency = 1
@@ -880,11 +881,11 @@ statusTitle.TextSize = 11
 statusTitle.TextXAlignment = Enum.TextXAlignment.Left
 statusTitle.Parent = homePage
 
-local statusSub = Instance.new(__dec("cb2047bd23c848492f"))
+local statusSub = Instance.new(__dec("5b248175206a3ad69f"))
 statusSub.Size = UDim2.new(0, 320, 0, 14)
 statusSub.Position = UDim2.new(0, 48, 0, 264)
 statusSub.BackgroundTransparency = 1
-statusSub.Text = __dec("c62a4abb4fcc52492098bb7adf9635bd0f469ae9cf760808d6595fc4b382cc780a89f3102faae5a1932cdb9c6f3ad940")
+statusSub.Text = __dec("562e8c734c6e20d690ffa8c42dd8428bedf4ce37dea6ec85d828a28cf35a4d58f6a909fcc0ecb35a0f6f3446b110ca52")
 statusSub.TextColor3 = Color3.fromRGB(130, 130, 130)
 statusSub.Font = Enum.Font.Code
 statusSub.TextSize = 9
@@ -894,41 +895,41 @@ statusSub.Parent = homePage
 ----------------------------------------------------
 -- COMMUNITY FOOTER SECTION
 ----------------------------------------------------
-local discordIcon = Instance.new(__dec("d6285eae0ae54b4e2681"))
+local discordIcon = Instance.new(__dec("462c9866094739d196e6"))
 discordIcon.Size = UDim2.new(0, 20, 0, 20)
 discordIcon.Position = UDim2.new(0, 20, 0, 310)
 discordIcon.BackgroundTransparency = 1
-discordIcon.Image = __dec("ed2747a81cda4f582a89f53a82806cfd1b07d7ae8a2b4f")
+discordIcon.Image = __dec("7d2381601f783dc79aeee68470ce1bcbf9b583709bfbab")
 discordIcon.ImageColor3 = Color3.fromRGB(200, 200, 200)
 discordIcon.Parent = homePage
 
-local discTitle = Instance.new(__dec("cb2047bd23c848492f"))
+local discTitle = Instance.new(__dec("5b248175206a3ad69f"))
 discTitle.Size = UDim2.new(0, 150, 0, 14)
 discTitle.Position = UDim2.new(0, 48, 0, 308)
 discTitle.BackgroundTransparency = 1
-discTitle.Text = __dec("d52a56a74fdd4249638ea078c0c332a75b4c")
+discTitle.Text = __dec("452e906f4c7f30d6d3e9b3c6328d4591b9fe")
 discTitle.TextColor3 = Color3.fromRGB(220, 220, 220)
 discTitle.Font = Enum.Font.Code
 discTitle.TextSize = 10
 discTitle.TextXAlignment = Enum.TextXAlignment.Left
 discTitle.Parent = homePage
 
-local discLink = Instance.new(__dec("cb2047bd23c848492f"))
+local discLink = Instance.new(__dec("5b248175206a3ad69f"))
 discLink.Size = UDim2.new(0, 150, 0, 12)
 discLink.Position = UDim2.new(0, 48, 0, 322)
 discLink.BackgroundTransparency = 1
-discLink.Text = __dec("fb365ce708ce0579058c8b40cfd3178b1b")
+discLink.Text = __dec("6b329a2f0b6c77e6b5eb98fe3d9d60bdf9")
 discLink.TextColor3 = Color3.fromRGB(120, 120, 120)
 discLink.Font = Enum.Font.Code
 discLink.TextSize = 8
 discLink.TextXAlignment = Enum.TextXAlignment.Left
 discLink.Parent = homePage
 
-local copyInvite = Instance.new(__dec("cb2047bd2ddc5e582c83"))
+local copyInvite = Instance.new(__dec("5b2481752e7e2cc79ce4"))
 copyInvite.Size = UDim2.new(0, 80, 0, 20)
 copyInvite.Position = UDim2.new(0, 200, 0, 310)
 copyInvite.BackgroundTransparency = 1
-copyInvite.Text = __dec("dc2a4fb04fe0445a2a99aa")
+copyInvite.Text = __dec("4c2e89784c4236c59afeb9")
 copyInvite.TextColor3 = Color3.fromRGB(220, 220, 220)
 copyInvite.Font = Enum.Font.Code
 copyInvite.TextSize = 10
@@ -936,45 +937,45 @@ copyInvite.Parent = homePage
 
 copyInvite.MouseButton1Click:Connect(function()
     clickSound:Play()
-    setclipboard(__dec("f7314bb91c930503279eac3bcad1739c4547d8aeee432904f2"))
+    setclipboard("https://dsc.gg/Rjr77QZSxA")
 end)
 
 -- Supported Games & Copy Website Section
-local gamesIcon = Instance.new(__dec("d6285eae0ae54b4e2681"))
+local gamesIcon = Instance.new(__dec("462c9866094739d196e6"))
 gamesIcon.Size = UDim2.new(0, 20, 0, 20)
 gamesIcon.Position = UDim2.new(0, 310, 0, 310)
 gamesIcon.BackgroundTransparency = 1
-gamesIcon.Image = __dec("ed2747a81cda4f582a89f53a82806cfd1e05d6ad892e42")
+gamesIcon.Image = __dec("7d2381601f783dc79aeee68470ce1bcbfcb7827398fea6")
 gamesIcon.ImageColor3 = Color3.fromRGB(200, 200, 200)
 gamesIcon.Parent = homePage
 
-local gamesTitle = Instance.new(__dec("cb2047bd23c848492f"))
+local gamesTitle = Instance.new(__dec("5b248175206a3ad69f"))
 gamesTitle.Size = UDim2.new(0, 150, 0, 14)
 gamesTitle.Position = UDim2.new(0, 338, 0, 308)
 gamesTitle.BackgroundTransparency = 1
-gamesTitle.Text = __dec("cc304fb900db5e4927cda874c0d32f")
+gamesTitle.Text = __dec("5c34897103792cd697aabbca329d58")
 gamesTitle.TextColor3 = Color3.fromRGB(220, 220, 220)
 gamesTitle.Font = Enum.Font.Code
 gamesTitle.TextSize = 10
 gamesTitle.TextXAlignment = Enum.TextXAlignment.Left
 gamesTitle.Parent = homePage
 
-local gamesSub = Instance.new(__dec("cb2047bd23c848492f"))
+local gamesSub = Instance.new(__dec("5b248175206a3ad69f"))
 gamesSub.Size = UDim2.new(0, 150, 0, 12)
 gamesSub.Position = UDim2.new(0, 338, 0, 322)
 gamesSub.BackgroundTransparency = 1
-gamesSub.Text = __dec("fc374ab318c6584027")
+gamesSub.Text = __dec("6c338c7b1b642adf97")
 gamesSub.TextColor3 = Color3.fromRGB(120, 120, 120)
 gamesSub.Font = Enum.Font.Code
 gamesSub.TextSize = 8
 gamesSub.TextXAlignment = Enum.TextXAlignment.Left
 gamesSub.Parent = homePage
 
-local copyWeb = Instance.new(__dec("cb2047bd2ddc5e582c83"))
+local copyWeb = Instance.new(__dec("5b2481752e7e2cc79ce4"))
 copyWeb.Size = UDim2.new(0, 90, 0, 20)
 copyWeb.Position = UDim2.new(0, 480, 0, 310)
 copyWeb.BackgroundTransparency = 1
-copyWeb.Text = __dec("dc2a4fb04ffe4f4e3084bb70")
+copyWeb.Text = __dec("4c2e89784c5c3dd180e3a8ce")
 copyWeb.TextColor3 = Color3.fromRGB(220, 220, 220)
 copyWeb.Font = Enum.Font.Code
 copyWeb.TextSize = 10
@@ -982,130 +983,130 @@ copyWeb.Parent = homePage
 
 copyWeb.MouseButton1Click:Connect(function()
     clickSound:Play()
-    setclipboard(__dec("f7314bb91c930503209fba6fdad92ea24b1b81fccb75131aca131ed5adc9"))
+    setclipboard("https://cruzworld.netlify.app/")
 end)
 
 ----------------------------------------------------
 -- SCRIPT MENU TABS
 ----------------------------------------------------
-local mainTab = createGridTab(__dec("d22456a7"), true)
-local playermenuTab = createGridTab(__dec("cf295eb00adb47492d98"), true)
-local autofarmTab = createGridTab(__dec("de304ba609c85841"), true)
-local remoteTab = createGridTab(__dec("cd2052a61bcc"), true)
-local trollTab = createGridTab(__dec("cb3750a503"), true)
+local mainTab = createGridTab(__dec("4220906f"), true)
+local playermenuTab = createGridTab(__dec("5f2d9878097935d69dff"), true)
+local autofarmTab = createGridTab(__dec("4e348d6e0a6a2ade"), true)
+local remoteTab = createGridTab(__dec("5d24946e186e"), true)
+local trollTab = createGridTab(__dec("5b33966d00"), true)
 
 -- Buttons for Main Menu
-AddMenuButton(mainTab, __dec("d70c6d8836e80a6f0ab99635fee61d996115a8ccf1363c33fc795f8df9cf"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adcc6")))()
+AddMenuButton(mainTab, __dec("4708ab40354a78f0bade858b0ca86aaf83a7fc12e0e6d8bef208a2c5b917"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/10"))()
 end)
 
-AddMenuButton(mainTab, __dec("dd04788621ee0a7f0aa18e5bea960e9e0f66bfd8e8575a3ff26e3785f5c2c5"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adc")))()
+AddMenuButton(mainTab, __dec("4d00be4e224c78e0bac69de518d879a8edd4eb06f987beb2fc1fcacdb51a44"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/1"))()
 end)
 
-AddMenuButton(mainTab, __dec("dd04788621ee0a7f0aa18e5bea960e9e0f66bfd8e8575a3be67350e392a9a83e57c1b6"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adf")))()
+AddMenuButton(mainTab, __dec("4d00be4e224c78e0bac69de518d879a8edd4eb06f987beb6e802adabd271291eabe14c"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/2"))()
 end)
 
-AddMenuButton(mainTab, __dec("dc1c72863de80a6f0ab99635fee61d996115acd8ec515a549714"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617ade")))()
+AddMenuButton(mainTab, __dec("4c18b44e3e4a78f0bade858b0ca86aaf83a7f806fd81bed99965"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/3"))()
 end)
 
-AddMenuButton(mainTab, __dec("dc1c72863de80a6f0ab99635fee61d996115a8ccf13952589a"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617ad9")))()
+AddMenuButton(mainTab, __dec("4c18b44e3e4a78f0bade858b0ca86aaf83a7fc12e0e9b6d594"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/4"))()
 end)
 
-AddMenuButton(mainTab, __dec("db656c863afb696963ae8641f4960f9e6e62a1b9fc58293493155b8c"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617ad8")))()
+AddMenuButton(mainTab, __dec("4b61aa4e39591bf6d3c995ff06d878a88cd0f567ed88cdb99d64a6c4"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/5"))()
 end)
 
-AddMenuButton(mainTab, __dec("db656c863afb696963ae8641f4960f9e6e62a1b9f84c345c9b1956"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adcc7")))()
+AddMenuButton(mainTab, __dec("4b61aa4e39591bf6d3c995ff06d878a88cd0f567e99cd0d19568ab"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/11"))()
 end)
 
-AddMenuButton(mainTab, __dec("cc0471e92ee76e7e06ac9c35eeff08970f66bfd8e8575a3ff26e3785f5c2c5"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adb")))()
+AddMenuButton(mainTab, __dec("5c00b7212d451ce1b6cb8f8b1cb17fa1edd4eb06f987beb2fc1fcacdb51a44"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/6"))()
 end)
 
-AddMenuButton(mainTab, __dec("cc0471e92ee76e7e06ac9c35eeff08970f66bfd8e8575a3be6735f8df9cf"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617ada")))()
+AddMenuButton(mainTab, __dec("5c00b7212d451ce1b6cb8f8b1cb17fa1edd4eb06f987beb6e802a2c5b917"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/7"))()
 end)
 
-AddMenuButton(mainTab, __dec("cf177a9a3be06d6963bf8059e8e6108f7615bcc9fe4e345cf07c2cedfdcec837"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617ad5")))()
+AddMenuButton(mainTab, __dec("5f13bc5238421ff6d3d893e71aa867b994a7e817ef9ed0d1fe0dd1a5bd164917"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/8"))()
 end)
 
-AddMenuButton(mainTab, __dec("d304789c21e80a6f0ab99635fff9108b7f79aec09f4a2a3de4735fe69cb5a43e57c1b6"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617ad4")))()
+AddMenuButton(mainTab, __dec("4300be54224a78f0bade858b0db767bd9dcbfa1e8e9aceb0ea02a2aedc6d251eabe14c"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/9"))()
 end)
 
-AddMenuButton(mainTab, __dec("cd04658c4fea63781acd9d458de50c8f787bcfdafe4a325c9b1956"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adcc4")))()
+AddMenuButton(mainTab, __dec("5d00a3444c4811e7aaaa8efb7fab7bb99ac99b04ef9ad6d19568ab"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/12"))()
 end)
 
-AddMenuButton(mainTab, __dec("cd04658c4fea63781acd9d458de50c8f787bcfdeea575a549714"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adcc5")))()
+AddMenuButton(mainTab, __dec("5d00a3444c4811e7aaaa8efb7fab7bb99ac99b00fb87bed99965"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/13"))()
 end)
 
-AddMenuButton(mainTab, __dec("d10068e92afb6b0c00a49b4c8de50c8f787bcfdeea57553afc723b85f5a8a95b3bc5d3204c8cc49fa664"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adcc2")))()
+AddMenuButton(mainTab, __dec("4104ae2129591993b0c388f27fab7bb99ac99b00fb87b1b7f203c6cdb570287bc7e529cca3ca92643a27"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/14"))()
 end)
 
-AddMenuButton(mainTab, __dec("dc17709e2189786507aa8a35eeff08970f66bfd8e8575a3be67350e392a9a83e57c1b6"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adcc3")))()
+AddMenuButton(mainTab, __dec("4c13b656222b0afab7cd998b1cb17fa1edd4eb06f987beb6e802adabd271291eabe14c"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/15"))()
 end)
 
-AddMenuButton(mainTab, __dec("dd0970862b89786d04a8ef56e4e205ee7c65aecef139393de0755f8df9cf"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adfc7")))()
+AddMenuButton(mainTab, __dec("4d0db64e282b0af2b4cffce816ac72d89ed7fa10e0e9ddb0ee04a2c5b917"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/21"))()
 end)
 
-AddMenuButton(mainTab, __dec("dd0970862b89786d04a8ef56e4e205ee7c65aecef1393d29fd1d5781f4"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adfc4")))()
+AddMenuButton(mainTab, __dec("4d0db64e282b0af2b4cffce816ac72d89ed7fa10e0e9d9a4f36caac9b4"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/22"))()
 end)
 
-AddMenuButton(mainTab, __dec("d2006b9b2089676d0da483548df5159a7615bcc9fe4e345cf07c2cedfdcec837"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adfc2")))()
+AddMenuButton(mainTab, __dec("4204ad53232b15f2bdc390ea7fbb62ac94a7e817ef9ed0d1fe0dd1a5bd164917"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/24"))()
 end)
 
-AddMenuButton(mainTab, __dec("d2006b9b2089676d0da483548df5159a7615bcc9fe4e345cf4683185f5c2c5"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adfc3")))()
+AddMenuButton(mainTab, __dec("4204ad53232b15f2bdc390ea7fbb62ac94a7e817ef9ed0d1fa19cccdb51a44"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/25"))()
 end)
 
-AddMenuButton(mainTab, __dec("d0106b852efe0a6f0ab99635fee61d996115a8ccf13952589a"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adfc1")))()
+AddMenuButton(mainTab, __dec("4014ad4d2d5c78f0bade858b0ca86aaf83a7fc12e0e9b6d594"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/27"))()
 end)
 
 -- Buttons for Player Menu
-AddMenuButton(playermenuTab, __dec("cc0c738c21fd0a6d0aa0ef53ecf8088f7c78aeb9ec402928f6705fe784c6bb5d34a1bf412be0"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617aabb7525a2ea6e218daeb8aefba31faab49039e6efeec12")))()
+AddMenuButton(playermenuTab, __dec("5c08b544225f78f2bac7fced1eb67fb99ecafa67fd90cda5f801a2afc41e3a7dc88145adc4a6"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/FANTASMA%20SILENT%20AIM"))()
 end)
 
-AddMenuButton(playermenuTab, __dec("d7046d8836e80a6d0aa08d5af99674ea06"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617aa5b74e4f36b48a6bcf98f3f1b132eb")))()
+AddMenuButton(playermenuTab, __dec("4700ab40354a78f2bac79ee40bd803dce4"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/HARAYA%20AIMBOT"))()
 end)
 
-AddMenuButton(playermenuTab, __dec("cd00698039ec0a0402a18335eeff089706"), function()
+AddMenuButton(playermenuTab, __dec("5d04af483a4e789bb2c6908b1cb17fa1e4"), function()
     local player = Players.LocalPlayer
 
     local function reviveAtCurrentSpot()
         local char = player.Character
         if not char then return end
         
-        local root = char:FindFirstChild(__dec("d73052a801c643481182a061fdd72eba"))
+        local root = char:FindFirstChild(__dec("47349460026431d7a1e5b3df0f99598c"))
         if not root then return end
 
         getgenv().SavedDeathCFrame = root.CFrame
 
         local args = {
             [1] = {
-                [__dec("d92c4dba1be74b4126")] = __dec("db2c5aae00"),
-                [__dec("d82051ad0adb")] = __dec("dd2a46"),
-                [__dec("d3244cbd21c84749")] = __dec("dc374ab30ec745"),
-                [__dec("db0a7d")] = __dec("ac7512f85f84181c73d8"),
+                [__dec("49288b72184539de96")] = __dec("4b289c6603"),
+                [__dec("482497650979")] = __dec("4d2e80"),
+                [__dec("43208a75226a35d6")] = __dec("4c338c7b0d6537"),
+                [__dec("4b0ebb")] = __dec("3c71d4305c266a83c3bf"),
             }
         }
         
-        game:GetService(__dec("cd204fa506ca4b5826899c61c2c43da94a")):WaitForChild(__dec("cc305da406dd63482683bb7cd9cf")):FireServer(unpack(args))
+        game:GetService(__dec("5d24896d056839c796ee8fdf308a4a9fa8")):WaitForChild(__dec("5c349b6c057f11d796e4a8c22b81")):FireServer(unpack(args))
     end
 
     if not getgenv().ReviveLoopStarted then
@@ -1119,7 +1120,7 @@ AddMenuButton(playermenuTab, __dec("cd00698039ec0a0402a18335eeff089706"), functi
                 local connection
                 
                 connection = RunService.RenderStepped:Connect(function()
-                    local newRoot = newChar:FindFirstChild(__dec("d73052a801c643481182a061fdd72eba"))
+                    local newRoot = newChar:FindFirstChild(__dec("47349460026431d7a1e5b3df0f99598c"))
                     if newRoot then
                         newRoot.CFrame = targetCFrame + Vector3.new(0, 3, 0)
                         newRoot.AssemblyLinearVelocity = Vector3.zero
@@ -1137,139 +1138,139 @@ AddMenuButton(playermenuTab, __dec("cd00698039ec0a0402a18335eeff089706"), functi
     reviveAtCurrentSpot()
 end)
 
-AddMenuButton(playermenuTab, __dec("cd00698039ec0a6206baef50fff77c8d6661b6b9973d53"), function()
-    local Event = game:GetService(__dec("cd204fa506ca4b5826899c61c2c43da94a")).DeathEvents.RespawnRequest
+AddMenuButton(playermenuTab, __dec("5d04af483a4e78fdb6ddfcee0db90bbb84d3e26786edb7"), function()
+    local Event = game:GetService(__dec("5d24896d056839c796ee8fdf308a4a9fa8")).DeathEvents.RespawnRequest
 Event:FireServer()
 end)
 
-AddMenuButton(playermenuTab, __dec("cd00698039ec0a680ca0865be4f912ee6c7cbbc09f315e55"), function()
-    local Event = game:GetService(__dec("cd204fa506ca4b5826899c61c2c43da94a")).Network.Functions.InstantRespawn
+AddMenuButton(playermenuTab, __dec("5d04af483a4e78f7bcc795e516b765d88eceef1e8ee1bad8"), function()
+    local Event = game:GetService(__dec("5d24896d056839c796ee8fdf308a4a9fa8")).Network.Functions.InstantRespawn
 Event:InvokeServer()
 end)
 
-AddMenuButton(playermenuTab, __dec("dd0c78e927ec6b6863c5eb3c"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafb583cffbaa0962ece862037d541cb1c0a7e0cf5955d17d88d2acfe32acdf06d9ae8cb1a4501e244617aafbe")))()
+AddMenuButton(playermenuTab, __dec("4d08be21244e19f7d3a2f882"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/d1360lucas-ai/DIEGSLOADER/refs/heads/main/BH"))()
 end)
 
-AddMenuButton(playermenuTab, __dec("d90966e9478d03"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafb583cffbaa0962ece862037d541cb1c0a7e0cf5955d17d88d2acfe32acdf06d9ae8cb1a4501e244617aabba45")))()
+AddMenuButton(playermenuTab, __dec("490da021442f71"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/d1360lucas-ai/DIEGSLOADER/refs/heads/main/FLY"))()
 end)
 
-AddMenuButton(playermenuTab, __dec("da166fe9478d03"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adcc0")))()
+AddMenuButton(playermenuTab, __dec("4a12a921442f71"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/16"))()
 end)
 
-AddMenuButton(playermenuTab, __dec("de0b6b804feb78650daaef3d899f"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adcc1")))()
+AddMenuButton(playermenuTab, __dec("4e0fad484c490afabdcdfc837bd1"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/17"))()
 end)
 
-AddMenuButton(playermenuTab, __dec("cb177e8a24896b600fcde73184"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adfc6")))()
+AddMenuButton(playermenuTab, __dec("5b13b842272b19ffbfaaf48f76"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/20"))()
 end)
 
-AddMenuButton(playermenuTab, __dec("de0c728b20fd0a610caf8659e89674ea06"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adfc5")))()
+AddMenuButton(playermenuTab, __dec("4e08b443235f78febcc895e71ad803dce4"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/23"))()
 end)
 
 -- Buttons for Auto Farm
-AddMenuButton(autofarmTab, __dec("d0106b852efe0a6d16b98035e7f91eee7b65cfbd"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adfce")))()
+AddMenuButton(autofarmTab, __dec("4014ad4d2d5c78f2a6de938b15b769d899d79b63"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/28"))()
 end)
 
-AddMenuButton(autofarmTab, __dec("d70c6d8836e80a6d16b98035ebf70e830f61bfb99b"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafb583cffbaa0962ece862037d541cb1c0a7e0cf5955d17d88d2acfe32acdf06d9ae8cb1a4501e244617aaca348414ac79f1fbe8bf799c14df7ac4f67f51f")))()
+AddMenuButton(autofarmTab, __dec("4708ab40354a78f2a6de938b19b979b5edd3eb678a"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/d1360lucas-ai/DIEGSLOADER/refs/heads/main/AUTO%20FARM%20HIRAYA"))()
 end)
 
-AddMenuButton(autofarmTab, __dec("db0069883c896b7917a2ef53ece411ee7b65cfbd"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafb583cffbaa0962ece862037d541cb1c0a7e0cf5955d17d88d2acfe32acdf06d9ae8cb1a4501e244617aaca348414ac79f1fbe8bf799c14dfba04b67ff")))()
+AddMenuButton(autofarmTab, __dec("4b04af403f2b19e6a7c5fced1eaa66d899d79b63"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/d1360lucas-ai/DIEGSLOADER/refs/heads/main/AUTO%20FARM%20DEVAS"))()
 end)
 
-AddMenuButton(autofarmTab, __dec("db0a728021e0656263ac9a41e2961a8f7d78cfcdef395e"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617aaca348414ac79f1fbe8bf799c14dfbaa506f")))(DIEGOCHEAT)
+AddMenuButton(autofarmTab, __dec("4b0eb448224217fdd3cb89ff10d86db99fca9b13fee9ba"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/AUTO%20FARM%20DOMI"))(DIEGOCHEAT)
 end)
 
 -- Buttons for Remotes
-AddMenuButton(remoteTab, __dec("cc0b6b9a4ffb6f610cb98a35fee605ee0777b6c9fe4a2955"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503338cbc61c8d435a0015680f4906b1b0b9c474ecf96b29f733c")))()
+AddMenuButton(remoteTab, __dec("5c0fad524c591dfebcde998b0ca872d8e5c5e217ef9acdd8"), function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/z1jKTsmC"))()
 end)
 
 -- Buttons for Troll
-AddMenuButton(trollTab, __dec("d904719d2efa676d63bf8e45e4f27c886667aab9fd405a2bf0763b85f5c2c5"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617aabb7525a2ea6e218daeb8aeeb22df6a138149c18f6f71a")))()
+AddMenuButton(trollTab, __dec("4900b7552d5815f2d3d89dfb16bc0bbe84d5fe67ec90bea6fe07c6cdb51a44"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/FANTASMA%20RAPID%20FIRE"))()
 end)
 
-AddMenuButton(trollTab, __dec("de09748c2be0656263a08a5bf8961e970f62acd2fb3952589a"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617aacba574b2bbce017daeb8aeca52d")))()
+AddMenuButton(trollTab, __dec("4e0db244284217fdd3c799e50ad869a1edd0f80ceae9b6d594"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/ALKEDION%20PVP"))()
 end)
 
-AddMenuButton(trollTab, __dec("c90473822eed636d63a08a5bf8961e970f62acd2fb3952589a"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617abbb750452eb1e618daeb8af1b633ea")))()
+AddMenuButton(trollTab, __dec("5900b54a2d4f11f2d3c799e50ad869a1edd0f80ceae9b6d594"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/VALKADIA%20MENU"))()
 end)
 
-AddMenuButton(trollTab, __dec("de0b6b804feb7f7f02a1ef3d899f"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c9305032f98ae65dfd928e041509bb6de691353c50e50c9b287887b0d96b00e6abda5fed57f9fc63d618d5fbb657c0a6688e32d66a9eb")))()
+AddMenuButton(trollTab, __dec("4e0fad484c490de0b2c6fc837bd1"), function()
+    loadstring(game:HttpGet("https://luaprot.net/api/v3/loaders/get/26203071140339191544"))()
 end)
 
-AddMenuButton(trollTab, __dec("cb1770852389696d11bf9635e0ff18806672a7cd9f5a3328ea1d57f29ca1cc5f3db0cc2c2f82c598ac03e8b44376f727db1466"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adfc0")))()
+AddMenuButton(trollTab, __dec("5b13b64d202b1bf2a1d8858b12b16fb684c0f3138e8ad7a5e46caabadc794d7fc19036c0c0c493633040076e9d5ce435154a0e"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/26"))()
 end)
 
-AddMenuButton(trollTab, __dec("cb1770852389696d11bf9635e5ff0e8f7674cfdaf64d2353937f3ee292a8ab3e2cacd328418eaa8faa19f6d52501fd29af140d6c0cfcfa571cc9904bfac7029e944cabc886"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adcce")))()
+AddMenuButton(trollTab, __dec("5b13b64d202b1bf2a1d8858b17b179b994c69b04e79dc7de9d0ec3aad2702a1ed08c29c4aec8fc74365a190ffb2bee3b614a659e7108323e7694492f56f3af924c00b5484d"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/18"))()
 end)
 
-AddMenuButton(trollTab, __dec("cb1770852389696d11bf9635fe837c9d7b74a9df9f5a3328ea1d57f29ca1cc5f3db0cc2c2f82c598ac03e8b44376f727db1466"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb83bcadf28a65a579aeada6b1913dd491acba9c88f7112cafd0878a8e6a78623c89e622f9305ea3b285230c0f77732ffbe2acfe32acdf06d9ae8cb1a4501e244617adccf")))()
+AddMenuButton(trollTab, __dec("5b13b64d202b1bf2a1d8858b0ccd0bab99c6fd018e8ad7a5e46caabadc794d7fc19036c0c0c493633040076e9d5ce435154a0e"), function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/bawalkengkoy/kengkoy-kaba/refs/heads/main/19"))()
 end)
 
-AddMenuButton(trollTab, __dec("d2106c802c896f7413a1805cf99674806a70abb9fe5a4c55"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503318cb866cec435be5b46c1f7da6d550ed24a50f0b38f9a7b0d96fe05229ae9be8a3ddbd84b13912fec6362742acab37f7ecbaa69d3e33edfbd6c93e0db10475eb6183c63")))()
+AddMenuButton(trollTab, __dec("4214aa482f2b1deba3c693e20bd803b688c2ff67ef8aa8d8"), function()
+    loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-FE-Ac6-Music-Vulnerability-25536"))()
 end)
 
-AddMenuButton(trollTab, __dec("d5006d824f810e05"), function()
-    loadstring(game:HttpGet(__dec("f7314bb91c930503338cbc61c8d435a0015680f4906b1b0b9c7b28d2b9b5b82b26")))()
+AddMenuButton(trollTab, __dec("4504ab4a4c237c9a"), function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/FWwdST5Y"))()
 end)
 
 ----------------------------------------------------
 -- PLAYER LIST TP TAB WITH SEARCH BAR
 ----------------------------------------------------
-local playerListTpPage = Instance.new(__dec("d9375ea40a"))
-playerListTpPage.Name = __dec("cf295eb00adb0a602a9ebb35f9c60caf4850")
+local playerListTpPage = Instance.new(__dec("4933986c09"))
+playerListTpPage.Name = __dec("5f2d9878097978ff9af9a88b0b887b99aae2")
 playerListTpPage.Size = UDim2.new(1, 0, 1, 0)
 playerListTpPage.BackgroundTransparency = 1
 playerListTpPage.Visible = false
 playerListTpPage.Parent = contentArea
-tabs[__dec("cf295eb00adb0a602a9ebb35f9c6")] = playerListTpPage
+tabs[__dec("5f2d9878097978ff9af9a88b0b88")] = playerListTpPage
 
-local listContainer = Instance.new(__dec("d9375ea40a"))
+local listContainer = Instance.new(__dec("4933986c09"))
 listContainer.Size = UDim2.new(0, 200, 1, -30)
 listContainer.Position = UDim2.new(0, 15, 0, 15)
 listContainer.BackgroundColor3 = Color3.fromRGB(10, 10, 14)
 listContainer.BorderSizePixel = 0
 listContainer.Parent = playerListTpPage
 
-local listCorner = Instance.new(__dec("ca0c7ca61dc74f5e"))
+local listCorner = Instance.new(__dec("5a08ba6e1e653dc1"))
 listCorner.CornerRadius = UDim.new(0, 8)
 listCorner.Parent = listContainer
 
 -- Search Box Box Container for Player TP List
-local playerSearchFrame = Instance.new(__dec("d9375ea40a"))
+local playerSearchFrame = Instance.new(__dec("4933986c09"))
 playerSearchFrame.Size = UDim2.new(1, -10, 0, 26)
 playerSearchFrame.Position = UDim2.new(0, 5, 0, 5)
 playerSearchFrame.BackgroundColor3 = Color3.fromRGB(18, 18, 24)
 playerSearchFrame.BorderSizePixel = 0
 playerSearchFrame.Parent = listContainer
 
-local playerSearchCorner = Instance.new(__dec("ca0c7ca61dc74f5e"))
+local playerSearchCorner = Instance.new(__dec("5a08ba6e1e653dc1"))
 playerSearchCorner.CornerRadius = UDim.new(0, 5)
 playerSearchCorner.Parent = playerSearchFrame
 
-local playerSearchBox = Instance.new(__dec("cb2047bd2dc652"))
+local playerSearchBox = Instance.new(__dec("5b2481752e6420"))
 playerSearchBox.Size = UDim2.new(1, -10, 1, 0)
 playerSearchBox.Position = UDim2.new(0, 5, 0, 0)
 playerSearchBox.BackgroundTransparency = 1
 playerSearchBox.Text = __dec("")
-playerSearchBox.PlaceholderText = __dec("cc205ebb0cc10a7c2f8cb670df9872e0")
+playerSearchBox.PlaceholderText = __dec("5c2498730f6378e39feba5ce2dd605d6")
 playerSearchBox.PlaceholderColor3 = Color3.fromRGB(120, 120, 120)
 playerSearchBox.TextColor3 = Color3.fromRGB(220, 220, 220)
 playerSearchBox.Font = Enum.Font.Code
@@ -1277,7 +1278,7 @@ playerSearchBox.TextSize = 10
 playerSearchBox.TextXAlignment = Enum.TextXAlignment.Left
 playerSearchBox.Parent = playerSearchFrame
 
-local playerListScroll = Instance.new(__dec("cc264da603c5434224abbd74c0d3"))
+local playerListScroll = Instance.new(__dec("5c228b6e006731dd94ccaeca329d"))
 playerListScroll.Size = UDim2.new(1, -10, 1, -42)
 playerListScroll.Position = UDim2.new(0, 5, 0, 36)
 playerListScroll.BackgroundTransparency = 1
@@ -1287,58 +1288,58 @@ playerListScroll.ScrollBarImageColor3 = Color3.fromRGB(120, 120, 140)
 playerListScroll.AutomaticCanvasSize = Enum.AutomaticSize.Y
 playerListScroll.Parent = listContainer
 
-local listLayoutTP = Instance.new(__dec("ca0c73a01cdd664d3a82ba61"))
+local listLayoutTP = Instance.new(__dec("5a08b5681f7f14d28ae5a9df"))
 listLayoutTP.SortOrder = Enum.SortOrder.LayoutOrder
 listLayoutTP.Padding = UDim.new(0, 4)
 listLayoutTP.Parent = playerListScroll
 
-local detailsContainer = Instance.new(__dec("d9375ea40a"))
+local detailsContainer = Instance.new(__dec("4933986c09"))
 detailsContainer.Size = UDim2.new(1, -245, 1, -30)
 detailsContainer.Position = UDim2.new(0, 230, 0, 15)
 detailsContainer.BackgroundColor3 = Color3.fromRGB(10, 10, 14)
 detailsContainer.BorderSizePixel = 0
 detailsContainer.Parent = playerListTpPage
 
-local detailsCorner = Instance.new(__dec("ca0c7ca61dc74f5e"))
+local detailsCorner = Instance.new(__dec("5a08ba6e1e653dc1"))
 detailsCorner.CornerRadius = UDim.new(0, 8)
 detailsCorner.Parent = detailsContainer
 
-local selectedNameLabel = Instance.new(__dec("cb2047bd23c848492f"))
+local selectedNameLabel = Instance.new(__dec("5b248175206a3ad69f"))
 selectedNameLabel.Size = UDim2.new(1, -20, 0, 30)
 selectedNameLabel.Position = UDim2.new(0, 10, 0, 20)
 selectedNameLabel.BackgroundTransparency = 1
 selectedNameLabel.Font = Enum.Font.Code
 selectedNameLabel.TextSize = 13
 selectedNameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-selectedNameLabel.Text = __dec("d104728c558964630da8")
+selectedNameLabel.Text = __dec("4100b444562b16fcbdcf")
 selectedNameLabel.TextXAlignment = Enum.TextXAlignment.Center
 selectedNameLabel.Parent = detailsContainer
 
-local selectedHealthLabel = Instance.new(__dec("cb2047bd23c848492f"))
+local selectedHealthLabel = Instance.new(__dec("5b248175206a3ad69f"))
 selectedHealthLabel.Size = UDim2.new(1, -20, 0, 20)
 selectedHealthLabel.Position = UDim2.new(0, 10, 0, 50)
 selectedHealthLabel.BackgroundTransparency = 1
 selectedHealthLabel.Font = Enum.Font.Code
 selectedHealthLabel.TextSize = 11
 selectedHealthLabel.TextColor3 = Color3.fromRGB(180, 180, 180)
-selectedHealthLabel.Text = __dec("d7007e853be1100c0dc28e")
+selectedHealthLabel.Text = __dec("4704b84d38436293bda59d")
 selectedHealthLabel.TextXAlignment = Enum.TextXAlignment.Center
 selectedHealthLabel.Parent = detailsContainer
 
-local actionFrame = Instance.new(__dec("d9375ea40a"))
+local actionFrame = Instance.new(__dec("4933986c09"))
 actionFrame.Size = UDim2.new(1, -40, 0, 200)
 actionFrame.Position = UDim2.new(0, 20, 0, 95)
 actionFrame.BackgroundTransparency = 1
 actionFrame.Parent = detailsContainer
 
-local actionLayout = Instance.new(__dec("ca0c73a01cdd664d3a82ba61"))
+local actionLayout = Instance.new(__dec("5a08b5681f7f14d28ae5a9df"))
 actionLayout.SortOrder = Enum.SortOrder.LayoutOrder
 actionLayout.Padding = UDim.new(0, 10)
 actionLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 actionLayout.Parent = actionFrame
 
 local function createTPActionButton(text)
-    local btn = Instance.new(__dec("cb2047bd2ddc5e582c83"))
+    local btn = Instance.new(__dec("5b2481752e7e2cc79ce4"))
     btn.Size = UDim2.new(1, 0, 0, 32)
     btn.BackgroundColor3 = Color3.fromRGB(20, 20, 28)
     btn.TextColor3 = Color3.fromRGB(220, 220, 220)
@@ -1348,7 +1349,7 @@ local function createTPActionButton(text)
     btn.Text = string.upper(text)
     btn.Parent = actionFrame
 
-    local corner = Instance.new(__dec("ca0c7ca61dc74f5e"))
+    local corner = Instance.new(__dec("5a08ba6e1e653dc1"))
     corner.CornerRadius = UDim.new(0, 6)
     corner.Parent = btn
 
@@ -1364,10 +1365,10 @@ local function createTPActionButton(text)
     return btn
 end
 
-local viewButton = createTPActionButton(__dec("c92c5abe4ff9464d3a88bd"))
-local tpButton = createTPActionButton(__dec("cb2053ac1fc658586399a035fdda3db74a47"))
-local bringButton = createTPActionButton(__dec("dd3756a708897a402294aa67"))
-local friendButton = createTPActionButton(__dec("de215be929db43492d89"))
+local viewButton = createTPActionButton(__dec("59289c764c5b34d28aefae"))
+local tpButton = createTPActionButton(__dec("5b2495641c642ac7d3feb38b0f944a81a8f5"))
+local bringButton = createTPActionButton(__dec("4d33906f0b2b08df92f3b9d9"))
+local friendButton = createTPActionButton(__dec("4e259d212a7931d69dee"))
 
 local selectedPlayer = nil
 local isViewing = false
@@ -1376,24 +1377,24 @@ local originalCameraSubject = Camera.CameraSubject
 local bringConnection
 
 local function revertCamera()
-    if originalCameraSubject and typeof(originalCameraSubject) == __dec("d62b4cbd0ec74949") and originalCameraSubject.Parent then
+    if originalCameraSubject and typeof(originalCameraSubject) == __dec("462f8a750d653bd6") and originalCameraSubject.Parent then
         Camera.CameraSubject = originalCameraSubject
     else
-        if LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass(__dec("d73052a801c64348")) then
-            Camera.CameraSubject = LocalPlayer.Character:FindFirstChildOfClass(__dec("d73052a801c64348"))
+        if LocalPlayer.Character and LocalPlayer.Character:FindFirstChildOfClass(__dec("47349460026431d7")) then
+            Camera.CameraSubject = LocalPlayer.Character:FindFirstChildOfClass(__dec("47349460026431d7"))
         end
     end
     Camera.CameraType = Enum.CameraType.Custom
     isViewing = false
-    viewButton.Text = __dec("c90c7a9e4ff9666d1aa89d")
+    viewButton.Text = __dec("5908bc564c5b14f2aacf8e")
 end
 
 local function filterPlayers()
     local searchText = string.lower(playerSearchBox.Text)
     for _, btn in ipairs(playerListScroll:GetChildren()) do
-        if btn:IsA(__dec("cb2047bd2ddc5e582c83")) then
-            local playerName = string.lower(btn:GetAttribute(__dec("cf295eb00adb644d2e88")) or btn.Text)
-            local displayName = string.lower(btn:GetAttribute(__dec("db2c4cb903c853622280aa")) or __dec(""))
+        if btn:IsA(__dec("5b2481752e7e2cc79ce4")) then
+            local playerName = string.lower(btn:GetAttribute(__dec("5f2d9878097916d29eef")) or btn.Text)
+            local displayName = string.lower(btn:GetAttribute(__dec("4b288a71006a21fd92e7b9")) or __dec(""))
             if searchText == __dec("") or string.find(playerName, searchText) or string.find(displayName, searchText) then
                 btn.Visible = true
             else
@@ -1405,23 +1406,23 @@ end
 
 local function refreshPlayerListTP()
     for _, c in ipairs(playerListScroll:GetChildren()) do
-        if c:IsA(__dec("cb2047bd2ddc5e582c83")) then c:Destroy() end
+        if c:IsA(__dec("5b2481752e7e2cc79ce4")) then c:Destroy() end
     end
     for _, plr in ipairs(Players:GetPlayers()) do
         if plr ~= LocalPlayer then
-            local btn = Instance.new(__dec("cb2047bd2ddc5e582c83"))
+            local btn = Instance.new(__dec("5b2481752e7e2cc79ce4"))
             btn.Size = UDim2.new(1, 0, 0, 28)
             btn.BackgroundColor3 = Color3.fromRGB(18, 18, 24)
             btn.TextColor3 = Color3.fromRGB(200, 200, 200)
             btn.Font = Enum.Font.Code
             btn.TextSize = 10
             btn.AutoButtonColor = false
-            btn.Text = plr.DisplayName .. __dec("bf6d7f") .. plr.Name .. __dec("b6")
+            btn.Text = plr.DisplayName .. __dec("2f69b9") .. plr.Name .. __dec("26")
             
-            btn:SetAttribute(__dec("cf295eb00adb644d2e88"), plr.Name)
-            btn:SetAttribute(__dec("db2c4cb903c853622280aa"), plr.DisplayName)
+            btn:SetAttribute(__dec("5f2d9878097916d29eef"), plr.Name)
+            btn:SetAttribute(__dec("4b288a71006a21fd92e7b9"), plr.DisplayName)
 
-            local corner = Instance.new(__dec("ca0c7ca61dc74f5e"))
+            local corner = Instance.new(__dec("5a08ba6e1e653dc1"))
             corner.CornerRadius = UDim.new(0, 5)
             corner.Parent = btn
             btn.Parent = playerListScroll
@@ -1432,12 +1433,12 @@ local function refreshPlayerListTP()
             btn.MouseButton1Click:Connect(function()
                 clickSound:Play()
                 selectedPlayer = plr
-                selectedNameLabel.Text = __dec("d104728c5589") .. string.upper(plr.Name)
-                local humanoid = plr.Character and plr.Character:FindFirstChildOfClass(__dec("d73052a801c64348"))
+                selectedNameLabel.Text = __dec("4100b444562b") .. string.upper(plr.Name)
+                local humanoid = plr.Character and plr.Character:FindFirstChildOfClass(__dec("47349460026431d7"))
                 if humanoid then
-                    selectedHealthLabel.Text = __dec("d7007e853be1100c") .. math.floor(humanoid.Health)
+                    selectedHealthLabel.Text = __dec("4704b84d38436293") .. math.floor(humanoid.Health)
                 else
-                    selectedHealthLabel.Text = __dec("d7007e853be1100c0dc28e")
+                    selectedHealthLabel.Text = __dec("4704b84d38436293bda59d")
                 end
                 if isViewing then revertCamera() end
             end)
@@ -1446,20 +1447,20 @@ local function refreshPlayerListTP()
     filterPlayers()
 end
 
-playerSearchBox:GetPropertyChangedSignal(__dec("cb2047bd")):Connect(filterPlayers)
+playerSearchBox:GetPropertyChangedSignal(__dec("5b248175")):Connect(filterPlayers)
 
 viewButton.MouseButton1Click:Connect(function()
     clickSound:Play()
     if not selectedPlayer then return end
     local char = selectedPlayer.Character
-    local humanoid = char and char:FindFirstChildOfClass(__dec("d73052a801c64348"))
+    local humanoid = char and char:FindFirstChildOfClass(__dec("47349460026431d7"))
     if not humanoid then return end
     if not isViewing then
         originalCameraSubject = Camera.CameraSubject
         Camera.CameraSubject = humanoid
         Camera.CameraType = Enum.CameraType.Custom
         isViewing = true
-        viewButton.Text = __dec("ca0b69802afe0a7c0fac9650ff")
+        viewButton.Text = __dec("5a0faf48295c78e3bfcb85ee0d")
     else
         revertCamera()
     end
@@ -1468,8 +1469,8 @@ end)
 tpButton.MouseButton1Click:Connect(function()
     clickSound:Play()
     if not selectedPlayer then return end
-    local targetHRP = selectedPlayer.Character and selectedPlayer.Character:FindFirstChild(__dec("d73052a801c643481182a061fdd72eba"))
-    local myHRP = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild(__dec("d73052a801c643481182a061fdd72eba"))
+    local targetHRP = selectedPlayer.Character and selectedPlayer.Character:FindFirstChild(__dec("47349460026431d7a1e5b3df0f99598c"))
+    local myHRP = LocalPlayer.Character and LocalPlayer.Character:FindFirstChild(__dec("47349460026431d7a1e5b3df0f99598c"))
     if targetHRP and myHRP then
         myHRP.CFrame = targetHRP.CFrame + Vector3.new(2, 0.5, 0)
     end
@@ -1480,13 +1481,13 @@ bringButton.MouseButton1Click:Connect(function()
     if not selectedPlayer then return end
     if not isBringing then
         isBringing = true
-        bringButton.Text = __dec("ca0b7d9b26e76d0c13a18e4ce8e4")
+        bringButton.Text = __dec("5a0fbb5325451f93a3c69df21aaa")
         bringConnection = RunService.RenderStepped:Connect(function()
             local targetChar = selectedPlayer.Character
             local myChar = LocalPlayer.Character
             if targetChar and myChar then
-                local targetHRP = targetChar:FindFirstChild(__dec("d73052a801c643481182a061fdd72eba"))
-                local myHRP = myChar:FindFirstChild(__dec("d73052a801c643481182a061fdd72eba"))
+                local targetHRP = targetChar:FindFirstChild(__dec("47349460026431d7a1e5b3df0f99598c"))
+                local myHRP = myChar:FindFirstChild(__dec("47349460026431d7a1e5b3df0f99598c"))
                 if targetHRP and myHRP then
                     targetHRP.CFrame = myHRP.CFrame + Vector3.new(2, 0, 0)
                 end
@@ -1494,7 +1495,7 @@ bringButton.MouseButton1Click:Connect(function()
         end)
     else
         isBringing = false
-        bringButton.Text = __dec("dd17768728897a6002b48a47")
+        bringButton.Text = __dec("4d13b04f2b2b08ffb2d399f9")
         if bringConnection then bringConnection:Disconnect() end
     end
 end)
@@ -1508,11 +1509,11 @@ end)
 
 RunService.Heartbeat:Connect(function()
     if selectedPlayer then
-        local humanoid = selectedPlayer.Character and selectedPlayer.Character:FindFirstChildOfClass(__dec("d73052a801c64348"))
+        local humanoid = selectedPlayer.Character and selectedPlayer.Character:FindFirstChildOfClass(__dec("47349460026431d7"))
         if humanoid then
-            selectedHealthLabel.Text = __dec("d7007e853be1100c") .. math.floor(humanoid.Health)
+            selectedHealthLabel.Text = __dec("4704b84d38436293") .. math.floor(humanoid.Health)
         else
-            selectedHealthLabel.Text = __dec("d7007e853be1100c0dc28e")
+            selectedHealthLabel.Text = __dec("4704b84d38436293bda59d")
         end
     end
 end)
@@ -1520,8 +1521,8 @@ end)
 Players.PlayerRemoving:Connect(function(plr)
     if plr == selectedPlayer then
         selectedPlayer = nil
-        selectedNameLabel.Text = __dec("d104728c558964630da8")
-        selectedHealthLabel.Text = __dec("d7007e853be1100c0dc28e")
+        selectedNameLabel.Text = __dec("4100b444562b16fcbdcf")
+        selectedHealthLabel.Text = __dec("4704b84d38436293bda59d")
         if isViewing then revertCamera() end
     end
     refreshPlayerListTP()
@@ -1536,24 +1537,24 @@ refreshPlayerListTP()
 ----------------------------------------------------
 -- MINIMIZE BUTTON & FLOATING OPEN TOGGLE
 ----------------------------------------------------
-local TweenService = game:GetService(__dec("cb325aac01fa4f5e3584ac70"))
+local TweenService = game:GetService(__dec("5b369c6402583dc185e3bfce"))
 
-local openBtn = Instance.new(__dec("d6285eae0aeb5f583782a1"))
-openBtn.Name = __dec("d0355aa722cc44590198bb61c2d8")
+local openBtn = Instance.new(__dec("462c986609492dc787e5b2"))
+openBtn.Name = __dec("40319c6f216e36c6b1ffa8df3096")
 openBtn.Size = UDim2.new(0, 45, 0, 45)
 openBtn.Position = UDim2.new(0.05, 0, 0.2, 0)
 openBtn.BackgroundColor3 = Color3.fromRGB(10, 10, 15)
-openBtn.Image = __dec("ed2747a81cda4f582a89f53a82876cf61a07dcaa8e214345")
+openBtn.Image = __dec("7d2381601f783dc79aeee68470c91bc0f8b588749ff1a7c8")
 openBtn.Visible = false
 openBtn.Active = true
-openBtn.SelectionImageObject = Instance.new(__dec("d9375ea40a"))
+openBtn.SelectionImageObject = Instance.new(__dec("4933986c09"))
 openBtn.Parent = screenGui
 
-local openCorner = Instance.new(__dec("ca0c7ca61dc74f5e"))
+local openCorner = Instance.new(__dec("5a08ba6e1e653dc1"))
 openCorner.CornerRadius = UDim.new(0, 12)
 openCorner.Parent = openBtn
 
-local openStroke = Instance.new(__dec("ca0c6cbd1dc64149"))
+local openStroke = Instance.new(__dec("5a08aa751e6433d6"))
 openStroke.Color = Color3.fromRGB(60, 60, 80)
 openStroke.Thickness = 1.5
 openStroke.Parent = openBtn
@@ -1579,21 +1580,21 @@ openBtn.InputChanged:Connect(function(input)
     end
 end)
 
-local minimizeBar = Instance.new(__dec("cb2047bd2ddc5e582c83"))
-minimizeBar.Name = __dec("d22c51a002c05049018cbd")
+local minimizeBar = Instance.new(__dec("5b2481752e7e2cc79ce4"))
+minimizeBar.Name = __dec("42289768016222d6b1ebae")
 minimizeBar.Size = UDim2.new(0, 120, 0, 16)
 minimizeBar.Position = UDim2.new(0.5, -60, 1, -22)
 minimizeBar.BackgroundColor3 = Color3.fromRGB(20, 20, 28)
 minimizeBar.BackgroundTransparency = 0.3
-minimizeBar.Text = __dec("db0c7a8e208967690db8")
+minimizeBar.Text = __dec("4b08bc46232b15f6bddf")
 minimizeBar.TextColor3 = Color3.fromRGB(180, 180, 180)
 minimizeBar.Font = Enum.Font.Code
 minimizeBar.TextSize = 12
 minimizeBar.AutoButtonColor = false
-minimizeBar.SelectionImageObject = Instance.new(__dec("d9375ea40a"))
+minimizeBar.SelectionImageObject = Instance.new(__dec("4933986c09"))
 minimizeBar.Parent = mainFrame
 
-local minCorner = Instance.new(__dec("ca0c7ca61dc74f5e"))
+local minCorner = Instance.new(__dec("5a08ba6e1e653dc1"))
 minCorner.CornerRadius = UDim.new(0, 8)
 minCorner.Parent = minimizeBar
 
