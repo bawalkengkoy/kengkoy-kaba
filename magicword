@@ -1,1 +1,474 @@
+local __o_t,__o_s,__o_m=table,string,math
+local __o_c,__o_sub,__o_cat=__o_s.char,__o_s.sub,__o_t.concat
+local __o_K=127
+local function __o_bx(a,b)
+  local r,p=0,1
+  while a>0 or b>0 do
+    local x,y=a%2,b%2
+    if x~=y then r=r+p end
+    a=(a-x)/2; b=(b-y)/2; p=p*2
+  end
+  return r
+end
+local function __o_S(h)
+  local o={}
+  for i=1,#h,2 do
+    local j=__o_m.floor((i-1)/2)
+    local byte=tonumber(__o_sub(h,i,i+1),16)
+    local kb=__o_bx(__o_K,(j*37)%256)
+    o[#o+1]=__o_c(__o_m.floor(__o_bx(byte,kb)))
+  end
+  return __o_cat(o)
+end
+local function __o_guard()
+  if __o_S("4a2c5e7c8faecc1b655b7885")~="5vkldhmg2ium" then return false end
+  local d=debug
+  if d then
+    if d.gethook then
+      local ok,h=pcall(d.gethook)
+      if ok and h then return false end
+    end
+    local ok,info=pcall(d.getinfo,1,"S")
+    if not ok or type(info)~="table" then return false end
+  end
+  local g=_G
+  if type(g)=="table" then
+    local bad={__o_S("0a3459658aa5"), __o_S("132f54748ea5"), __o_S("201e407d9b"), __o_S("1b3f567f86b6c81032"), __o_S("203e507384abd1153b57"), __o_S("1b2f5860aaaacd"), __o_S("1b2f5860aaaacd3038516c84")}
+    for i=1,#bad do if g[bad[i]]~=nil then return false end end
+  end
+  if type(__o_s.dump)~="function" then return false end
+  return true
+end
+local function __o_main(...)
+-- Auto Job Box v18 — Fixed teleport distance and strict check.
+-- Restyled: black minimal, Code font, white strokes, corner radii, draggable,
+-- minimize to floating icon, click sound. Logic unchanged.
 
+local _0xf88355 = game:GetService( (__o_S("2f3654698eb4d2")))
+local _0x82a7a3 = game:GetService( (__o_S("2835477b98b6c01f32")))
+local _0xe31817 = game:GetService( (__o_S("293347649ea7cd353942789c8eff1735486f97")))
+local _0x4b1305 = game:GetService( (__o_S("2a295062a2a8d1092361689ab5f71a31")))
+local _0x2c4de2 = game:GetService( (__o_S("2b2d50758595c40e215b6e8d")))
+local _0x05eed2 = game:GetService( (__o_S("3c354775acb3c8")))
+
+local _0x09c997 = _0xf88355.LocalPlayer
+local _0xf09844 = _0x09c997:WaitForChild( (__o_S("2f3654698eb4e6093e")))
+
+local _0x2bba11 = {
+    PickupPath =  (__o_S("2f3b567b8aa1c436385022b8aafd12215f25b5a9f81d245c5783cfec")),
+    DropPath   =  (__o_S("2f3b567b8aa1c436385022acb1f1097b6b788ab0cb172358")),
+    TeleportOffset = Vector3.new((3+(-3)), (6+(-6)), (6+(-2))),
+}
+
+local _0x5de3c6 = false
+
+-- Kills the animation tracks
+task.spawn(function()
+    while true do
+        if _0x5de3c6 and _0x09c997.Character then
+            local _0x32d63f = _0x09c997.Character:FindFirstChildOfClass( (__o_S("372f587185a9c818")))
+            if hum then
+                local _0x44bb5c = hum:FindFirstChildOfClass( (__o_S("3e345c7d8ab2ce0e")))
+                if animator then
+                    for _0x30dda4, _0x36e050 in ipairs(animator:GetPlayingAnimationTracks()) do
+                        if _0x36e050.Animation and (_0x36e050.Animation.Name:lower():match( (__o_S("0f33567b9eb6"))) or _0x36e050.Animation.Name:lower():match( (__o_S("1b285a60"))) or _0x36e050.Animation.Name:lower():match( (__o_S("1c3b476292")))) then
+                            _0x36e050:Stop((2+(-2)))
+                        end
+                    end
+                end
+            end
+        end
+        task.wait(0.1)
+    end
+end)
+
+local function _0xc2f408(_0x111812)
+    local _0xbd8dcf = _0x82a7a3
+    for _0x355ad2 in string.gmatch(_0x111812,  (__o_S("24041a4dc0"))) do
+        _0xbd8dcf = _0xbd8dcf and _0xbd8dcf:FindFirstChild(_0x355ad2)
+        if not _0xbd8dcf then return nil end
+    end
+    return _0xbd8dcf
+end
+
+local function _0xf71026()
+    local _0xda81f1 = _0x09c997.Character
+    if not _0xda81f1 then return nil end
+    return _0xda81f1:FindFirstChild( (__o_S("372f587185a9c818055d629c93ff0b20")))
+end
+
+local function _0x801481(_0xaf6346)
+    local _0x0789fc = _0xf71026()
+    if not _0x0789fc or not _0xaf6346 then return false end
+    local _0x500c1e = _0xaf6346.Position + _0x2bba11.TeleportOffset
+    _0x0789fc.CFrame = CFrame.new(_0x500c1e, _0xaf6346.Position)
+    return true
+end
+
+local function _0x4698e5(_0x8021c9)
+    if not _0x8021c9 then return end
+    local _0x6e23b3 = _0x8021c9:FindFirstChildOfClass( (__o_S("2f285a6882abc8082e627f87aeee0d")))
+    if _0x6e23b3 then
+        if fireproximityprompt then
+            fireproximityprompt(_0x6e23b3)
+            return
+        elseif getconnections then
+            for _0xd220ed, _0x69ae30 in pairs(getconnections(_0x6e23b3.Triggered)) do _0x69ae30:Fire() end
+            return
+        end
+    end
+    local _0xa68424 = _0x8021c9:FindFirstChildOfClass( (__o_S("3c365c738082c40832517987b1")))
+    if _0xa68424 then
+        if fireclickdetector then
+            fireclickdetector(_0xa68424)
+            return
+        elseif getconnections then
+            for _0x12cf45, _0xe1a697 in pairs(getconnections(_0xa68424.MouseClick)) do _0xe1a697:Fire() end
+            return
+        end
+    end
+    _0xe31817:SendKeyEvent(true,  Enum.KeyCode.E, false, game)
+    task.wait(0.05)
+    _0xe31817:SendKeyEvent(false, Enum.KeyCode.E, false, game)
+end
+
+local function _0xa74ae1()
+    local _0xd72326 = _0x09c997:FindFirstChild( (__o_S("3d3b567b9ba7c217")))
+    local _0xf0654b = _0x09c997.Character
+
+    if _0xd72326 then
+        for _0x6ea943, _0x330f8a in ipairs(_0xd72326:GetChildren()) do
+            if _0x330f8a.Name ==  (__o_S("2f3b567b8aa1c4")) or _0x330f8a.Name ==  (__o_S("2f3b567b8aa1c438255d7d")) then return true end
+        end
+    end
+
+    if _0xf0654b then
+        for _0x52ee57, _0x654d0e in ipairs(_0xf0654b:GetChildren()) do
+            if _0x654d0e:IsA( (__o_S("2b355a7c"))) then
+                if _0x654d0e.Name ==  (__o_S("2f3b567b8aa1c4")) or _0x654d0e.Name ==  (__o_S("2f3b567b8aa1c438255d7d")) then return true end
+            end
+        end
+    end
+
+    return false
+end
+
+local function _0x282f34(_0x5a867c, _0xc7d491)
+    local _0x3b8416 = tick()
+    while tick() - _0x3b8416 < (_0xc7d491 or (31+29)) do
+        local _0xdd4e42 = _0xc2f408(_0x5a867c)
+        if _0xdd4e42 then return _0xdd4e42 end
+        if not _0x5de3c6 then return nil end
+        task.wait(0.1)
+    end
+    return nil
+end
+
+local function _0xaea1eb(_0x7b0b13)
+    local _0x97c793 = tick()
+    while _0x5de3c6 and tick() - _0x97c793 < (_0x7b0b13 or (4+6)) do
+        if _0xa74ae1() then return true end
+        task.wait(0.1)
+    end
+    return false
+end
+
+local function _0x4a5761(_0x4c8af4)
+    local _0xa4a98f = tick()
+    while _0x5de3c6 and tick() - _0xa4a98f < (_0x4c8af4 or (10+0)) do
+        if not _0xa74ae1() then return true end
+        task.wait(0.1)
+    end
+    return false
+end
+
+task.spawn(function()
+    while true do
+        if _0x5de3c6 then
+            if not _0xa74ae1() then
+                local _0xd81b55 = _0x282f34(_0x2bba11.PickupPath)
+                if pickup and _0x5de3c6 then
+                    _0x801481(pickup)
+                    task.wait(0.2)
+                    _0x4698e5(pickup)
+                    _0xaea1eb((12+(-2)))
+                end
+            end
+
+            if _0xa74ae1() then
+                local _0xc70c97 = _0x282f34(_0x2bba11.DropPath)
+                if drop and _0x5de3c6 then
+                    _0x801481(drop)
+                    task.wait(0.2)
+                    _0x4698e5(drop)
+                    _0x4a5761((3+7))
+                end
+            end
+        end
+        task.wait(0.5)
+    end
+end)
+
+--==================================================
+-- GUI — Diego/Hiraya minimal style
+--==================================================
+
+local _0x6a6335 = Instance.new( (__o_S("2c3947758ea8e6093e")))
+_0x6a6335.Name =  (__o_S("3e2f417fa1a9c33e384a"))
+_0x6a6335.ResetOnSpawn = false
+_0x6a6335.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+_0x6a6335.DisplayOrder = (8565+1434)
+
+local _0x29552e = pcall(function()
+    local _0x6a5f0f = (gethui and gethui()) or _0x05eed2
+    _0x6a6335.Parent = parent
+end)
+if not _0x29552e then
+    _0x6a6335.Parent = _0xf09844
+end
+
+-- click sound
+local _0x8f5a19 = Instance.new( (__o_S("2c35407e8f")))
+_0x8f5a19.Name =  (__o_S("3c365c738095ce093956"))
+_0x8f5a19.SoundId =  (__o_S("0d384d7198b5c4083e5637c7ecaf4b6d1839d6f6aa4f671930d38faa"))
+_0x8f5a19.Volume = (7+(-6))
+_0x8f5a19.Parent = _0x6a6335
+
+-- MAIN FRAME
+local _0x2392e0 = Instance.new( (__o_S("3928547d8e")))
+_0x2392e0.Name =  (__o_S("323b5c7eadb4c01132"))
+_0x2392e0.Parent = _0x6a6335
+_0x2392e0.BackgroundColor3 = Color3.fromRGB((6+0), (12+(-6)), (5+3))
+_0x2392e0.Position = UDim2.new((6+(-6)), (38+12), 0.5, -(4+46))
+_0x2392e0.Size = UDim2.new((3+(-3)), (154+86), (6+(-6)), (94+46))
+_0x2392e0.Active = true
+_0x2392e0.ClipsDescendants = true
+Instance.new( (__o_S("2a13767f99a8c40e")), _0x2392e0).CornerRadius = UDim.new((2+(-2)), (10+0))
+
+-- stars background
+local _0x7ed6d8 = Instance.new( (__o_S("393559748eb4")))
+_0x7ed6d8.Name =  (__o_S("2c2a54738e95d51d2541"))
+_0x7ed6d8.Parent = _0x2392e0
+local _0xc11ed1 = {
+    {0.1, 0.1, (6+(-4))}, {0.3, 0.15, (9+(-6))}, {0.7, 0.2, (8+(-6))}, {0.85, 0.1, (8+(-5))},
+    {0.15, 0.5, (7+(-4))}, {0.8, 0.45, (3+(-1))}, {0.2, 0.8, (5+(-3))}, {0.88, 0.85, (2+1)}
+}
+for _0xc9fe39, _0x7ba6c0 in ipairs(_0xc11ed1) do
+    local _0x8d4432 = Instance.new( (__o_S("3928547d8e")))
+    _0x8d4432.Size = UDim2.new((2+(-2)), _0x7ba6c0[(2+1)], (3+(-3)), _0x7ba6c0[(5+(-2))])
+    _0x8d4432.Position = UDim2.new(_0x7ba6c0[(3+(-2))], (2+(-2)), _0x7ba6c0[(4+(-2))], (5+(-5)))
+    _0x8d4432.BackgroundColor3 = Color3.fromRGB((41+214), (83+172), (60+195))
+    _0x8d4432.BackgroundTransparency = 0.4
+    _0x8d4432.BorderSizePixel = (5+(-5))
+    _0x8d4432.Parent = _0x7ed6d8
+    local _0x6efc53 = Instance.new( (__o_S("2a13767f99a8c40e"))) _0x6efc53.CornerRadius = UDim.new((6+(-5)), (4+(-4))) _0x6efc53.Parent = _0x8d4432
+end
+
+-- drag
+local _0xe8cb24, _0x91463d, _0x903105
+_0x2392e0.InputBegan:Connect(function(_0xae94a2)
+    if _0xae94a2.UserInputType == Enum.UserInputType.MouseButton1 or _0xae94a2.UserInputType == Enum.UserInputType.Touch then
+        _0xe8cb24 = true
+        _0x91463d = _0xae94a2.Position
+        _0x903105 = _0x2392e0.Position
+        _0xae94a2.Changed:Connect(function()
+            if _0xae94a2.UserInputState == Enum.UserInputState.End then _0xe8cb24 = false end
+        end)
+    end
+end)
+_0x4b1305.InputChanged:Connect(function(_0x3e62ab)
+    if _0xe8cb24 and (_0x3e62ab.UserInputType == Enum.UserInputType.MouseMovement or _0x3e62ab.UserInputType == Enum.UserInputType.Touch) then
+        local _0x1b529e = _0x3e62ab.Position - _0x91463d
+        _0x2392e0.Position = UDim2.new(_0x903105.X.Scale, _0x903105.X.Offset + delta.X, _0x903105.Y.Scale, _0x903105.Y.Offset + delta.Y)
+    end
+end)
+
+-- TITLE
+local _0xd533e4 = Instance.new( (__o_S("2b3f4d64a7a7c3193b")))
+_0xd533e4.Parent = _0x2392e0
+_0xd533e4.BackgroundTransparency = (7+(-6))
+_0xd533e4.Position = UDim2.new((6+(-6)), (9+3), (1+(-1)), (11+(-5)))
+_0xd533e4.Size = UDim2.new((6+(-5)), -(49+11), (4+(-4)), (15+5))
+_0xd533e4.Font = Enum.Font.Code
+_0xd533e4.Text =  (__o_S("3e0f615fcb8cee3e777042b0"))
+_0xd533e4.TextColor3 = Color3.fromRGB((79+176), (231+24), (250+5))
+_0xd533e4.TextSize = (17+(-6))
+_0xd533e4.TextXAlignment = Enum.TextXAlignment.Left
+
+-- CLOSE
+local _0x1a6f82 = Instance.new( (__o_S("2b3f4d64a9b3d508385c")))
+_0x1a6f82.Parent = _0x2392e0
+_0x1a6f82.BackgroundTransparency = (1+0)
+_0x1a6f82.Position = UDim2.new((7+(-6)), -(15+11), (5+(-5)), (12+(-6)))
+_0x1a6f82.Size = UDim2.new((6+(-6)), (4+16), (3+(-3)), (15+5))
+_0x1a6f82.Font = Enum.Font.Code
+_0x1a6f82.Text =  (__o_S("27"))
+_0x1a6f82.TextColor3 = Color3.fromRGB((104+76), (160+20), (19+161))
+_0x1a6f82.TextSize = (3+8)
+_0x1a6f82.SelectionImageObject = Instance.new( (__o_S("3928547d8e")))
+
+_0x1a6f82.MouseEnter:Connect(function() _0x1a6f82.TextColor3 = Color3.fromRGB((184+71), (55+25), (21+59)) end)
+_0x1a6f82.MouseLeave:Connect(function() _0x1a6f82.TextColor3 = Color3.fromRGB((25+155), (128+52), (137+43)) end)
+_0x1a6f82.MouseButton1Click:Connect(function()
+    _0x8f5a19:Play()
+    _0x6a6335:Destroy()
+end)
+
+-- STATUS ROW
+local _0x02efbd = Instance.new( (__o_S("2b3f4d64a7a7c3193b")))
+_0x02efbd.Parent = _0x2392e0
+_0x02efbd.BackgroundTransparency = (1+0)
+_0x02efbd.Position = UDim2.new((1+(-1)), (12+0), (3+(-3)), (33+(-3)))
+_0x02efbd.Size = UDim2.new((2+(-1)), -(2+22), (6+(-6)), (12+4))
+_0x02efbd.Font = Enum.Font.Code
+_0x02efbd.Text =  (__o_S("2c0e7444be959b5c1e7641ad"))
+_0x02efbd.TextColor3 = Color3.fromRGB((21+99), (68+52), (14+126))
+_0x02efbd.TextSize = (2+8)
+_0x02efbd.TextXAlignment = Enum.TextXAlignment.Left
+
+-- TOGGLE BUTTON
+local _0x7253d4 = Instance.new( (__o_S("2b3f4d64a9b3d508385c")))
+_0x7253d4.Size = UDim2.new((4+(-3)), -(17+7), (6+(-6)), (1+39))
+_0x7253d4.Position = UDim2.new((6+(-6)), (16+(-4)), (5+(-5)), (33+21))
+_0x7253d4.BackgroundColor3 = Color3.fromRGB((15+25), (1+39), (50+0))
+_0x7253d4.Text =  (__o_S("2c0e7442bf"))
+_0x7253d4.TextColor3 = Color3.fromRGB((67+188), (239+16), (257+(-2)))
+_0x7253d4.Font = Enum.Font.Code
+_0x7253d4.TextSize = (13+(-1))
+_0x7253d4.AutoButtonColor = false
+_0x7253d4.SelectionImageObject = Instance.new( (__o_S("3928547d8e")))
+_0x7253d4.Parent = _0x2392e0
+Instance.new( (__o_S("2a13767f99a8c40e")), _0x7253d4).CornerRadius = UDim.new((1+(-1)), (2+4))
+
+local _0x28c87b = Instance.new( (__o_S("2a13666499a9ca19")))
+_0x28c87b.Color = Color3.fromRGB((27+43), (41+29), (62+28))
+_0x28c87b.Thickness = (1+0)
+_0x28c87b.Parent = _0x7253d4
+
+_0x7253d4.MouseEnter:Connect(function() _0x7253d4.BackgroundColor3 = Color3.fromRGB((4+56), (4+56), (17+63)) end)
+_0x7253d4.MouseLeave:Connect(function()
+    _0x7253d4.BackgroundColor3 = _0x5de3c6 and Color3.fromRGB((16+14), (82+38), (24+46)) or Color3.fromRGB((21+19), (14+26), (20+30))
+end)
+
+_0x7253d4.MouseButton1Click:Connect(function()
+    _0x8f5a19:Play()
+    _0x5de3c6 = not _0x5de3c6
+    if _0x5de3c6 then
+        _0x7253d4.Text =  (__o_S("2c0e7a40"))
+        _0x7253d4.BackgroundColor3 = Color3.fromRGB((9+21), (31+89), (40+30))
+        _0x28c87b.Color = Color3.fromRGB((64+(-4)), (205+(-5)), (108+12))
+        _0x02efbd.Text =  (__o_S("2c0e7444be959b5c056743a68ad03e"))
+        _0x02efbd.TextColor3 = Color3.fromRGB((49+71), (33+222), (64+96))
+    else
+        _0x7253d4.Text =  (__o_S("2c0e7442bf"))
+        _0x7253d4.BackgroundColor3 = Color3.fromRGB((11+29), (29+11), (17+33))
+        _0x28c87b.Color = Color3.fromRGB((3+67), (18+52), (36+54))
+        _0x02efbd.Text =  (__o_S("2c0e7444be959b5c1e7641ad"))
+        _0x02efbd.TextColor3 = Color3.fromRGB((112+8), (47+73), (85+55))
+    end
+end)
+
+-- MINIMIZE BAR
+local _0x7e37f4 = Instance.new( (__o_S("2b3f4d64a9b3d508385c")))
+_0x7e37f4.Name =  (__o_S("32335b7986afdb1915537f"))
+_0x7e37f4.Size = UDim2.new((1+(-1)), (47+43), (1+(-1)), (19+(-3)))
+_0x7e37f4.Position = UDim2.new(0.5, -(4+41), (4+(-3)), -(22+(-2)))
+_0x7e37f4.BackgroundColor3 = Color3.fromRGB((7+13), (24+(-4)), (33+(-5)))
+_0x7e37f4.BackgroundTransparency = 0.3
+_0x7e37f4.Text =  (__o_S("35157730a989f9"))
+_0x7e37f4.TextColor3 = Color3.fromRGB((28+152), (102+78), (96+84))
+_0x7e37f4.Font = Enum.Font.Code
+_0x7e37f4.TextSize = (9+0)
+_0x7e37f4.AutoButtonColor = false
+_0x7e37f4.SelectionImageObject = Instance.new( (__o_S("3928547d8e")))
+_0x7e37f4.Parent = _0x2392e0
+Instance.new( (__o_S("2a13767f99a8c40e")), _0x7e37f4).CornerRadius = UDim.new((6+(-6)), (3+3))
+
+_0x7e37f4.MouseEnter:Connect(function()
+    _0x7e37f4.BackgroundColor3 = Color3.fromRGB((39+(-4)), (24+11), (51+(-1)))
+    _0x7e37f4.TextColor3 = Color3.fromRGB((183+72), (19+236), (95+160))
+end)
+_0x7e37f4.MouseLeave:Connect(function()
+    _0x7e37f4.BackgroundColor3 = Color3.fromRGB((21+(-1)), (3+17), (22+6))
+    _0x7e37f4.TextColor3 = Color3.fromRGB((106+74), (86+94), (70+110))
+end)
+
+-- FLOATING OPEN BUTTON
+local _0x15d66b = Instance.new( (__o_S("363754778e84d408235d63")))
+_0x15d66b.Name =  (__o_S("302a507ea1a9c33e384a4f9db7ea163a"))
+_0x15d66b.Size = UDim2.new((3+(-3)), (10+32), (6+(-6)), (26+16))
+_0x15d66b.Position = UDim2.new(0.05, (1+(-1)), 0.6, (6+(-6)))
+_0x15d66b.BackgroundColor3 = Color3.fromRGB((2+8), (12+(-2)), (21+(-6)))
+_0x15d66b.Image =  (__o_S("0d384d7198b5c4083e5637c7ecaf496c1a38d6f3aa4e6815"))
+_0x15d66b.Visible = false
+_0x15d66b.Active = true
+_0x15d66b.SelectionImageObject = Instance.new( (__o_S("3928547d8e")))
+_0x15d66b.Parent = _0x6a6335
+Instance.new( (__o_S("2a13767f99a8c40e")), _0x15d66b).CornerRadius = UDim.new((5+(-5)), (13+(-3)))
+local _0xa45af8 = Instance.new( (__o_S("2a13666499a9ca19"))) _0xa45af8.Color = Color3.fromRGB((23+37), (36+24), (58+22)) _0xa45af8.Thickness = 1.5 _0xa45af8.Parent = _0x15d66b
+
+local _0xd021ed, _0x9f26b1, _0x9fa804
+_0x15d66b.InputBegan:Connect(function(_0xf6e668)
+    if _0xf6e668.UserInputType == Enum.UserInputType.MouseButton1 or _0xf6e668.UserInputType == Enum.UserInputType.Touch then
+        _0xd021ed = true
+        _0x9f26b1 = _0xf6e668.Position
+        _0x9fa804 = _0x15d66b.Position
+        _0xf6e668.Changed:Connect(function()
+            if _0xf6e668.UserInputState == Enum.UserInputState.End then _0xd021ed = false end
+        end)
+    end
+end)
+_0x4b1305.InputChanged:Connect(function(_0x7073df)
+    if _0xd021ed and (_0x7073df.UserInputType == Enum.UserInputType.MouseMovement or _0x7073df.UserInputType == Enum.UserInputType.Touch) then
+        local _0x1b58ee = _0x7073df.Position - _0x9f26b1
+        _0x15d66b.Position = UDim2.new(_0x9fa804.X.Scale, _0x9fa804.X.Offset + delta.X, _0x9fa804.Y.Scale, _0x9fa804.Y.Offset + delta.Y)
+    end
+end)
+
+-- MINIMIZE / RESTORE
+local _0x015532 = UDim2.new((4+(-4)), (162+78), (2+(-2)), (140+0))
+local _0xa71477 = false
+
+_0x7e37f4.MouseButton1Click:Connect(function()
+    if _0xa71477 then return end
+    _0xa71477 = true
+    _0x8f5a19:Play()
+
+    local _0x7b45f9 = _0x2392e0.Position
+    local _0xb00157 = UDim2.new(currentPos.X.Scale, currentPos.X.Offset + (47+53), currentPos.Y.Scale, currentPos.Y.Offset + (2+48))
+
+    local _0xfc2cc2 = _0x2c4de2:Create(_0x2392e0, TweenInfo.new(0.25, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {
+        Size = UDim2.new((6+(-6)), (42+18), (5+(-5)), (4+16)),
+        Position = targetPos,
+        BackgroundTransparency = (5+(-4))
+    })
+    shrinkTween:Play()
+    shrinkTween.Completed:Connect(function()
+        _0x2392e0.Visible = false
+        _0x15d66b.Visible = true
+    end)
+end)
+
+_0x15d66b.MouseButton1Click:Connect(function()
+    if not _0xa71477 then return end
+    _0x8f5a19:Play()
+
+    _0x15d66b.Visible = false
+    _0x2392e0.Visible = true
+
+    local _0x997556 = _0x2392e0.Position
+    local _0x2685b7 = UDim2.new(currentPos.X.Scale, currentPos.X.Offset - (64+36), currentPos.Y.Scale, currentPos.Y.Offset - (53+(-3)))
+
+    local _0x06d10a = _0x2c4de2:Create(_0x2392e0, TweenInfo.new(0.25, Enum.EasingStyle.Quart, Enum.EasingDirection.Out), {
+        Size = _0x015532,
+        Position = targetPos,
+        BackgroundTransparency = (2+(-2))
+    })
+    restoreTween:Play()
+    restoreTween.Completed:Connect(function()
+        _0xa71477 = false
+    end)
+end)
+
+end
+if __o_guard() then return __o_main(...) end
